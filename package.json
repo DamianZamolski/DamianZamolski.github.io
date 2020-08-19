@@ -1,0 +1,13 @@
+{
+  "name": "DamianZamolski.github.io",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export -o docs"
+  },
+  "dependencies": {
+    "next": "^9.5.2",
+    "react-dom": "^16.13.1",
+    "react": "^16.13.1"
+  }
+}
