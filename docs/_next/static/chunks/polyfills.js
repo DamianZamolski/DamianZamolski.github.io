@@ -6746,7 +6746,8 @@ _N_E = (window['webpackJsonp_N_E'] = window['webpackJsonp_N_E'] || []).push([
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */ ;(function (module) {
+        /* WEBPACK VAR INJECTION */
+        ;(function (module) {
           __webpack_require__(
             /*! next/dist/build/polyfills/polyfill-nomodule */ './node_modules/next/dist/build/polyfills/polyfill-nomodule.js'
           )

@@ -181,7 +181,8 @@ _N_E = (window['webpackJsonp_N_E'] = window['webpackJsonp_N_E'] || []).push([
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */ ;(function (module) {
+        /* WEBPACK VAR INJECTION */
+        ;(function (module) {
           var _regeneratorRuntime = __webpack_require__(
             /*! @babel/runtime/regenerator */ './node_modules/@babel/runtime/regenerator/index.js'
           )
@@ -461,7 +462,8 @@ _N_E = (window['webpackJsonp_N_E'] = window['webpackJsonp_N_E'] || []).push([
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */ ;(function (module) {
+        /* WEBPACK VAR INJECTION */
+        ;(function (module) {
           exports.__esModule = true
           exports.getEventSourceWrapper = getEventSourceWrapper
           var eventCallbacks = []
@@ -629,7 +631,8 @@ _N_E = (window['webpackJsonp_N_E'] = window['webpackJsonp_N_E'] || []).push([
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */ ;(function (module) {
+        /* WEBPACK VAR INJECTION */
+        ;(function (module) {
           var _interopRequireDefault = __webpack_require__(
             /*! @babel/runtime/helpers/interopRequireDefault */ './node_modules/@babel/runtime/helpers/interopRequireDefault.js'
           )
@@ -1838,7 +1841,8 @@ _N_E = (window['webpackJsonp_N_E'] = window['webpackJsonp_N_E'] || []).push([
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */ ;(function (module) {
+        /* WEBPACK VAR INJECTION */
+        ;(function (module) {
           exports.__esModule = true
           exports.displayContent = displayContent // This function is used to remove Next.js' no-FOUC styles workaround for using
           // `style-loader` in development. It must be called before hydration, or else
@@ -1947,7 +1951,8 @@ _N_E = (window['webpackJsonp_N_E'] = window['webpackJsonp_N_E'] || []).push([
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */ ;(function (module) {
+        /* WEBPACK VAR INJECTION */
+        ;(function (module) {
           var _interopRequireDefault = __webpack_require__(
             /*! @babel/runtime/helpers/interopRequireDefault */ './node_modules/@babel/runtime/helpers/interopRequireDefault.js'
           )
