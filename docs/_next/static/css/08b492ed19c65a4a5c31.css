@@ -1,13 +1,19 @@
 #Footer_footer__1GsGg {
   grid-area: footer;
 }
+#Footer_footer__1GsGg,
+#Header_header__P0_LE {
+  background-color: var(--dark-background-color);
+}
 #Header_header__P0_LE {
   grid-area: header;
 }
 #Nav_nav__2jHIk {
+  background-color: var(--dark-background-color);
   grid-area: nav;
 }
 #Content_content__1M24u {
+  background-color: var(--background-color);
   grid-area: content;
 }
 #Page_page__1GEsf {
