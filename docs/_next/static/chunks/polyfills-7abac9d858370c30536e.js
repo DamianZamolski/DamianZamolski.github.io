@@ -915,11 +915,7 @@ _N_E = (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
             String,
             'String',
             function (t) {
-              $e(this, {
-                type: 'String Iterator',
-                string: String(t),
-                index: 0,
-              })
+              $e(this, { type: 'String Iterator', string: String(t), index: 0 })
             },
             function () {
               var t,
