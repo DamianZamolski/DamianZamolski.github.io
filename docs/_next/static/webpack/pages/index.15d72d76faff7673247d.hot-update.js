@@ -1,0 +1,40 @@
+webpackHotUpdate_N_E('pages/index', {
+  /***/ './node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/index.js?!./node_modules/resolve-url-loader/index.js?!./node_modules/sass-loader/dist/cjs.js?!./src/components/Page/Page.module.scss':
+    /*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-3-1!./node_modules/next/dist/compiled/postcss-loader??__nextjs_postcss!./node_modules/resolve-url-loader??ref--5-oneOf-3-3!./node_modules/sass-loader/dist/cjs.js??ref--5-oneOf-3-4!./src/components/Page/Page.module.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+    /*! no static exports found */
+    /***/ function (module, exports, __webpack_require__) {
+      // Imports
+      var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(
+        /*! ../../../node_modules/css-loader/dist/runtime/api.js */ './node_modules/css-loader/dist/runtime/api.js'
+      )
+      exports = ___CSS_LOADER_API_IMPORT___(true)
+      // Module
+      exports.push([
+        module.i,
+        '#Page_page__1GEsf {\n  grid: "nav header" "nav content" "nav footer"/300px auto;\n}',
+        '',
+        {
+          version: 3,
+          sources: [
+            'C:/zamola/dev/DamianZamolski.github.io/src/components/Page/Page.module.scss',
+          ],
+          names: [],
+          mappings: 'AAAA;EAEE,wDAAA;AAAF',
+          file: 'Page.module.scss',
+          sourcesContent: [
+            "#page {\r\n  // display: grid;\r\n  grid: 'nav header' 'nav content' 'nav footer' / 300px auto;\r\n}\r\n",
+          ],
+        },
+      ])
+      // Exports
+      exports.locals = {
+        page: 'Page_page__1GEsf',
+      }
+      module.exports = exports
+
+      /***/
+    },
+})
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9fTl9FLy4vc3JjL2NvbXBvbmVudHMvUGFnZS9QYWdlLm1vZHVsZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUFBO0FBQ0Esa0NBQWtDLG1CQUFPLENBQUMsMkdBQXNEO0FBQ2hHO0FBQ0E7QUFDQSxjQUFjLFFBQVMsc0JBQXNCLG1FQUFtRSxHQUFHLE9BQU8sa0lBQWtJLFdBQVcsMERBQTBELHVCQUF1QixpRUFBaUUsS0FBSyxPQUFPO0FBQ3JhO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJmaWxlIjoic3RhdGljL3dlYnBhY2svcGFnZXMvaW5kZXguMTVkNzJkNzZmYWZmNzY3MzI0N2QuaG90LXVwZGF0ZS5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIEltcG9ydHNcbnZhciBfX19DU1NfTE9BREVSX0FQSV9JTVBPUlRfX18gPSByZXF1aXJlKFwiLi4vLi4vLi4vbm9kZV9tb2R1bGVzL2Nzcy1sb2FkZXIvZGlzdC9ydW50aW1lL2FwaS5qc1wiKTtcbmV4cG9ydHMgPSBfX19DU1NfTE9BREVSX0FQSV9JTVBPUlRfX18odHJ1ZSk7XG4vLyBNb2R1bGVcbmV4cG9ydHMucHVzaChbbW9kdWxlLmlkLCBcIiNQYWdlX3BhZ2VfXzFHRXNmIHtcXG4gIGdyaWQ6IFxcXCJuYXYgaGVhZGVyXFxcIiBcXFwibmF2IGNvbnRlbnRcXFwiIFxcXCJuYXYgZm9vdGVyXFxcIi8zMDBweCBhdXRvO1xcbn1cIiwgXCJcIix7XCJ2ZXJzaW9uXCI6MyxcInNvdXJjZXNcIjpbXCJDOi96YW1vbGEvZGV2L0RhbWlhblphbW9sc2tpLmdpdGh1Yi5pby9zcmMvY29tcG9uZW50cy9QYWdlL1BhZ2UubW9kdWxlLnNjc3NcIl0sXCJuYW1lc1wiOltdLFwibWFwcGluZ3NcIjpcIkFBQUE7RUFFRSx3REFBQTtBQUFGXCIsXCJmaWxlXCI6XCJQYWdlLm1vZHVsZS5zY3NzXCIsXCJzb3VyY2VzQ29udGVudFwiOltcIiNwYWdlIHtcXHJcXG4gIC8vIGRpc3BsYXk6IGdyaWQ7XFxyXFxuICBncmlkOiAnbmF2IGhlYWRlcicgJ25hdiBjb250ZW50JyAnbmF2IGZvb3RlcicgLyAzMDBweCBhdXRvO1xcclxcbn1cXHJcXG5cIl19XSk7XG4vLyBFeHBvcnRzXG5leHBvcnRzLmxvY2FscyA9IHtcblx0XCJwYWdlXCI6IFwiUGFnZV9wYWdlX18xR0VzZlwiXG59O1xubW9kdWxlLmV4cG9ydHMgPSBleHBvcnRzO1xuIl0sInNvdXJjZVJvb3QiOiIifQ==

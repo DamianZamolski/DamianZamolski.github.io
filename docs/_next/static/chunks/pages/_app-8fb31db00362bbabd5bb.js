@@ -12,19 +12,19 @@ _N_E = (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
         },
       ])
     },
-    Hglc: function (n, t, o) {},
     IlR1: function (n, t, o) {
       'use strict'
       o.r(t)
-      var c = o('q1tI'),
-        e = o.n(c),
-        _ = (o('Hglc'), e.a.createElement)
+      var e = o('q1tI'),
+        _ = o.n(e),
+        c = (o('QdDn'), _.a.createElement)
       t.default = function (n) {
         var t = n.Component,
           o = n.pageProps
-        return _(t, o)
+        return c(t, o)
       }
     },
+    QdDn: function (n, t, o) {},
   },
   [[0, 0, 1, 2]],
 ])

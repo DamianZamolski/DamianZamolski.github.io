@@ -1,0 +1,16 @@
+#Footer_footer__1GsGg {
+  grid-area: footer;
+}
+#Header_header__P0_LE {
+  grid-area: header;
+}
+#Nav_nav__2jHIk {
+  grid-area: nav;
+}
+#Content_content__1M24u {
+  grid-area: content;
+}
+#Page_page__1GEsf {
+  display: grid;
+  grid: 'nav header' 'nav content' 'nav footer'/300px auto;
+}
