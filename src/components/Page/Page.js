@@ -1,14 +1,14 @@
 import React from 'react'
+import Content from './Content/Content'
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
 import Nav from './Nav/Nav'
 import { page } from './Page.module.scss'
-import Content from './Content/Content'
 
-const Page = ({ children }) => (
+const Page = ({ children, title }) => (
   <div id={page}>
     <Nav />
-    <Header />
+    <Header title={title} />
     <Content>{children}</Content>
     <Footer />
   </div>

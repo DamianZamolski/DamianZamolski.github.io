@@ -1,4 +1,4 @@
 #page {
   display: grid;
-  grid: 'nav header' 'nav content' 'nav footer' / 300px auto;
+  grid: 'nav header' 'nav content' 'nav footer' / max-content auto;
 }
