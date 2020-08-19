@@ -15,17 +15,14 @@ _N_E = (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
     Hglc: function (n, t, o) {},
     IlR1: function (n, t, o) {
       'use strict'
-      o.r(t),
-        o.d(t, 'default', function () {
-          return r
-        })
+      o.r(t)
       var c = o('q1tI'),
         e = o.n(c),
-        u = (o('Hglc'), e.a.createElement)
-      function r(n) {
+        _ = (o('Hglc'), e.a.createElement)
+      t.default = function (n) {
         var t = n.Component,
           o = n.pageProps
-        return u(t, o)
+        return _(t, o)
       }
     },
   },

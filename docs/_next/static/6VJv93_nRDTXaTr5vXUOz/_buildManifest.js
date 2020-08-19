@@ -1,5 +1,5 @@
 self.__BUILD_MANIFEST = {
-  '/': ['static\u002Fchunks\u002Fpages\u002Findex-93bfac365482262bd95d.js'],
+  '/': ['static\u002Fchunks\u002Fpages\u002Findex-ca32e3f2888a7bc7892e.js'],
   '/_error': [
     'static\u002Fchunks\u002Fpages\u002F_error-fa39c7ce12d3ae2cec40.js',
   ],

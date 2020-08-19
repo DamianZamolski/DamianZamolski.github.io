@@ -1,3 +1,8 @@
 import React from 'react'
+import Page from '../components/Page/Page'
 
-export default () => <div>Hello World</div>
+export default () => (
+  <Page>
+    <div>Hello World</div>
+  </Page>
+)
