@@ -730,8 +730,7 @@ _N_E = (window['webpackJsonp_N_E'] = window['webpackJsonp_N_E'] || []).push([
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           exports.__esModule = true
           exports.removePathTrailingSlash = removePathTrailingSlash
           exports.normalizePathTrailingSlash = void 0
@@ -838,8 +837,7 @@ _N_E = (window['webpackJsonp_N_E'] = window['webpackJsonp_N_E'] || []).push([
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           var _construct = __webpack_require__(
             /*! @babel/runtime/helpers/construct */ './node_modules/@babel/runtime/helpers/construct.js'
           )
@@ -1220,8 +1218,7 @@ _N_E = (window['webpackJsonp_N_E'] = window['webpackJsonp_N_E'] || []).push([
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           var _interopRequireDefault = __webpack_require__(
             /*! @babel/runtime/helpers/interopRequireDefault */ './node_modules/@babel/runtime/helpers/interopRequireDefault.js'
           )
@@ -1352,8 +1349,7 @@ _N_E = (window['webpackJsonp_N_E'] = window['webpackJsonp_N_E'] || []).push([
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           exports.__esModule = true
           exports['default'] = mitt
           /*
@@ -1484,8 +1480,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           exports.__esModule = true
           exports.RouterContext = void 0
 
@@ -1595,8 +1590,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           var _slicedToArray = __webpack_require__(
             /*! @babel/runtime/helpers/slicedToArray */ './node_modules/@babel/runtime/helpers/slicedToArray.js'
           )
@@ -3096,8 +3090,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           exports.__esModule = true
           exports.formatUrl = formatUrl
 
@@ -3326,8 +3319,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           exports.__esModule = true
           exports.isDynamicRoute = isDynamicRoute // Identify /[param]/ in route string
 
@@ -3423,8 +3415,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           exports.__esModule = true
           exports.parseRelativeUrl = parseRelativeUrl
 
@@ -3556,8 +3547,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           var _slicedToArray = __webpack_require__(
             /*! @babel/runtime/helpers/slicedToArray */ './node_modules/@babel/runtime/helpers/slicedToArray.js'
           )
@@ -3707,8 +3697,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           exports.__esModule = true
           exports.getRouteMatcher = getRouteMatcher
 
@@ -3837,8 +3826,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           exports.__esModule = true
           exports.getRouteRegex = getRouteRegex // this isn't importing the escape-string-regex module
           // to reduce bytes
@@ -3998,8 +3986,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           var _regeneratorRuntime = __webpack_require__(
             /*! @babel/runtime/regenerator */ './node_modules/@babel/runtime/regenerator/index.js'
           )
@@ -8348,8 +8335,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       /***/ function (module, __webpack_exports__, __webpack_require__) {
         'use strict'
         __webpack_require__.r(__webpack_exports__)
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
             /*! @babel/runtime/helpers/esm/extends */ './node_modules/@babel/runtime/helpers/esm/extends.js'
           )

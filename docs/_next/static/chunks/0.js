@@ -8,8 +8,7 @@
       /*! no static exports found */
       /***/ function (module, exports, __webpack_require__) {
         'use strict'
-        /* WEBPACK VAR INJECTION */
-        ;(function (module) {
+        /* WEBPACK VAR INJECTION */ ;(function (module) {
           var _a, _b
           // Legacy CSS implementations will `eval` browser code in a Node.js context
           // to extract CSS. For backwards compatibility, we need to check we're in a
