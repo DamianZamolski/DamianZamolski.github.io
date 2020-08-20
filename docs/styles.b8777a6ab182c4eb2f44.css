@@ -31,6 +31,9 @@ body {
   grid-area: main;
 }
 #nav-module--nav--XOa-H {
+  align-items: stretch;
+  justify-content: stretch;
+  display: flex;
   grid-area: nav;
 }
 #Page-module--page--Mo1Sm {
