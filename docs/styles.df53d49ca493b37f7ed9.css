@@ -11,11 +11,6 @@ body {
   margin: 0;
   padding: 0;
 }
-#Content-module--content--3R2nP {
-  background-color: var(--light-background-color);
-  grid-area: content;
-  padding: var(--space);
-}
 #Footer-module--footer--2XDsj {
   grid-area: footer;
 }
@@ -27,6 +22,11 @@ body {
 #Header-module--header--2ZFqp {
   grid-area: header;
 }
+#Main-module--main--1i6gQ {
+  background-color: var(--light-background-color);
+  grid-area: main;
+  padding: var(--space);
+}
 #Nav-module--nav--1K9MS {
   background-color: var(--dark-background-color);
   grid-area: nav;
@@ -34,6 +34,6 @@ body {
 }
 #Page-module--page--N-Olx {
   display: grid;
-  grid: 'nav header' 'nav content' 'nav footer' / -webkit-max-content auto;
-  grid: 'nav header' 'nav content' 'nav footer' / max-content auto;
+  grid: 'nav header' 'nav main' 'nav footer' / -webkit-max-content auto;
+  grid: 'nav header' 'nav main' 'nav footer' / max-content auto;
 }

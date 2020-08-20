@@ -1,8 +1,8 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Content from './content/Content'
 import Footer from './footer/Footer'
 import Header from './header/Header'
+import Main from './main/Main'
 import Nav from './nav/Nav'
 import { page } from './Page.module.css'
 
@@ -17,7 +17,7 @@ const Page = ({ children, title }) => (
     </Helmet>
     <Nav />
     <Header title={title} />
-    <Content>{children}</Content>
+    <Main>{children}</Main>
     <Footer />
   </div>
 )

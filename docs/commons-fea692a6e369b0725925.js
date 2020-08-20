@@ -104,6 +104,9 @@
         }
       }
     },
+    '9UOb': function (e, t, n) {
+      e.exports = { main: 'Main-module--main--1i6gQ' }
+    },
     I96t: function (e, t, n) {
       e.exports = { page: 'Page-module--page--N-Olx' }
     },
@@ -112,23 +115,23 @@
       var r = n('q1tI'),
         o = n.n(r),
         i = n('qhky'),
-        a = n('Ygzn'),
-        c = function (e) {
-          var t = e.children
-          return o.a.createElement('main', { id: a.content }, t)
+        a = n('Y9Hk'),
+        c = function () {
+          return o.a.createElement('footer', { id: a.footer }, 'Footer')
         },
-        u = n('Y9Hk'),
-        s = function () {
-          return o.a.createElement('footer', { id: u.footer }, 'Footer')
-        },
-        l = n('rKQJ'),
-        f = function (e) {
+        u = n('rKQJ'),
+        s = function (e) {
           var t = e.title
           return o.a.createElement(
             'header',
-            { id: l.header },
+            { id: u.header },
             o.a.createElement('h1', null, t)
           )
+        },
+        l = n('9UOb'),
+        f = function (e) {
+          var t = e.children
+          return o.a.createElement('main', { id: l.main }, t)
         },
         p = n('s+X8'),
         d = function () {
@@ -152,17 +155,14 @@
             })
           ),
           o.a.createElement(d, null),
-          o.a.createElement(f, { title: n }),
-          o.a.createElement(c, null, t),
-          o.a.createElement(s, null)
+          o.a.createElement(s, { title: n }),
+          o.a.createElement(f, null, t),
+          o.a.createElement(c, null)
         )
       }
     },
     Y9Hk: function (e, t, n) {
       e.exports = { footer: 'Footer-module--footer--2XDsj' }
-    },
-    Ygzn: function (e, t, n) {
-      e.exports = { content: 'Content-module--content--3R2nP' }
     },
     ZhWT: function (e, t) {
       var n = 'undefined' != typeof Element,
@@ -272,8 +272,8 @@
             }),
             'charset'),
           A = 'cssText',
-          E = 'href',
-          O = 'http-equiv',
+          O = 'href',
+          E = 'http-equiv',
           C = 'innerHTML',
           S = 'itemprop',
           j = 'name',
@@ -296,11 +296,11 @@
           R = 'encodeSpecialCharacters',
           q = 'onChangeClientState',
           H = 'titleTemplate',
-          Y = Object.keys(L).reduce(function (e, t) {
+          _ = Object.keys(L).reduce(function (e, t) {
             return (e[L[t]] = t), e
           }, {}),
-          _ = [g.NOSCRIPT, g.SCRIPT, g.STYLE],
-          D =
+          D = [g.NOSCRIPT, g.SCRIPT, g.STYLE],
+          F =
             'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
               ? function (e) {
                   return typeof e
@@ -313,7 +313,7 @@
                     ? 'symbol'
                     : typeof e
                 },
-          F = function (e, t) {
+          Y = function (e, t) {
             if (!(e instanceof t))
               throw new TypeError('Cannot call a class as a function')
           },
@@ -331,7 +331,7 @@
               return n && e(t.prototype, n), r && e(t, r), t
             }
           })(),
-          K =
+          U =
             Object.assign ||
             function (e) {
               for (var t = 1; t < arguments.length; t++) {
@@ -341,7 +341,7 @@
               }
               return e
             },
-          U = function (e, t) {
+          K = function (e, t) {
             var n = {}
             for (var r in e)
               t.indexOf(r) >= 0 ||
@@ -379,10 +379,10 @@
             var r = $(e, M)
             return t || r || void 0
           },
-          V = function (e) {
+          Q = function (e) {
             return $(e, q) || function () {}
           },
-          X = function (e, t) {
+          V = function (e, t) {
             return t
               .filter(function (t) {
                 return void 0 !== t[e]
@@ -391,10 +391,10 @@
                 return t[e]
               })
               .reduce(function (e, t) {
-                return K({}, e, t)
+                return U({}, e, t)
               }, {})
           },
-          Z = function (e, t) {
+          X = function (e, t) {
             return t
               .filter(function (e) {
                 return void 0 !== e[g.BASE]
@@ -412,7 +412,7 @@
                 return t
               }, [])
           },
-          Q = function (e, t, n) {
+          Z = function (e, t, n) {
             var r = {}
             return n
               .filter(function (t) {
@@ -423,7 +423,7 @@
                       'Helmet: ' +
                         e +
                         ' should be of type "Array". Instead found type "' +
-                        D(t[e]) +
+                        F(t[e]) +
                         '"'
                     ),
                   !1)
@@ -714,7 +714,7 @@
                               return e ? e + ' ' + o : o
                             }, ''),
                           i = r.innerHTML || r.cssText || '',
-                          a = -1 === _.indexOf(e)
+                          a = -1 === D.indexOf(e)
                         return (
                           t +
                           '<' +
@@ -757,19 +757,19 @@
           he = l()(
             function (e) {
               return {
-                baseTag: Z([E, I], e),
-                bodyAttributes: X(b, e),
+                baseTag: X([O, I], e),
+                bodyAttributes: V(b, e),
                 defer: $(e, N),
                 encode: $(e, R),
-                htmlAttributes: X(T, e),
-                linkTags: Q(g.LINK, [P, E], e),
-                metaTags: Q(g.META, [j, w, O, k, S], e),
-                noscriptTags: Q(g.NOSCRIPT, [C], e),
-                onChangeClientState: V(e),
-                scriptTags: Q(g.SCRIPT, [x, C], e),
-                styleTags: Q(g.STYLE, [A], e),
+                htmlAttributes: V(T, e),
+                linkTags: Z(g.LINK, [P, O], e),
+                metaTags: Z(g.META, [j, w, E, k, S], e),
+                noscriptTags: Z(g.NOSCRIPT, [C], e),
+                onChangeClientState: Q(e),
+                scriptTags: Z(g.SCRIPT, [x, C], e),
+                styleTags: Z(g.STYLE, [A], e),
                 title: J(e),
-                titleAttributes: X(v, e),
+                titleAttributes: V(v, e),
               }
             },
             function (e) {
@@ -790,7 +790,7 @@
             ((o = he),
             (a = i = (function (e) {
               function t() {
-                return F(this, t), z(this, e.apply(this, arguments))
+                return Y(this, t), z(this, e.apply(this, arguments))
               }
               return (
                 (function (e, t) {
@@ -836,11 +836,11 @@
                     r = e.arrayTypeChildren,
                     o = e.newChildProps,
                     i = e.nestedChildren
-                  return K(
+                  return U(
                     {},
                     r,
                     (((t = {})[n.type] = [].concat(r[n.type] || [], [
-                      K({}, o, this.mapNestedChildrenToProps(n, i)),
+                      U({}, o, this.mapNestedChildrenToProps(n, i)),
                     ])),
                     t)
                   )
@@ -854,26 +854,26 @@
                     a = e.nestedChildren
                   switch (r.type) {
                     case g.TITLE:
-                      return K(
+                      return U(
                         {},
                         o,
                         (((t = {})[r.type] = a),
-                        (t.titleAttributes = K({}, i)),
+                        (t.titleAttributes = U({}, i)),
                         t)
                       )
                     case g.BODY:
-                      return K({}, o, { bodyAttributes: K({}, i) })
+                      return U({}, o, { bodyAttributes: U({}, i) })
                     case g.HTML:
-                      return K({}, o, { htmlAttributes: K({}, i) })
+                      return U({}, o, { htmlAttributes: U({}, i) })
                   }
-                  return K({}, o, (((n = {})[r.type] = K({}, i)), n))
+                  return U({}, o, (((n = {})[r.type] = U({}, i)), n))
                 }),
                 (t.prototype.mapArrayTypeChildrenToProps = function (e, t) {
-                  var n = K({}, t)
+                  var n = U({}, t)
                   return (
                     Object.keys(e).forEach(function (t) {
                       var r
-                      n = K({}, n, (((r = {})[t] = e[t]), r))
+                      n = U({}, n, (((r = {})[t] = e[t]), r))
                     }),
                     n
                   )
@@ -895,9 +895,9 @@
                                 ? arguments[1]
                                 : {}
                             return Object.keys(e).reduce(function (t, n) {
-                              return (t[Y[n] || n] = e[n]), t
+                              return (t[_[n] || n] = e[n]), t
                             }, t)
-                          })(U(o, ['children']))
+                          })(K(o, ['children']))
                         switch ((n.warnOnInvalidChildren(e, i), e.type)) {
                           case g.LINK:
                           case g.META:
@@ -927,8 +927,8 @@
                 (t.prototype.render = function () {
                   var e = this.props,
                     t = e.children,
-                    n = U(e, ['children']),
-                    r = K({}, n)
+                    n = K(e, ['children']),
+                    r = U({}, n)
                   return (
                     t && (r = this.mapChildrenToProps(t, r)),
                     h.a.createElement(o, r)
@@ -1009,4 +1009,4 @@
     },
   },
 ])
-//# sourceMappingURL=commons-d18b2d26ee1bb0a0fb52.js.map
+//# sourceMappingURL=commons-fea692a6e369b0725925.js.map
