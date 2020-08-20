@@ -52,7 +52,7 @@
             !t.startsWith('//')
           )
         }
-      var b = function (t, e) {
+      var w = function (t, e) {
           return 'number' == typeof t
             ? t
             : g(t)
@@ -63,7 +63,7 @@
                 })(t, e)
             : t
         },
-        w = {
+        b = {
           activeClassName: u.default.string,
           activeStyle: u.default.object,
           partiallyActive: u.default.bool,
@@ -104,14 +104,14 @@
               this.props.to === t.to ||
                 this.state.IOSupported ||
                 ___loader.enqueue(
-                  (0, f.parsePath)(b(this.props.to, window.location.pathname))
+                  (0, f.parsePath)(w(this.props.to, window.location.pathname))
                     .pathname
                 )
             }),
             (n.componentDidMount = function () {
               this.state.IOSupported ||
                 ___loader.enqueue(
-                  (0, f.parsePath)(b(this.props.to, window.location.pathname))
+                  (0, f.parsePath)(w(this.props.to, window.location.pathname))
                     .pathname
                 )
             }),
@@ -139,7 +139,7 @@
                     (n = function () {
                       ___loader.enqueue(
                         (0, f.parsePath)(
-                          b(o.props.to, window.location.pathname)
+                          w(o.props.to, window.location.pathname)
                         ).pathname
                       )
                     }),
@@ -181,7 +181,7 @@
                 ])
               return s.default.createElement(l.Location, null, function (e) {
                 var r = e.location,
-                  o = b(n, r.pathname)
+                  o = w(n, r.pathname)
                 return g(o)
                   ? s.default.createElement(
                       l.Link,
@@ -226,7 +226,7 @@
             e
           )
         })(s.default.Component)
-      y.propTypes = (0, a.default)({}, w, {
+      y.propTypes = (0, a.default)({}, b, {
         onClick: u.default.func,
         to: u.default.string.isRequired,
         replace: u.default.bool,
@@ -248,15 +248,15 @@
         })
       e.default = R
       e.navigate = function (t, e) {
-        window.___navigate(b(t, window.location.pathname), e)
+        window.___navigate(w(t, window.location.pathname), e)
       }
       var O = function (t) {
-        P('push', 'navigate', 3), window.___push(b(t, window.location.pathname))
+        P('push', 'navigate', 3), window.___push(w(t, window.location.pathname))
       }
       e.push = O
       e.replace = function (t) {
         P('replace', 'navigate', 3),
-          window.___replace(b(t, window.location.pathname))
+          window.___replace(w(t, window.location.pathname))
       }
       e.navigateTo = function (t) {
         return P('navigateTo', 'navigate', 3), O(t)
@@ -745,8 +745,9 @@
     GddB: function (t, e, n) {
       'use strict'
       n.r(e)
-      n('p2bk')
+      n('Hglc')
     },
+    Hglc: function (t, e, n) {},
     IOVJ: function (t, e, n) {
       'use strict'
       var r = n('dI71'),
@@ -821,7 +822,7 @@
           return l
         }),
         n.d(e, 'shallowCompare', function () {
-          return w
+          return b
         })
       var r = n('QLaP'),
         o = n.n(r),
@@ -847,7 +848,7 @@
             else {
               for (
                 var g = m(d.path),
-                  w = {},
+                  b = {},
                   y = Math.max(i.length, g.length),
                   P = 0;
                 P < y;
@@ -856,7 +857,7 @@
                 var R = g[P],
                   O = i[P]
                 if (h(R)) {
-                  w[R.slice(1) || '*'] = i
+                  b[R.slice(1) || '*'] = i
                     .slice(P)
                     .map(decodeURIComponent)
                     .join('/')
@@ -868,16 +869,16 @@
                 }
                 var S = p.exec(R)
                 if (S && !c) {
-                  ;-1 === b.indexOf(S[1]) || o()(!1)
+                  ;-1 === w.indexOf(S[1]) || o()(!1)
                   var j = decodeURIComponent(O)
-                  w[S[1]] = j
+                  b[S[1]] = j
                 } else if (R !== O) {
                   f = !0
                   break
                 }
               }
               if (!f) {
-                n = { route: d, params: w, uri: '/' + i.slice(0, P).join('/') }
+                n = { route: d, params: b, uri: '/' + i.slice(0, P).join('/') }
                 break
               }
             }
@@ -990,8 +991,8 @@
               : '')
           )
         },
-        b = ['uri', 'path'],
-        w = function (t, e) {
+        w = ['uri', 'path'],
+        b = function (t, e) {
           var n = Object.keys(t)
           return (
             n.length === Object.keys(e).length &&
@@ -1160,7 +1161,7 @@
         v = (d.default.enqueue, i.a.createContext({}))
       var m = n('YLt+'),
         g = n('5yr3'),
-        b = {
+        w = {
           id: 'gatsby-announcer',
           style: {
             position: 'absolute',
@@ -1176,7 +1177,7 @@
           'aria-live': 'assertive',
           'aria-atomic': 'true',
         },
-        w = n('9Xx/'),
+        b = n('9Xx/'),
         y = m.reduce(function (t, e) {
           return (t[e.fromPath] = e), t
         }, {})
@@ -1236,7 +1237,7 @@
                   clearTimeout(a)
               })
             }
-          } else w.c.navigate(t)
+          } else b.c.navigate(t)
         }
       function j(t, e) {
         var n = this,
@@ -1283,7 +1284,7 @@
             (n.render = function () {
               return i.a.createElement(
                 'div',
-                Object.assign({}, b, { ref: this.announcementRef })
+                Object.assign({}, w, { ref: this.announcementRef })
               )
             }),
             e
@@ -1397,7 +1398,7 @@
         (window.asyncRequires = x.a),
         (window.___emitter = g.a),
         (window.___loader = d.publicLoader),
-        w.c.listen(function (t) {
+        b.c.listen(function (t) {
           t.location.action = t.action
         }),
         (window.___push = function (t) {
@@ -1564,7 +1565,7 @@
           return D
         }),
         n.d(e, 'Location', function () {
-          return w
+          return b
         }),
         n.d(e, 'LocationProvider', function () {
           return y
@@ -1677,10 +1678,10 @@
           var n = u()(e)
           return (n.displayName = t), n
         },
-        b = g('Location'),
-        w = function (t) {
+        w = g('Location'),
+        b = function (t) {
           var e = t.children
-          return o.a.createElement(b.Consumer, null, function (t) {
+          return o.a.createElement(w.Consumer, null, function (t) {
             return t ? e(t) : o.a.createElement(y, null, e)
           })
         },
@@ -1734,7 +1735,7 @@
               var t = this.state.context,
                 e = this.props.children
               return o.a.createElement(
-                b.Provider,
+                w.Provider,
                 { value: t },
                 'function' == typeof e ? e(t) : e || null
               )
@@ -1752,7 +1753,7 @@
           return (
             r > -1 ? ((a = e.substring(0, r)), (i = e.substring(r))) : (a = e),
             o.a.createElement(
-              b.Provider,
+              w.Provider,
               {
                 value: {
                   location: { pathname: a, search: i, hash: '' },
@@ -1768,7 +1769,7 @@
         R = g('Base', { baseuri: '/', basepath: '/' }),
         O = function (t) {
           return o.a.createElement(R.Consumer, null, function (e) {
-            return o.a.createElement(w, null, function (n) {
+            return o.a.createElement(b, null, function (n) {
               return o.a.createElement(S, f({}, e, n, t))
             })
           })
@@ -1806,9 +1807,9 @@
               if (v) {
                 var m = v.params,
                   g = v.uri,
-                  b = v.route,
-                  w = v.route.value
-                r = b.default ? r : b.path.replace(/\*$/, '')
+                  w = v.route,
+                  b = v.route.value
+                r = w.default ? r : w.path.replace(/\*$/, '')
                 var y = f({}, m, {
                     uri: g,
                     location: e,
@@ -1817,13 +1818,13 @@
                     },
                   }),
                   P = o.a.cloneElement(
-                    w,
+                    b,
                     y,
-                    w.props.children
+                    b.props.children
                       ? o.a.createElement(
                           O,
                           { location: e, primary: a },
-                          w.props.children
+                          b.props.children
                         )
                       : void 0
                   ),
@@ -1954,7 +1955,7 @@
         return o.a.createElement(R.Consumer, null, function (t) {
           t.basepath
           var a = t.baseuri
-          return o.a.createElement(w, null, function (t) {
+          return o.a.createElement(b, null, function (t) {
             var i = t.location,
               c = t.navigate,
               u = r.to,
@@ -1964,16 +1965,16 @@
               v = void 0 === d ? x : d,
               m = h(r, ['to', 'state', 'replace', 'getProps']),
               g = Object(l.resolve)(u, a),
-              b = encodeURI(g),
-              w = i.pathname === b,
-              y = Object(l.startsWith)(i.pathname, b)
+              w = encodeURI(g),
+              b = i.pathname === w,
+              y = Object(l.startsWith)(i.pathname, w)
             return o.a.createElement(
               'a',
               f(
-                { ref: e || n, 'aria-current': w ? 'page' : void 0 },
+                { ref: e || n, 'aria-current': b ? 'page' : void 0 },
                 m,
                 v({
-                  isCurrent: w,
+                  isCurrent: b,
                   isPartiallyCurrent: y,
                   href: g,
                   location: i,
@@ -1984,7 +1985,7 @@
                     if ((m.onClick && m.onClick(t), G(t))) {
                       t.preventDefault()
                       var e = p
-                      if ('boolean' != typeof p && w) {
+                      if ('boolean' != typeof p && b) {
                         var n = f({}, i.state),
                           r = (n.key, h(n, ['key']))
                         e = Object(l.shallowCompare)(f({}, s), r)
@@ -2059,7 +2060,7 @@
         I = function (t) {
           return o.a.createElement(R.Consumer, null, function (e) {
             var n = e.baseuri
-            return o.a.createElement(w, null, function (e) {
+            return o.a.createElement(b, null, function (e) {
               return o.a.createElement(M, f({}, e, { baseuri: n }, t))
             })
           })
@@ -2069,7 +2070,7 @@
             n = t.children
           return o.a.createElement(R.Consumer, null, function (t) {
             var r = t.baseuri
-            return o.a.createElement(w, null, function (t) {
+            return o.a.createElement(b, null, function (t) {
               var o = t.navigate,
                 a = t.location,
                 i = Object(l.resolve)(e, r),
@@ -2083,7 +2084,7 @@
           })
         },
         W = function () {
-          var t = Object(r.useContext)(b)
+          var t = Object(r.useContext)(w)
           if (!t)
             throw new Error(
               'useLocation hook was used but a LocationContext.Provider was not found in the parent tree. Make sure this is used in a component that is a child of Router'
@@ -2091,7 +2092,7 @@
           return t.location
         },
         q = function () {
-          var t = Object(r.useContext)(b)
+          var t = Object(r.useContext)(w)
           if (!t)
             throw new Error(
               'useNavigate hook was used but a LocationContext.Provider was not found in the parent tree. Make sure this is used in a component that is a child of Router'
@@ -2234,7 +2235,7 @@
           return g
         }),
         n.d(e, 'ProdLoader', function () {
-          return w
+          return b
         }),
         n.d(e, 'setLoader', function () {
           return y
@@ -2599,7 +2600,7 @@
                 n = this.pageDataDb.get(e)
               if (n) {
                 var r = m(n.payload)
-                return [].concat(a(b(r.page.componentChunkName)), [h(e)])
+                return [].concat(a(w(r.page.componentChunkName)), [h(e)])
               }
               return null
             }),
@@ -2631,12 +2632,12 @@
             t
           )
         })(),
-        b = function (t) {
+        w = function (t) {
           return (window.___chunkMapping[t] || []).map(function (t) {
             return '' + t
           })
         },
-        w = (function (t) {
+        b = (function (t) {
           function e(e, n) {
             return (
               t.call(
@@ -2668,7 +2669,7 @@
                   if (t.status !== p.Success) return Promise.resolve()
                   var e = t.payload,
                     n = e.componentChunkName,
-                    r = b(n)
+                    r = w(n)
                   return Promise.all(r.map(u)).then(function () {
                     return e
                   })
@@ -2805,7 +2806,6 @@
       var r = n('q1tI').createContext
       ;(t.exports = r), (t.exports.default = r)
     },
-    p2bk: function (t, e, n) {},
     pVnL: function (t, e) {
       function n() {
         return (
@@ -2884,4 +2884,4 @@
   },
   [['UxWs', 2, 1, 6]],
 ])
-//# sourceMappingURL=app-84a748586a1b53ffb079.js.map
+//# sourceMappingURL=app-176ab4d986109038f450.js.map

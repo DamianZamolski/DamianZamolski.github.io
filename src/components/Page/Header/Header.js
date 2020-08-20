@@ -1,5 +1,5 @@
 import React from 'react'
-import { header } from './Header.module.css'
+import { header } from './Header.module.scss'
 
 const Header = ({ title }) => (
   <header id={header}>

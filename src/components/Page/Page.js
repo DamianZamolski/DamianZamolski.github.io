@@ -4,7 +4,7 @@ import Footer from './footer/Footer'
 import Header from './header/Header'
 import Main from './main/Main'
 import Nav from './nav/Nav'
-import { page } from './Page.module.css'
+import { page } from './Page.module.scss'
 
 const Page = ({ children, title }) => (
   <div id={page}>
