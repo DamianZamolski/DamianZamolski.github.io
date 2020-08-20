@@ -1,0 +1,1087 @@
+;(window.webpackJsonp = window.webpackJsonp || []).push([
+  [0],
+  {
+    '6r2t': function (e, t, r) {
+      e.exports = { header: 'Header-module--header--3OZ6N' }
+    },
+    '8+s/': function (e, t, r) {
+      'use strict'
+      var n,
+        o = r('q1tI'),
+        a = (n = o) && 'object' == typeof n && 'default' in n ? n.default : n
+      function i(e, t, r) {
+        return (
+          t in e
+            ? Object.defineProperty(e, t, {
+                value: r,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0,
+              })
+            : (e[t] = r),
+          e
+        )
+      }
+      var u = !(
+        'undefined' == typeof window ||
+        !window.document ||
+        !window.document.createElement
+      )
+      e.exports = function (e, t, r) {
+        if ('function' != typeof e)
+          throw new Error('Expected reducePropsToState to be a function.')
+        if ('function' != typeof t)
+          throw new Error(
+            'Expected handleStateChangeOnClient to be a function.'
+          )
+        if (void 0 !== r && 'function' != typeof r)
+          throw new Error(
+            'Expected mapStateOnServer to either be undefined or a function.'
+          )
+        return function (n) {
+          if ('function' != typeof n)
+            throw new Error(
+              'Expected WrappedComponent to be a React component.'
+            )
+          var c,
+            l = []
+          function s() {
+            ;(c = e(
+              l.map(function (e) {
+                return e.props
+              })
+            )),
+              f.canUseDOM ? t(c) : r && (c = r(c))
+          }
+          var f = (function (e) {
+            var t, r
+            function o() {
+              return e.apply(this, arguments) || this
+            }
+            ;(r = e),
+              ((t = o).prototype = Object.create(r.prototype)),
+              (t.prototype.constructor = t),
+              (t.__proto__ = r),
+              (o.peek = function () {
+                return c
+              }),
+              (o.rewind = function () {
+                if (o.canUseDOM)
+                  throw new Error(
+                    'You may only call rewind() on the server. Call peek() to read the current state.'
+                  )
+                var e = c
+                return (c = void 0), (l = []), e
+              })
+            var i = o.prototype
+            return (
+              (i.UNSAFE_componentWillMount = function () {
+                l.push(this), s()
+              }),
+              (i.componentDidUpdate = function () {
+                s()
+              }),
+              (i.componentWillUnmount = function () {
+                var e = l.indexOf(this)
+                l.splice(e, 1), s()
+              }),
+              (i.render = function () {
+                return a.createElement(n, this.props)
+              }),
+              o
+            )
+          })(o.PureComponent)
+          return (
+            i(
+              f,
+              'displayName',
+              'SideEffect(' +
+                (function (e) {
+                  return e.displayName || e.name || 'Component'
+                })(n) +
+                ')'
+            ),
+            i(f, 'canUseDOM', u),
+            f
+          )
+        }
+      }
+    },
+    FZDs: function (e, t, r) {
+      e.exports = { footer: 'Footer-module--footer--V8wej' }
+    },
+    I77B: function (e, t, r) {
+      e.exports = {
+        area: 'area-module--area--2kuCT',
+        areaDark: 'area-module--area--dark--1d-62',
+        areaLight: 'area-module--area--light--ms8bQ',
+      }
+    },
+    Lpdm: function (e, t, r) {
+      'use strict'
+      var n = r('q1tI'),
+        o = r.n(n),
+        a = r('qhky'),
+        i = r('TSYQ'),
+        u = r.n(i),
+        c = r('I77B'),
+        l = function (e) {
+          var t = e.children,
+            r = e.variant
+          return o.a.createElement(
+            'div',
+            {
+              className: u()(
+                c.area,
+                'dark' === r && c.areaDark,
+                'light' === r && c.areaLight
+              ),
+            },
+            t
+          )
+        },
+        s = r('FZDs'),
+        f = function () {
+          return o.a.createElement(
+            'footer',
+            { id: s.footer },
+            o.a.createElement(l, null, 'Footer')
+          )
+        },
+        p = r('6r2t'),
+        d = function (e) {
+          var t = e.title
+          return o.a.createElement(
+            'header',
+            { id: p.header },
+            o.a.createElement(l, null, o.a.createElement('h1', null, t))
+          )
+        },
+        h = r('NyQI'),
+        y = function (e) {
+          var t = e.children
+          return o.a.createElement(
+            'main',
+            { id: h.main },
+            o.a.createElement(l, { variant: 'light' }, t)
+          )
+        },
+        m = r('Z6Se'),
+        b = function () {
+          return o.a.createElement(
+            'nav',
+            { id: m.nav },
+            o.a.createElement(
+              l,
+              { variant: 'dark' },
+              o.a.createElement(
+                'ul',
+                null,
+                o.a.createElement('li', null, 'a'),
+                o.a.createElement('li', null, 'b'),
+                o.a.createElement('li', null, 'c')
+              )
+            )
+          )
+        },
+        v = r('TKWK')
+      t.a = function (e) {
+        var t = e.children,
+          r = e.title
+        return o.a.createElement(
+          'div',
+          { id: v.page },
+          o.a.createElement(
+            a.a,
+            null,
+            o.a.createElement('title', null, r),
+            o.a.createElement('link', {
+              href:
+                'https://fonts.googleapis.com/css2?family=Roboto&display=swap',
+              rel: 'stylesheet',
+            })
+          ),
+          o.a.createElement(b, null),
+          o.a.createElement(d, { title: r }),
+          o.a.createElement(y, null, t),
+          o.a.createElement(f, null)
+        )
+      }
+    },
+    NyQI: function (e, t, r) {
+      e.exports = { main: 'Main-module--main--3Jql9' }
+    },
+    TKWK: function (e, t, r) {
+      e.exports = { page: 'Page-module--page--Mo1Sm' }
+    },
+    TSYQ: function (e, t, r) {
+      var n
+      !(function () {
+        'use strict'
+        var r = {}.hasOwnProperty
+        function o() {
+          for (var e = [], t = 0; t < arguments.length; t++) {
+            var n = arguments[t]
+            if (n) {
+              var a = typeof n
+              if ('string' === a || 'number' === a) e.push(n)
+              else if (Array.isArray(n) && n.length) {
+                var i = o.apply(null, n)
+                i && e.push(i)
+              } else if ('object' === a)
+                for (var u in n) r.call(n, u) && n[u] && e.push(u)
+            }
+          }
+          return e.join(' ')
+        }
+        e.exports
+          ? ((o.default = o), (e.exports = o))
+          : void 0 ===
+              (n = function () {
+                return o
+              }.apply(t, [])) || (e.exports = n)
+      })()
+    },
+    Z6Se: function (e, t, r) {
+      e.exports = { nav: 'nav-module--nav--XOa-H' }
+    },
+    ZhWT: function (e, t) {
+      var r = 'undefined' != typeof Element,
+        n = 'function' == typeof Map,
+        o = 'function' == typeof Set,
+        a = 'function' == typeof ArrayBuffer && !!ArrayBuffer.isView
+      e.exports = function (e, t) {
+        try {
+          return (function e(t, i) {
+            if (t === i) return !0
+            if (t && i && 'object' == typeof t && 'object' == typeof i) {
+              if (t.constructor !== i.constructor) return !1
+              var u, c, l, s
+              if (Array.isArray(t)) {
+                if ((u = t.length) != i.length) return !1
+                for (c = u; 0 != c--; ) if (!e(t[c], i[c])) return !1
+                return !0
+              }
+              if (n && t instanceof Map && i instanceof Map) {
+                if (t.size !== i.size) return !1
+                for (s = t.entries(); !(c = s.next()).done; )
+                  if (!i.has(c.value[0])) return !1
+                for (s = t.entries(); !(c = s.next()).done; )
+                  if (!e(c.value[1], i.get(c.value[0]))) return !1
+                return !0
+              }
+              if (o && t instanceof Set && i instanceof Set) {
+                if (t.size !== i.size) return !1
+                for (s = t.entries(); !(c = s.next()).done; )
+                  if (!i.has(c.value[0])) return !1
+                return !0
+              }
+              if (a && ArrayBuffer.isView(t) && ArrayBuffer.isView(i)) {
+                if ((u = t.length) != i.length) return !1
+                for (c = u; 0 != c--; ) if (t[c] !== i[c]) return !1
+                return !0
+              }
+              if (t.constructor === RegExp)
+                return t.source === i.source && t.flags === i.flags
+              if (t.valueOf !== Object.prototype.valueOf)
+                return t.valueOf() === i.valueOf()
+              if (t.toString !== Object.prototype.toString)
+                return t.toString() === i.toString()
+              if ((u = (l = Object.keys(t)).length) !== Object.keys(i).length)
+                return !1
+              for (c = u; 0 != c--; )
+                if (!Object.prototype.hasOwnProperty.call(i, l[c])) return !1
+              if (r && t instanceof Element) return !1
+              for (c = u; 0 != c--; )
+                if (
+                  (('_owner' !== l[c] && '__v' !== l[c] && '__o' !== l[c]) ||
+                    !t.$$typeof) &&
+                  !e(t[l[c]], i[l[c]])
+                )
+                  return !1
+              return !0
+            }
+            return t != t && i != i
+          })(e, t)
+        } catch (i) {
+          if ((i.message || '').match(/stack|recursion/i))
+            return (
+              console.warn('react-fast-compare cannot handle circular refs'), !1
+            )
+          throw i
+        }
+      }
+    },
+    qhky: function (e, t, r) {
+      'use strict'
+      ;(function (e) {
+        r.d(t, 'a', function () {
+          return ye
+        })
+        var n,
+          o,
+          a,
+          i,
+          u = r('17x9'),
+          c = r.n(u),
+          l = r('8+s/'),
+          s = r.n(l),
+          f = r('ZhWT'),
+          p = r.n(f),
+          d = r('q1tI'),
+          h = r.n(d),
+          y = r('6qGY'),
+          m = r.n(y),
+          b = 'bodyAttributes',
+          v = 'htmlAttributes',
+          T = 'titleAttributes',
+          g = {
+            BASE: 'base',
+            BODY: 'body',
+            HEAD: 'head',
+            HTML: 'html',
+            LINK: 'link',
+            META: 'meta',
+            NOSCRIPT: 'noscript',
+            SCRIPT: 'script',
+            STYLE: 'style',
+            TITLE: 'title',
+          },
+          w =
+            (Object.keys(g).map(function (e) {
+              return g[e]
+            }),
+            'charset'),
+          E = 'cssText',
+          A = 'href',
+          O = 'http-equiv',
+          C = 'innerHTML',
+          S = 'itemprop',
+          j = 'name',
+          k = 'property',
+          x = 'rel',
+          P = 'src',
+          I = 'target',
+          L = {
+            accesskey: 'accessKey',
+            charset: 'charSet',
+            class: 'className',
+            contenteditable: 'contentEditable',
+            contextmenu: 'contextMenu',
+            'http-equiv': 'httpEquiv',
+            itemprop: 'itemProp',
+            tabindex: 'tabIndex',
+          },
+          M = 'defaultTitle',
+          N = 'defer',
+          R = 'encodeSpecialCharacters',
+          q = 'onChangeClientState',
+          D = 'titleTemplate',
+          _ = Object.keys(L).reduce(function (e, t) {
+            return (e[L[t]] = t), e
+          }, {}),
+          B = [g.NOSCRIPT, g.SCRIPT, g.STYLE],
+          F =
+            'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
+              ? function (e) {
+                  return typeof e
+                }
+              : function (e) {
+                  return e &&
+                    'function' == typeof Symbol &&
+                    e.constructor === Symbol &&
+                    e !== Symbol.prototype
+                    ? 'symbol'
+                    : typeof e
+                },
+          H = function (e, t) {
+            if (!(e instanceof t))
+              throw new TypeError('Cannot call a class as a function')
+          },
+          Y = (function () {
+            function e(e, t) {
+              for (var r = 0; r < t.length; r++) {
+                var n = t[r]
+                ;(n.enumerable = n.enumerable || !1),
+                  (n.configurable = !0),
+                  'value' in n && (n.writable = !0),
+                  Object.defineProperty(e, n.key, n)
+              }
+            }
+            return function (t, r, n) {
+              return r && e(t.prototype, r), n && e(t, n), t
+            }
+          })(),
+          K =
+            Object.assign ||
+            function (e) {
+              for (var t = 1; t < arguments.length; t++) {
+                var r = arguments[t]
+                for (var n in r)
+                  Object.prototype.hasOwnProperty.call(r, n) && (e[n] = r[n])
+              }
+              return e
+            },
+          U = function (e, t) {
+            var r = {}
+            for (var n in e)
+              t.indexOf(n) >= 0 ||
+                (Object.prototype.hasOwnProperty.call(e, n) && (r[n] = e[n]))
+            return r
+          },
+          W = function (e, t) {
+            if (!e)
+              throw new ReferenceError(
+                "this hasn't been initialised - super() hasn't been called"
+              )
+            return !t || ('object' != typeof t && 'function' != typeof t)
+              ? e
+              : t
+          },
+          Z = function (e) {
+            var t =
+              !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1]
+            return !1 === t
+              ? String(e)
+              : String(e)
+                  .replace(/&/g, '&amp;')
+                  .replace(/</g, '&lt;')
+                  .replace(/>/g, '&gt;')
+                  .replace(/"/g, '&quot;')
+                  .replace(/'/g, '&#x27;')
+          },
+          z = function (e) {
+            var t = G(e, g.TITLE),
+              r = G(e, D)
+            if (r && t)
+              return r.replace(/%s/g, function () {
+                return Array.isArray(t) ? t.join('') : t
+              })
+            var n = G(e, M)
+            return t || n || void 0
+          },
+          Q = function (e) {
+            return G(e, q) || function () {}
+          },
+          V = function (e, t) {
+            return t
+              .filter(function (t) {
+                return void 0 !== t[e]
+              })
+              .map(function (t) {
+                return t[e]
+              })
+              .reduce(function (e, t) {
+                return K({}, e, t)
+              }, {})
+          },
+          J = function (e, t) {
+            return t
+              .filter(function (e) {
+                return void 0 !== e[g.BASE]
+              })
+              .map(function (e) {
+                return e[g.BASE]
+              })
+              .reverse()
+              .reduce(function (t, r) {
+                if (!t.length)
+                  for (var n = Object.keys(r), o = 0; o < n.length; o++) {
+                    var a = n[o].toLowerCase()
+                    if (-1 !== e.indexOf(a) && r[a]) return t.concat(r)
+                  }
+                return t
+              }, [])
+          },
+          $ = function (e, t, r) {
+            var n = {}
+            return r
+              .filter(function (t) {
+                return (
+                  !!Array.isArray(t[e]) ||
+                  (void 0 !== t[e] &&
+                    ne(
+                      'Helmet: ' +
+                        e +
+                        ' should be of type "Array". Instead found type "' +
+                        F(t[e]) +
+                        '"'
+                    ),
+                  !1)
+                )
+              })
+              .map(function (t) {
+                return t[e]
+              })
+              .reverse()
+              .reduce(function (e, r) {
+                var o = {}
+                r.filter(function (e) {
+                  for (
+                    var r = void 0, a = Object.keys(e), i = 0;
+                    i < a.length;
+                    i++
+                  ) {
+                    var u = a[i],
+                      c = u.toLowerCase()
+                    ;-1 === t.indexOf(c) ||
+                      (r === x && 'canonical' === e[r].toLowerCase()) ||
+                      (c === x && 'stylesheet' === e[c].toLowerCase()) ||
+                      (r = c),
+                      -1 === t.indexOf(u) ||
+                        (u !== C && u !== E && u !== S) ||
+                        (r = u)
+                  }
+                  if (!r || !e[r]) return !1
+                  var l = e[r].toLowerCase()
+                  return (
+                    n[r] || (n[r] = {}),
+                    o[r] || (o[r] = {}),
+                    !n[r][l] && ((o[r][l] = !0), !0)
+                  )
+                })
+                  .reverse()
+                  .forEach(function (t) {
+                    return e.push(t)
+                  })
+                for (var a = Object.keys(o), i = 0; i < a.length; i++) {
+                  var u = a[i],
+                    c = m()({}, n[u], o[u])
+                  n[u] = c
+                }
+                return e
+              }, [])
+              .reverse()
+          },
+          G = function (e, t) {
+            for (var r = e.length - 1; r >= 0; r--) {
+              var n = e[r]
+              if (n.hasOwnProperty(t)) return n[t]
+            }
+            return null
+          },
+          X =
+            ((n = Date.now()),
+            function (e) {
+              var t = Date.now()
+              t - n > 16
+                ? ((n = t), e(t))
+                : setTimeout(function () {
+                    X(e)
+                  }, 0)
+            }),
+          ee = function (e) {
+            return clearTimeout(e)
+          },
+          te =
+            'undefined' != typeof window
+              ? (window.requestAnimationFrame &&
+                  window.requestAnimationFrame.bind(window)) ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                X
+              : e.requestAnimationFrame || X,
+          re =
+            'undefined' != typeof window
+              ? window.cancelAnimationFrame ||
+                window.webkitCancelAnimationFrame ||
+                window.mozCancelAnimationFrame ||
+                ee
+              : e.cancelAnimationFrame || ee,
+          ne = function (e) {
+            return (
+              console && 'function' == typeof console.warn && console.warn(e)
+            )
+          },
+          oe = null,
+          ae = function (e, t) {
+            var r = e.baseTag,
+              n = e.bodyAttributes,
+              o = e.htmlAttributes,
+              a = e.linkTags,
+              i = e.metaTags,
+              u = e.noscriptTags,
+              c = e.onChangeClientState,
+              l = e.scriptTags,
+              s = e.styleTags,
+              f = e.title,
+              p = e.titleAttributes
+            ce(g.BODY, n), ce(g.HTML, o), ue(f, p)
+            var d = {
+                baseTag: le(g.BASE, r),
+                linkTags: le(g.LINK, a),
+                metaTags: le(g.META, i),
+                noscriptTags: le(g.NOSCRIPT, u),
+                scriptTags: le(g.SCRIPT, l),
+                styleTags: le(g.STYLE, s),
+              },
+              h = {},
+              y = {}
+            Object.keys(d).forEach(function (e) {
+              var t = d[e],
+                r = t.newTags,
+                n = t.oldTags
+              r.length && (h[e] = r), n.length && (y[e] = d[e].oldTags)
+            }),
+              t && t(),
+              c(e, h, y)
+          },
+          ie = function (e) {
+            return Array.isArray(e) ? e.join('') : e
+          },
+          ue = function (e, t) {
+            void 0 !== e && document.title !== e && (document.title = ie(e)),
+              ce(g.TITLE, t)
+          },
+          ce = function (e, t) {
+            var r = document.getElementsByTagName(e)[0]
+            if (r) {
+              for (
+                var n = r.getAttribute('data-react-helmet'),
+                  o = n ? n.split(',') : [],
+                  a = [].concat(o),
+                  i = Object.keys(t),
+                  u = 0;
+                u < i.length;
+                u++
+              ) {
+                var c = i[u],
+                  l = t[c] || ''
+                r.getAttribute(c) !== l && r.setAttribute(c, l),
+                  -1 === o.indexOf(c) && o.push(c)
+                var s = a.indexOf(c)
+                ;-1 !== s && a.splice(s, 1)
+              }
+              for (var f = a.length - 1; f >= 0; f--) r.removeAttribute(a[f])
+              o.length === a.length
+                ? r.removeAttribute('data-react-helmet')
+                : r.getAttribute('data-react-helmet') !== i.join(',') &&
+                  r.setAttribute('data-react-helmet', i.join(','))
+            }
+          },
+          le = function (e, t) {
+            var r = document.head || document.querySelector(g.HEAD),
+              n = r.querySelectorAll(e + '[data-react-helmet]'),
+              o = Array.prototype.slice.call(n),
+              a = [],
+              i = void 0
+            return (
+              t &&
+                t.length &&
+                t.forEach(function (t) {
+                  var r = document.createElement(e)
+                  for (var n in t)
+                    if (t.hasOwnProperty(n))
+                      if (n === C) r.innerHTML = t.innerHTML
+                      else if (n === E)
+                        r.styleSheet
+                          ? (r.styleSheet.cssText = t.cssText)
+                          : r.appendChild(document.createTextNode(t.cssText))
+                      else {
+                        var u = void 0 === t[n] ? '' : t[n]
+                        r.setAttribute(n, u)
+                      }
+                  r.setAttribute('data-react-helmet', 'true'),
+                    o.some(function (e, t) {
+                      return (i = t), r.isEqualNode(e)
+                    })
+                      ? o.splice(i, 1)
+                      : a.push(r)
+                }),
+              o.forEach(function (e) {
+                return e.parentNode.removeChild(e)
+              }),
+              a.forEach(function (e) {
+                return r.appendChild(e)
+              }),
+              { oldTags: o, newTags: a }
+            )
+          },
+          se = function (e) {
+            return Object.keys(e).reduce(function (t, r) {
+              var n = void 0 !== e[r] ? r + '="' + e[r] + '"' : '' + r
+              return t ? t + ' ' + n : n
+            }, '')
+          },
+          fe = function (e) {
+            var t =
+              arguments.length > 1 && void 0 !== arguments[1]
+                ? arguments[1]
+                : {}
+            return Object.keys(e).reduce(function (t, r) {
+              return (t[L[r] || r] = e[r]), t
+            }, t)
+          },
+          pe = function (e, t, r) {
+            switch (e) {
+              case g.TITLE:
+                return {
+                  toComponent: function () {
+                    return (
+                      (e = t.title),
+                      (r = t.titleAttributes),
+                      ((n = { key: e })['data-react-helmet'] = !0),
+                      (o = fe(r, n)),
+                      [h.a.createElement(g.TITLE, o, e)]
+                    )
+                    var e, r, n, o
+                  },
+                  toString: function () {
+                    return (function (e, t, r, n) {
+                      var o = se(r),
+                        a = ie(t)
+                      return o
+                        ? '<' +
+                            e +
+                            ' data-react-helmet="true" ' +
+                            o +
+                            '>' +
+                            Z(a, n) +
+                            '</' +
+                            e +
+                            '>'
+                        : '<' +
+                            e +
+                            ' data-react-helmet="true">' +
+                            Z(a, n) +
+                            '</' +
+                            e +
+                            '>'
+                    })(e, t.title, t.titleAttributes, r)
+                  },
+                }
+              case b:
+              case v:
+                return {
+                  toComponent: function () {
+                    return fe(t)
+                  },
+                  toString: function () {
+                    return se(t)
+                  },
+                }
+              default:
+                return {
+                  toComponent: function () {
+                    return (function (e, t) {
+                      return t.map(function (t, r) {
+                        var n,
+                          o = (((n = { key: r })['data-react-helmet'] = !0), n)
+                        return (
+                          Object.keys(t).forEach(function (e) {
+                            var r = L[e] || e
+                            if (r === C || r === E) {
+                              var n = t.innerHTML || t.cssText
+                              o.dangerouslySetInnerHTML = { __html: n }
+                            } else o[r] = t[e]
+                          }),
+                          h.a.createElement(e, o)
+                        )
+                      })
+                    })(e, t)
+                  },
+                  toString: function () {
+                    return (function (e, t, r) {
+                      return t.reduce(function (t, n) {
+                        var o = Object.keys(n)
+                            .filter(function (e) {
+                              return !(e === C || e === E)
+                            })
+                            .reduce(function (e, t) {
+                              var o =
+                                void 0 === n[t]
+                                  ? t
+                                  : t + '="' + Z(n[t], r) + '"'
+                              return e ? e + ' ' + o : o
+                            }, ''),
+                          a = n.innerHTML || n.cssText || '',
+                          i = -1 === B.indexOf(e)
+                        return (
+                          t +
+                          '<' +
+                          e +
+                          ' data-react-helmet="true" ' +
+                          o +
+                          (i ? '/>' : '>' + a + '</' + e + '>')
+                        )
+                      }, '')
+                    })(e, t, r)
+                  },
+                }
+            }
+          },
+          de = function (e) {
+            var t = e.baseTag,
+              r = e.bodyAttributes,
+              n = e.encode,
+              o = e.htmlAttributes,
+              a = e.linkTags,
+              i = e.metaTags,
+              u = e.noscriptTags,
+              c = e.scriptTags,
+              l = e.styleTags,
+              s = e.title,
+              f = void 0 === s ? '' : s,
+              p = e.titleAttributes
+            return {
+              base: pe(g.BASE, t, n),
+              bodyAttributes: pe(b, r, n),
+              htmlAttributes: pe(v, o, n),
+              link: pe(g.LINK, a, n),
+              meta: pe(g.META, i, n),
+              noscript: pe(g.NOSCRIPT, u, n),
+              script: pe(g.SCRIPT, c, n),
+              style: pe(g.STYLE, l, n),
+              title: pe(g.TITLE, { title: f, titleAttributes: p }, n),
+            }
+          },
+          he = s()(
+            function (e) {
+              return {
+                baseTag: J([A, I], e),
+                bodyAttributes: V(b, e),
+                defer: G(e, N),
+                encode: G(e, R),
+                htmlAttributes: V(v, e),
+                linkTags: $(g.LINK, [x, A], e),
+                metaTags: $(g.META, [j, w, O, k, S], e),
+                noscriptTags: $(g.NOSCRIPT, [C], e),
+                onChangeClientState: Q(e),
+                scriptTags: $(g.SCRIPT, [P, C], e),
+                styleTags: $(g.STYLE, [E], e),
+                title: z(e),
+                titleAttributes: V(T, e),
+              }
+            },
+            function (e) {
+              oe && re(oe),
+                e.defer
+                  ? (oe = te(function () {
+                      ae(e, function () {
+                        oe = null
+                      })
+                    }))
+                  : (ae(e), (oe = null))
+            },
+            de
+          )(function () {
+            return null
+          }),
+          ye =
+            ((o = he),
+            (i = a = (function (e) {
+              function t() {
+                return H(this, t), W(this, e.apply(this, arguments))
+              }
+              return (
+                (function (e, t) {
+                  if ('function' != typeof t && null !== t)
+                    throw new TypeError(
+                      'Super expression must either be null or a function, not ' +
+                        typeof t
+                    )
+                  ;(e.prototype = Object.create(t && t.prototype, {
+                    constructor: {
+                      value: e,
+                      enumerable: !1,
+                      writable: !0,
+                      configurable: !0,
+                    },
+                  })),
+                    t &&
+                      (Object.setPrototypeOf
+                        ? Object.setPrototypeOf(e, t)
+                        : (e.__proto__ = t))
+                })(t, e),
+                (t.prototype.shouldComponentUpdate = function (e) {
+                  return !p()(this.props, e)
+                }),
+                (t.prototype.mapNestedChildrenToProps = function (e, t) {
+                  if (!t) return null
+                  switch (e.type) {
+                    case g.SCRIPT:
+                    case g.NOSCRIPT:
+                      return { innerHTML: t }
+                    case g.STYLE:
+                      return { cssText: t }
+                  }
+                  throw new Error(
+                    '<' +
+                      e.type +
+                      ' /> elements are self-closing and can not contain children. Refer to our API for more information.'
+                  )
+                }),
+                (t.prototype.flattenArrayTypeChildren = function (e) {
+                  var t,
+                    r = e.child,
+                    n = e.arrayTypeChildren,
+                    o = e.newChildProps,
+                    a = e.nestedChildren
+                  return K(
+                    {},
+                    n,
+                    (((t = {})[r.type] = [].concat(n[r.type] || [], [
+                      K({}, o, this.mapNestedChildrenToProps(r, a)),
+                    ])),
+                    t)
+                  )
+                }),
+                (t.prototype.mapObjectTypeChildren = function (e) {
+                  var t,
+                    r,
+                    n = e.child,
+                    o = e.newProps,
+                    a = e.newChildProps,
+                    i = e.nestedChildren
+                  switch (n.type) {
+                    case g.TITLE:
+                      return K(
+                        {},
+                        o,
+                        (((t = {})[n.type] = i),
+                        (t.titleAttributes = K({}, a)),
+                        t)
+                      )
+                    case g.BODY:
+                      return K({}, o, { bodyAttributes: K({}, a) })
+                    case g.HTML:
+                      return K({}, o, { htmlAttributes: K({}, a) })
+                  }
+                  return K({}, o, (((r = {})[n.type] = K({}, a)), r))
+                }),
+                (t.prototype.mapArrayTypeChildrenToProps = function (e, t) {
+                  var r = K({}, t)
+                  return (
+                    Object.keys(e).forEach(function (t) {
+                      var n
+                      r = K({}, r, (((n = {})[t] = e[t]), n))
+                    }),
+                    r
+                  )
+                }),
+                (t.prototype.warnOnInvalidChildren = function (e, t) {
+                  return !0
+                }),
+                (t.prototype.mapChildrenToProps = function (e, t) {
+                  var r = this,
+                    n = {}
+                  return (
+                    h.a.Children.forEach(e, function (e) {
+                      if (e && e.props) {
+                        var o = e.props,
+                          a = o.children,
+                          i = (function (e) {
+                            var t =
+                              arguments.length > 1 && void 0 !== arguments[1]
+                                ? arguments[1]
+                                : {}
+                            return Object.keys(e).reduce(function (t, r) {
+                              return (t[_[r] || r] = e[r]), t
+                            }, t)
+                          })(U(o, ['children']))
+                        switch ((r.warnOnInvalidChildren(e, a), e.type)) {
+                          case g.LINK:
+                          case g.META:
+                          case g.NOSCRIPT:
+                          case g.SCRIPT:
+                          case g.STYLE:
+                            n = r.flattenArrayTypeChildren({
+                              child: e,
+                              arrayTypeChildren: n,
+                              newChildProps: i,
+                              nestedChildren: a,
+                            })
+                            break
+                          default:
+                            t = r.mapObjectTypeChildren({
+                              child: e,
+                              newProps: t,
+                              newChildProps: i,
+                              nestedChildren: a,
+                            })
+                        }
+                      }
+                    }),
+                    (t = this.mapArrayTypeChildrenToProps(n, t))
+                  )
+                }),
+                (t.prototype.render = function () {
+                  var e = this.props,
+                    t = e.children,
+                    r = U(e, ['children']),
+                    n = K({}, r)
+                  return (
+                    t && (n = this.mapChildrenToProps(t, n)),
+                    h.a.createElement(o, n)
+                  )
+                }),
+                Y(t, null, [
+                  {
+                    key: 'canUseDOM',
+                    set: function (e) {
+                      o.canUseDOM = e
+                    },
+                  },
+                ]),
+                t
+              )
+            })(h.a.Component)),
+            (a.propTypes = {
+              base: c.a.object,
+              bodyAttributes: c.a.object,
+              children: c.a.oneOfType([c.a.arrayOf(c.a.node), c.a.node]),
+              defaultTitle: c.a.string,
+              defer: c.a.bool,
+              encodeSpecialCharacters: c.a.bool,
+              htmlAttributes: c.a.object,
+              link: c.a.arrayOf(c.a.object),
+              meta: c.a.arrayOf(c.a.object),
+              noscript: c.a.arrayOf(c.a.object),
+              onChangeClientState: c.a.func,
+              script: c.a.arrayOf(c.a.object),
+              style: c.a.arrayOf(c.a.object),
+              title: c.a.string,
+              titleAttributes: c.a.object,
+              titleTemplate: c.a.string,
+            }),
+            (a.defaultProps = { defer: !0, encodeSpecialCharacters: !0 }),
+            (a.peek = o.peek),
+            (a.rewind = function () {
+              var e = o.rewind()
+              return (
+                e ||
+                  (e = de({
+                    baseTag: [],
+                    bodyAttributes: {},
+                    encodeSpecialCharacters: !0,
+                    htmlAttributes: {},
+                    linkTags: [],
+                    metaTags: [],
+                    noscriptTags: [],
+                    scriptTags: [],
+                    styleTags: [],
+                    title: '',
+                    titleAttributes: {},
+                  })),
+                e
+              )
+            }),
+            i)
+        ye.renderStatic = ye.rewind
+      }.call(this, r('yLpj')))
+    },
+    yLpj: function (e, t) {
+      var r
+      r = (function () {
+        return this
+      })()
+      try {
+        r = r || new Function('return this')()
+      } catch (n) {
+        'object' == typeof window && (r = window)
+      }
+      e.exports = r
+    },
+  },
+])
+//# sourceMappingURL=commons-61a32787f008df055aaa.js.map

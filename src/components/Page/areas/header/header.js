@@ -1,10 +1,11 @@
 import React from 'react'
+import Area from '~area'
 import { header } from './Header.module.scss'
 
-const Header = ({ title }) => (
+export default ({ title }) => (
   <header id={header}>
-    <h1>{title}</h1>
+    <Area>
+      <h1>{title}</h1>
+    </Area>
   </header>
 )
-
-export default Header

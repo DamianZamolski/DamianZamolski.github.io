@@ -3,7 +3,10 @@ const path = require('path')
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      alias: { '~Page': path.resolve(__dirname, 'src/components/page/Page') },
+      alias: {
+        '~area': path.resolve(__dirname, 'src/components/page/area/Area'),
+        '~page': path.resolve(__dirname, 'src/components/page/Page'),
+      },
     },
   })
 }

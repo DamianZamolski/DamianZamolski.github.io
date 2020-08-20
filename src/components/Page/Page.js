@@ -1,9 +1,9 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Footer from './footer/Footer'
-import Header from './header/Header'
-import Main from './main/Main'
-import Nav from './nav/Nav'
+import Footer from './areas/footer/Footer'
+import Header from './areas/header/Header'
+import Main from './areas/main/Main'
+import Nav from './areas/nav/Nav'
 import { page } from './Page.module.scss'
 
 const Page = ({ children, title }) => (

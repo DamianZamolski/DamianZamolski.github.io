@@ -17,4 +17,4 @@
     },
   },
 ])
-//# sourceMappingURL=component---src-pages-books-12-rules-for-life-js-015f5c65bc3c97cbbd6b.js.map
+//# sourceMappingURL=component---src-pages-books-12-rules-for-life-js-b547ea9b1658e6ab9af1.js.map
