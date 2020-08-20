@@ -3,7 +3,7 @@ import Content from './Content/Content'
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
 import Nav from './Nav/Nav'
-import { page } from './Page.module.scss'
+import { page } from './Page.module.css'
 
 const Page = ({ children, title }) => (
   <div id={page}>
