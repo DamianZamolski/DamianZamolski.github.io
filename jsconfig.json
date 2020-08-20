@@ -1,6 +1,0 @@
-{
-  "compilerOptions": {
-    "baseUrl": "src/components",
-    "paths": { "@Page": ["Page/Page"] }
-  }
-}

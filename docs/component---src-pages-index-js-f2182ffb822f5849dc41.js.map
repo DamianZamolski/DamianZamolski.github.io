@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/index.js"],"names":["title"],"mappings":"2FAAA,4CAGe,4BACb,kBAAC,IAAD,CAAMA,MAAM,SACV","file":"component---src-pages-index-js-f2182ffb822f5849dc41.js","sourcesContent":["import React from 'react'\nimport Page from '~Page'\n\nexport default () => (\n  <Page title='Index'>\n    <div>Hello World</div>\n  </Page>\n)\n"],"sourceRoot":""}

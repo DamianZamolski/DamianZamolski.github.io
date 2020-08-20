@@ -1,72 +1,74 @@
 !(function (e) {
   function t(t) {
     for (
-      var n, o, c = t[0], i = t[1], s = t[2], l = 0, d = [];
-      l < c.length;
+      var n, o, u = t[0], s = t[1], i = t[2], l = 0, d = [];
+      l < u.length;
       l++
     )
-      (o = c[l]),
+      (o = u[l]),
         Object.prototype.hasOwnProperty.call(a, o) && a[o] && d.push(a[o][0]),
         (a[o] = 0)
-    for (n in i) Object.prototype.hasOwnProperty.call(i, n) && (e[n] = i[n])
+    for (n in s) Object.prototype.hasOwnProperty.call(s, n) && (e[n] = s[n])
     for (f && f(t); d.length; ) d.shift()()
-    return u.push.apply(u, s || []), r()
+    return c.push.apply(c, i || []), r()
   }
   function r() {
-    for (var e, t = 0; t < u.length; t++) {
-      for (var r = u[t], n = !0, o = 1; o < r.length; o++) {
-        var i = r[o]
-        0 !== a[i] && (n = !1)
+    for (var e, t = 0; t < c.length; t++) {
+      for (var r = c[t], n = !0, o = 1; o < r.length; o++) {
+        var s = r[o]
+        0 !== a[s] && (n = !1)
       }
-      n && (u.splice(t--, 1), (e = c((c.s = r[0]))))
+      n && (c.splice(t--, 1), (e = u((u.s = r[0]))))
     }
     return e
   }
   var n = {},
-    o = { 1: 0 },
-    a = { 1: 0 },
-    u = []
-  function c(t) {
+    o = { 2: 0 },
+    a = { 2: 0 },
+    c = []
+  function u(t) {
     if (n[t]) return n[t].exports
     var r = (n[t] = { i: t, l: !1, exports: {} })
-    return e[t].call(r.exports, r, r.exports, c), (r.l = !0), r.exports
+    return e[t].call(r.exports, r, r.exports, u), (r.l = !0), r.exports
   }
-  ;(c.e = function (e) {
+  ;(u.e = function (e) {
     var t = []
     o[e]
       ? t.push(o[e])
       : 0 !== o[e] &&
-        { 0: 1 }[e] &&
+        { 1: 1 }[e] &&
         t.push(
           (o[e] = new Promise(function (t, r) {
             for (
               var n =
                   ({
-                    0: 'styles',
-                    3: 'component---src-pages-books-12-rules-for-life-js',
-                    4: 'component---src-pages-index-js',
+                    0: 'commons',
+                    1: 'styles',
+                    4: 'component---src-pages-books-12-rules-for-life-js',
+                    5: 'component---src-pages-index-js',
                   }[e] || e) +
                   '.' +
                   {
-                    0: 'c07f292f7c72bd35fd7d',
-                    3: '31d6cfe0d16ae931b73c',
+                    0: '31d6cfe0d16ae931b73c',
+                    1: 'a32173cad74bcbda3a35',
                     4: '31d6cfe0d16ae931b73c',
+                    5: '31d6cfe0d16ae931b73c',
                   }[e] +
                   '.css',
-                a = c.p + n,
-                u = document.getElementsByTagName('link'),
-                i = 0;
-              i < u.length;
-              i++
+                a = u.p + n,
+                c = document.getElementsByTagName('link'),
+                s = 0;
+              s < c.length;
+              s++
             ) {
-              var s =
-                (f = u[i]).getAttribute('data-href') || f.getAttribute('href')
-              if ('stylesheet' === f.rel && (s === n || s === a)) return t()
+              var i =
+                (f = c[s]).getAttribute('data-href') || f.getAttribute('href')
+              if ('stylesheet' === f.rel && (i === n || i === a)) return t()
             }
             var l = document.getElementsByTagName('style')
-            for (i = 0; i < l.length; i++) {
+            for (s = 0; s < l.length; s++) {
               var f
-              if ((s = (f = l[i]).getAttribute('data-href')) === n || s === a)
+              if ((i = (f = l[s]).getAttribute('data-href')) === n || i === a)
                 return t()
             }
             var d = document.createElement('link')
@@ -75,14 +77,14 @@
               (d.onload = t),
               (d.onerror = function (t) {
                 var n = (t && t.target && t.target.src) || a,
-                  u = new Error(
+                  c = new Error(
                     'Loading CSS chunk ' + e + ' failed.\n(' + n + ')'
                   )
-                ;(u.code = 'CSS_CHUNK_LOAD_FAILED'),
-                  (u.request = n),
+                ;(c.code = 'CSS_CHUNK_LOAD_FAILED'),
+                  (c.request = n),
                   delete o[e],
                   d.parentNode.removeChild(d),
-                  r(u)
+                  r(c)
               }),
               (d.href = a),
               document.getElementsByTagName('head')[0].appendChild(d)
@@ -98,76 +100,78 @@
           r = a[e] = [t, n]
         })
         t.push((r[2] = n))
-        var u,
-          i = document.createElement('script')
-        ;(i.charset = 'utf-8'),
-          (i.timeout = 120),
-          c.nc && i.setAttribute('nonce', c.nc),
-          (i.src = (function (e) {
+        var c,
+          s = document.createElement('script')
+        ;(s.charset = 'utf-8'),
+          (s.timeout = 120),
+          u.nc && s.setAttribute('nonce', u.nc),
+          (s.src = (function (e) {
             return (
-              c.p +
+              u.p +
               '' +
               ({
-                0: 'styles',
-                3: 'component---src-pages-books-12-rules-for-life-js',
-                4: 'component---src-pages-index-js',
+                0: 'commons',
+                1: 'styles',
+                4: 'component---src-pages-books-12-rules-for-life-js',
+                5: 'component---src-pages-index-js',
               }[e] || e) +
               '-' +
               {
-                0: '89fd2ae28bdf06750a71',
-                3: 'ef05034190c5c9cd351e',
-                4: '8623802120881d7de039',
+                0: 'd18b2d26ee1bb0a0fb52',
+                1: 'c2fe8482057191dca484',
+                4: '015f5c65bc3c97cbbd6b',
+                5: 'f2182ffb822f5849dc41',
               }[e] +
               '.js'
             )
           })(e))
-        var s = new Error()
-        u = function (t) {
-          ;(i.onerror = i.onload = null), clearTimeout(l)
+        var i = new Error()
+        c = function (t) {
+          ;(s.onerror = s.onload = null), clearTimeout(l)
           var r = a[e]
           if (0 !== r) {
             if (r) {
               var n = t && ('load' === t.type ? 'missing' : t.type),
                 o = t && t.target && t.target.src
-              ;(s.message =
+              ;(i.message =
                 'Loading chunk ' + e + ' failed.\n(' + n + ': ' + o + ')'),
-                (s.name = 'ChunkLoadError'),
-                (s.type = n),
-                (s.request = o),
-                r[1](s)
+                (i.name = 'ChunkLoadError'),
+                (i.type = n),
+                (i.request = o),
+                r[1](i)
             }
             a[e] = void 0
           }
         }
         var l = setTimeout(function () {
-          u({ type: 'timeout', target: i })
+          c({ type: 'timeout', target: s })
         }, 12e4)
-        ;(i.onerror = i.onload = u), document.head.appendChild(i)
+        ;(s.onerror = s.onload = c), document.head.appendChild(s)
       }
     return Promise.all(t)
   }),
-    (c.m = e),
-    (c.c = n),
-    (c.d = function (e, t, r) {
-      c.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r })
+    (u.m = e),
+    (u.c = n),
+    (u.d = function (e, t, r) {
+      u.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r })
     }),
-    (c.r = function (e) {
+    (u.r = function (e) {
       'undefined' != typeof Symbol &&
         Symbol.toStringTag &&
         Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
         Object.defineProperty(e, '__esModule', { value: !0 })
     }),
-    (c.t = function (e, t) {
-      if ((1 & t && (e = c(e)), 8 & t)) return e
+    (u.t = function (e, t) {
+      if ((1 & t && (e = u(e)), 8 & t)) return e
       if (4 & t && 'object' == typeof e && e && e.__esModule) return e
       var r = Object.create(null)
       if (
-        (c.r(r),
+        (u.r(r),
         Object.defineProperty(r, 'default', { enumerable: !0, value: e }),
         2 & t && 'string' != typeof e)
       )
         for (var n in e)
-          c.d(
+          u.d(
             r,
             n,
             function (t) {
@@ -176,7 +180,7 @@
           )
       return r
     }),
-    (c.n = function (e) {
+    (u.n = function (e) {
       var t =
         e && e.__esModule
           ? function () {
@@ -185,20 +189,20 @@
           : function () {
               return e
             }
-      return c.d(t, 'a', t), t
+      return u.d(t, 'a', t), t
     }),
-    (c.o = function (e, t) {
+    (u.o = function (e, t) {
       return Object.prototype.hasOwnProperty.call(e, t)
     }),
-    (c.p = '/'),
-    (c.oe = function (e) {
+    (u.p = '/'),
+    (u.oe = function (e) {
       throw (console.error(e), e)
     })
-  var i = (window.webpackJsonp = window.webpackJsonp || []),
-    s = i.push.bind(i)
-  ;(i.push = t), (i = i.slice())
-  for (var l = 0; l < i.length; l++) t(i[l])
-  var f = s
+  var s = (window.webpackJsonp = window.webpackJsonp || []),
+    i = s.push.bind(s)
+  ;(s.push = t), (s = s.slice())
+  for (var l = 0; l < s.length; l++) t(s[l])
+  var f = i
   r()
 })([])
-//# sourceMappingURL=webpack-runtime-0ab2e20b2b3b2b26f461.js.map
+//# sourceMappingURL=webpack-runtime-735edd5c984a6558d55c.js.map

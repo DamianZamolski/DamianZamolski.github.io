@@ -1,10 +1,10 @@
 {
-  "polyfill": ["/polyfill-bea99394faf6a6f67a84.js"],
-  "app": ["/app-513b0c3785d4efbbdfcf.js"],
+  "polyfill": ["/polyfill-2a86e29ae53b0bcd324d.js"],
+  "app": ["/app-84a748586a1b53ffb079.js"],
   "component---src-pages-books-12-rules-for-life-js": [
-    "/component---src-pages-books-12-rules-for-life-js-ef05034190c5c9cd351e.js"
+    "/component---src-pages-books-12-rules-for-life-js-015f5c65bc3c97cbbd6b.js"
   ],
   "component---src-pages-index-js": [
-    "/component---src-pages-index-js-8623802120881d7de039.js"
+    "/component---src-pages-index-js-f2182ffb822f5849dc41.js"
   ]
 }
