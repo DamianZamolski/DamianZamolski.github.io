@@ -127,14 +127,16 @@
         c = r('I77B'),
         l = function (e) {
           var t = e.children,
-            r = e.variant
+            r = e.id,
+            n = e.variant
           return o.a.createElement(
             'div',
             {
+              id: r,
               className: u()(
                 c.area,
-                'dark' === r && c.areaDark,
-                'light' === r && c.areaLight
+                'dark' === n && c.areaDark,
+                'light' === n && c.areaLight
               ),
             },
             t
@@ -142,45 +144,33 @@
         },
         s = r('FZDs'),
         f = function () {
-          return o.a.createElement(
-            'footer',
-            { id: s.footer },
-            o.a.createElement(l, null, 'Footer')
-          )
+          return o.a.createElement(l, { id: s.footer }, 'Footer')
         },
         p = r('6r2t'),
         d = function (e) {
           var t = e.title
           return o.a.createElement(
-            'header',
+            l,
             { id: p.header },
-            o.a.createElement(l, null, o.a.createElement('h1', null, t))
+            o.a.createElement('h1', null, t)
           )
         },
         h = r('NyQI'),
         y = function (e) {
           var t = e.children
-          return o.a.createElement(
-            'main',
-            { id: h.main },
-            o.a.createElement(l, { variant: 'light' }, t)
-          )
+          return o.a.createElement(l, { id: h.main, variant: 'light' }, t)
         },
         m = r('Z6Se'),
         b = function () {
           return o.a.createElement(
-            'nav',
-            { id: m.nav },
+            l,
+            { id: m.nav, variant: 'dark' },
             o.a.createElement(
-              l,
-              { variant: 'dark' },
-              o.a.createElement(
-                'ul',
-                null,
-                o.a.createElement('li', null, 'a'),
-                o.a.createElement('li', null, 'b'),
-                o.a.createElement('li', null, 'c')
-              )
+              'ul',
+              null,
+              o.a.createElement('li', null, 'aaa'),
+              o.a.createElement('li', null, 'bbb'),
+              o.a.createElement('li', null, 'ccc')
             )
           )
         },
@@ -1084,4 +1074,4 @@
     },
   },
 ])
-//# sourceMappingURL=commons-61a32787f008df055aaa.js.map
+//# sourceMappingURL=commons-67ec8cd51222d59fee16.js.map

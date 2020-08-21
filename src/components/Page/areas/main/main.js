@@ -3,7 +3,7 @@ import Area from '~area'
 import { main } from './Main.module.scss'
 
 export default ({ children }) => (
-  <main id={main}>
-    <Area variant='light'>{children}</Area>
-  </main>
+  <Area id={main} variant='light'>
+    {children}
+  </Area>
 )

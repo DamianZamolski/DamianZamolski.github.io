@@ -31,13 +31,10 @@ body {
   grid-area: main;
 }
 #nav-module--nav--XOa-H {
-  align-items: stretch;
-  justify-content: stretch;
-  display: flex;
   grid-area: nav;
 }
 #Page-module--page--Mo1Sm {
   display: grid;
-  grid: 'nav header' 'nav main' 'nav footer' / -webkit-max-content auto;
-  grid: 'nav header' 'nav main' 'nav footer' / max-content auto;
+  grid: 'nav header' 'nav main' 1fr 'nav footer' / auto 1fr;
+  height: 100vh;
 }
