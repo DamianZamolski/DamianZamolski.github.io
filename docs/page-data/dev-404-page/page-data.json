@@ -4,7 +4,11 @@
   "result": {
     "data": {
       "allSitePage": {
-        "nodes": [{ "path": "/" }, { "path": "/books/12-rules-for-life/" }]
+        "nodes": [
+          { "path": "/" },
+          { "path": "/macronutrients/" },
+          { "path": "/books/12-rules-for-life/" }
+        ]
       }
     },
     "pageContext": {}

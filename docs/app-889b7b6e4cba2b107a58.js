@@ -52,7 +52,7 @@
             !t.startsWith('//')
           )
         }
-      var w = function (t, e) {
+      var b = function (t, e) {
           return 'number' == typeof t
             ? t
             : g(t)
@@ -63,7 +63,7 @@
                 })(t, e)
             : t
         },
-        b = {
+        w = {
           activeClassName: u.default.string,
           activeStyle: u.default.object,
           partiallyActive: u.default.bool,
@@ -104,14 +104,14 @@
               this.props.to === t.to ||
                 this.state.IOSupported ||
                 ___loader.enqueue(
-                  (0, f.parsePath)(w(this.props.to, window.location.pathname))
+                  (0, f.parsePath)(b(this.props.to, window.location.pathname))
                     .pathname
                 )
             }),
             (n.componentDidMount = function () {
               this.state.IOSupported ||
                 ___loader.enqueue(
-                  (0, f.parsePath)(w(this.props.to, window.location.pathname))
+                  (0, f.parsePath)(b(this.props.to, window.location.pathname))
                     .pathname
                 )
             }),
@@ -139,7 +139,7 @@
                     (n = function () {
                       ___loader.enqueue(
                         (0, f.parsePath)(
-                          w(o.props.to, window.location.pathname)
+                          b(o.props.to, window.location.pathname)
                         ).pathname
                       )
                     }),
@@ -181,7 +181,7 @@
                 ])
               return s.default.createElement(l.Location, null, function (e) {
                 var r = e.location,
-                  o = w(n, r.pathname)
+                  o = b(n, r.pathname)
                 return g(o)
                   ? s.default.createElement(
                       l.Link,
@@ -226,7 +226,7 @@
             e
           )
         })(s.default.Component)
-      y.propTypes = (0, a.default)({}, b, {
+      y.propTypes = (0, a.default)({}, w, {
         onClick: u.default.func,
         to: u.default.string.isRequired,
         replace: u.default.bool,
@@ -248,15 +248,15 @@
         })
       e.default = R
       e.navigate = function (t, e) {
-        window.___navigate(w(t, window.location.pathname), e)
+        window.___navigate(b(t, window.location.pathname), e)
       }
       var O = function (t) {
-        P('push', 'navigate', 3), window.___push(w(t, window.location.pathname))
+        P('push', 'navigate', 3), window.___push(b(t, window.location.pathname))
       }
       e.push = O
       e.replace = function (t) {
         P('replace', 'navigate', 3),
-          window.___replace(w(t, window.location.pathname))
+          window.___replace(b(t, window.location.pathname))
       }
       e.navigateTo = function (t) {
         return P('navigateTo', 'navigate', 3), O(t)
@@ -822,7 +822,7 @@
           return l
         }),
         n.d(e, 'shallowCompare', function () {
-          return b
+          return w
         })
       var r = n('QLaP'),
         o = n.n(r),
@@ -848,7 +848,7 @@
             else {
               for (
                 var g = m(d.path),
-                  b = {},
+                  w = {},
                   y = Math.max(i.length, g.length),
                   P = 0;
                 P < y;
@@ -857,7 +857,7 @@
                 var R = g[P],
                   O = i[P]
                 if (h(R)) {
-                  b[R.slice(1) || '*'] = i
+                  w[R.slice(1) || '*'] = i
                     .slice(P)
                     .map(decodeURIComponent)
                     .join('/')
@@ -869,16 +869,16 @@
                 }
                 var S = p.exec(R)
                 if (S && !c) {
-                  ;-1 === w.indexOf(S[1]) || o()(!1)
+                  ;-1 === b.indexOf(S[1]) || o()(!1)
                   var j = decodeURIComponent(O)
-                  b[S[1]] = j
+                  w[S[1]] = j
                 } else if (R !== O) {
                   f = !0
                   break
                 }
               }
               if (!f) {
-                n = { route: d, params: b, uri: '/' + i.slice(0, P).join('/') }
+                n = { route: d, params: w, uri: '/' + i.slice(0, P).join('/') }
                 break
               }
             }
@@ -991,8 +991,8 @@
               : '')
           )
         },
-        w = ['uri', 'path'],
-        b = function (t, e) {
+        b = ['uri', 'path'],
+        w = function (t, e) {
           var n = Object.keys(t)
           return (
             n.length === Object.keys(e).length &&
@@ -1105,6 +1105,11 @@
             n.bind(null, 'RXBc')
           )
         },
+        'component---src-pages-macronutrients-js': function () {
+          return Promise.all([n.e(1), n.e(0), n.e(6)]).then(
+            n.bind(null, 'G3Xh')
+          )
+        },
       }
     },
     PJYZ: function (t, e) {
@@ -1156,12 +1161,11 @@
         l = n('7hJ6'),
         p = n('MMVs'),
         f = n.n(p),
-        h = n('+ZDr'),
-        d = (n('lw3w'), n('emEt')),
-        v = (d.default.enqueue, i.a.createContext({}))
-      var m = n('YLt+'),
-        g = n('5yr3'),
-        w = {
+        h = n('Wbzz'),
+        d = n('emEt'),
+        v = n('YLt+'),
+        m = n('5yr3'),
+        g = {
           id: 'gatsby-announcer',
           style: {
             position: 'absolute',
@@ -1178,7 +1182,8 @@
           'aria-atomic': 'true',
         },
         b = n('9Xx/'),
-        y = m.reduce(function (t, e) {
+        w = n('+ZDr'),
+        y = v.reduce(function (t, e) {
           return (t[e.fromPath] = e), t
         }, {})
       function P(t) {
@@ -1201,16 +1206,16 @@
         },
         S = function (t, e) {
           if ((void 0 === e && (e = {}), 'number' != typeof t)) {
-            var n = Object(h.parsePath)(t).pathname,
+            var n = Object(w.parsePath)(t).pathname,
               r = y[n]
             if (
-              (r && ((t = r.toPath), (n = Object(h.parsePath)(t).pathname)),
+              (r && ((t = r.toPath), (n = Object(w.parsePath)(t).pathname)),
               window.___swUpdated)
             )
               window.location = n
             else {
               var a = setTimeout(function () {
-                g.a.emit('onDelayedLoadPageResources', { pathname: n }),
+                m.a.emit('onDelayedLoadPageResources', { pathname: n }),
                   Object(o.apiRunner)('onRouteUpdateDelayed', {
                     location: window.location,
                   })
@@ -1284,7 +1289,7 @@
             (n.render = function () {
               return i.a.createElement(
                 'div',
-                Object.assign({}, w, { ref: this.announcementRef })
+                Object.assign({}, g, { ref: this.announcementRef })
               )
             }),
             e
@@ -1396,7 +1401,7 @@
       Object(d.setLoader)(F),
         F.setApiRunner(o.apiRunner),
         (window.asyncRequires = x.a),
-        (window.___emitter = g.a),
+        (window.___emitter = m.a),
         (window.___loader = d.publicLoader),
         b.c.listen(function (t) {
           t.location.action = t.action
@@ -1436,7 +1441,7 @@
                         o = n.location,
                         a = Object(d.getStaticQueryResults)()
                       return i.a.createElement(
-                        v.Provider,
+                        h.b.Provider,
                         { value: a },
                         i.a.createElement(
                           e.Provider,
@@ -1499,17 +1504,17 @@
               )
             })(i.a.Component),
             p = window,
-            h = p.pagePath,
+            v = p.pagePath,
             m = p.location
-          h &&
-            '' + h !== m.pathname &&
+          v &&
+            '' + v !== m.pathname &&
             !(
               F.findMatchPath(Object(T.a)(m.pathname, '')) ||
-              '/404.html' === h ||
-              h.match(/^\/404\/?$/) ||
-              h.match(/^\/offline-plugin-app-shell-fallback\/?$/)
+              '/404.html' === v ||
+              v.match(/^\/404\/?$/) ||
+              v.match(/^\/offline-plugin-app-shell-fallback\/?$/)
             ) &&
-            Object(s.navigate)('' + h + m.search + m.hash, { replace: !0 }),
+            Object(s.navigate)('' + v + m.search + m.hash, { replace: !0 }),
             d.publicLoader.loadPage(m.pathname).then(function (t) {
               if (!t || t.status === d.PageResourceStatus.Error)
                 throw new Error(
@@ -1555,6 +1560,21 @@
           (t.__proto__ = e)
       }
     },
+    Wbzz: function (t, e, n) {
+      'use strict'
+      n.d(e, 'b', function () {
+        return c
+      })
+      var r = n('q1tI'),
+        o = n.n(r),
+        a = n('+ZDr'),
+        i = n.n(a)
+      n.d(e, 'a', function () {
+        return i.a
+      })
+      n('7hJ6'), n('lw3w'), n('emEt').default.enqueue
+      var c = o.a.createContext({})
+    },
     'YLt+': function (t) {
       t.exports = JSON.parse('[]')
     },
@@ -1565,7 +1585,7 @@
           return D
         }),
         n.d(e, 'Location', function () {
-          return b
+          return w
         }),
         n.d(e, 'LocationProvider', function () {
           return y
@@ -1574,7 +1594,7 @@
           return A
         }),
         n.d(e, 'Redirect', function () {
-          return I
+          return M
         }),
         n.d(e, 'Router', function () {
           return O
@@ -1678,10 +1698,10 @@
           var n = u()(e)
           return (n.displayName = t), n
         },
-        w = g('Location'),
-        b = function (t) {
+        b = g('Location'),
+        w = function (t) {
           var e = t.children
-          return o.a.createElement(w.Consumer, null, function (t) {
+          return o.a.createElement(b.Consumer, null, function (t) {
             return t ? e(t) : o.a.createElement(y, null, e)
           })
         },
@@ -1735,7 +1755,7 @@
               var t = this.state.context,
                 e = this.props.children
               return o.a.createElement(
-                w.Provider,
+                b.Provider,
                 { value: t },
                 'function' == typeof e ? e(t) : e || null
               )
@@ -1753,7 +1773,7 @@
           return (
             r > -1 ? ((a = e.substring(0, r)), (i = e.substring(r))) : (a = e),
             o.a.createElement(
-              w.Provider,
+              b.Provider,
               {
                 value: {
                   location: { pathname: a, search: i, hash: '' },
@@ -1769,7 +1789,7 @@
         R = g('Base', { baseuri: '/', basepath: '/' }),
         O = function (t) {
           return o.a.createElement(R.Consumer, null, function (e) {
-            return o.a.createElement(b, null, function (n) {
+            return o.a.createElement(w, null, function (n) {
               return o.a.createElement(S, f({}, e, n, t))
             })
           })
@@ -1799,7 +1819,7 @@
                   'component',
                 ]),
                 p = o.a.Children.toArray(i).reduce(function (t, e) {
-                  var n = Y(r)(e)
+                  var n = G(r)(e)
                   return t.concat(n)
                 }, []),
                 d = e.pathname,
@@ -1807,9 +1827,9 @@
               if (v) {
                 var m = v.params,
                   g = v.uri,
-                  w = v.route,
-                  b = v.route.value
-                r = w.default ? r : w.path.replace(/\*$/, '')
+                  b = v.route,
+                  w = v.route.value
+                r = b.default ? r : b.path.replace(/\*$/, '')
                 var y = f({}, m, {
                     uri: g,
                     location: e,
@@ -1818,13 +1838,13 @@
                     },
                   }),
                   P = o.a.cloneElement(
-                    b,
+                    w,
                     y,
-                    b.props.children
+                    w.props.children
                       ? o.a.createElement(
                           O,
                           { location: e, primary: a },
-                          b.props.children
+                          w.props.children
                         )
                       : void 0
                   ),
@@ -1955,7 +1975,7 @@
         return o.a.createElement(R.Consumer, null, function (t) {
           t.basepath
           var a = t.baseuri
-          return o.a.createElement(b, null, function (t) {
+          return o.a.createElement(w, null, function (t) {
             var i = t.location,
               c = t.navigate,
               u = r.to,
@@ -1965,16 +1985,16 @@
               v = void 0 === d ? x : d,
               m = h(r, ['to', 'state', 'replace', 'getProps']),
               g = Object(l.resolve)(u, a),
-              w = encodeURI(g),
-              b = i.pathname === w,
-              y = Object(l.startsWith)(i.pathname, w)
+              b = encodeURI(g),
+              w = i.pathname === b,
+              y = Object(l.startsWith)(i.pathname, b)
             return o.a.createElement(
               'a',
               f(
-                { ref: e || n, 'aria-current': b ? 'page' : void 0 },
+                { ref: e || n, 'aria-current': w ? 'page' : void 0 },
                 m,
                 v({
-                  isCurrent: b,
+                  isCurrent: w,
                   isPartiallyCurrent: y,
                   href: g,
                   location: i,
@@ -1982,10 +2002,10 @@
                 {
                   href: g,
                   onClick: function (t) {
-                    if ((m.onClick && m.onClick(t), G(t))) {
+                    if ((m.onClick && m.onClick(t), Y(t))) {
                       t.preventDefault()
                       var e = p
-                      if ('boolean' != typeof p && b) {
+                      if ('boolean' != typeof p && w) {
                         var n = f({}, i.state),
                           r = (n.key, h(n, ['key']))
                         e = Object(l.shallowCompare)(f({}, s), r)
@@ -2009,7 +2029,7 @@
         F = function (t) {
           throw new T(t)
         },
-        M = (function (t) {
+        I = (function (t) {
           function e() {
             return d(this, e), v(this, t.apply(this, arguments))
           }
@@ -2057,11 +2077,11 @@
             e
           )
         })(o.a.Component),
-        I = function (t) {
+        M = function (t) {
           return o.a.createElement(R.Consumer, null, function (e) {
             var n = e.baseuri
-            return o.a.createElement(b, null, function (e) {
-              return o.a.createElement(M, f({}, e, { baseuri: n }, t))
+            return o.a.createElement(w, null, function (e) {
+              return o.a.createElement(I, f({}, e, { baseuri: n }, t))
             })
           })
         },
@@ -2070,7 +2090,7 @@
             n = t.children
           return o.a.createElement(R.Consumer, null, function (t) {
             var r = t.baseuri
-            return o.a.createElement(b, null, function (t) {
+            return o.a.createElement(w, null, function (t) {
               var o = t.navigate,
                 a = t.location,
                 i = Object(l.resolve)(e, r),
@@ -2084,7 +2104,7 @@
           })
         },
         W = function () {
-          var t = Object(r.useContext)(w)
+          var t = Object(r.useContext)(b)
           if (!t)
             throw new Error(
               'useLocation hook was used but a LocationContext.Provider was not found in the parent tree. Make sure this is used in a component that is a child of Router'
@@ -2092,7 +2112,7 @@
           return t.location
         },
         q = function () {
-          var t = Object(r.useContext)(w)
+          var t = Object(r.useContext)(b)
           if (!t)
             throw new Error(
               'useNavigate hook was used but a LocationContext.Provider was not found in the parent tree. Make sure this is used in a component that is a child of Router'
@@ -2127,21 +2147,21 @@
         H = function (t) {
           return t.replace(/(^\/+|\/+$)/g, '')
         },
-        Y = function t(e) {
+        G = function t(e) {
           return function (n) {
             if (!n) return null
             if (n.type === o.a.Fragment && n.props.children)
               return o.a.Children.map(n.props.children, t(e))
             if (
-              (n.props.path || n.props.default || n.type === I || i()(!1),
-              n.type !== I || (n.props.from && n.props.to) || i()(!1),
-              n.type !== I ||
+              (n.props.path || n.props.default || n.type === M || i()(!1),
+              n.type !== M || (n.props.from && n.props.to) || i()(!1),
+              n.type !== M ||
                 Object(l.validateRedirect)(n.props.from, n.props.to) ||
                 i()(!1),
               n.props.default)
             )
               return { value: n, default: !0 }
-            var r = n.type === I ? n.props.from : n.props.path,
+            var r = n.type === M ? n.props.from : n.props.path,
               a = '/' === r ? e : H(e) + '/' + H(r)
             return {
               value: n,
@@ -2150,7 +2170,7 @@
             }
           }
         },
-        G = function (t) {
+        Y = function (t) {
           return (
             !t.defaultPrevented &&
             0 === t.button &&
@@ -2235,7 +2255,7 @@
           return g
         }),
         n.d(e, 'ProdLoader', function () {
-          return b
+          return w
         }),
         n.d(e, 'setLoader', function () {
           return y
@@ -2600,7 +2620,7 @@
                 n = this.pageDataDb.get(e)
               if (n) {
                 var r = m(n.payload)
-                return [].concat(a(w(r.page.componentChunkName)), [h(e)])
+                return [].concat(a(b(r.page.componentChunkName)), [h(e)])
               }
               return null
             }),
@@ -2632,12 +2652,12 @@
             t
           )
         })(),
-        w = function (t) {
+        b = function (t) {
           return (window.___chunkMapping[t] || []).map(function (t) {
             return '' + t
           })
         },
-        b = (function (t) {
+        w = (function (t) {
           function e(e, n) {
             return (
               t.call(
@@ -2669,7 +2689,7 @@
                   if (t.status !== p.Success) return Promise.resolve()
                   var e = t.payload,
                     n = e.componentChunkName,
-                    r = w(n)
+                    r = b(n)
                   return Promise.all(r.map(u)).then(function () {
                     return e
                   })
@@ -2882,6 +2902,6 @@
         })
     },
   },
-  [['UxWs', 2, 1, 6]],
+  [['UxWs', 2, 1, 7]],
 ])
-//# sourceMappingURL=app-176ab4d986109038f450.js.map
+//# sourceMappingURL=app-889b7b6e4cba2b107a58.js.map

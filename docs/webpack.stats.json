@@ -5,30 +5,30 @@
   ],
   "namedChunkGroups": {
     "polyfill": {
-      "chunks": [2, 0, 7],
+      "chunks": [2, 0, 8],
       "assets": [
-        "webpack-runtime-a599f452a96f0d5bb021.js",
-        "webpack-runtime-a599f452a96f0d5bb021.js.map",
-        "commons-c68dd77127d4cd658d98.js",
-        "commons-c68dd77127d4cd658d98.js.map",
-        "polyfill-2a86e29ae53b0bcd324d.js",
-        "polyfill-2a86e29ae53b0bcd324d.js.map"
+        "webpack-runtime-e874375574146bace383.js",
+        "webpack-runtime-e874375574146bace383.js.map",
+        "commons-9d0964e692c459b4394b.js",
+        "commons-9d0964e692c459b4394b.js.map",
+        "polyfill-88d9aed314b16f9b2adc.js",
+        "polyfill-88d9aed314b16f9b2adc.js.map"
       ],
       "children": {},
       "childAssets": {}
     },
     "app": {
-      "chunks": [2, 1, 6, 3],
+      "chunks": [2, 1, 7, 3],
       "assets": [
-        "webpack-runtime-a599f452a96f0d5bb021.js",
-        "webpack-runtime-a599f452a96f0d5bb021.js.map",
+        "webpack-runtime-e874375574146bace383.js",
+        "webpack-runtime-e874375574146bace383.js.map",
         "styles.e5db23e5f1206ad907a1.css",
         "styles-c2fe8482057191dca484.js",
         "styles-c2fe8482057191dca484.js.map",
-        "framework-a576ae5ab153fa4a7c27.js",
-        "framework-a576ae5ab153fa4a7c27.js.map",
-        "app-176ab4d986109038f450.js",
-        "app-176ab4d986109038f450.js.map"
+        "framework-fd2b85530eec85104a39.js",
+        "framework-fd2b85530eec85104a39.js.map",
+        "app-889b7b6e4cba2b107a58.js",
+        "app-889b7b6e4cba2b107a58.js.map"
       ],
       "children": {},
       "childAssets": {}
@@ -39,8 +39,8 @@
         "styles.e5db23e5f1206ad907a1.css",
         "styles-c2fe8482057191dca484.js",
         "styles-c2fe8482057191dca484.js.map",
-        "commons-c68dd77127d4cd658d98.js",
-        "commons-c68dd77127d4cd658d98.js.map",
+        "commons-9d0964e692c459b4394b.js",
+        "commons-9d0964e692c459b4394b.js.map",
         "component---src-pages-books-12-rules-for-life-js-107d4db1d39df6901e18.js",
         "component---src-pages-books-12-rules-for-life-js-107d4db1d39df6901e18.js.map"
       ],
@@ -53,10 +53,24 @@
         "styles.e5db23e5f1206ad907a1.css",
         "styles-c2fe8482057191dca484.js",
         "styles-c2fe8482057191dca484.js.map",
-        "commons-c68dd77127d4cd658d98.js",
-        "commons-c68dd77127d4cd658d98.js.map",
+        "commons-9d0964e692c459b4394b.js",
+        "commons-9d0964e692c459b4394b.js.map",
         "component---src-pages-index-js-4c32fea021eafc054a0e.js",
         "component---src-pages-index-js-4c32fea021eafc054a0e.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-macronutrients-js": {
+      "chunks": [1, 0, 6],
+      "assets": [
+        "styles.e5db23e5f1206ad907a1.css",
+        "styles-c2fe8482057191dca484.js",
+        "styles-c2fe8482057191dca484.js.map",
+        "commons-9d0964e692c459b4394b.js",
+        "commons-9d0964e692c459b4394b.js.map",
+        "component---src-pages-macronutrients-js-90cf86454840b6d33956.js",
+        "component---src-pages-macronutrients-js-90cf86454840b6d33956.js.map"
       ],
       "children": {},
       "childAssets": {}
@@ -64,28 +78,34 @@
   },
   "assetsByChunkName": {
     "polyfill": [
-      "webpack-runtime-a599f452a96f0d5bb021.js",
-      "commons-c68dd77127d4cd658d98.js",
-      "polyfill-2a86e29ae53b0bcd324d.js"
+      "webpack-runtime-e874375574146bace383.js",
+      "commons-9d0964e692c459b4394b.js",
+      "polyfill-88d9aed314b16f9b2adc.js"
     ],
     "app": [
-      "webpack-runtime-a599f452a96f0d5bb021.js",
+      "webpack-runtime-e874375574146bace383.js",
       "styles.e5db23e5f1206ad907a1.css",
       "styles-c2fe8482057191dca484.js",
-      "framework-a576ae5ab153fa4a7c27.js",
-      "app-176ab4d986109038f450.js"
+      "framework-fd2b85530eec85104a39.js",
+      "app-889b7b6e4cba2b107a58.js"
     ],
     "component---src-pages-books-12-rules-for-life-js": [
       "styles.e5db23e5f1206ad907a1.css",
       "styles-c2fe8482057191dca484.js",
-      "commons-c68dd77127d4cd658d98.js",
+      "commons-9d0964e692c459b4394b.js",
       "component---src-pages-books-12-rules-for-life-js-107d4db1d39df6901e18.js"
     ],
     "component---src-pages-index-js": [
       "styles.e5db23e5f1206ad907a1.css",
       "styles-c2fe8482057191dca484.js",
-      "commons-c68dd77127d4cd658d98.js",
+      "commons-9d0964e692c459b4394b.js",
       "component---src-pages-index-js-4c32fea021eafc054a0e.js"
+    ],
+    "component---src-pages-macronutrients-js": [
+      "styles.e5db23e5f1206ad907a1.css",
+      "styles-c2fe8482057191dca484.js",
+      "commons-9d0964e692c459b4394b.js",
+      "component---src-pages-macronutrients-js-90cf86454840b6d33956.js"
     ]
   }
 }

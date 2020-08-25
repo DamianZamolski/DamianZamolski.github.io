@@ -1,13 +1,12 @@
 import React from 'react'
 import DarkArea from '../../area/dark-area/dark-area'
 import { nav, list } from './nav.module.scss'
+import Link from './link'
 
 const Nav = () => (
   <DarkArea id={nav}>
     <ul id={list}>
-      <li>aaa</li>
-      <li>bbb</li>
-      <li>ccc</li>
+      <Link to='/macronutrients'>Macronutrients</Link>
     </ul>
   </DarkArea>
 )

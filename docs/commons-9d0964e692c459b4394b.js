@@ -352,7 +352,7 @@
               ? e
               : t
           },
-          V = function (e) {
+          z = function (e) {
             var t =
               !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1]
             return !1 === t
@@ -374,7 +374,7 @@
             var n = G(e, N)
             return t || n || void 0
           },
-          z = function (e) {
+          V = function (e) {
             return G(e, q) || function () {}
           },
           Q = function (e, t) {
@@ -650,14 +650,14 @@
                             ' data-react-helmet="true" ' +
                             o +
                             '>' +
-                            V(a, n) +
+                            z(a, n) +
                             '</' +
                             e +
                             '>'
                         : '<' +
                             e +
                             ' data-react-helmet="true">' +
-                            V(a, n) +
+                            z(a, n) +
                             '</' +
                             e +
                             '>'
@@ -705,7 +705,7 @@
                               var o =
                                 void 0 === n[t]
                                   ? t
-                                  : t + '="' + V(n[t], r) + '"'
+                                  : t + '="' + z(n[t], r) + '"'
                               return e ? e + ' ' + o : o
                             }, ''),
                           a = n.innerHTML || n.cssText || '',
@@ -760,7 +760,7 @@
                 linkTags: $(g.LINK, [x, A], e),
                 metaTags: $(g.META, [j, w, O, k, S], e),
                 noscriptTags: $(g.NOSCRIPT, [C], e),
-                onChangeClientState: z(e),
+                onChangeClientState: V(e),
                 scriptTags: $(g.SCRIPT, [I, C], e),
                 styleTags: $(g.STYLE, [E], e),
                 title: W(e),
@@ -1056,40 +1056,44 @@
           return o.a.createElement(m, { className: g.darkArea, id: r }, t)
         },
         E = r('Z6Se'),
-        A = function () {
+        A = r('Wbzz'),
+        O = function (e) {
+          var t = e.children,
+            r = e.to
+          return o.a.createElement(A.a, { to: r }, t)
+        },
+        C = function () {
           return o.a.createElement(
             w,
             { id: E.nav },
             o.a.createElement(
               'ul',
               { id: E.list },
-              o.a.createElement('li', null, 'aaa'),
-              o.a.createElement('li', null, 'bbb'),
-              o.a.createElement('li', null, 'ccc')
+              o.a.createElement(O, { to: '/macronutrients' }, 'Macronutrients')
             )
           )
         },
-        O = function (e) {
+        S = function (e) {
           var t = e.children,
             r = e.title
           return o.a.createElement(
             o.a.Fragment,
             null,
-            o.a.createElement(A, null),
+            o.a.createElement(C, null),
             o.a.createElement(h, { title: r }),
             o.a.createElement(T, null, t),
             o.a.createElement(p, null)
           )
         },
-        C = r('TKWK')
+        j = r('TKWK')
       t.a = function (e) {
         var t = e.children,
           r = e.title
         return o.a.createElement(
           'div',
-          { id: C.page },
+          { id: j.page },
           o.a.createElement(i, { title: r }),
-          o.a.createElement(O, { title: r }, t)
+          o.a.createElement(S, { title: r }, t)
         )
       }
     },
@@ -1107,4 +1111,4 @@
     },
   },
 ])
-//# sourceMappingURL=commons-c68dd77127d4cd658d98.js.map
+//# sourceMappingURL=commons-9d0964e692c459b4394b.js.map

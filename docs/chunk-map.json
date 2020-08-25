@@ -1,10 +1,13 @@
 {
-  "polyfill": ["/polyfill-2a86e29ae53b0bcd324d.js"],
-  "app": ["/app-176ab4d986109038f450.js"],
+  "polyfill": ["/polyfill-88d9aed314b16f9b2adc.js"],
+  "app": ["/app-889b7b6e4cba2b107a58.js"],
   "component---src-pages-books-12-rules-for-life-js": [
     "/component---src-pages-books-12-rules-for-life-js-107d4db1d39df6901e18.js"
   ],
   "component---src-pages-index-js": [
     "/component---src-pages-index-js-4c32fea021eafc054a0e.js"
+  ],
+  "component---src-pages-macronutrients-js": [
+    "/component---src-pages-macronutrients-js-90cf86454840b6d33956.js"
   ]
 }
