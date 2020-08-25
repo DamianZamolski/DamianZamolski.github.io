@@ -1,19 +1,13 @@
-:root {
-  --background-color: #8bc34a;
-  --light-background-color: #bef67a;
-  --dark-background-color: #5a9216;
-  --space: 0.5rem;
-}
-body {
-  font-family: Roboto, sans-serif;
-}
 * {
   margin: 0;
   padding: 0;
 }
+body {
+  font-family: Roboto, sans-serif;
+}
 .area-module--area--2kuCT {
-  background-color: var(--background-color);
-  padding: var(--space);
+  background-color: #8bc34a;
+  padding: 0.5rem;
 }
 #Footer-module--footer--V8wej {
   grid-area: footer;
@@ -22,13 +16,13 @@ body {
   grid-area: header;
 }
 .light-area-module--area--light--1bCIG {
-  background-color: var(--light-background-color);
+  background-color: #bef67a;
 }
 #Main-module--main--3Jql9 {
   grid-area: main;
 }
 .dark-area-module--area--dark--1AgVr {
-  background-color: var(--dark-background-color);
+  background-color: #5a9216;
 }
 #nav-module--nav--XOa-H {
   grid-area: nav;

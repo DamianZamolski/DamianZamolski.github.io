@@ -1,9 +1,11 @@
 import React from 'react'
+import Area from '../../area/area'
 import { areaLight } from './light-area.module.scss'
-import Area from '~area'
 
-export default ({ children, id }) => (
+const LightArea = ({ children, id }) => (
   <Area className={areaLight} id={id}>
     {children}
   </Area>
 )
+
+export default LightArea

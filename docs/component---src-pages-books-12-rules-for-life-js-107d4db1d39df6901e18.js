@@ -6,7 +6,7 @@
       t.r(n)
       var l = t('q1tI'),
         a = t.n(l),
-        o = t('Lpdm')
+        o = t('xKBe')
       n.default = function () {
         return a.a.createElement(
           o.a,
@@ -17,4 +17,4 @@
     },
   },
 ])
-//# sourceMappingURL=component---src-pages-books-12-rules-for-life-js-b547ea9b1658e6ab9af1.js.map
+//# sourceMappingURL=component---src-pages-books-12-rules-for-life-js-107d4db1d39df6901e18.js.map

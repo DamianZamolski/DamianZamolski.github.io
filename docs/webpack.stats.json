@@ -1,14 +1,16 @@
 {
   "errors": [],
-  "warnings": [],
+  "warnings": [
+    "./src/components/page/area/Area.js\nThere are multiple modules with names that only differ in casing.\nThis can lead to unexpected behavior when compiling on a filesystem with other case-semantic.\nUse equal casing. Compare these module identifiers:\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\Area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\areas\\header\\header.js\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\light-area\\light-area.js"
+  ],
   "namedChunkGroups": {
     "polyfill": {
       "chunks": [2, 0, 7],
       "assets": [
-        "webpack-runtime-beff3b88ef1c361cb970.js",
-        "webpack-runtime-beff3b88ef1c361cb970.js.map",
-        "commons-a4f378f72dada5925d9f.js",
-        "commons-a4f378f72dada5925d9f.js.map",
+        "webpack-runtime-b8c80365345c77c77f5e.js",
+        "webpack-runtime-b8c80365345c77c77f5e.js.map",
+        "commons-4f7fea98a67c3052acd0.js",
+        "commons-4f7fea98a67c3052acd0.js.map",
         "polyfill-2a86e29ae53b0bcd324d.js",
         "polyfill-2a86e29ae53b0bcd324d.js.map"
       ],
@@ -18,9 +20,9 @@
     "app": {
       "chunks": [2, 1, 6, 3],
       "assets": [
-        "webpack-runtime-beff3b88ef1c361cb970.js",
-        "webpack-runtime-beff3b88ef1c361cb970.js.map",
-        "styles.8df03dc0d6488a7cd4c6.css",
+        "webpack-runtime-b8c80365345c77c77f5e.js",
+        "webpack-runtime-b8c80365345c77c77f5e.js.map",
+        "styles.b3637fd5e17aa066b435.css",
         "styles-c2fe8482057191dca484.js",
         "styles-c2fe8482057191dca484.js.map",
         "framework-a576ae5ab153fa4a7c27.js",
@@ -34,13 +36,13 @@
     "component---src-pages-books-12-rules-for-life-js": {
       "chunks": [1, 0, 4],
       "assets": [
-        "styles.8df03dc0d6488a7cd4c6.css",
+        "styles.b3637fd5e17aa066b435.css",
         "styles-c2fe8482057191dca484.js",
         "styles-c2fe8482057191dca484.js.map",
-        "commons-a4f378f72dada5925d9f.js",
-        "commons-a4f378f72dada5925d9f.js.map",
-        "component---src-pages-books-12-rules-for-life-js-b547ea9b1658e6ab9af1.js",
-        "component---src-pages-books-12-rules-for-life-js-b547ea9b1658e6ab9af1.js.map"
+        "commons-4f7fea98a67c3052acd0.js",
+        "commons-4f7fea98a67c3052acd0.js.map",
+        "component---src-pages-books-12-rules-for-life-js-107d4db1d39df6901e18.js",
+        "component---src-pages-books-12-rules-for-life-js-107d4db1d39df6901e18.js.map"
       ],
       "children": {},
       "childAssets": {}
@@ -48,13 +50,13 @@
     "component---src-pages-index-js": {
       "chunks": [1, 0, 5],
       "assets": [
-        "styles.8df03dc0d6488a7cd4c6.css",
+        "styles.b3637fd5e17aa066b435.css",
         "styles-c2fe8482057191dca484.js",
         "styles-c2fe8482057191dca484.js.map",
-        "commons-a4f378f72dada5925d9f.js",
-        "commons-a4f378f72dada5925d9f.js.map",
-        "component---src-pages-index-js-8ab8250936ee52aada8f.js",
-        "component---src-pages-index-js-8ab8250936ee52aada8f.js.map"
+        "commons-4f7fea98a67c3052acd0.js",
+        "commons-4f7fea98a67c3052acd0.js.map",
+        "component---src-pages-index-js-4c32fea021eafc054a0e.js",
+        "component---src-pages-index-js-4c32fea021eafc054a0e.js.map"
       ],
       "children": {},
       "childAssets": {}
@@ -62,28 +64,28 @@
   },
   "assetsByChunkName": {
     "polyfill": [
-      "webpack-runtime-beff3b88ef1c361cb970.js",
-      "commons-a4f378f72dada5925d9f.js",
+      "webpack-runtime-b8c80365345c77c77f5e.js",
+      "commons-4f7fea98a67c3052acd0.js",
       "polyfill-2a86e29ae53b0bcd324d.js"
     ],
     "app": [
-      "webpack-runtime-beff3b88ef1c361cb970.js",
-      "styles.8df03dc0d6488a7cd4c6.css",
+      "webpack-runtime-b8c80365345c77c77f5e.js",
+      "styles.b3637fd5e17aa066b435.css",
       "styles-c2fe8482057191dca484.js",
       "framework-a576ae5ab153fa4a7c27.js",
       "app-176ab4d986109038f450.js"
     ],
     "component---src-pages-books-12-rules-for-life-js": [
-      "styles.8df03dc0d6488a7cd4c6.css",
+      "styles.b3637fd5e17aa066b435.css",
       "styles-c2fe8482057191dca484.js",
-      "commons-a4f378f72dada5925d9f.js",
-      "component---src-pages-books-12-rules-for-life-js-b547ea9b1658e6ab9af1.js"
+      "commons-4f7fea98a67c3052acd0.js",
+      "component---src-pages-books-12-rules-for-life-js-107d4db1d39df6901e18.js"
     ],
     "component---src-pages-index-js": [
-      "styles.8df03dc0d6488a7cd4c6.css",
+      "styles.b3637fd5e17aa066b435.css",
       "styles-c2fe8482057191dca484.js",
-      "commons-a4f378f72dada5925d9f.js",
-      "component---src-pages-index-js-8ab8250936ee52aada8f.js"
+      "commons-4f7fea98a67c3052acd0.js",
+      "component---src-pages-index-js-4c32fea021eafc054a0e.js"
     ]
   }
 }

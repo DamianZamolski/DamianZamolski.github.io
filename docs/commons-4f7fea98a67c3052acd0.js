@@ -116,92 +116,6 @@
     LIDZ: function (e, t, r) {
       e.exports = { areaLight: 'light-area-module--area--light--1bCIG' }
     },
-    Lpdm: function (e, t, r) {
-      'use strict'
-      var n = r('q1tI'),
-        o = r.n(n),
-        a = r('qhky'),
-        i = r('TSYQ'),
-        c = r.n(i),
-        u = r('I77B'),
-        l = function (e) {
-          var t = e.children,
-            r = e.className,
-            n = e.id
-          return o.a.createElement(
-            'div',
-            { id: n, className: c()(u.area, r) },
-            t
-          )
-        },
-        s = r('FZDs'),
-        f = function () {
-          return o.a.createElement(l, { id: s.footer }, 'Footer')
-        },
-        p = r('6r2t'),
-        d = function (e) {
-          var t = e.title
-          return o.a.createElement(
-            l,
-            { id: p.header },
-            o.a.createElement('h1', null, t)
-          )
-        },
-        h = r('LIDZ'),
-        y = function (e) {
-          var t = e.children,
-            r = e.id
-          return o.a.createElement(l, { className: h.areaLight, id: r }, t)
-        },
-        m = r('NyQI'),
-        b = function (e) {
-          var t = e.children
-          return o.a.createElement(y, { id: m.main }, t)
-        },
-        v = r('QVrL'),
-        T = function (e) {
-          var t = e.children,
-            r = e.id
-          return o.a.createElement(l, { className: v.areaDark, id: r }, t)
-        },
-        g = r('Z6Se'),
-        w = function () {
-          return o.a.createElement(
-            T,
-            { id: g.nav },
-            o.a.createElement(
-              'ul',
-              null,
-              o.a.createElement('li', null, 'aaa'),
-              o.a.createElement('li', null, 'bbb'),
-              o.a.createElement('li', null, 'ccc')
-            )
-          )
-        },
-        E = r('TKWK')
-      t.a = function (e) {
-        var t = e.children,
-          r = e.title
-        return o.a.createElement(
-          'div',
-          { id: E.page },
-          o.a.createElement(
-            a.a,
-            null,
-            o.a.createElement('title', null, r),
-            o.a.createElement('link', {
-              href:
-                'https://fonts.googleapis.com/css2?family=Roboto&display=swap',
-              rel: 'stylesheet',
-            })
-          ),
-          o.a.createElement(w, null),
-          o.a.createElement(d, { title: r }),
-          o.a.createElement(b, null, t),
-          o.a.createElement(f, null)
-        )
-      }
-    },
     NyQI: function (e, t, r) {
       e.exports = { main: 'Main-module--main--3Jql9' }
     },
@@ -357,8 +271,8 @@
           j = 'name',
           k = 'property',
           x = 'rel',
-          L = 'src',
-          I = 'target',
+          I = 'src',
+          L = 'target',
           P = {
             accesskey: 'accessKey',
             charset: 'charSet',
@@ -374,11 +288,11 @@
           R = 'encodeSpecialCharacters',
           q = 'onChangeClientState',
           D = 'titleTemplate',
-          _ = Object.keys(P).reduce(function (e, t) {
+          B = Object.keys(P).reduce(function (e, t) {
             return (e[P[t]] = t), e
           }, {}),
-          B = [g.NOSCRIPT, g.SCRIPT, g.STYLE],
-          F =
+          F = [g.NOSCRIPT, g.SCRIPT, g.STYLE],
+          _ =
             'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
               ? function (e) {
                   return typeof e
@@ -501,7 +415,7 @@
                       'Helmet: ' +
                         e +
                         ' should be of type "Array". Instead found type "' +
-                        F(t[e]) +
+                        _(t[e]) +
                         '"'
                     ),
                   !1)
@@ -792,7 +706,7 @@
                               return e ? e + ' ' + o : o
                             }, ''),
                           a = n.innerHTML || n.cssText || '',
-                          i = -1 === B.indexOf(e)
+                          i = -1 === F.indexOf(e)
                         return (
                           t +
                           '<' +
@@ -835,7 +749,7 @@
           he = s()(
             function (e) {
               return {
-                baseTag: J([A, I], e),
+                baseTag: J([A, L], e),
                 bodyAttributes: Q(b, e),
                 defer: $(e, M),
                 encode: $(e, R),
@@ -844,7 +758,7 @@
                 metaTags: G(g.META, [j, w, O, k, S], e),
                 noscriptTags: G(g.NOSCRIPT, [C], e),
                 onChangeClientState: z(e),
-                scriptTags: G(g.SCRIPT, [L, C], e),
+                scriptTags: G(g.SCRIPT, [I, C], e),
                 styleTags: G(g.STYLE, [E], e),
                 title: W(e),
                 titleAttributes: Q(T, e),
@@ -973,7 +887,7 @@
                                 ? arguments[1]
                                 : {}
                             return Object.keys(e).reduce(function (t, r) {
-                              return (t[_[r] || r] = e[r]), t
+                              return (t[B[r] || r] = e[r]), t
                             }, t)
                           })(U(o, ['children']))
                         switch ((r.warnOnInvalidChildren(e, a), e.type)) {
@@ -1067,6 +981,115 @@
         ye.renderStatic = ye.rewind
       }.call(this, r('yLpj')))
     },
+    xKBe: function (e, t, r) {
+      'use strict'
+      var n = r('q1tI'),
+        o = r.n(n),
+        a = r('qhky'),
+        i = function (e) {
+          var t = e.title
+          return o.a.createElement(
+            a.a,
+            null,
+            o.a.createElement('title', null, t),
+            o.a.createElement('link', {
+              href:
+                'https://fonts.googleapis.com/css2?family=Roboto&display=swap',
+              rel: 'stylesheet',
+            })
+          )
+        },
+        c = r('TSYQ'),
+        u = r.n(c),
+        l = r('I77B'),
+        s = function (e) {
+          var t = e.children,
+            r = e.className,
+            n = e.id
+          return o.a.createElement(
+            'div',
+            { id: n, className: u()(l.area, r) },
+            t
+          )
+        },
+        f = r('FZDs'),
+        p = function () {
+          return o.a.createElement(s, { id: f.footer }, 'Footer')
+        },
+        d = r('6r2t'),
+        h = function (e) {
+          var t = e.title
+          return o.a.createElement(
+            s,
+            { id: d.header },
+            o.a.createElement('h1', null, t)
+          )
+        },
+        y = function (e) {
+          var t = e.children,
+            r = e.className,
+            n = e.id
+          return o.a.createElement(
+            'div',
+            { id: n, className: u()(l.area, r) },
+            t
+          )
+        },
+        m = r('LIDZ'),
+        b = function (e) {
+          var t = e.children,
+            r = e.id
+          return o.a.createElement(y, { className: m.areaLight, id: r }, t)
+        },
+        v = r('NyQI'),
+        T = function (e) {
+          var t = e.children
+          return o.a.createElement(b, { id: v.main }, t)
+        },
+        g = r('QVrL'),
+        w = function (e) {
+          var t = e.children,
+            r = e.id
+          return o.a.createElement(y, { className: g.areaDark, id: r }, t)
+        },
+        E = r('Z6Se'),
+        A = function () {
+          return o.a.createElement(
+            w,
+            { id: E.nav },
+            o.a.createElement(
+              'ul',
+              null,
+              o.a.createElement('li', null, 'aaa'),
+              o.a.createElement('li', null, 'bbb'),
+              o.a.createElement('li', null, 'ccc')
+            )
+          )
+        },
+        O = function (e) {
+          var t = e.children,
+            r = e.title
+          return o.a.createElement(
+            o.a.Fragment,
+            null,
+            o.a.createElement(A, null),
+            o.a.createElement(h, { title: r }),
+            o.a.createElement(T, null, t),
+            o.a.createElement(p, null)
+          )
+        },
+        C = r('TKWK')
+      t.a = function (e) {
+        var t = e.children,
+          r = e.title
+        return o.a.createElement(
+          'div',
+          { id: C.page },
+          o.a.createElement(i, { title: r }),
+          o.a.createElement(O, { title: r }, t)
+        )
+      }
+    },
     yLpj: function (e, t) {
       var r
       r = (function () {
@@ -1081,4 +1104,4 @@
     },
   },
 ])
-//# sourceMappingURL=commons-a4f378f72dada5925d9f.js.map
+//# sourceMappingURL=commons-4f7fea98a67c3052acd0.js.map

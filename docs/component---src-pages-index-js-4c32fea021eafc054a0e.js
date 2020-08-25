@@ -6,7 +6,7 @@
       t.r(n)
       var a = t('q1tI'),
         l = t.n(a),
-        c = t('Lpdm')
+        c = t('xKBe')
       n.default = function () {
         return l.a.createElement(
           c.a,
@@ -17,4 +17,4 @@
     },
   },
 ])
-//# sourceMappingURL=component---src-pages-index-js-8ab8250936ee52aada8f.js.map
+//# sourceMappingURL=component---src-pages-index-js-4c32fea021eafc054a0e.js.map

@@ -1,5 +1,5 @@
 import React from 'react'
-import DarkArea from '~dark-area'
+import DarkArea from '../../area/dark-area/dark-area'
 import { nav } from './nav.module.scss'
 
 const Nav = () => (

@@ -1,5 +1,7 @@
 import React from 'react'
-import Area from '~area'
+import Area from '../../area/Area'
 import { footer } from './Footer.module.scss'
 
-export default () => <Area id={footer}>Footer</Area>
+const Footer = () => <Area id={footer}>Footer</Area>
+
+export default Footer
