@@ -15,17 +15,20 @@ body {
 #Header-module--header--3OZ6N {
   grid-area: header;
 }
-.light-area-module--area--light--1bCIG {
+.light-area-module--light-area--2D3IV {
   background-color: #bef67a;
 }
 #Main-module--main--3Jql9 {
   grid-area: main;
 }
-.dark-area-module--area--dark--1AgVr {
+.dark-area-module--dark-area--3Cn6t {
   background-color: #5a9216;
 }
 #nav-module--nav--XOa-H {
   grid-area: nav;
+}
+#nav-module--nav--XOa-H #nav-module--list--2gdHL {
+  list-style: none;
 }
 #Page-module--page--Mo1Sm {
   display: grid;

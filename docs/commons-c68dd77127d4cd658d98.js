@@ -114,13 +114,13 @@
       e.exports = { area: 'area-module--area--2kuCT' }
     },
     LIDZ: function (e, t, r) {
-      e.exports = { areaLight: 'light-area-module--area--light--1bCIG' }
+      e.exports = { lightArea: 'light-area-module--light-area--2D3IV' }
     },
     NyQI: function (e, t, r) {
       e.exports = { main: 'Main-module--main--3Jql9' }
     },
     QVrL: function (e, t, r) {
-      e.exports = { areaDark: 'dark-area-module--area--dark--1AgVr' }
+      e.exports = { darkArea: 'dark-area-module--dark-area--3Cn6t' }
     },
     TKWK: function (e, t, r) {
       e.exports = { page: 'Page-module--page--Mo1Sm' }
@@ -154,7 +154,10 @@
       })()
     },
     Z6Se: function (e, t, r) {
-      e.exports = { nav: 'nav-module--nav--XOa-H' }
+      e.exports = {
+        nav: 'nav-module--nav--XOa-H',
+        list: 'nav-module--list--2gdHL',
+      }
     },
     ZhWT: function (e, t) {
       var r = 'undefined' != typeof Element,
@@ -227,7 +230,7 @@
       'use strict'
       ;(function (e) {
         r.d(t, 'a', function () {
-          return ye
+          return me
         })
         var n,
           o,
@@ -241,8 +244,8 @@
           p = r.n(f),
           d = r('q1tI'),
           h = r.n(d),
-          y = r('6qGY'),
-          m = r.n(y),
+          m = r('6qGY'),
+          y = r.n(m),
           b = 'bodyAttributes',
           v = 'htmlAttributes',
           T = 'titleAttributes',
@@ -272,8 +275,8 @@
           k = 'property',
           x = 'rel',
           I = 'src',
-          L = 'target',
-          P = {
+          P = 'target',
+          L = {
             accesskey: 'accessKey',
             charset: 'charSet',
             class: 'className',
@@ -288,11 +291,11 @@
           R = 'encodeSpecialCharacters',
           q = 'onChangeClientState',
           D = 'titleTemplate',
-          B = Object.keys(P).reduce(function (e, t) {
-            return (e[P[t]] = t), e
+          B = Object.keys(L).reduce(function (e, t) {
+            return (e[L[t]] = t), e
           }, {}),
           F = [g.NOSCRIPT, g.SCRIPT, g.STYLE],
-          _ =
+          H =
             'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
               ? function (e) {
                   return typeof e
@@ -305,7 +308,7 @@
                     ? 'symbol'
                     : typeof e
                 },
-          H = function (e, t) {
+          _ = function (e, t) {
             if (!(e instanceof t))
               throw new TypeError('Cannot call a class as a function')
           },
@@ -362,17 +365,17 @@
                   .replace(/'/g, '&#x27;')
           },
           W = function (e) {
-            var t = $(e, g.TITLE),
-              r = $(e, D)
+            var t = G(e, g.TITLE),
+              r = G(e, D)
             if (r && t)
               return r.replace(/%s/g, function () {
                 return Array.isArray(t) ? t.join('') : t
               })
-            var n = $(e, N)
+            var n = G(e, N)
             return t || n || void 0
           },
           z = function (e) {
-            return $(e, q) || function () {}
+            return G(e, q) || function () {}
           },
           Q = function (e, t) {
             return t
@@ -404,7 +407,7 @@
                 return t
               }, [])
           },
-          G = function (e, t, r) {
+          $ = function (e, t, r) {
             var n = {}
             return r
               .filter(function (t) {
@@ -415,7 +418,7 @@
                       'Helmet: ' +
                         e +
                         ' should be of type "Array". Instead found type "' +
-                        _(t[e]) +
+                        H(t[e]) +
                         '"'
                     ),
                   !1)
@@ -457,14 +460,14 @@
                   })
                 for (var a = Object.keys(o), i = 0; i < a.length; i++) {
                   var c = a[i],
-                    u = m()({}, n[c], o[c])
+                    u = y()({}, n[c], o[c])
                   n[c] = u
                 }
                 return e
               }, [])
               .reverse()
           },
-          $ = function (e, t) {
+          G = function (e, t) {
             for (var r = e.length - 1; r >= 0; r--) {
               var n = e[r]
               if (n.hasOwnProperty(t)) return n[t]
@@ -527,15 +530,15 @@
                 styleTags: le(g.STYLE, s),
               },
               h = {},
-              y = {}
+              m = {}
             Object.keys(d).forEach(function (e) {
               var t = d[e],
                 r = t.newTags,
                 n = t.oldTags
-              r.length && (h[e] = r), n.length && (y[e] = d[e].oldTags)
+              r.length && (h[e] = r), n.length && (m[e] = d[e].oldTags)
             }),
               t && t(),
-              u(e, h, y)
+              u(e, h, m)
           },
           ie = function (e) {
             return Array.isArray(e) ? e.join('') : e
@@ -620,7 +623,7 @@
                 ? arguments[1]
                 : {}
             return Object.keys(e).reduce(function (t, r) {
-              return (t[P[r] || r] = e[r]), t
+              return (t[L[r] || r] = e[r]), t
             }, t)
           },
           pe = function (e, t, r) {
@@ -680,7 +683,7 @@
                           o = (((n = { key: r })['data-react-helmet'] = !0), n)
                         return (
                           Object.keys(t).forEach(function (e) {
-                            var r = P[e] || e
+                            var r = L[e] || e
                             if (r === C || r === E) {
                               var n = t.innerHTML || t.cssText
                               o.dangerouslySetInnerHTML = { __html: n }
@@ -749,17 +752,17 @@
           he = s()(
             function (e) {
               return {
-                baseTag: J([A, L], e),
+                baseTag: J([A, P], e),
                 bodyAttributes: Q(b, e),
-                defer: $(e, M),
-                encode: $(e, R),
+                defer: G(e, M),
+                encode: G(e, R),
                 htmlAttributes: Q(v, e),
-                linkTags: G(g.LINK, [x, A], e),
-                metaTags: G(g.META, [j, w, O, k, S], e),
-                noscriptTags: G(g.NOSCRIPT, [C], e),
+                linkTags: $(g.LINK, [x, A], e),
+                metaTags: $(g.META, [j, w, O, k, S], e),
+                noscriptTags: $(g.NOSCRIPT, [C], e),
                 onChangeClientState: z(e),
-                scriptTags: G(g.SCRIPT, [I, C], e),
-                styleTags: G(g.STYLE, [E], e),
+                scriptTags: $(g.SCRIPT, [I, C], e),
+                styleTags: $(g.STYLE, [E], e),
                 title: W(e),
                 titleAttributes: Q(T, e),
               }
@@ -778,11 +781,11 @@
           )(function () {
             return null
           }),
-          ye =
+          me =
             ((o = he),
             (i = a = (function (e) {
               function t() {
-                return H(this, t), Z(this, e.apply(this, arguments))
+                return _(this, t), Z(this, e.apply(this, arguments))
               }
               return (
                 (function (e, t) {
@@ -978,7 +981,7 @@
               )
             }),
             i)
-        ye.renderStatic = ye.rewind
+        me.renderStatic = me.rewind
       }.call(this, r('yLpj')))
     },
     xKBe: function (e, t, r) {
@@ -1025,7 +1028,7 @@
             o.a.createElement('h1', null, t)
           )
         },
-        y = function (e) {
+        m = function (e) {
           var t = e.children,
             r = e.className,
             n = e.id
@@ -1035,11 +1038,11 @@
             t
           )
         },
-        m = r('LIDZ'),
+        y = r('LIDZ'),
         b = function (e) {
           var t = e.children,
             r = e.id
-          return o.a.createElement(y, { className: m.areaLight, id: r }, t)
+          return o.a.createElement(m, { className: y.lightArea, id: r }, t)
         },
         v = r('NyQI'),
         T = function (e) {
@@ -1050,7 +1053,7 @@
         w = function (e) {
           var t = e.children,
             r = e.id
-          return o.a.createElement(y, { className: g.areaDark, id: r }, t)
+          return o.a.createElement(m, { className: g.darkArea, id: r }, t)
         },
         E = r('Z6Se'),
         A = function () {
@@ -1059,7 +1062,7 @@
             { id: E.nav },
             o.a.createElement(
               'ul',
-              null,
+              { id: E.list },
               o.a.createElement('li', null, 'aaa'),
               o.a.createElement('li', null, 'bbb'),
               o.a.createElement('li', null, 'ccc')
@@ -1104,4 +1107,4 @@
     },
   },
 ])
-//# sourceMappingURL=commons-4f7fea98a67c3052acd0.js.map
+//# sourceMappingURL=commons-c68dd77127d4cd658d98.js.map
