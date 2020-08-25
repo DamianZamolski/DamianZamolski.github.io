@@ -1,15 +1,15 @@
 import React from 'react'
-import Area from '~area'
+import DarkArea from '~dark-area'
 import { nav } from './nav.module.scss'
 
 const Nav = () => (
-  <Area id={nav} variant='dark'>
+  <DarkArea id={nav}>
     <ul>
       <li>aaa</li>
       <li>bbb</li>
       <li>ccc</li>
     </ul>
-  </Area>
+  </DarkArea>
 )
 
 export default Nav

@@ -22,7 +22,7 @@
           e
         )
       }
-      var u = !(
+      var c = !(
         'undefined' == typeof window ||
         !window.document ||
         !window.document.createElement
@@ -43,15 +43,15 @@
             throw new Error(
               'Expected WrappedComponent to be a React component.'
             )
-          var c,
+          var u,
             l = []
           function s() {
-            ;(c = e(
+            ;(u = e(
               l.map(function (e) {
                 return e.props
               })
             )),
-              f.canUseDOM ? t(c) : r && (c = r(c))
+              f.canUseDOM ? t(u) : r && (u = r(u))
           }
           var f = (function (e) {
             var t, r
@@ -63,15 +63,15 @@
               (t.prototype.constructor = t),
               (t.__proto__ = r),
               (o.peek = function () {
-                return c
+                return u
               }),
               (o.rewind = function () {
                 if (o.canUseDOM)
                   throw new Error(
                     'You may only call rewind() on the server. Call peek() to read the current state.'
                   )
-                var e = c
-                return (c = void 0), (l = []), e
+                var e = u
+                return (u = void 0), (l = []), e
               })
             var i = o.prototype
             return (
@@ -101,7 +101,7 @@
                 })(n) +
                 ')'
             ),
-            i(f, 'canUseDOM', u),
+            i(f, 'canUseDOM', c),
             f
           )
         }
@@ -111,11 +111,10 @@
       e.exports = { footer: 'Footer-module--footer--V8wej' }
     },
     I77B: function (e, t, r) {
-      e.exports = {
-        area: 'area-module--area--2kuCT',
-        areaDark: 'area-module--area--dark--1d-62',
-        areaLight: 'area-module--area--light--ms8bQ',
-      }
+      e.exports = { area: 'area-module--area--2kuCT' }
+    },
+    LIDZ: function (e, t, r) {
+      e.exports = { areaLight: 'light-area-module--area--light--1bCIG' }
     },
     Lpdm: function (e, t, r) {
       'use strict'
@@ -123,22 +122,15 @@
         o = r.n(n),
         a = r('qhky'),
         i = r('TSYQ'),
-        u = r.n(i),
-        c = r('I77B'),
+        c = r.n(i),
+        u = r('I77B'),
         l = function (e) {
           var t = e.children,
-            r = e.id,
-            n = e.variant
+            r = e.className,
+            n = e.id
           return o.a.createElement(
             'div',
-            {
-              id: r,
-              className: u()(
-                c.area,
-                'dark' === n && c.areaDark,
-                'light' === n && c.areaLight
-              ),
-            },
+            { id: n, className: c()(u.area, r) },
             t
           )
         },
@@ -155,16 +147,28 @@
             o.a.createElement('h1', null, t)
           )
         },
-        h = r('NyQI'),
+        h = r('LIDZ'),
         y = function (e) {
-          var t = e.children
-          return o.a.createElement(l, { id: h.main, variant: 'light' }, t)
+          var t = e.children,
+            r = e.id
+          return o.a.createElement(l, { className: h.areaLight, id: r }, t)
         },
-        m = r('Z6Se'),
-        b = function () {
+        m = r('NyQI'),
+        b = function (e) {
+          var t = e.children
+          return o.a.createElement(y, { id: m.main }, t)
+        },
+        v = r('QVrL'),
+        T = function (e) {
+          var t = e.children,
+            r = e.id
+          return o.a.createElement(l, { className: v.areaDark, id: r }, t)
+        },
+        g = r('Z6Se'),
+        w = function () {
           return o.a.createElement(
-            l,
-            { id: m.nav, variant: 'dark' },
+            T,
+            { id: g.nav },
             o.a.createElement(
               'ul',
               null,
@@ -174,13 +178,13 @@
             )
           )
         },
-        v = r('TKWK')
+        E = r('TKWK')
       t.a = function (e) {
         var t = e.children,
           r = e.title
         return o.a.createElement(
           'div',
-          { id: v.page },
+          { id: E.page },
           o.a.createElement(
             a.a,
             null,
@@ -191,15 +195,18 @@
               rel: 'stylesheet',
             })
           ),
-          o.a.createElement(b, null),
+          o.a.createElement(w, null),
           o.a.createElement(d, { title: r }),
-          o.a.createElement(y, null, t),
+          o.a.createElement(b, null, t),
           o.a.createElement(f, null)
         )
       }
     },
     NyQI: function (e, t, r) {
       e.exports = { main: 'Main-module--main--3Jql9' }
+    },
+    QVrL: function (e, t, r) {
+      e.exports = { areaDark: 'dark-area-module--area--dark--1AgVr' }
     },
     TKWK: function (e, t, r) {
       e.exports = { page: 'Page-module--page--Mo1Sm' }
@@ -219,7 +226,7 @@
                 var i = o.apply(null, n)
                 i && e.push(i)
               } else if ('object' === a)
-                for (var u in n) r.call(n, u) && n[u] && e.push(u)
+                for (var c in n) r.call(n, c) && n[c] && e.push(c)
             }
           }
           return e.join(' ')
@@ -246,29 +253,29 @@
             if (t === i) return !0
             if (t && i && 'object' == typeof t && 'object' == typeof i) {
               if (t.constructor !== i.constructor) return !1
-              var u, c, l, s
+              var c, u, l, s
               if (Array.isArray(t)) {
-                if ((u = t.length) != i.length) return !1
-                for (c = u; 0 != c--; ) if (!e(t[c], i[c])) return !1
+                if ((c = t.length) != i.length) return !1
+                for (u = c; 0 != u--; ) if (!e(t[u], i[u])) return !1
                 return !0
               }
               if (n && t instanceof Map && i instanceof Map) {
                 if (t.size !== i.size) return !1
-                for (s = t.entries(); !(c = s.next()).done; )
-                  if (!i.has(c.value[0])) return !1
-                for (s = t.entries(); !(c = s.next()).done; )
-                  if (!e(c.value[1], i.get(c.value[0]))) return !1
+                for (s = t.entries(); !(u = s.next()).done; )
+                  if (!i.has(u.value[0])) return !1
+                for (s = t.entries(); !(u = s.next()).done; )
+                  if (!e(u.value[1], i.get(u.value[0]))) return !1
                 return !0
               }
               if (o && t instanceof Set && i instanceof Set) {
                 if (t.size !== i.size) return !1
-                for (s = t.entries(); !(c = s.next()).done; )
-                  if (!i.has(c.value[0])) return !1
+                for (s = t.entries(); !(u = s.next()).done; )
+                  if (!i.has(u.value[0])) return !1
                 return !0
               }
               if (a && ArrayBuffer.isView(t) && ArrayBuffer.isView(i)) {
-                if ((u = t.length) != i.length) return !1
-                for (c = u; 0 != c--; ) if (t[c] !== i[c]) return !1
+                if ((c = t.length) != i.length) return !1
+                for (u = c; 0 != u--; ) if (t[u] !== i[u]) return !1
                 return !0
               }
               if (t.constructor === RegExp)
@@ -277,16 +284,16 @@
                 return t.valueOf() === i.valueOf()
               if (t.toString !== Object.prototype.toString)
                 return t.toString() === i.toString()
-              if ((u = (l = Object.keys(t)).length) !== Object.keys(i).length)
+              if ((c = (l = Object.keys(t)).length) !== Object.keys(i).length)
                 return !1
-              for (c = u; 0 != c--; )
-                if (!Object.prototype.hasOwnProperty.call(i, l[c])) return !1
+              for (u = c; 0 != u--; )
+                if (!Object.prototype.hasOwnProperty.call(i, l[u])) return !1
               if (r && t instanceof Element) return !1
-              for (c = u; 0 != c--; )
+              for (u = c; 0 != u--; )
                 if (
-                  (('_owner' !== l[c] && '__v' !== l[c] && '__o' !== l[c]) ||
+                  (('_owner' !== l[u] && '__v' !== l[u] && '__o' !== l[u]) ||
                     !t.$$typeof) &&
-                  !e(t[l[c]], i[l[c]])
+                  !e(t[l[u]], i[l[u]])
                 )
                   return !1
               return !0
@@ -312,8 +319,8 @@
           o,
           a,
           i,
-          u = r('17x9'),
-          c = r.n(u),
+          c = r('17x9'),
+          u = r.n(c),
           l = r('8+s/'),
           s = r.n(l),
           f = r('ZhWT'),
@@ -350,9 +357,9 @@
           j = 'name',
           k = 'property',
           x = 'rel',
-          P = 'src',
+          L = 'src',
           I = 'target',
-          L = {
+          P = {
             accesskey: 'accessKey',
             charset: 'charSet',
             class: 'className',
@@ -362,13 +369,13 @@
             itemprop: 'itemProp',
             tabindex: 'tabIndex',
           },
-          M = 'defaultTitle',
-          N = 'defer',
+          N = 'defaultTitle',
+          M = 'defer',
           R = 'encodeSpecialCharacters',
           q = 'onChangeClientState',
           D = 'titleTemplate',
-          _ = Object.keys(L).reduce(function (e, t) {
-            return (e[L[t]] = t), e
+          _ = Object.keys(P).reduce(function (e, t) {
+            return (e[P[t]] = t), e
           }, {}),
           B = [g.NOSCRIPT, g.SCRIPT, g.STYLE],
           F =
@@ -419,7 +426,7 @@
                 (Object.prototype.hasOwnProperty.call(e, n) && (r[n] = e[n]))
             return r
           },
-          W = function (e, t) {
+          Z = function (e, t) {
             if (!e)
               throw new ReferenceError(
                 "this hasn't been initialised - super() hasn't been called"
@@ -428,7 +435,7 @@
               ? e
               : t
           },
-          Z = function (e) {
+          V = function (e) {
             var t =
               !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1]
             return !1 === t
@@ -440,20 +447,20 @@
                   .replace(/"/g, '&quot;')
                   .replace(/'/g, '&#x27;')
           },
-          z = function (e) {
-            var t = G(e, g.TITLE),
-              r = G(e, D)
+          W = function (e) {
+            var t = $(e, g.TITLE),
+              r = $(e, D)
             if (r && t)
               return r.replace(/%s/g, function () {
                 return Array.isArray(t) ? t.join('') : t
               })
-            var n = G(e, M)
+            var n = $(e, N)
             return t || n || void 0
           },
-          Q = function (e) {
-            return G(e, q) || function () {}
+          z = function (e) {
+            return $(e, q) || function () {}
           },
-          V = function (e, t) {
+          Q = function (e, t) {
             return t
               .filter(function (t) {
                 return void 0 !== t[e]
@@ -483,7 +490,7 @@
                 return t
               }, [])
           },
-          $ = function (e, t, r) {
+          G = function (e, t, r) {
             var n = {}
             return r
               .filter(function (t) {
@@ -512,15 +519,15 @@
                     i < a.length;
                     i++
                   ) {
-                    var u = a[i],
-                      c = u.toLowerCase()
-                    ;-1 === t.indexOf(c) ||
+                    var c = a[i],
+                      u = c.toLowerCase()
+                    ;-1 === t.indexOf(u) ||
                       (r === x && 'canonical' === e[r].toLowerCase()) ||
-                      (c === x && 'stylesheet' === e[c].toLowerCase()) ||
-                      (r = c),
-                      -1 === t.indexOf(u) ||
-                        (u !== C && u !== E && u !== S) ||
-                        (r = u)
+                      (u === x && 'stylesheet' === e[u].toLowerCase()) ||
+                      (r = u),
+                      -1 === t.indexOf(c) ||
+                        (c !== C && c !== E && c !== S) ||
+                        (r = c)
                   }
                   if (!r || !e[r]) return !1
                   var l = e[r].toLowerCase()
@@ -535,15 +542,15 @@
                     return e.push(t)
                   })
                 for (var a = Object.keys(o), i = 0; i < a.length; i++) {
-                  var u = a[i],
-                    c = m()({}, n[u], o[u])
-                  n[u] = c
+                  var c = a[i],
+                    u = m()({}, n[c], o[c])
+                  n[c] = u
                 }
                 return e
               }, [])
               .reverse()
           },
-          G = function (e, t) {
+          $ = function (e, t) {
             for (var r = e.length - 1; r >= 0; r--) {
               var n = e[r]
               if (n.hasOwnProperty(t)) return n[t]
@@ -590,18 +597,18 @@
               o = e.htmlAttributes,
               a = e.linkTags,
               i = e.metaTags,
-              u = e.noscriptTags,
-              c = e.onChangeClientState,
+              c = e.noscriptTags,
+              u = e.onChangeClientState,
               l = e.scriptTags,
               s = e.styleTags,
               f = e.title,
               p = e.titleAttributes
-            ce(g.BODY, n), ce(g.HTML, o), ue(f, p)
+            ue(g.BODY, n), ue(g.HTML, o), ce(f, p)
             var d = {
                 baseTag: le(g.BASE, r),
                 linkTags: le(g.LINK, a),
                 metaTags: le(g.META, i),
-                noscriptTags: le(g.NOSCRIPT, u),
+                noscriptTags: le(g.NOSCRIPT, c),
                 scriptTags: le(g.SCRIPT, l),
                 styleTags: le(g.STYLE, s),
               },
@@ -614,16 +621,16 @@
               r.length && (h[e] = r), n.length && (y[e] = d[e].oldTags)
             }),
               t && t(),
-              c(e, h, y)
+              u(e, h, y)
           },
           ie = function (e) {
             return Array.isArray(e) ? e.join('') : e
           },
-          ue = function (e, t) {
-            void 0 !== e && document.title !== e && (document.title = ie(e)),
-              ce(g.TITLE, t)
-          },
           ce = function (e, t) {
+            void 0 !== e && document.title !== e && (document.title = ie(e)),
+              ue(g.TITLE, t)
+          },
+          ue = function (e, t) {
             var r = document.getElementsByTagName(e)[0]
             if (r) {
               for (
@@ -631,15 +638,15 @@
                   o = n ? n.split(',') : [],
                   a = [].concat(o),
                   i = Object.keys(t),
-                  u = 0;
-                u < i.length;
-                u++
+                  c = 0;
+                c < i.length;
+                c++
               ) {
-                var c = i[u],
-                  l = t[c] || ''
-                r.getAttribute(c) !== l && r.setAttribute(c, l),
-                  -1 === o.indexOf(c) && o.push(c)
-                var s = a.indexOf(c)
+                var u = i[c],
+                  l = t[u] || ''
+                r.getAttribute(u) !== l && r.setAttribute(u, l),
+                  -1 === o.indexOf(u) && o.push(u)
+                var s = a.indexOf(u)
                 ;-1 !== s && a.splice(s, 1)
               }
               for (var f = a.length - 1; f >= 0; f--) r.removeAttribute(a[f])
@@ -668,8 +675,8 @@
                           ? (r.styleSheet.cssText = t.cssText)
                           : r.appendChild(document.createTextNode(t.cssText))
                       else {
-                        var u = void 0 === t[n] ? '' : t[n]
-                        r.setAttribute(n, u)
+                        var c = void 0 === t[n] ? '' : t[n]
+                        r.setAttribute(n, c)
                       }
                   r.setAttribute('data-react-helmet', 'true'),
                     o.some(function (e, t) {
@@ -699,7 +706,7 @@
                 ? arguments[1]
                 : {}
             return Object.keys(e).reduce(function (t, r) {
-              return (t[L[r] || r] = e[r]), t
+              return (t[P[r] || r] = e[r]), t
             }, t)
           },
           pe = function (e, t, r) {
@@ -726,14 +733,14 @@
                             ' data-react-helmet="true" ' +
                             o +
                             '>' +
-                            Z(a, n) +
+                            V(a, n) +
                             '</' +
                             e +
                             '>'
                         : '<' +
                             e +
                             ' data-react-helmet="true">' +
-                            Z(a, n) +
+                            V(a, n) +
                             '</' +
                             e +
                             '>'
@@ -759,7 +766,7 @@
                           o = (((n = { key: r })['data-react-helmet'] = !0), n)
                         return (
                           Object.keys(t).forEach(function (e) {
-                            var r = L[e] || e
+                            var r = P[e] || e
                             if (r === C || r === E) {
                               var n = t.innerHTML || t.cssText
                               o.dangerouslySetInnerHTML = { __html: n }
@@ -781,7 +788,7 @@
                               var o =
                                 void 0 === n[t]
                                   ? t
-                                  : t + '="' + Z(n[t], r) + '"'
+                                  : t + '="' + V(n[t], r) + '"'
                               return e ? e + ' ' + o : o
                             }, ''),
                           a = n.innerHTML || n.cssText || '',
@@ -807,8 +814,8 @@
               o = e.htmlAttributes,
               a = e.linkTags,
               i = e.metaTags,
-              u = e.noscriptTags,
-              c = e.scriptTags,
+              c = e.noscriptTags,
+              u = e.scriptTags,
               l = e.styleTags,
               s = e.title,
               f = void 0 === s ? '' : s,
@@ -819,8 +826,8 @@
               htmlAttributes: pe(v, o, n),
               link: pe(g.LINK, a, n),
               meta: pe(g.META, i, n),
-              noscript: pe(g.NOSCRIPT, u, n),
-              script: pe(g.SCRIPT, c, n),
+              noscript: pe(g.NOSCRIPT, c, n),
+              script: pe(g.SCRIPT, u, n),
               style: pe(g.STYLE, l, n),
               title: pe(g.TITLE, { title: f, titleAttributes: p }, n),
             }
@@ -829,18 +836,18 @@
             function (e) {
               return {
                 baseTag: J([A, I], e),
-                bodyAttributes: V(b, e),
-                defer: G(e, N),
-                encode: G(e, R),
-                htmlAttributes: V(v, e),
-                linkTags: $(g.LINK, [x, A], e),
-                metaTags: $(g.META, [j, w, O, k, S], e),
-                noscriptTags: $(g.NOSCRIPT, [C], e),
-                onChangeClientState: Q(e),
-                scriptTags: $(g.SCRIPT, [P, C], e),
-                styleTags: $(g.STYLE, [E], e),
-                title: z(e),
-                titleAttributes: V(T, e),
+                bodyAttributes: Q(b, e),
+                defer: $(e, M),
+                encode: $(e, R),
+                htmlAttributes: Q(v, e),
+                linkTags: G(g.LINK, [x, A], e),
+                metaTags: G(g.META, [j, w, O, k, S], e),
+                noscriptTags: G(g.NOSCRIPT, [C], e),
+                onChangeClientState: z(e),
+                scriptTags: G(g.SCRIPT, [L, C], e),
+                styleTags: G(g.STYLE, [E], e),
+                title: W(e),
+                titleAttributes: Q(T, e),
               }
             },
             function (e) {
@@ -861,7 +868,7 @@
             ((o = he),
             (i = a = (function (e) {
               function t() {
-                return H(this, t), W(this, e.apply(this, arguments))
+                return H(this, t), Z(this, e.apply(this, arguments))
               }
               return (
                 (function (e, t) {
@@ -1017,22 +1024,22 @@
               )
             })(h.a.Component)),
             (a.propTypes = {
-              base: c.a.object,
-              bodyAttributes: c.a.object,
-              children: c.a.oneOfType([c.a.arrayOf(c.a.node), c.a.node]),
-              defaultTitle: c.a.string,
-              defer: c.a.bool,
-              encodeSpecialCharacters: c.a.bool,
-              htmlAttributes: c.a.object,
-              link: c.a.arrayOf(c.a.object),
-              meta: c.a.arrayOf(c.a.object),
-              noscript: c.a.arrayOf(c.a.object),
-              onChangeClientState: c.a.func,
-              script: c.a.arrayOf(c.a.object),
-              style: c.a.arrayOf(c.a.object),
-              title: c.a.string,
-              titleAttributes: c.a.object,
-              titleTemplate: c.a.string,
+              base: u.a.object,
+              bodyAttributes: u.a.object,
+              children: u.a.oneOfType([u.a.arrayOf(u.a.node), u.a.node]),
+              defaultTitle: u.a.string,
+              defer: u.a.bool,
+              encodeSpecialCharacters: u.a.bool,
+              htmlAttributes: u.a.object,
+              link: u.a.arrayOf(u.a.object),
+              meta: u.a.arrayOf(u.a.object),
+              noscript: u.a.arrayOf(u.a.object),
+              onChangeClientState: u.a.func,
+              script: u.a.arrayOf(u.a.object),
+              style: u.a.arrayOf(u.a.object),
+              title: u.a.string,
+              titleAttributes: u.a.object,
+              titleTemplate: u.a.string,
             }),
             (a.defaultProps = { defer: !0, encodeSpecialCharacters: !0 }),
             (a.peek = o.peek),
@@ -1074,4 +1081,4 @@
     },
   },
 ])
-//# sourceMappingURL=commons-67ec8cd51222d59fee16.js.map
+//# sourceMappingURL=commons-a4f378f72dada5925d9f.js.map

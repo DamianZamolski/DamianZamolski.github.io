@@ -1,9 +1,5 @@
 import React from 'react'
-import Area from '~area'
+import LightArea from '~light-area'
 import { main } from './Main.module.scss'
 
-export default ({ children }) => (
-  <Area id={main} variant='light'>
-    {children}
-  </Area>
-)
+export default ({ children }) => <LightArea id={main}>{children}</LightArea>

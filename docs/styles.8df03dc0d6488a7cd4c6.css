@@ -15,20 +15,20 @@ body {
   background-color: var(--background-color);
   padding: var(--space);
 }
-.area-module--area--dark--1d-62 {
-  background-color: var(--dark-background-color);
-}
-.area-module--area--light--ms8bQ {
-  background-color: var(--light-background-color);
-}
 #Footer-module--footer--V8wej {
   grid-area: footer;
 }
 #Header-module--header--3OZ6N {
   grid-area: header;
 }
+.light-area-module--area--light--1bCIG {
+  background-color: var(--light-background-color);
+}
 #Main-module--main--3Jql9 {
   grid-area: main;
+}
+.dark-area-module--area--dark--1AgVr {
+  background-color: var(--dark-background-color);
 }
 #nav-module--nav--XOa-H {
   grid-area: nav;
