@@ -1,14 +1,14 @@
 {
   "errors": [],
   "warnings": [
-    "./src/components/page/area/Area.js\nThere are multiple modules with names that only differ in casing.\nThis can lead to unexpected behavior when compiling on a filesystem with other case-semantic.\nUse equal casing. Compare these module identifiers:\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\Area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\areas\\footer\\footer.js\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\light-area\\light-area.js"
+    "./src/components/page/area/Area.js\nThere are multiple modules with names that only differ in casing.\nThis can lead to unexpected behavior when compiling on a filesystem with other case-semantic.\nUse equal casing. Compare these module identifiers:\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\Area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\areas\\header\\header.js\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\light-area\\light-area.js"
   ],
   "namedChunkGroups": {
     "polyfill": {
       "chunks": [2, 0, 8],
       "assets": [
-        "webpack-runtime-e874375574146bace383.js",
-        "webpack-runtime-e874375574146bace383.js.map",
+        "webpack-runtime-87531b2dc165eee4325a.js",
+        "webpack-runtime-87531b2dc165eee4325a.js.map",
         "commons-9d0964e692c459b4394b.js",
         "commons-9d0964e692c459b4394b.js.map",
         "polyfill-88d9aed314b16f9b2adc.js",
@@ -20,8 +20,8 @@
     "app": {
       "chunks": [2, 1, 7, 3],
       "assets": [
-        "webpack-runtime-e874375574146bace383.js",
-        "webpack-runtime-e874375574146bace383.js.map",
+        "webpack-runtime-87531b2dc165eee4325a.js",
+        "webpack-runtime-87531b2dc165eee4325a.js.map",
         "styles.e5db23e5f1206ad907a1.css",
         "styles-c2fe8482057191dca484.js",
         "styles-c2fe8482057191dca484.js.map",
@@ -69,8 +69,8 @@
         "styles-c2fe8482057191dca484.js.map",
         "commons-9d0964e692c459b4394b.js",
         "commons-9d0964e692c459b4394b.js.map",
-        "component---src-pages-macronutrients-js-90cf86454840b6d33956.js",
-        "component---src-pages-macronutrients-js-90cf86454840b6d33956.js.map"
+        "component---src-pages-macronutrients-js-86c582b1150cbf6ad1a9.js",
+        "component---src-pages-macronutrients-js-86c582b1150cbf6ad1a9.js.map"
       ],
       "children": {},
       "childAssets": {}
@@ -78,12 +78,12 @@
   },
   "assetsByChunkName": {
     "polyfill": [
-      "webpack-runtime-e874375574146bace383.js",
+      "webpack-runtime-87531b2dc165eee4325a.js",
       "commons-9d0964e692c459b4394b.js",
       "polyfill-88d9aed314b16f9b2adc.js"
     ],
     "app": [
-      "webpack-runtime-e874375574146bace383.js",
+      "webpack-runtime-87531b2dc165eee4325a.js",
       "styles.e5db23e5f1206ad907a1.css",
       "styles-c2fe8482057191dca484.js",
       "framework-fd2b85530eec85104a39.js",
@@ -105,7 +105,7 @@
       "styles.e5db23e5f1206ad907a1.css",
       "styles-c2fe8482057191dca484.js",
       "commons-9d0964e692c459b4394b.js",
-      "component---src-pages-macronutrients-js-90cf86454840b6d33956.js"
+      "component---src-pages-macronutrients-js-86c582b1150cbf6ad1a9.js"
     ]
   }
 }
