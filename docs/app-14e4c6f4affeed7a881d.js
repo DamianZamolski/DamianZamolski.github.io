@@ -1,5 +1,5 @@
 ;(window.webpackJsonp = window.webpackJsonp || []).push([
-  [3],
+  [4],
   {
     '+ZDr': function (t, e, n) {
       'use strict'
@@ -1096,17 +1096,17 @@
     NsGk: function (t, e, n) {
       e.components = {
         'component---src-pages-books-12-rules-for-life-js': function () {
-          return Promise.all([n.e(1), n.e(0), n.e(4)]).then(
+          return Promise.all([n.e(1), n.e(2), n.e(0), n.e(5)]).then(
             n.bind(null, 'VcKj')
           )
         },
         'component---src-pages-index-js': function () {
-          return Promise.all([n.e(1), n.e(0), n.e(5)]).then(
+          return Promise.all([n.e(1), n.e(2), n.e(0), n.e(6)]).then(
             n.bind(null, 'RXBc')
           )
         },
         'component---src-pages-macronutrients-js': function () {
-          return Promise.all([n.e(1), n.e(0), n.e(6)]).then(
+          return Promise.all([n.e(1), n.e(2), n.e(0), n.e(7)]).then(
             n.bind(null, 'G3Xh')
           )
         },
@@ -2902,6 +2902,6 @@
         })
     },
   },
-  [['UxWs', 2, 1, 7]],
+  [['UxWs', 3, 1, 8]],
 ])
-//# sourceMappingURL=app-889b7b6e4cba2b107a58.js.map
+//# sourceMappingURL=app-14e4c6f4affeed7a881d.js.map

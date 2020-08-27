@@ -1,5 +1,5 @@
 ;(window.webpackJsonp = window.webpackJsonp || []).push([
-  [5],
+  [6],
   {
     RXBc: function (e, n, t) {
       'use strict'
@@ -17,4 +17,4 @@
     },
   },
 ])
-//# sourceMappingURL=component---src-pages-index-js-6c9bef5cc7b8aa28b17c.js.map
+//# sourceMappingURL=component---src-pages-index-js-b2d5589c918b7d34b9fe.js.map
