@@ -18,30 +18,32 @@
             l.a.createElement('input', {
               onChange: n,
               type: 'number',
+              min: 0,
+              max: 99,
               value: a,
             })
           )
         },
-        c = function () {
-          var e = Object(a.useState)(0),
-            t = e[0],
-            n = e[1]
+        c = function (e, t) {
+          var n = Object(a.useState)(0),
+            l = n[0],
+            u = n[1]
           return [
-            t,
+            l,
             Object(a.useCallback)(
-              function (e) {
-                var t = e.target.value
-                return n(t)
+              function (n) {
+                var a = n.target.value
+                return u(a < e ? a : a > t ? t : a)
               },
-              [n]
+              [u]
             ),
           ]
         }
       t.default = function () {
-        var e = c(),
+        var e = c(0, 200),
           t = e[0],
           n = e[1],
-          o = c(),
+          o = c(0, 100),
           i = o[0],
           m = o[1],
           s = c(),
@@ -95,7 +97,7 @@
             },
             [g, v]
           ),
-          F = Object(a.useMemo)(
+          x = Object(a.useMemo)(
             function () {
               return ((g - 4 * v) / 8).toFixed(0)
             },
@@ -160,11 +162,11 @@
             ),
             l.a.createElement('li', null, 'Proteins ≈ ', v, 'g'),
             l.a.createElement('li', null, 'Fats ≈ ', O, 'g'),
-            l.a.createElement('li', null, 'Carbohydrates ≈ ', F, 'g')
+            l.a.createElement('li', null, 'Carbohydrates ≈ ', x, 'g')
           )
         )
       }
     },
   },
 ])
-//# sourceMappingURL=component---src-pages-macronutrients-js-8d8d87f7441d143719bc.js.map
+//# sourceMappingURL=component---src-pages-macronutrients-js-677dff164c76d4e0ba4e.js.map

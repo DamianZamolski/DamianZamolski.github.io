@@ -9,7 +9,7 @@ import Area from '../../area/Area'
 import { footer } from './Footer.module.scss'
 
 const Footer = () => (
-  <Area id={footer}>
+  <Area Component='footer' id={footer}>
     <FontAwesomeIcon icon={faTwitterSquare} />
     <FontAwesomeIcon icon={faGithubSquare} />
   </Area>

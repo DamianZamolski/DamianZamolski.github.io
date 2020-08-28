@@ -4,7 +4,7 @@ import { nav, list } from './nav.module.scss'
 import Link from './link'
 
 const Nav = () => (
-  <DarkArea id={nav}>
+  <DarkArea Component='nav' id={nav}>
     <ul id={list}>
       <Link to='/macronutrients'>Macronutrients</Link>
     </ul>

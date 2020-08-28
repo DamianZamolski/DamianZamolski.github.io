@@ -269,8 +269,8 @@
           w = 'cssText',
           A = 'href',
           E = 'http-equiv',
-          S = 'innerHTML',
-          C = 'itemprop',
+          C = 'innerHTML',
+          S = 'itemprop',
           j = 'name',
           x = 'property',
           k = 'rel',
@@ -443,7 +443,7 @@
                       (u === k && 'stylesheet' === e[u].toLowerCase()) ||
                       (r = u),
                       -1 === t.indexOf(c) ||
-                        (c !== S && c !== w && c !== C) ||
+                        (c !== C && c !== w && c !== S) ||
                         (r = c)
                   }
                   if (!r || !e[r]) return !1
@@ -586,7 +586,7 @@
                   var r = document.createElement(e)
                   for (var n in t)
                     if (t.hasOwnProperty(n))
-                      if (n === S) r.innerHTML = t.innerHTML
+                      if (n === C) r.innerHTML = t.innerHTML
                       else if (n === w)
                         r.styleSheet
                           ? (r.styleSheet.cssText = t.cssText)
@@ -684,7 +684,7 @@
                         return (
                           Object.keys(t).forEach(function (e) {
                             var r = L[e] || e
-                            if (r === S || r === w) {
+                            if (r === C || r === w) {
                               var n = t.innerHTML || t.cssText
                               o.dangerouslySetInnerHTML = { __html: n }
                             } else o[r] = t[e]
@@ -699,7 +699,7 @@
                       return t.reduce(function (t, n) {
                         var o = Object.keys(n)
                             .filter(function (e) {
-                              return !(e === S || e === w)
+                              return !(e === C || e === w)
                             })
                             .reduce(function (e, t) {
                               var o =
@@ -758,10 +758,10 @@
                 encode: G(e, R),
                 htmlAttributes: Q(v, e),
                 linkTags: $(T.LINK, [k, A], e),
-                metaTags: $(T.META, [j, O, E, x, C], e),
-                noscriptTags: $(T.NOSCRIPT, [S], e),
+                metaTags: $(T.META, [j, O, E, x, S], e),
+                noscriptTags: $(T.NOSCRIPT, [C], e),
                 onChangeClientState: V(e),
-                scriptTags: $(T.SCRIPT, [P, S], e),
+                scriptTags: $(T.SCRIPT, [P, C], e),
                 styleTags: $(T.STYLE, [w], e),
                 title: Z(e),
                 titleAttributes: Q(g, e),
@@ -1340,23 +1340,21 @@
         }.bind(null, o.a.createElement),
         A = r('8tEE'),
         E = r('TSYQ'),
-        S = r.n(E),
-        C = r('I77B'),
+        C = r.n(E),
+        S = r('I77B'),
         j = function (e) {
           var t = e.children,
             r = e.className,
-            n = e.id
-          return o.a.createElement(
-            'div',
-            { id: n, className: S()(C.area, r) },
-            t
-          )
+            n = e.Component,
+            a = void 0 === n ? 'div' : n,
+            i = e.id
+          return o.a.createElement(a, { id: i, className: C()(S.area, r) }, t)
         },
         x = r('FZDs'),
         k = function () {
           return o.a.createElement(
             j,
-            { id: x.footer },
+            { Component: 'footer', id: x.footer },
             o.a.createElement(O, { icon: A.b }),
             o.a.createElement(O, { icon: A.a })
           )
@@ -1366,36 +1364,44 @@
           var t = e.title
           return o.a.createElement(
             j,
-            { id: P.header },
+            { Component: 'header', id: P.header },
             o.a.createElement('h1', null, t)
           )
         },
         L = function (e) {
           var t = e.children,
             r = e.className,
-            n = e.id
-          return o.a.createElement(
-            'div',
-            { id: n, className: S()(C.area, r) },
-            t
-          )
+            n = e.Component,
+            a = void 0 === n ? 'div' : n,
+            i = e.id
+          return o.a.createElement(a, { id: i, className: C()(S.area, r) }, t)
         },
         N = r('LIDZ'),
         M = function (e) {
           var t = e.children,
-            r = e.id
-          return o.a.createElement(L, { className: N.lightArea, id: r }, t)
+            r = e.Component,
+            n = e.id
+          return o.a.createElement(
+            L,
+            { className: N.lightArea, Component: r, id: n },
+            t
+          )
         },
         R = r('NyQI'),
         D = function (e) {
           var t = e.children
-          return o.a.createElement(M, { id: R.main }, t)
+          return o.a.createElement(M, { Component: 'main', id: R.main }, t)
         },
         q = r('QVrL'),
         _ = function (e) {
           var t = e.children,
-            r = e.id
-          return o.a.createElement(L, { className: q.darkArea, id: r }, t)
+            r = e.Component,
+            n = e.id
+          return o.a.createElement(
+            L,
+            { className: q.darkArea, Component: r, id: n },
+            t
+          )
         },
         B = r('Z6Se'),
         H = r('Wbzz'),
@@ -1407,7 +1413,7 @@
         z = function () {
           return o.a.createElement(
             _,
-            { id: B.nav },
+            { Component: 'nav', id: B.nav },
             o.a.createElement(
               'ul',
               { id: B.list },
@@ -1441,4 +1447,4 @@
     },
   },
 ])
-//# sourceMappingURL=commons-35508588c2909041474d.js.map
+//# sourceMappingURL=commons-a8ba53c8e2bb51ba06e5.js.map

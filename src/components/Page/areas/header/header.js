@@ -3,7 +3,7 @@ import Area from '../../area/Area'
 import { header } from './Header.module.scss'
 
 const Header = ({ title }) => (
-  <Area id={header}>
+  <Area Component='header' id={header}>
     <h1>{title}</h1>
   </Area>
 )

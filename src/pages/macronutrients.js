@@ -4,15 +4,16 @@ import Page from '../components/page/page'
 const NumberInput = ({ label, onChange, value }) => (
   <label>
     {label}
-    <input onChange={onChange} type='number' value={value} />
+    <input onChange={onChange} type='number' min={0} max={99} value={value} />
   </label>
 )
 
-const useInput = () => {
+const useInput = (min, max) => {
   const [value, setValue] = useState(0)
 
   const handleValueChange = useCallback(
-    ({ target: { value } }) => setValue(value),
+    ({ target: { value } }) =>
+      setValue(value < min ? value : value > max ? max : value),
     [setValue]
   )
 
@@ -20,8 +21,8 @@ const useInput = () => {
 }
 
 export default () => {
-  const [bodyMass, handleBodyMassChange] = useInput()
-  const [bodyFat, handleBodyFatChange] = useInput()
+  const [bodyMass, handleBodyMassChange] = useInput(0, 200)
+  const [bodyFat, handleBodyFatChange] = useInput(0, 100)
   const [excerciseTime, handleExcerciseTimeChange] = useInput()
 
   const leanBodyMass = useMemo(() => bodyMass * (1 - bodyFat / 100), [
