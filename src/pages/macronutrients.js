@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react'
 import Page from '../components/page/page'
+import List from '../components/list/list'
 
 const NumberInput = ({ label, onChange, value }) => (
   <label>
@@ -68,45 +69,44 @@ export default () => {
 
   return (
     <Page title='Macronutrients'>
-      <ol style={{ paddingLeft: '1em' }}>
-        <li>
-          <NumberInput
-            label='Body Mass (BM) ≈'
-            onChange={handleBodyMassChange}
-            value={bodyMass}
-          />
-          kg
-        </li>
-        <li>
-          <NumberInput
-            label='Body Fat (BF) ≈'
-            onChange={handleBodyFatChange}
-            value={bodyFat}
-          />
-          %
-        </li>
-        <li>
+      <List
+        items={[
+          <>
+            <NumberInput
+              label='Body Mass (BM) ≈'
+              onChange={handleBodyMassChange}
+              value={bodyMass}
+            />
+            kg
+          </>,
+          <>
+            <NumberInput
+              label='Body Fat (BF) ≈'
+              onChange={handleBodyFatChange}
+              value={bodyFat}
+            />
+            %
+          </>,
           <NumberInput
             label='Exercise Time (ET) ≈'
             onChange={handleExcerciseTimeChange}
             value={excerciseTime}
-          />
-        </li>
-        <li>
-          Lean Body Mass (LBM) ≈ BM * (1 - BF / 100) ≈ {fixedLeanBodyMass}
-        </li>
-        <li>
-          Basal Metabolic Rate (BMR) ≈ 370 + 21.6 * LBM ≈{' '}
-          {fixedBasalMetabolicRate}kcal
-        </li>
-        <li>
-          Total Daily Energy Expenditure (TDEE) ≈ BMR * (1.2 + ET * 0.35) ≈{' '}
-          {fixedTotalDailyEnergyExpenditure}kcal
-        </li>
-        <li>Proteins ≈ {proteins}g</li>
-        <li>Fats ≈ {fats}g</li>
-        <li>Carbohydrates ≈ {carbohydrates}g</li>
-      </ol>
+          />,
+          <>Lean Body Mass (LBM) ≈ BM * (1 - BF / 100) ≈ {fixedLeanBodyMass}</>,
+          <>
+            Basal Metabolic Rate (BMR) ≈ 370 + 21.6 * LBM ≈{' '}
+            {fixedBasalMetabolicRate}kcal
+          </>,
+          <>
+            Total Daily Energy Expenditure (TDEE) ≈ BMR * (1.2 + ET * 0.35) ≈{' '}
+            {fixedTotalDailyEnergyExpenditure}kcal
+          </>,
+          <>Proteins ≈ {proteins}g</>,
+          <>Fats ≈ {fats}g</>,
+          <>Carbohydrates ≈ {carbohydrates}g</>,
+        ]}
+        ordered
+      />
     </Page>
   )
 }

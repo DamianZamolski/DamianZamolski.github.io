@@ -1,14 +1,14 @@
 {
   "errors": [],
   "warnings": [
-    "./src/components/page/area/Area.js\nThere are multiple modules with names that only differ in casing.\nThis can lead to unexpected behavior when compiling on a filesystem with other case-semantic.\nUse equal casing. Compare these module identifiers:\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\Area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\areas\\header\\header.js\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\light-area\\light-area.js"
+    "./src/components/page/area/Area.js\nThere are multiple modules with names that only differ in casing.\nThis can lead to unexpected behavior when compiling on a filesystem with other case-semantic.\nUse equal casing. Compare these module identifiers:\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\Area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\areas\\footer\\footer.js\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\dark-area\\dark-area.js"
   ],
   "namedChunkGroups": {
     "polyfill": {
       "chunks": [4, 10],
       "assets": [
-        "webpack-runtime-61f2b6d374c93880526c.js",
-        "webpack-runtime-61f2b6d374c93880526c.js.map",
+        "webpack-runtime-1f7c193a641bf4c3f3d3.js",
+        "webpack-runtime-1f7c193a641bf4c3f3d3.js.map",
         "polyfill-40ea4eca876fac8ccd82.js",
         "polyfill-40ea4eca876fac8ccd82.js.map"
       ],
@@ -18,8 +18,8 @@
     "app": {
       "chunks": [4, 0, 9, 5],
       "assets": [
-        "webpack-runtime-61f2b6d374c93880526c.js",
-        "webpack-runtime-61f2b6d374c93880526c.js.map",
+        "webpack-runtime-1f7c193a641bf4c3f3d3.js",
+        "webpack-runtime-1f7c193a641bf4c3f3d3.js.map",
         "styles.43e6ba4e545eb7bd7411.css",
         "styles-89fd2ae28bdf06750a71.js",
         "styles-89fd2ae28bdf06750a71.js.map",
@@ -41,8 +41,8 @@
         "cb1608f2-6ca7077ff8db0e6f2c13.js.map",
         "a9a7754c-37b23b755b8f3f33b676.js",
         "a9a7754c-37b23b755b8f3f33b676.js.map",
-        "commons-f6577638f66b0d5028ce.js",
-        "commons-f6577638f66b0d5028ce.js.map",
+        "commons-061683a23ad7ba64b515.js",
+        "commons-061683a23ad7ba64b515.js.map",
         "component---src-pages-books-12-rules-for-life-js-47b9637d902e27145cf6.js",
         "component---src-pages-books-12-rules-for-life-js-47b9637d902e27145cf6.js.map"
       ],
@@ -59,8 +59,8 @@
         "cb1608f2-6ca7077ff8db0e6f2c13.js.map",
         "a9a7754c-37b23b755b8f3f33b676.js",
         "a9a7754c-37b23b755b8f3f33b676.js.map",
-        "commons-f6577638f66b0d5028ce.js",
-        "commons-f6577638f66b0d5028ce.js.map",
+        "commons-061683a23ad7ba64b515.js",
+        "commons-061683a23ad7ba64b515.js.map",
         "component---src-pages-index-js-2af10e486bceed9277c0.js",
         "component---src-pages-index-js-2af10e486bceed9277c0.js.map"
       ],
@@ -77,10 +77,10 @@
         "cb1608f2-6ca7077ff8db0e6f2c13.js.map",
         "a9a7754c-37b23b755b8f3f33b676.js",
         "a9a7754c-37b23b755b8f3f33b676.js.map",
-        "commons-f6577638f66b0d5028ce.js",
-        "commons-f6577638f66b0d5028ce.js.map",
-        "component---src-pages-macronutrients-js-7be6f3949e3184120d0d.js",
-        "component---src-pages-macronutrients-js-7be6f3949e3184120d0d.js.map"
+        "commons-061683a23ad7ba64b515.js",
+        "commons-061683a23ad7ba64b515.js.map",
+        "component---src-pages-macronutrients-js-23f223f765d6ee6760a7.js",
+        "component---src-pages-macronutrients-js-23f223f765d6ee6760a7.js.map"
       ],
       "children": {},
       "childAssets": {}
@@ -88,11 +88,11 @@
   },
   "assetsByChunkName": {
     "polyfill": [
-      "webpack-runtime-61f2b6d374c93880526c.js",
+      "webpack-runtime-1f7c193a641bf4c3f3d3.js",
       "polyfill-40ea4eca876fac8ccd82.js"
     ],
     "app": [
-      "webpack-runtime-61f2b6d374c93880526c.js",
+      "webpack-runtime-1f7c193a641bf4c3f3d3.js",
       "styles.43e6ba4e545eb7bd7411.css",
       "styles-89fd2ae28bdf06750a71.js",
       "framework-b5b229d58c3c710d5429.js",
@@ -103,7 +103,7 @@
       "styles-89fd2ae28bdf06750a71.js",
       "cb1608f2-6ca7077ff8db0e6f2c13.js",
       "a9a7754c-37b23b755b8f3f33b676.js",
-      "commons-f6577638f66b0d5028ce.js",
+      "commons-061683a23ad7ba64b515.js",
       "component---src-pages-books-12-rules-for-life-js-47b9637d902e27145cf6.js"
     ],
     "component---src-pages-index-js": [
@@ -111,7 +111,7 @@
       "styles-89fd2ae28bdf06750a71.js",
       "cb1608f2-6ca7077ff8db0e6f2c13.js",
       "a9a7754c-37b23b755b8f3f33b676.js",
-      "commons-f6577638f66b0d5028ce.js",
+      "commons-061683a23ad7ba64b515.js",
       "component---src-pages-index-js-2af10e486bceed9277c0.js"
     ],
     "component---src-pages-macronutrients-js": [
@@ -119,8 +119,8 @@
       "styles-89fd2ae28bdf06750a71.js",
       "cb1608f2-6ca7077ff8db0e6f2c13.js",
       "a9a7754c-37b23b755b8f3f33b676.js",
-      "commons-f6577638f66b0d5028ce.js",
-      "component---src-pages-macronutrients-js-7be6f3949e3184120d0d.js"
+      "commons-061683a23ad7ba64b515.js",
+      "component---src-pages-macronutrients-js-23f223f765d6ee6760a7.js"
     ]
   }
 }

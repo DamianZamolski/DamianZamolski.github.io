@@ -153,6 +153,29 @@
               }.apply(t, [])) || (e.exports = n)
       })()
     },
+    UZXO: function (e, t, r) {
+      'use strict'
+      var n = r('q1tI'),
+        o = r.n(n),
+        a = r('ngtq')
+      t.a = function (e) {
+        var t = e.items,
+          r = e.ordered,
+          i = Object(n.useMemo)(
+            function () {
+              return r ? 'ol' : 'ul'
+            },
+            [r]
+          )
+        return o.a.createElement(
+          i,
+          { className: a.list },
+          t.map(function (e, t) {
+            return o.a.createElement('li', { key: t }, e)
+          })
+        )
+      }
+    },
     Z6Se: function (e, t, r) {
       e.exports = { nav: 'nav-module--nav--XOa-H' }
     },
@@ -342,14 +365,14 @@
               }
               return e
             },
-          W = function (e, t) {
+          U = function (e, t) {
             var r = {}
             for (var n in e)
               t.indexOf(n) >= 0 ||
                 (Object.prototype.hasOwnProperty.call(e, n) && (r[n] = e[n]))
             return r
           },
-          K = function (e, t) {
+          W = function (e, t) {
             if (!e)
               throw new ReferenceError(
                 "this hasn't been initialised - super() hasn't been called"
@@ -358,7 +381,7 @@
               ? e
               : t
           },
-          U = function (e) {
+          Z = function (e) {
             var t =
               !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1]
             return !1 === t
@@ -370,18 +393,18 @@
                   .replace(/"/g, '&quot;')
                   .replace(/'/g, '&#x27;')
           },
-          Z = function (e) {
-            var t = $(e, T.TITLE),
-              r = $(e, q)
+          K = function (e) {
+            var t = G(e, T.TITLE),
+              r = G(e, q)
             if (r && t)
               return r.replace(/%s/g, function () {
                 return Array.isArray(t) ? t.join('') : t
               })
-            var n = $(e, N)
+            var n = G(e, N)
             return t || n || void 0
           },
           V = function (e) {
-            return $(e, R) || function () {}
+            return G(e, R) || function () {}
           },
           Q = function (e, t) {
             return t
@@ -413,7 +436,7 @@
                 return t
               }, [])
           },
-          G = function (e, t, r) {
+          X = function (e, t, r) {
             var n = {}
             return r
               .filter(function (t) {
@@ -473,21 +496,21 @@
               }, [])
               .reverse()
           },
-          $ = function (e, t) {
+          G = function (e, t) {
             for (var r = e.length - 1; r >= 0; r--) {
               var n = e[r]
               if (n.hasOwnProperty(t)) return n[t]
             }
             return null
           },
-          X =
+          $ =
             ((n = Date.now()),
             function (e) {
               var t = Date.now()
               t - n > 16
                 ? ((n = t), e(t))
                 : setTimeout(function () {
-                    X(e)
+                    $(e)
                   }, 0)
             }),
           ee = function (e) {
@@ -499,8 +522,8 @@
                   window.requestAnimationFrame.bind(window)) ||
                 window.webkitRequestAnimationFrame ||
                 window.mozRequestAnimationFrame ||
-                X
-              : e.requestAnimationFrame || X,
+                $
+              : e.requestAnimationFrame || $,
           re =
             'undefined' != typeof window
               ? window.cancelAnimationFrame ||
@@ -656,14 +679,14 @@
                             ' data-react-helmet="true" ' +
                             o +
                             '>' +
-                            U(a, n) +
+                            Z(a, n) +
                             '</' +
                             e +
                             '>'
                         : '<' +
                             e +
                             ' data-react-helmet="true">' +
-                            U(a, n) +
+                            Z(a, n) +
                             '</' +
                             e +
                             '>'
@@ -711,7 +734,7 @@
                               var o =
                                 void 0 === n[t]
                                   ? t
-                                  : t + '="' + U(n[t], r) + '"'
+                                  : t + '="' + Z(n[t], r) + '"'
                               return e ? e + ' ' + o : o
                             }, ''),
                           a = n.innerHTML || n.cssText || '',
@@ -760,16 +783,16 @@
               return {
                 baseTag: J([E, I], e),
                 bodyAttributes: Q(b, e),
-                defer: $(e, M),
-                encode: $(e, D),
+                defer: G(e, M),
+                encode: G(e, D),
                 htmlAttributes: Q(v, e),
-                linkTags: G(T.LINK, [k, E], e),
-                metaTags: G(T.META, [S, O, A, j, x], e),
-                noscriptTags: G(T.NOSCRIPT, [C], e),
+                linkTags: X(T.LINK, [k, E], e),
+                metaTags: X(T.META, [S, O, A, j, x], e),
+                noscriptTags: X(T.NOSCRIPT, [C], e),
                 onChangeClientState: V(e),
-                scriptTags: G(T.SCRIPT, [P, C], e),
-                styleTags: G(T.STYLE, [w], e),
-                title: Z(e),
+                scriptTags: X(T.SCRIPT, [P, C], e),
+                styleTags: X(T.STYLE, [w], e),
+                title: K(e),
                 titleAttributes: Q(g, e),
               }
             },
@@ -791,7 +814,7 @@
             ((o = me),
             (i = a = (function (e) {
               function t() {
-                return H(this, t), K(this, e.apply(this, arguments))
+                return H(this, t), W(this, e.apply(this, arguments))
               }
               return (
                 (function (e, t) {
@@ -898,7 +921,7 @@
                             return Object.keys(e).reduce(function (t, r) {
                               return (t[B[r] || r] = e[r]), t
                             }, t)
-                          })(W(o, ['children']))
+                          })(U(o, ['children']))
                         switch ((r.warnOnInvalidChildren(e, a), e.type)) {
                           case T.LINK:
                           case T.META:
@@ -928,7 +951,7 @@
                 (t.prototype.render = function () {
                   var e = this.props,
                     t = e.children,
-                    r = W(e, ['children']),
+                    r = U(e, ['children']),
                     n = Y({}, r)
                   return (
                     t && (n = this.mapChildrenToProps(t, n)),
@@ -1168,7 +1191,7 @@
       var A = !1
       try {
         A = !0
-      } catch (J) {}
+      } catch (Q) {}
       function C(e) {
         return null === e
           ? null
@@ -1369,29 +1392,12 @@
           )
         },
         I = r('FZDs'),
-        L = r('ngtq'),
-        N = function (e) {
-          var t = e.items,
-            r = e.ordered,
-            a = Object(n.useMemo)(
-              function () {
-                return r ? 'ol' : 'ul'
-              },
-              [r]
-            )
-          return o.a.createElement(
-            a,
-            { className: L.list },
-            t.map(function (e) {
-              return o.a.createElement('li', null, e)
-            })
-          )
-        },
-        M = function () {
+        L = r('UZXO'),
+        N = function () {
           return o.a.createElement(
             p,
             { Component: 'footer', id: I.footer },
-            o.a.createElement(N, {
+            o.a.createElement(L.a, {
               items: [
                 o.a.createElement(P, {
                   icon: u.a,
@@ -1405,16 +1411,16 @@
             })
           )
         },
-        D = r('6r2t'),
-        R = function (e) {
+        M = r('6r2t'),
+        D = function (e) {
           var t = e.title
           return o.a.createElement(
             p,
-            { Component: 'header', id: D.header },
+            { Component: 'header', id: M.header },
             o.a.createElement('h1', null, t)
           )
         },
-        q = function (e) {
+        R = function (e) {
           var t = e.children,
             r = e.className,
             n = e.Component,
@@ -1422,52 +1428,52 @@
             i = e.id
           return o.a.createElement(a, { id: i, className: s()(f.area, r) }, t)
         },
-        B = r('LIDZ'),
-        _ = function (e) {
+        q = r('LIDZ'),
+        B = function (e) {
           var t = e.children,
             r = e.Component,
             n = e.id
           return o.a.createElement(
-            q,
-            { className: B.lightArea, Component: r, id: n },
+            R,
+            { className: q.lightArea, Component: r, id: n },
             t
           )
         },
-        z = r('NyQI'),
-        H = function (e) {
+        _ = r('NyQI'),
+        z = function (e) {
           var t = e.children
-          return o.a.createElement(_, { Component: 'main', id: z.main }, t)
+          return o.a.createElement(B, { Component: 'main', id: _.main }, t)
         },
-        F = r('Wbzz'),
-        Y = r('QVrL'),
-        W = function (e) {
+        H = r('Wbzz'),
+        F = r('QVrL'),
+        Y = function (e) {
           var t = e.children,
             r = e.Component,
             n = e.id
           return o.a.createElement(
-            q,
-            { className: Y.darkArea, Component: r, id: n },
+            R,
+            { className: F.darkArea, Component: r, id: n },
             t
           )
         },
-        K = r('Z6Se'),
-        U = function (e) {
+        U = r('Z6Se'),
+        W = function (e) {
           var t = e.icon,
             r = e.page,
             n = e.text
           return o.a.createElement(
-            F.a,
+            H.a,
             { to: r },
             o.a.createElement(P, { icon: t, text: n })
           )
         },
         Z = function () {
           return o.a.createElement(
-            W,
-            { Component: 'nav', id: K.nav },
-            o.a.createElement(N, {
+            Y,
+            { Component: 'nav', id: U.nav },
+            o.a.createElement(L.a, {
               items: [
-                o.a.createElement(U, {
+                o.a.createElement(W, {
                   icon: u.b,
                   page: '/macronutrients',
                   text: 'Macronutrients',
@@ -1476,30 +1482,30 @@
             })
           )
         },
-        V = function (e) {
+        K = function (e) {
           var t = e.children,
             r = e.title
           return o.a.createElement(
             o.a.Fragment,
             null,
             o.a.createElement(Z, null),
-            o.a.createElement(R, { title: r }),
-            o.a.createElement(H, null, t),
-            o.a.createElement(M, null)
+            o.a.createElement(D, { title: r }),
+            o.a.createElement(z, null, t),
+            o.a.createElement(N, null)
           )
         },
-        Q = r('TKWK')
+        V = r('TKWK')
       t.a = function (e) {
         var t = e.children,
           r = e.title
         return o.a.createElement(
           'div',
-          { id: Q.page },
+          { id: V.page },
           o.a.createElement(i, { title: r }),
-          o.a.createElement(V, { title: r }, t)
+          o.a.createElement(K, { title: r }, t)
         )
       }
     },
   },
 ])
-//# sourceMappingURL=commons-f6577638f66b0d5028ce.js.map
+//# sourceMappingURL=commons-061683a23ad7ba64b515.js.map
