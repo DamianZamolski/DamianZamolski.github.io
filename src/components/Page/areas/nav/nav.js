@@ -1,13 +1,24 @@
 import React from 'react'
+import { Link as GatsbyLink } from 'gatsby'
+import { faWeight } from '@fortawesome/free-solid-svg-icons'
 import DarkArea from '../../area/dark-area/dark-area'
-import { nav, list } from './nav.module.scss'
-import Link from './link'
+import IconText from '../../../icon-text/icon-text'
+import List from '../../../list/list'
+import { nav } from './nav.module.scss'
+
+const Link = ({ icon, page, text }) => (
+  <GatsbyLink to={page}>
+    <IconText icon={icon} text={text} />
+  </GatsbyLink>
+)
 
 const Nav = () => (
   <DarkArea Component='nav' id={nav}>
-    <ul id={list}>
-      <Link to='/macronutrients'>Macronutrients</Link>
-    </ul>
+    <List
+      items={[
+        <Link icon={faWeight} page='/macronutrients' text='Macronutrients' />,
+      ]}
+    />
   </DarkArea>
 )
 

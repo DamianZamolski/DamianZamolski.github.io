@@ -1,17 +1,19 @@
 import React from 'react'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faGithubSquare,
-  faTwitterSquare,
-} from '@fortawesome/free-brands-svg-icons'
+import { faDiscord } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import Area from '../../area/Area'
+import IconText from '../../../icon-text/icon-text'
 import { footer } from './Footer.module.scss'
+import List from '../../../list/list'
 
 const Footer = () => (
   <Area Component='footer' id={footer}>
-    <FontAwesomeIcon icon={faTwitterSquare} />
-    <FontAwesomeIcon icon={faGithubSquare} />
+    <List
+      items={[
+        <IconText icon={faEnvelope} text='damian.zamola.zamolski@gmail.com' />,
+        <IconText icon={faDiscord} text='DamianZamolski#8167' />,
+      ]}
+    />
   </Area>
 )
 

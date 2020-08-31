@@ -1,5 +1,5 @@
 ;(window.webpackJsonp = window.webpackJsonp || []).push([
-  [2],
+  [3],
   {
     '6r2t': function (e, t, r) {
       e.exports = { header: 'Header-module--header--3OZ6N' }
@@ -154,10 +154,7 @@
       })()
     },
     Z6Se: function (e, t, r) {
-      e.exports = {
-        nav: 'nav-module--nav--XOa-H',
-        list: 'nav-module--list--2gdHL',
-      }
+      e.exports = { nav: 'nav-module--nav--XOa-H' }
     },
     ZhWT: function (e, t) {
       var r = 'undefined' != typeof Element,
@@ -226,11 +223,20 @@
         }
       }
     },
+    dnBu: function (e, t, r) {
+      e.exports = {
+        iconText: 'icon-text-module--icon-text--l-JV9',
+        icon: 'icon-text-module--icon--2D_8x',
+      }
+    },
+    ngtq: function (e, t, r) {
+      e.exports = { list: 'list-module--list--lGEmL' }
+    },
     qhky: function (e, t, r) {
       'use strict'
       ;(function (e) {
         r.d(t, 'a', function () {
-          return me
+          return ye
         })
         var n,
           o,
@@ -243,9 +249,9 @@
           f = r('ZhWT'),
           p = r.n(f),
           d = r('q1tI'),
-          y = r.n(d),
-          m = r('6qGY'),
-          h = r.n(m),
+          m = r.n(d),
+          y = r('6qGY'),
+          h = r.n(y),
           b = 'bodyAttributes',
           v = 'htmlAttributes',
           g = 'titleAttributes',
@@ -267,12 +273,12 @@
             }),
             'charset'),
           w = 'cssText',
-          A = 'href',
-          E = 'http-equiv',
+          E = 'href',
+          A = 'http-equiv',
           C = 'innerHTML',
-          S = 'itemprop',
-          j = 'name',
-          x = 'property',
+          x = 'itemprop',
+          S = 'name',
+          j = 'property',
           k = 'rel',
           P = 'src',
           I = 'target',
@@ -288,14 +294,14 @@
           },
           N = 'defaultTitle',
           M = 'defer',
-          R = 'encodeSpecialCharacters',
-          D = 'onChangeClientState',
+          D = 'encodeSpecialCharacters',
+          R = 'onChangeClientState',
           q = 'titleTemplate',
-          _ = Object.keys(L).reduce(function (e, t) {
+          B = Object.keys(L).reduce(function (e, t) {
             return (e[L[t]] = t), e
           }, {}),
-          B = [T.NOSCRIPT, T.SCRIPT, T.STYLE],
-          H =
+          _ = [T.NOSCRIPT, T.SCRIPT, T.STYLE],
+          z =
             'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
               ? function (e) {
                   return typeof e
@@ -308,11 +314,11 @@
                     ? 'symbol'
                     : typeof e
                 },
-          F = function (e, t) {
+          H = function (e, t) {
             if (!(e instanceof t))
               throw new TypeError('Cannot call a class as a function')
           },
-          z = (function () {
+          F = (function () {
             function e(e, t) {
               for (var r = 0; r < t.length; r++) {
                 var n = t[r]
@@ -365,17 +371,17 @@
                   .replace(/'/g, '&#x27;')
           },
           Z = function (e) {
-            var t = G(e, T.TITLE),
-              r = G(e, q)
+            var t = $(e, T.TITLE),
+              r = $(e, q)
             if (r && t)
               return r.replace(/%s/g, function () {
                 return Array.isArray(t) ? t.join('') : t
               })
-            var n = G(e, N)
+            var n = $(e, N)
             return t || n || void 0
           },
           V = function (e) {
-            return G(e, D) || function () {}
+            return $(e, R) || function () {}
           },
           Q = function (e, t) {
             return t
@@ -407,7 +413,7 @@
                 return t
               }, [])
           },
-          $ = function (e, t, r) {
+          G = function (e, t, r) {
             var n = {}
             return r
               .filter(function (t) {
@@ -418,7 +424,7 @@
                       'Helmet: ' +
                         e +
                         ' should be of type "Array". Instead found type "' +
-                        H(t[e]) +
+                        z(t[e]) +
                         '"'
                     ),
                   !1)
@@ -443,7 +449,7 @@
                       (u === k && 'stylesheet' === e[u].toLowerCase()) ||
                       (r = u),
                       -1 === t.indexOf(c) ||
-                        (c !== C && c !== w && c !== S) ||
+                        (c !== C && c !== w && c !== x) ||
                         (r = c)
                   }
                   if (!r || !e[r]) return !1
@@ -467,7 +473,7 @@
               }, [])
               .reverse()
           },
-          G = function (e, t) {
+          $ = function (e, t) {
             for (var r = e.length - 1; r >= 0; r--) {
               var n = e[r]
               if (n.hasOwnProperty(t)) return n[t]
@@ -529,16 +535,16 @@
                 scriptTags: le(T.SCRIPT, l),
                 styleTags: le(T.STYLE, s),
               },
-              y = {},
-              m = {}
+              m = {},
+              y = {}
             Object.keys(d).forEach(function (e) {
               var t = d[e],
                 r = t.newTags,
                 n = t.oldTags
-              r.length && (y[e] = r), n.length && (m[e] = d[e].oldTags)
+              r.length && (m[e] = r), n.length && (y[e] = d[e].oldTags)
             }),
               t && t(),
-              u(e, y, m)
+              u(e, m, y)
           },
           ie = function (e) {
             return Array.isArray(e) ? e.join('') : e
@@ -636,7 +642,7 @@
                       (r = t.titleAttributes),
                       ((n = { key: e })['data-react-helmet'] = !0),
                       (o = fe(r, n)),
-                      [y.a.createElement(T.TITLE, o, e)]
+                      [m.a.createElement(T.TITLE, o, e)]
                     )
                     var e, r, n, o
                   },
@@ -689,7 +695,7 @@
                               o.dangerouslySetInnerHTML = { __html: n }
                             } else o[r] = t[e]
                           }),
-                          y.a.createElement(e, o)
+                          m.a.createElement(e, o)
                         )
                       })
                     })(e, t)
@@ -709,7 +715,7 @@
                               return e ? e + ' ' + o : o
                             }, ''),
                           a = n.innerHTML || n.cssText || '',
-                          i = -1 === B.indexOf(e)
+                          i = -1 === _.indexOf(e)
                         return (
                           t +
                           '<' +
@@ -749,20 +755,20 @@
               title: pe(T.TITLE, { title: f, titleAttributes: p }, n),
             }
           },
-          ye = s()(
+          me = s()(
             function (e) {
               return {
-                baseTag: J([A, I], e),
+                baseTag: J([E, I], e),
                 bodyAttributes: Q(b, e),
-                defer: G(e, M),
-                encode: G(e, R),
+                defer: $(e, M),
+                encode: $(e, D),
                 htmlAttributes: Q(v, e),
-                linkTags: $(T.LINK, [k, A], e),
-                metaTags: $(T.META, [j, O, E, x, S], e),
-                noscriptTags: $(T.NOSCRIPT, [C], e),
+                linkTags: G(T.LINK, [k, E], e),
+                metaTags: G(T.META, [S, O, A, j, x], e),
+                noscriptTags: G(T.NOSCRIPT, [C], e),
                 onChangeClientState: V(e),
-                scriptTags: $(T.SCRIPT, [P, C], e),
-                styleTags: $(T.STYLE, [w], e),
+                scriptTags: G(T.SCRIPT, [P, C], e),
+                styleTags: G(T.STYLE, [w], e),
                 title: Z(e),
                 titleAttributes: Q(g, e),
               }
@@ -781,11 +787,11 @@
           )(function () {
             return null
           }),
-          me =
-            ((o = ye),
+          ye =
+            ((o = me),
             (i = a = (function (e) {
               function t() {
-                return F(this, t), K(this, e.apply(this, arguments))
+                return H(this, t), K(this, e.apply(this, arguments))
               }
               return (
                 (function (e, t) {
@@ -880,7 +886,7 @@
                   var r = this,
                     n = {}
                   return (
-                    y.a.Children.forEach(e, function (e) {
+                    m.a.Children.forEach(e, function (e) {
                       if (e && e.props) {
                         var o = e.props,
                           a = o.children,
@@ -890,7 +896,7 @@
                                 ? arguments[1]
                                 : {}
                             return Object.keys(e).reduce(function (t, r) {
-                              return (t[_[r] || r] = e[r]), t
+                              return (t[B[r] || r] = e[r]), t
                             }, t)
                           })(W(o, ['children']))
                         switch ((r.warnOnInvalidChildren(e, a), e.type)) {
@@ -926,10 +932,10 @@
                     n = Y({}, r)
                   return (
                     t && (n = this.mapChildrenToProps(t, n)),
-                    y.a.createElement(o, n)
+                    m.a.createElement(o, n)
                   )
                 }),
-                z(t, null, [
+                F(t, null, [
                   {
                     key: 'canUseDOM',
                     set: function (e) {
@@ -939,7 +945,7 @@
                 ]),
                 t
               )
-            })(y.a.Component)),
+            })(m.a.Component)),
             (a.propTypes = {
               base: u.a.object,
               bodyAttributes: u.a.object,
@@ -981,7 +987,7 @@
               )
             }),
             i)
-        me.renderStatic = me.rewind
+        ye.renderStatic = ye.rewind
       }.call(this, r('yLpj')))
     },
     xKBe: function (e, t, r) {
@@ -1002,11 +1008,24 @@
             })
           )
         },
-        c = r('7O5W'),
-        u = r('17x9'),
-        l = r.n(u)
-      function s(e) {
-        return (s =
+        c = r('8tEE'),
+        u = r('wHSu'),
+        l = r('TSYQ'),
+        s = r.n(l),
+        f = r('I77B'),
+        p = function (e) {
+          var t = e.children,
+            r = e.className,
+            n = e.Component,
+            a = void 0 === n ? 'div' : n,
+            i = e.id
+          return o.a.createElement(a, { id: i, className: s()(f.area, r) }, t)
+        },
+        d = r('7O5W'),
+        m = r('17x9'),
+        y = r.n(m)
+      function h(e) {
+        return (h =
           'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
             ? function (e) {
                 return typeof e
@@ -1020,7 +1039,7 @@
                   : typeof e
               })(e)
       }
-      function f(e, t, r) {
+      function b(e, t, r) {
         return (
           t in e
             ? Object.defineProperty(e, t, {
@@ -1033,7 +1052,7 @@
           e
         )
       }
-      function p(e, t) {
+      function v(e, t) {
         var r = Object.keys(e)
         if (Object.getOwnPropertySymbols) {
           var n = Object.getOwnPropertySymbols(e)
@@ -1045,16 +1064,16 @@
         }
         return r
       }
-      function d(e) {
+      function g(e) {
         for (var t = 1; t < arguments.length; t++) {
           var r = null != arguments[t] ? arguments[t] : {}
           t % 2
-            ? p(Object(r), !0).forEach(function (t) {
-                f(e, t, r[t])
+            ? v(Object(r), !0).forEach(function (t) {
+                b(e, t, r[t])
               })
             : Object.getOwnPropertyDescriptors
             ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r))
-            : p(Object(r)).forEach(function (t) {
+            : v(Object(r)).forEach(function (t) {
                 Object.defineProperty(
                   e,
                   t,
@@ -1064,7 +1083,7 @@
         }
         return e
       }
-      function y(e, t) {
+      function T(e, t) {
         if (null == e) return {}
         var r,
           n,
@@ -1088,7 +1107,7 @@
         }
         return o
       }
-      function m(e) {
+      function O(e) {
         return (
           (function (e) {
             if (Array.isArray(e)) {
@@ -1111,7 +1130,7 @@
           })()
         )
       }
-      function h(e) {
+      function w(e) {
         return (
           (t = e),
           (t -= 0) == t
@@ -1124,7 +1143,7 @@
         )
         var t
       }
-      function b(e) {
+      function E(e) {
         return e
           .split(';')
           .map(function (e) {
@@ -1136,7 +1155,7 @@
           .reduce(function (e, t) {
             var r,
               n = t.indexOf(':'),
-              o = h(t.slice(0, n)),
+              o = w(t.slice(0, n)),
               a = t.slice(n + 1).trim()
             return (
               o.startsWith('webkit')
@@ -1146,14 +1165,14 @@
             )
           }, {})
       }
-      var v = !1
+      var A = !1
       try {
-        v = !0
-      } catch (K) {}
-      function g(e) {
+        A = !0
+      } catch (J) {}
+      function C(e) {
         return null === e
           ? null
-          : 'object' === s(e) && e.prefix && e.iconName
+          : 'object' === h(e) && e.prefix && e.iconName
           ? e
           : Array.isArray(e) && 2 === e.length
           ? { prefix: e[0], iconName: e[1] }
@@ -1161,24 +1180,24 @@
           ? { prefix: 'fas', iconName: e }
           : void 0
       }
-      function T(e, t) {
+      function x(e, t) {
         return (Array.isArray(t) && t.length > 0) || (!Array.isArray(t) && t)
-          ? f({}, e, t)
+          ? b({}, e, t)
           : {}
       }
-      function O(e) {
+      function S(e) {
         var t = e.forwardedRef,
-          r = y(e, ['forwardedRef']),
+          r = T(e, ['forwardedRef']),
           n = r.icon,
           o = r.mask,
           a = r.symbol,
           i = r.className,
-          u = r.title,
-          l = g(n),
-          s = T(
+          c = r.title,
+          u = C(n),
+          l = x(
             'classes',
             [].concat(
-              m(
+              O(
                 (function (e) {
                   var t,
                     r = e.spin,
@@ -1190,9 +1209,9 @@
                     u = e.flip,
                     l = e.size,
                     s = e.rotation,
-                    p = e.pull,
-                    d =
-                      (f(
+                    f = e.pull,
+                    p =
+                      (b(
                         (t = {
                           'fa-spin': r,
                           'fa-pulse': n,
@@ -1207,64 +1226,64 @@
                         'fa-'.concat(l),
                         null != l
                       ),
-                      f(t, 'fa-rotate-'.concat(s), null != s && 0 !== s),
-                      f(t, 'fa-pull-'.concat(p), null != p),
-                      f(t, 'fa-swap-opacity', e.swapOpacity),
+                      b(t, 'fa-rotate-'.concat(s), null != s && 0 !== s),
+                      b(t, 'fa-pull-'.concat(f), null != f),
+                      b(t, 'fa-swap-opacity', e.swapOpacity),
                       t)
-                  return Object.keys(d)
+                  return Object.keys(p)
                     .map(function (e) {
-                      return d[e] ? e : null
+                      return p[e] ? e : null
                     })
                     .filter(function (e) {
                       return e
                     })
                 })(r)
               ),
-              m(i.split(' '))
+              O(i.split(' '))
             )
           ),
-          p = T(
+          s = x(
             'transform',
             'string' == typeof r.transform
-              ? c.c.transform(r.transform)
+              ? d.c.transform(r.transform)
               : r.transform
           ),
-          h = T('mask', g(o)),
-          b = Object(c.b)(l, d({}, s, {}, p, {}, h, { symbol: a, title: u }))
-        if (!b)
+          f = x('mask', C(o)),
+          p = Object(d.b)(u, g({}, l, {}, s, {}, f, { symbol: a, title: c }))
+        if (!p)
           return (
             (function () {
               var e
-              !v &&
+              !A &&
                 console &&
                 'function' == typeof console.error &&
                 (e = console).error.apply(e, arguments)
-            })('Could not find icon', l),
+            })('Could not find icon', u),
             null
           )
-        var A = b.abstract,
-          E = { ref: t }
+        var m = p.abstract,
+          y = { ref: t }
         return (
           Object.keys(r).forEach(function (e) {
-            O.defaultProps.hasOwnProperty(e) || (E[e] = r[e])
+            S.defaultProps.hasOwnProperty(e) || (y[e] = r[e])
           }),
-          w(A[0], E)
+          j(m[0], y)
         )
       }
-      ;(O.displayName = 'FontAwesomeIcon'),
-        (O.propTypes = {
-          border: l.a.bool,
-          className: l.a.string,
-          mask: l.a.oneOfType([l.a.object, l.a.array, l.a.string]),
-          fixedWidth: l.a.bool,
-          inverse: l.a.bool,
-          flip: l.a.oneOf(['horizontal', 'vertical', 'both']),
-          icon: l.a.oneOfType([l.a.object, l.a.array, l.a.string]),
-          listItem: l.a.bool,
-          pull: l.a.oneOf(['right', 'left']),
-          pulse: l.a.bool,
-          rotation: l.a.oneOf([0, 90, 180, 270]),
-          size: l.a.oneOf([
+      ;(S.displayName = 'FontAwesomeIcon'),
+        (S.propTypes = {
+          border: y.a.bool,
+          className: y.a.string,
+          mask: y.a.oneOfType([y.a.object, y.a.array, y.a.string]),
+          fixedWidth: y.a.bool,
+          inverse: y.a.bool,
+          flip: y.a.oneOf(['horizontal', 'vertical', 'both']),
+          icon: y.a.oneOfType([y.a.object, y.a.array, y.a.string]),
+          listItem: y.a.bool,
+          pull: y.a.oneOf(['right', 'left']),
+          pulse: y.a.bool,
+          rotation: y.a.oneOf([0, 90, 180, 270]),
+          size: y.a.oneOf([
             'lg',
             'xs',
             'sm',
@@ -1279,13 +1298,13 @@
             '9x',
             '10x',
           ]),
-          spin: l.a.bool,
-          symbol: l.a.oneOfType([l.a.bool, l.a.string]),
-          title: l.a.string,
-          transform: l.a.oneOfType([l.a.string, l.a.object]),
-          swapOpacity: l.a.bool,
+          spin: y.a.bool,
+          symbol: y.a.oneOfType([y.a.bool, y.a.string]),
+          title: y.a.string,
+          transform: y.a.oneOfType([y.a.string, y.a.object]),
+          swapOpacity: y.a.bool,
         }),
-        (O.defaultProps = {
+        (S.defaultProps = {
           border: !1,
           className: '',
           mask: null,
@@ -1304,7 +1323,7 @@
           transform: null,
           swapOpacity: !1,
         })
-      var w = function e(t, r) {
+      var j = function e(t, r) {
           var n =
             arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {}
           if ('string' == typeof r) return r
@@ -1319,12 +1338,12 @@
                     ;(e.attrs.className = n), delete r.attributes.class
                     break
                   case 'style':
-                    e.attrs.style = b(n)
+                    e.attrs.style = E(n)
                     break
                   default:
                     0 === t.indexOf('aria-') || 0 === t.indexOf('data-')
                       ? (e.attrs[t.toLowerCase()] = n)
-                      : (e.attrs[h(t)] = n)
+                      : (e.attrs[w(t)] = n)
                 }
                 return e
               },
@@ -1332,119 +1351,155 @@
             ),
             i = n.style,
             c = void 0 === i ? {} : i,
-            u = y(n, ['style'])
+            u = T(n, ['style'])
           return (
-            (a.attrs.style = d({}, a.attrs.style, {}, c)),
-            t.apply(void 0, [r.tag, d({}, a.attrs, {}, u)].concat(m(o)))
+            (a.attrs.style = g({}, a.attrs.style, {}, c)),
+            t.apply(void 0, [r.tag, g({}, a.attrs, {}, u)].concat(O(o)))
           )
         }.bind(null, o.a.createElement),
-        A = r('8tEE'),
-        E = r('TSYQ'),
-        C = r.n(E),
-        S = r('I77B'),
-        j = function (e) {
-          var t = e.children,
-            r = e.className,
-            n = e.Component,
-            a = void 0 === n ? 'div' : n,
-            i = e.id
-          return o.a.createElement(a, { id: i, className: C()(S.area, r) }, t)
-        },
-        x = r('FZDs'),
-        k = function () {
+        k = r('dnBu'),
+        P = function (e) {
+          var t = e.icon,
+            r = e.text
           return o.a.createElement(
-            j,
-            { Component: 'footer', id: x.footer },
-            o.a.createElement(O, { icon: A.b }),
-            o.a.createElement(O, { icon: A.a })
+            'div',
+            { className: k.iconText },
+            o.a.createElement(S, { className: k.icon, icon: t }),
+            r
           )
         },
-        P = r('6r2t'),
-        I = function (e) {
+        I = r('FZDs'),
+        L = r('ngtq'),
+        N = function (e) {
+          var t = e.items,
+            r = e.ordered,
+            a = Object(n.useMemo)(
+              function () {
+                return r ? 'ol' : 'ul'
+              },
+              [r]
+            )
+          return o.a.createElement(
+            a,
+            { className: L.list },
+            t.map(function (e) {
+              return o.a.createElement('li', null, e)
+            })
+          )
+        },
+        M = function () {
+          return o.a.createElement(
+            p,
+            { Component: 'footer', id: I.footer },
+            o.a.createElement(N, {
+              items: [
+                o.a.createElement(P, {
+                  icon: u.a,
+                  text: 'damian.zamola.zamolski@gmail.com',
+                }),
+                o.a.createElement(P, {
+                  icon: c.a,
+                  text: 'DamianZamolski#8167',
+                }),
+              ],
+            })
+          )
+        },
+        D = r('6r2t'),
+        R = function (e) {
           var t = e.title
           return o.a.createElement(
-            j,
-            { Component: 'header', id: P.header },
+            p,
+            { Component: 'header', id: D.header },
             o.a.createElement('h1', null, t)
           )
         },
-        L = function (e) {
+        q = function (e) {
           var t = e.children,
             r = e.className,
             n = e.Component,
             a = void 0 === n ? 'div' : n,
             i = e.id
-          return o.a.createElement(a, { id: i, className: C()(S.area, r) }, t)
+          return o.a.createElement(a, { id: i, className: s()(f.area, r) }, t)
         },
-        N = r('LIDZ'),
-        M = function (e) {
-          var t = e.children,
-            r = e.Component,
-            n = e.id
-          return o.a.createElement(
-            L,
-            { className: N.lightArea, Component: r, id: n },
-            t
-          )
-        },
-        R = r('NyQI'),
-        D = function (e) {
-          var t = e.children
-          return o.a.createElement(M, { Component: 'main', id: R.main }, t)
-        },
-        q = r('QVrL'),
+        B = r('LIDZ'),
         _ = function (e) {
           var t = e.children,
             r = e.Component,
             n = e.id
           return o.a.createElement(
-            L,
-            { className: q.darkArea, Component: r, id: n },
+            q,
+            { className: B.lightArea, Component: r, id: n },
             t
           )
         },
-        B = r('Z6Se'),
-        H = r('Wbzz'),
-        F = function (e) {
-          var t = e.children,
-            r = e.to
-          return o.a.createElement(H.a, { to: r }, t)
+        z = r('NyQI'),
+        H = function (e) {
+          var t = e.children
+          return o.a.createElement(_, { Component: 'main', id: z.main }, t)
         },
-        z = function () {
+        F = r('Wbzz'),
+        Y = r('QVrL'),
+        W = function (e) {
+          var t = e.children,
+            r = e.Component,
+            n = e.id
           return o.a.createElement(
-            _,
-            { Component: 'nav', id: B.nav },
-            o.a.createElement(
-              'ul',
-              { id: B.list },
-              o.a.createElement(F, { to: '/macronutrients' }, 'Macronutrients')
-            )
+            q,
+            { className: Y.darkArea, Component: r, id: n },
+            t
           )
         },
-        Y = function (e) {
+        K = r('Z6Se'),
+        U = function (e) {
+          var t = e.icon,
+            r = e.page,
+            n = e.text
+          return o.a.createElement(
+            F.a,
+            { to: r },
+            o.a.createElement(P, { icon: t, text: n })
+          )
+        },
+        Z = function () {
+          return o.a.createElement(
+            W,
+            { Component: 'nav', id: K.nav },
+            o.a.createElement(N, {
+              items: [
+                o.a.createElement(U, {
+                  icon: u.b,
+                  page: '/macronutrients',
+                  text: 'Macronutrients',
+                }),
+              ],
+            })
+          )
+        },
+        V = function (e) {
           var t = e.children,
             r = e.title
           return o.a.createElement(
             o.a.Fragment,
             null,
-            o.a.createElement(z, null),
-            o.a.createElement(I, { title: r }),
-            o.a.createElement(D, null, t),
-            o.a.createElement(k, null)
+            o.a.createElement(Z, null),
+            o.a.createElement(R, { title: r }),
+            o.a.createElement(H, null, t),
+            o.a.createElement(M, null)
           )
         },
-        W = r('TKWK')
+        Q = r('TKWK')
       t.a = function (e) {
         var t = e.children,
           r = e.title
         return o.a.createElement(
           'div',
-          { id: W.page },
+          { id: Q.page },
           o.a.createElement(i, { title: r }),
-          o.a.createElement(Y, { title: r }, t)
+          o.a.createElement(V, { title: r }, t)
         )
       }
     },
   },
 ])
-//# sourceMappingURL=commons-a8ba53c8e2bb51ba06e5.js.map
+//# sourceMappingURL=commons-f6577638f66b0d5028ce.js.map

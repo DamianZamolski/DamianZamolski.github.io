@@ -1,5 +1,5 @@
 ;(window.webpackJsonp = window.webpackJsonp || []).push([
-  [5],
+  [6],
   {
     VcKj: function (e, n, t) {
       'use strict'
@@ -17,4 +17,4 @@
     },
   },
 ])
-//# sourceMappingURL=component---src-pages-books-12-rules-for-life-js-e1aca15469c2284d59c3.js.map
+//# sourceMappingURL=component---src-pages-books-12-rules-for-life-js-47b9637d902e27145cf6.js.map
