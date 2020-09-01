@@ -5,9 +5,12 @@
     "data": {
       "allSitePage": {
         "nodes": [
+          { "path": "/charts/" },
           { "path": "/" },
           { "path": "/macronutrients/" },
-          { "path": "/books/12-rules-for-life/" }
+          { "path": "/books/12-rules-for-life/" },
+          { "path": "/routines/evening/" },
+          { "path": "/routines/morning/" }
         ]
       }
     },

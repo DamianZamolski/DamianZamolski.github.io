@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { iconText, icon as iconClassName } from './icon-text.module.scss'
 
 const IconText = ({ icon, text }) => (
-  <div className={iconText}>
-    <FontAwesomeIcon className={iconClassName} icon={icon} />
+  <span className={iconText}>
+    <FontAwesomeIcon className={iconClassName} fixedWidth icon={icon} />
     {text}
-  </div>
+  </span>
 )
 
 export default IconText

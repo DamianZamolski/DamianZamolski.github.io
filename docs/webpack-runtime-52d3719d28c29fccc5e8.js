@@ -1,16 +1,16 @@
 !(function (e) {
   function t(t) {
     for (
-      var n, o, s = t[0], u = t[1], f = t[2], i = 0, d = [];
-      i < s.length;
-      i++
+      var n, o, s = t[0], u = t[1], i = t[2], f = 0, p = [];
+      f < s.length;
+      f++
     )
-      (o = s[i]),
-        Object.prototype.hasOwnProperty.call(a, o) && a[o] && d.push(a[o][0]),
+      (o = s[f]),
+        Object.prototype.hasOwnProperty.call(a, o) && a[o] && p.push(a[o][0]),
         (a[o] = 0)
     for (n in u) Object.prototype.hasOwnProperty.call(u, n) && (e[n] = u[n])
-    for (l && l(t); d.length; ) d.shift()()
-    return c.push.apply(c, f || []), r()
+    for (d && d(t); p.length; ) p.shift()()
+    return c.push.apply(c, i || []), r()
   }
   function r() {
     for (var e, t = 0; t < c.length; t++) {
@@ -46,19 +46,27 @@
                     1: 'a9a7754c',
                     2: 'cb1608f2',
                     3: 'commons',
-                    6: 'component---src-pages-books-12-rules-for-life-js',
-                    7: 'component---src-pages-index-js',
-                    8: 'component---src-pages-macronutrients-js',
+                    5: '4a3ea9cd',
+                    7: 'component---src-pages-books-12-rules-for-life-js',
+                    8: 'component---src-pages-charts-js',
+                    9: 'component---src-pages-index-js',
+                    10: 'component---src-pages-macronutrients-js',
+                    11: 'component---src-pages-routines-evening-js',
+                    12: 'component---src-pages-routines-morning-js',
                   }[e] || e) +
                   '.' +
                   {
-                    0: '43e6ba4e545eb7bd7411',
+                    0: '24797eca7dbf897d71f6',
                     1: '31d6cfe0d16ae931b73c',
                     2: '31d6cfe0d16ae931b73c',
                     3: '31d6cfe0d16ae931b73c',
-                    6: '31d6cfe0d16ae931b73c',
+                    5: '31d6cfe0d16ae931b73c',
                     7: '31d6cfe0d16ae931b73c',
                     8: '31d6cfe0d16ae931b73c',
+                    9: '31d6cfe0d16ae931b73c',
+                    10: '31d6cfe0d16ae931b73c',
+                    11: '31d6cfe0d16ae931b73c',
+                    12: '31d6cfe0d16ae931b73c',
                   }[e] +
                   '.css',
                 a = s.p + n,
@@ -67,21 +75,21 @@
               u < c.length;
               u++
             ) {
-              var f =
-                (l = c[u]).getAttribute('data-href') || l.getAttribute('href')
-              if ('stylesheet' === l.rel && (f === n || f === a)) return t()
+              var i =
+                (d = c[u]).getAttribute('data-href') || d.getAttribute('href')
+              if ('stylesheet' === d.rel && (i === n || i === a)) return t()
             }
-            var i = document.getElementsByTagName('style')
-            for (u = 0; u < i.length; u++) {
-              var l
-              if ((f = (l = i[u]).getAttribute('data-href')) === n || f === a)
+            var f = document.getElementsByTagName('style')
+            for (u = 0; u < f.length; u++) {
+              var d
+              if ((i = (d = f[u]).getAttribute('data-href')) === n || i === a)
                 return t()
             }
-            var d = document.createElement('link')
-            ;(d.rel = 'stylesheet'),
-              (d.type = 'text/css'),
-              (d.onload = t),
-              (d.onerror = function (t) {
+            var p = document.createElement('link')
+            ;(p.rel = 'stylesheet'),
+              (p.type = 'text/css'),
+              (p.onload = t),
+              (p.onerror = function (t) {
                 var n = (t && t.target && t.target.src) || a,
                   c = new Error(
                     'Loading CSS chunk ' + e + ' failed.\n(' + n + ')'
@@ -89,11 +97,11 @@
                 ;(c.code = 'CSS_CHUNK_LOAD_FAILED'),
                   (c.request = n),
                   delete o[e],
-                  d.parentNode.removeChild(d),
+                  p.parentNode.removeChild(p),
                   r(c)
               }),
-              (d.href = a),
-              document.getElementsByTagName('head')[0].appendChild(d)
+              (p.href = a),
+              document.getElementsByTagName('head')[0].appendChild(p)
           }).then(function () {
             o[e] = 0
           }))
@@ -120,42 +128,50 @@
                 1: 'a9a7754c',
                 2: 'cb1608f2',
                 3: 'commons',
-                6: 'component---src-pages-books-12-rules-for-life-js',
-                7: 'component---src-pages-index-js',
-                8: 'component---src-pages-macronutrients-js',
+                5: '4a3ea9cd',
+                7: 'component---src-pages-books-12-rules-for-life-js',
+                8: 'component---src-pages-charts-js',
+                9: 'component---src-pages-index-js',
+                10: 'component---src-pages-macronutrients-js',
+                11: 'component---src-pages-routines-evening-js',
+                12: 'component---src-pages-routines-morning-js',
               }[e] || e) +
               '-' +
               {
                 0: '89fd2ae28bdf06750a71',
                 1: '37b23b755b8f3f33b676',
-                2: '6ca7077ff8db0e6f2c13',
-                3: '061683a23ad7ba64b515',
-                6: '47b9637d902e27145cf6',
-                7: '2af10e486bceed9277c0',
-                8: '23f223f765d6ee6760a7',
+                2: '562aabc6691098a4c4cc',
+                3: '313863d11779db7a96d1',
+                5: '12162a16a571b2c94f09',
+                7: 'a99a7f6958182427b464',
+                8: '0323df1014a1ada324b3',
+                9: '51283b44cbb1ce0cb053',
+                10: '7bfaae8378bed5ed3a2d',
+                11: '98ef43bf81e9ea1b77c3',
+                12: 'a9ae011d2843932a8975',
               }[e] +
               '.js'
             )
           })(e))
-        var f = new Error()
+        var i = new Error()
         c = function (t) {
-          ;(u.onerror = u.onload = null), clearTimeout(i)
+          ;(u.onerror = u.onload = null), clearTimeout(f)
           var r = a[e]
           if (0 !== r) {
             if (r) {
               var n = t && ('load' === t.type ? 'missing' : t.type),
                 o = t && t.target && t.target.src
-              ;(f.message =
+              ;(i.message =
                 'Loading chunk ' + e + ' failed.\n(' + n + ': ' + o + ')'),
-                (f.name = 'ChunkLoadError'),
-                (f.type = n),
-                (f.request = o),
-                r[1](f)
+                (i.name = 'ChunkLoadError'),
+                (i.type = n),
+                (i.request = o),
+                r[1](i)
             }
             a[e] = void 0
           }
         }
-        var i = setTimeout(function () {
+        var f = setTimeout(function () {
           c({ type: 'timeout', target: u })
         }, 12e4)
         ;(u.onerror = u.onload = c), document.head.appendChild(u)
@@ -211,10 +227,10 @@
       throw (console.error(e), e)
     })
   var u = (window.webpackJsonp = window.webpackJsonp || []),
-    f = u.push.bind(u)
+    i = u.push.bind(u)
   ;(u.push = t), (u = u.slice())
-  for (var i = 0; i < u.length; i++) t(u[i])
-  var l = f
+  for (var f = 0; f < u.length; f++) t(u[f])
+  var d = i
   r()
 })([])
-//# sourceMappingURL=webpack-runtime-1f7c193a641bf4c3f3d3.js.map
+//# sourceMappingURL=webpack-runtime-52d3719d28c29fccc5e8.js.map

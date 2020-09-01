@@ -1,5 +1,5 @@
 ;(window.webpackJsonp = window.webpackJsonp || []).push([
-  [8],
+  [10],
   {
     G3Xh: function (e, t, n) {
       'use strict'
@@ -167,4 +167,4 @@
     },
   },
 ])
-//# sourceMappingURL=component---src-pages-macronutrients-js-23f223f765d6ee6760a7.js.map
+//# sourceMappingURL=component---src-pages-macronutrients-js-7bfaae8378bed5ed3a2d.js.map

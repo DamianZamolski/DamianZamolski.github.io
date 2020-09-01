@@ -1,5 +1,5 @@
 ;(window.webpackJsonp = window.webpackJsonp || []).push([
-  [5],
+  [6],
   {
     '+ZDr': function (t, e, n) {
       'use strict'
@@ -243,23 +243,23 @@
               '" instead.'
           )
         },
-        O = u.default.forwardRef(function (t, e) {
+        P = u.default.forwardRef(function (t, e) {
           return u.default.createElement(w, (0, a.default)({ innerRef: e }, t))
         })
-      e.default = O
+      e.default = P
       e.navigate = function (t, e) {
         window.___navigate(y(t, window.location.pathname), e)
       }
-      var P = function (t) {
+      var O = function (t) {
         _('push', 'navigate', 3), window.___push(y(t, window.location.pathname))
       }
-      e.push = P
+      e.push = O
       e.replace = function (t) {
         _('replace', 'navigate', 3),
           window.___replace(y(t, window.location.pathname))
       }
       e.navigateTo = function (t) {
-        return _('navigateTo', 'navigate', 3), P(t)
+        return _('navigateTo', 'navigate', 3), O(t)
       }
     },
     '/hTd': function (t, e, n) {
@@ -558,7 +558,7 @@
             return k
           }),
           n.d(e, 'c', function () {
-            return Pt
+            return Ot
           })
         var u = function () {},
           l = {},
@@ -597,7 +597,7 @@
             PRIMARY: 'primary',
             SECONDARY: 'secondary',
           },
-          O =
+          P =
             ([
               'xs',
               'sm',
@@ -664,10 +664,10 @@
                   if (e) return e.getAttribute(t)
                 })(n)
               )
-            null != o && (O[r] = o)
+            null != o && (P[r] = o)
           })
         }
-        var P = c(
+        var O = c(
           {},
           {
             familyPrefix: 'fa',
@@ -682,10 +682,10 @@
             measurePerformance: !1,
             showMissingIcons: !0,
           },
-          O
+          P
         )
-        P.autoReplaceSvg || (P.observeMutations = !1)
-        var k = c({}, P)
+        O.autoReplaceSvg || (O.observeMutations = !1)
+        var k = c({}, O)
         m.FontAwesomeConfig = k
         var R = m || {}
         R.___FONT_AWESOME___ || (R.___FONT_AWESOME___ = {}),
@@ -903,7 +903,7 @@
             ]
           return e
         }
-        function V(t) {
+        function X(t) {
           return ''
             .concat(t)
             .replace(/&/g, '&amp;')
@@ -912,7 +912,7 @@
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
         }
-        function X(t) {
+        function V(t) {
           return Object.keys(t || {}).reduce(function (e, n) {
             return e + ''.concat(n, ': ').concat(t[n], ';')
           }, '')
@@ -1014,7 +1014,7 @@
               symbol: s,
               styles: p.styles,
             }),
-            O =
+            P =
               r.found && n.found
                 ? (function (t) {
                     var e,
@@ -1097,7 +1097,7 @@
                       n = t.attributes,
                       r = t.main,
                       o = t.transform,
-                      a = X(t.styles)
+                      a = V(t.styles)
                     if ((a.length > 0 && (n.style = a), Q(o))) {
                       var i = K({
                         transform: o,
@@ -1124,10 +1124,10 @@
                     } else e.push(r.icon)
                     return { children: e, attributes: n }
                   })(_),
-            P = O.children,
-            R = O.attributes
+            O = P.children,
+            R = P.attributes
           return (
-            (_.children = P),
+            (_.children = O),
             (_.attributes = R),
             s
               ? (function (t) {
@@ -1167,7 +1167,7 @@
                     i = t.transform
                   if (Q(i) && n.found && !r.found) {
                     var s = { x: n.width / n.height / 2, y: 0.5 }
-                    o.style = X(
+                    o.style = V(
                       c({}, a, {
                         'transform-origin': ''
                           .concat(s.x + i.x / 16, 'em ')
@@ -1274,14 +1274,14 @@
             o = t.children,
             a = void 0 === o ? [] : o
           return 'string' == typeof t
-            ? V(t)
+            ? X(t)
             : '<'
                 .concat(e, ' ')
                 .concat(
                   (function (t) {
                     return Object.keys(t || {})
                       .reduce(function (e, n) {
-                        return e + ''.concat(n, '="').concat(V(t[n]), '" ')
+                        return e + ''.concat(n, '="').concat(X(t[n]), '" ')
                       }, '')
                       .trim()
                   })(r),
@@ -1419,7 +1419,7 @@
           return r
         }
         function gt() {
-          k.autoAddCss && !Ot && (J(vt()), (Ot = !0))
+          k.autoAddCss && !Pt && (J(vt()), (Pt = !0))
         }
         function yt(t, e) {
           return (
@@ -1508,8 +1508,8 @@
               t
             )
           })())(),
-          Ot = !1,
-          Pt = {
+          Pt = !1,
+          Ot = {
             transform: function (t) {
               return ut(t)
             },
@@ -1540,8 +1540,8 @@
                 w = void 0 === b ? {} : b
               if (t) {
                 var _ = t.prefix,
-                  O = t.iconName,
-                  P = t.icon
+                  P = t.iconName,
+                  O = t.icon
                 return yt(c({ type: 'icon' }, t), function () {
                   return (
                     gt(),
@@ -1554,13 +1554,13 @@
                           (y.focusable = 'false'))),
                     tt({
                       icons: {
-                        main: mt(P),
+                        main: mt(O),
                         mask: s
                           ? mt(s.icon)
                           : { found: !1, width: null, height: null, icon: {} },
                       },
                       prefix: _,
-                      iconName: O,
+                      iconName: P,
                       transform: c({}, B, r),
                       symbol: a,
                       title: p,
@@ -2097,25 +2097,25 @@
                 _ < w;
                 _++
               ) {
-                var O = g[_],
-                  P = i[_]
-                if (d(O)) {
-                  b[O.slice(1) || '*'] = i
+                var P = g[_],
+                  O = i[_]
+                if (d(P)) {
+                  b[P.slice(1) || '*'] = i
                     .slice(_)
                     .map(decodeURIComponent)
                     .join('/')
                   break
                 }
-                if (void 0 === P) {
+                if (void 0 === O) {
                   p = !0
                   break
                 }
-                var k = f.exec(O)
+                var k = f.exec(P)
                 if (k && !c) {
                   ;-1 === y.indexOf(k[1]) || o()(!1)
-                  var R = decodeURIComponent(P)
+                  var R = decodeURIComponent(O)
                   b[k[1]] = R
-                } else if (O !== P) {
+                } else if (P !== O) {
                   p = !0
                   break
                 }
@@ -2339,18 +2339,38 @@
     NsGk: function (t, e, n) {
       e.components = {
         'component---src-pages-books-12-rules-for-life-js': function () {
-          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(6)]).then(
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(7)]).then(
             n.bind(null, 'VcKj')
           )
         },
+        'component---src-pages-charts-js': function () {
+          return Promise.all([
+            n.e(0),
+            n.e(2),
+            n.e(1),
+            n.e(5),
+            n.e(3),
+            n.e(8),
+          ]).then(n.bind(null, 'yFFX'))
+        },
         'component---src-pages-index-js': function () {
-          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(7)]).then(
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(9)]).then(
             n.bind(null, 'RXBc')
           )
         },
         'component---src-pages-macronutrients-js': function () {
-          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(8)]).then(
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(10)]).then(
             n.bind(null, 'G3Xh')
+          )
+        },
+        'component---src-pages-routines-evening-js': function () {
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(11)]).then(
+            n.bind(null, 'xUc0')
+          )
+        },
+        'component---src-pages-routines-morning-js': function () {
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(12)]).then(
+            n.bind(null, 'dMRG')
           )
         },
       }
@@ -2481,14 +2501,14 @@
         var e = w[t]
         return null != e && (window.___replace(e.toPath), !0)
       }
-      var O = function (t, e) {
+      var P = function (t, e) {
           _(t.pathname) ||
             Object(o.apiRunner)('onPreRouteUpdate', {
               location: t,
               prevLocation: e,
             })
         },
-        P = function (t, e) {
+        O = function (t, e) {
           _(t.pathname) ||
             Object(o.apiRunner)('onRouteUpdate', {
               location: t,
@@ -2589,21 +2609,21 @@
         S = (function (t) {
           function e(e) {
             var n
-            return (n = t.call(this, e) || this), O(e.location, null), n
+            return (n = t.call(this, e) || this), P(e.location, null), n
           }
           Object(r.a)(e, t)
           var n = e.prototype
           return (
             (n.componentDidMount = function () {
-              P(this.props.location, null)
+              O(this.props.location, null)
             }),
             (n.componentDidUpdate = function (t, e, n) {
-              n && P(this.props.location, t.location)
+              n && O(this.props.location, t.location)
             }),
             (n.getSnapshotBeforeUpdate = function (t) {
               return (
                 this.props.location.pathname !== t.location.pathname &&
-                (O(this.props.location, t.location), !0)
+                (P(this.props.location, t.location), !0)
               )
             }),
             (n.render = function () {
@@ -3014,7 +3034,7 @@
           return F
         }),
         n.d(e, 'Router', function () {
-          return P
+          return O
         }),
         n.d(e, 'ServerLocation', function () {
           return _
@@ -3038,7 +3058,7 @@
           return q
         }),
         n.d(e, 'BaseContext', function () {
-          return O
+          return P
         })
       var r = n('q1tI'),
         o = n.n(r),
@@ -3203,9 +3223,9 @@
             )
           )
         },
-        O = g('Base', { baseuri: '/', basepath: '/' }),
-        P = function (t) {
-          return o.a.createElement(O.Consumer, null, function (e) {
+        P = g('Base', { baseuri: '/', basepath: '/' }),
+        O = function (t) {
+          return o.a.createElement(P.Consumer, null, function (e) {
             return o.a.createElement(b, null, function (n) {
               return o.a.createElement(k, p({}, e, n, t))
             })
@@ -3259,7 +3279,7 @@
                     w,
                     b.props.children
                       ? o.a.createElement(
-                          P,
+                          O,
                           { location: e, primary: a },
                           b.props.children
                         )
@@ -3268,7 +3288,7 @@
                   k = a ? E : s,
                   R = a ? p({ uri: g, location: e, component: s }, u) : u
                 return o.a.createElement(
-                  O.Provider,
+                  P.Provider,
                   { value: { baseuri: g, basepath: r } },
                   o.a.createElement(k, R, _)
                 )
@@ -3389,7 +3409,7 @@
       var L = T(function (t, e) {
         var n = t.innerRef,
           r = d(t, ['innerRef'])
-        return o.a.createElement(O.Consumer, null, function (t) {
+        return o.a.createElement(P.Consumer, null, function (t) {
           t.basepath
           var a = t.baseuri
           return o.a.createElement(b, null, function (t) {
@@ -3495,7 +3515,7 @@
           )
         })(o.a.Component),
         F = function (t) {
-          return o.a.createElement(O.Consumer, null, function (e) {
+          return o.a.createElement(P.Consumer, null, function (e) {
             var n = e.baseuri
             return o.a.createElement(b, null, function (e) {
               return o.a.createElement(D, p({}, e, { baseuri: n }, t))
@@ -3505,7 +3525,7 @@
         N = function (t) {
           var e = t.path,
             n = t.children
-          return o.a.createElement(O.Consumer, null, function (t) {
+          return o.a.createElement(P.Consumer, null, function (t) {
             var r = t.baseuri
             return o.a.createElement(b, null, function (t) {
               var o = t.navigate,
@@ -3537,7 +3557,7 @@
           return t.navigate
         },
         z = function () {
-          var t = Object(r.useContext)(O)
+          var t = Object(r.useContext)(P)
           if (!t)
             throw new Error(
               'useParams hook was used but a LocationContext.Provider was not found in the parent tree. Make sure this is used in a component that is a child of Router'
@@ -3551,7 +3571,7 @@
             throw new Error(
               'useMatch(path: string) requires an argument of a string to match against'
             )
-          var e = Object(r.useContext)(O)
+          var e = Object(r.useContext)(P)
           if (!e)
             throw new Error(
               'useMatch hook was used but a LocationContext.Provider was not found in the parent tree. Make sure this is used in a component that is a child of Router'
@@ -3681,7 +3701,7 @@
           return _
         }),
         n.d(e, 'getStaticQueryResults', function () {
-          return O
+          return P
         })
       var r = n('dI71')
       function o(t, e) {
@@ -4172,7 +4192,7 @@
           },
         }
       e.default = _
-      function O() {
+      function P() {
         return m.staticQueryDb
       }
     },
@@ -4331,6 +4351,6 @@
       t.exports = n
     },
   },
-  [['UxWs', 4, 0, 9]],
+  [['UxWs', 4, 0, 13]],
 ])
-//# sourceMappingURL=app-1675f418ddb1187415de.js.map
+//# sourceMappingURL=app-d07c2a0b288cfc6102ed.js.map

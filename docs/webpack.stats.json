@@ -1,86 +1,145 @@
 {
   "errors": [],
   "warnings": [
-    "./src/components/page/area/Area.js\nThere are multiple modules with names that only differ in casing.\nThis can lead to unexpected behavior when compiling on a filesystem with other case-semantic.\nUse equal casing. Compare these module identifiers:\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\Area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\areas\\footer\\footer.js\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\dark-area\\dark-area.js"
+    "./src/components/page/area/Area.js\nThere are multiple modules with names that only differ in casing.\nThis can lead to unexpected behavior when compiling on a filesystem with other case-semantic.\nUse equal casing. Compare these module identifiers:\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\Area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\areas\\footer\\footer.js\n* C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\area.js\n    Used by 4 module(s), i. e.\n    C:\\zamola\\dev\\DamianZamolski.github.io\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\zamola\\dev\\DamianZamolski.github.io\\src\\components\\page\\area\\light-area\\light-area.js",
+    "chunk styles [mini-css-extract-plugin]\nConflicting order. Following module has been added:\n * css ./node_modules/css-loader??ref--13-oneOf-0-1!./node_modules/postcss-loader/src??postcss-4!./node_modules/sass-loader/dist/cjs.js??ref--13-oneOf-0-3!./src/components/icon-text/icon-text.module.scss\ndespite it was not able to fulfill desired ordering with these modules:\n * css ./node_modules/css-loader??ref--13-oneOf-0-1!./node_modules/postcss-loader/src??postcss-4!./node_modules/sass-loader/dist/cjs.js??ref--13-oneOf-0-3!./src/components/page/area/area.module.scss\n   - couldn't fulfill desired order of chunk group(s) component---src-pages-books-12-rules-for-life-js, component---src-pages-charts-js, component---src-pages-index-js, component---src-pages-macronutrients-js, component---src-pages-routines-evening-js\n   - while fulfilling desired order of chunk group(s) component---src-pages-routines-morning-js",
+    "chunk styles [mini-css-extract-plugin]\nConflicting order. Following module has been added:\n * css ./node_modules/css-loader??ref--13-oneOf-0-1!./node_modules/postcss-loader/src??postcss-4!./node_modules/sass-loader/dist/cjs.js??ref--13-oneOf-0-3!./src/components/page/area/area.module.scss\ndespite it was not able to fulfill desired ordering with these modules:\n * css ./node_modules/css-loader??ref--13-oneOf-0-1!./node_modules/postcss-loader/src??postcss-4!./node_modules/sass-loader/dist/cjs.js??ref--13-oneOf-0-3!./src/components/list/list.module.scss\n   - couldn't fulfill desired order of chunk group(s) component---src-pages-routines-morning-js\n   - while fulfilling desired order of chunk group(s) component---src-pages-books-12-rules-for-life-js, component---src-pages-charts-js, component---src-pages-index-js, component---src-pages-macronutrients-js, component---src-pages-routines-evening-js",
+    "chunk styles [mini-css-extract-plugin]\nConflicting order. Following module has been added:\n * css ./node_modules/css-loader??ref--13-oneOf-0-1!./node_modules/postcss-loader/src??postcss-4!./node_modules/sass-loader/dist/cjs.js??ref--13-oneOf-0-3!./src/components/page/areas/footer/Footer.module.scss\ndespite it was not able to fulfill desired ordering with these modules:\n * css ./node_modules/css-loader??ref--13-oneOf-0-1!./node_modules/postcss-loader/src??postcss-4!./node_modules/sass-loader/dist/cjs.js??ref--13-oneOf-0-3!./src/components/list/list.module.scss\n   - couldn't fulfill desired order of chunk group(s) component---src-pages-routines-morning-js\n   - while fulfilling desired order of chunk group(s) component---src-pages-books-12-rules-for-life-js, component---src-pages-charts-js, component---src-pages-index-js, component---src-pages-macronutrients-js, component---src-pages-routines-evening-js"
   ],
   "namedChunkGroups": {
     "polyfill": {
-      "chunks": [4, 10],
+      "chunks": [4, 14],
       "assets": [
-        "webpack-runtime-1f7c193a641bf4c3f3d3.js",
-        "webpack-runtime-1f7c193a641bf4c3f3d3.js.map",
-        "polyfill-40ea4eca876fac8ccd82.js",
-        "polyfill-40ea4eca876fac8ccd82.js.map"
+        "webpack-runtime-52d3719d28c29fccc5e8.js",
+        "webpack-runtime-52d3719d28c29fccc5e8.js.map",
+        "polyfill-26dfc8abb7f59baaa2ea.js",
+        "polyfill-26dfc8abb7f59baaa2ea.js.map"
       ],
       "children": {},
       "childAssets": {}
     },
     "app": {
-      "chunks": [4, 0, 9, 5],
+      "chunks": [4, 0, 13, 6],
       "assets": [
-        "webpack-runtime-1f7c193a641bf4c3f3d3.js",
-        "webpack-runtime-1f7c193a641bf4c3f3d3.js.map",
-        "styles.43e6ba4e545eb7bd7411.css",
+        "webpack-runtime-52d3719d28c29fccc5e8.js",
+        "webpack-runtime-52d3719d28c29fccc5e8.js.map",
+        "styles.24797eca7dbf897d71f6.css",
         "styles-89fd2ae28bdf06750a71.js",
         "styles-89fd2ae28bdf06750a71.js.map",
-        "framework-b5b229d58c3c710d5429.js",
-        "framework-b5b229d58c3c710d5429.js.map",
-        "app-1675f418ddb1187415de.js",
-        "app-1675f418ddb1187415de.js.map"
+        "framework-0e8501c0599d79803b4b.js",
+        "framework-0e8501c0599d79803b4b.js.map",
+        "app-d07c2a0b288cfc6102ed.js",
+        "app-d07c2a0b288cfc6102ed.js.map"
       ],
       "children": {},
       "childAssets": {}
     },
     "component---src-pages-books-12-rules-for-life-js": {
-      "chunks": [0, 2, 1, 3, 6],
+      "chunks": [0, 2, 1, 3, 7],
       "assets": [
-        "styles.43e6ba4e545eb7bd7411.css",
+        "styles.24797eca7dbf897d71f6.css",
         "styles-89fd2ae28bdf06750a71.js",
         "styles-89fd2ae28bdf06750a71.js.map",
-        "cb1608f2-6ca7077ff8db0e6f2c13.js",
-        "cb1608f2-6ca7077ff8db0e6f2c13.js.map",
+        "cb1608f2-562aabc6691098a4c4cc.js",
+        "cb1608f2-562aabc6691098a4c4cc.js.map",
         "a9a7754c-37b23b755b8f3f33b676.js",
         "a9a7754c-37b23b755b8f3f33b676.js.map",
-        "commons-061683a23ad7ba64b515.js",
-        "commons-061683a23ad7ba64b515.js.map",
-        "component---src-pages-books-12-rules-for-life-js-47b9637d902e27145cf6.js",
-        "component---src-pages-books-12-rules-for-life-js-47b9637d902e27145cf6.js.map"
+        "commons-313863d11779db7a96d1.js",
+        "commons-313863d11779db7a96d1.js.map",
+        "component---src-pages-books-12-rules-for-life-js-a99a7f6958182427b464.js",
+        "component---src-pages-books-12-rules-for-life-js-a99a7f6958182427b464.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-charts-js": {
+      "chunks": [0, 2, 1, 5, 3, 8],
+      "assets": [
+        "styles.24797eca7dbf897d71f6.css",
+        "styles-89fd2ae28bdf06750a71.js",
+        "styles-89fd2ae28bdf06750a71.js.map",
+        "cb1608f2-562aabc6691098a4c4cc.js",
+        "cb1608f2-562aabc6691098a4c4cc.js.map",
+        "a9a7754c-37b23b755b8f3f33b676.js",
+        "a9a7754c-37b23b755b8f3f33b676.js.map",
+        "4a3ea9cd-12162a16a571b2c94f09.js",
+        "4a3ea9cd-12162a16a571b2c94f09.js.map",
+        "commons-313863d11779db7a96d1.js",
+        "commons-313863d11779db7a96d1.js.map",
+        "component---src-pages-charts-js-0323df1014a1ada324b3.js",
+        "component---src-pages-charts-js-0323df1014a1ada324b3.js.map"
       ],
       "children": {},
       "childAssets": {}
     },
     "component---src-pages-index-js": {
-      "chunks": [0, 2, 1, 3, 7],
+      "chunks": [0, 2, 1, 3, 9],
       "assets": [
-        "styles.43e6ba4e545eb7bd7411.css",
+        "styles.24797eca7dbf897d71f6.css",
         "styles-89fd2ae28bdf06750a71.js",
         "styles-89fd2ae28bdf06750a71.js.map",
-        "cb1608f2-6ca7077ff8db0e6f2c13.js",
-        "cb1608f2-6ca7077ff8db0e6f2c13.js.map",
+        "cb1608f2-562aabc6691098a4c4cc.js",
+        "cb1608f2-562aabc6691098a4c4cc.js.map",
         "a9a7754c-37b23b755b8f3f33b676.js",
         "a9a7754c-37b23b755b8f3f33b676.js.map",
-        "commons-061683a23ad7ba64b515.js",
-        "commons-061683a23ad7ba64b515.js.map",
-        "component---src-pages-index-js-2af10e486bceed9277c0.js",
-        "component---src-pages-index-js-2af10e486bceed9277c0.js.map"
+        "commons-313863d11779db7a96d1.js",
+        "commons-313863d11779db7a96d1.js.map",
+        "component---src-pages-index-js-51283b44cbb1ce0cb053.js",
+        "component---src-pages-index-js-51283b44cbb1ce0cb053.js.map"
       ],
       "children": {},
       "childAssets": {}
     },
     "component---src-pages-macronutrients-js": {
-      "chunks": [0, 2, 1, 3, 8],
+      "chunks": [0, 2, 1, 3, 10],
       "assets": [
-        "styles.43e6ba4e545eb7bd7411.css",
+        "styles.24797eca7dbf897d71f6.css",
         "styles-89fd2ae28bdf06750a71.js",
         "styles-89fd2ae28bdf06750a71.js.map",
-        "cb1608f2-6ca7077ff8db0e6f2c13.js",
-        "cb1608f2-6ca7077ff8db0e6f2c13.js.map",
+        "cb1608f2-562aabc6691098a4c4cc.js",
+        "cb1608f2-562aabc6691098a4c4cc.js.map",
         "a9a7754c-37b23b755b8f3f33b676.js",
         "a9a7754c-37b23b755b8f3f33b676.js.map",
-        "commons-061683a23ad7ba64b515.js",
-        "commons-061683a23ad7ba64b515.js.map",
-        "component---src-pages-macronutrients-js-23f223f765d6ee6760a7.js",
-        "component---src-pages-macronutrients-js-23f223f765d6ee6760a7.js.map"
+        "commons-313863d11779db7a96d1.js",
+        "commons-313863d11779db7a96d1.js.map",
+        "component---src-pages-macronutrients-js-7bfaae8378bed5ed3a2d.js",
+        "component---src-pages-macronutrients-js-7bfaae8378bed5ed3a2d.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-routines-evening-js": {
+      "chunks": [0, 2, 1, 3, 11],
+      "assets": [
+        "styles.24797eca7dbf897d71f6.css",
+        "styles-89fd2ae28bdf06750a71.js",
+        "styles-89fd2ae28bdf06750a71.js.map",
+        "cb1608f2-562aabc6691098a4c4cc.js",
+        "cb1608f2-562aabc6691098a4c4cc.js.map",
+        "a9a7754c-37b23b755b8f3f33b676.js",
+        "a9a7754c-37b23b755b8f3f33b676.js.map",
+        "commons-313863d11779db7a96d1.js",
+        "commons-313863d11779db7a96d1.js.map",
+        "component---src-pages-routines-evening-js-98ef43bf81e9ea1b77c3.js",
+        "component---src-pages-routines-evening-js-98ef43bf81e9ea1b77c3.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-routines-morning-js": {
+      "chunks": [0, 2, 1, 3, 12],
+      "assets": [
+        "styles.24797eca7dbf897d71f6.css",
+        "styles-89fd2ae28bdf06750a71.js",
+        "styles-89fd2ae28bdf06750a71.js.map",
+        "cb1608f2-562aabc6691098a4c4cc.js",
+        "cb1608f2-562aabc6691098a4c4cc.js.map",
+        "a9a7754c-37b23b755b8f3f33b676.js",
+        "a9a7754c-37b23b755b8f3f33b676.js.map",
+        "commons-313863d11779db7a96d1.js",
+        "commons-313863d11779db7a96d1.js.map",
+        "component---src-pages-routines-morning-js-a9ae011d2843932a8975.js",
+        "component---src-pages-routines-morning-js-a9ae011d2843932a8975.js.map"
       ],
       "children": {},
       "childAssets": {}
@@ -88,39 +147,64 @@
   },
   "assetsByChunkName": {
     "polyfill": [
-      "webpack-runtime-1f7c193a641bf4c3f3d3.js",
-      "polyfill-40ea4eca876fac8ccd82.js"
+      "webpack-runtime-52d3719d28c29fccc5e8.js",
+      "polyfill-26dfc8abb7f59baaa2ea.js"
     ],
     "app": [
-      "webpack-runtime-1f7c193a641bf4c3f3d3.js",
-      "styles.43e6ba4e545eb7bd7411.css",
+      "webpack-runtime-52d3719d28c29fccc5e8.js",
+      "styles.24797eca7dbf897d71f6.css",
       "styles-89fd2ae28bdf06750a71.js",
-      "framework-b5b229d58c3c710d5429.js",
-      "app-1675f418ddb1187415de.js"
+      "framework-0e8501c0599d79803b4b.js",
+      "app-d07c2a0b288cfc6102ed.js"
     ],
     "component---src-pages-books-12-rules-for-life-js": [
-      "styles.43e6ba4e545eb7bd7411.css",
+      "styles.24797eca7dbf897d71f6.css",
       "styles-89fd2ae28bdf06750a71.js",
-      "cb1608f2-6ca7077ff8db0e6f2c13.js",
+      "cb1608f2-562aabc6691098a4c4cc.js",
       "a9a7754c-37b23b755b8f3f33b676.js",
-      "commons-061683a23ad7ba64b515.js",
-      "component---src-pages-books-12-rules-for-life-js-47b9637d902e27145cf6.js"
+      "commons-313863d11779db7a96d1.js",
+      "component---src-pages-books-12-rules-for-life-js-a99a7f6958182427b464.js"
+    ],
+    "component---src-pages-charts-js": [
+      "styles.24797eca7dbf897d71f6.css",
+      "styles-89fd2ae28bdf06750a71.js",
+      "cb1608f2-562aabc6691098a4c4cc.js",
+      "a9a7754c-37b23b755b8f3f33b676.js",
+      "4a3ea9cd-12162a16a571b2c94f09.js",
+      "commons-313863d11779db7a96d1.js",
+      "component---src-pages-charts-js-0323df1014a1ada324b3.js"
     ],
     "component---src-pages-index-js": [
-      "styles.43e6ba4e545eb7bd7411.css",
+      "styles.24797eca7dbf897d71f6.css",
       "styles-89fd2ae28bdf06750a71.js",
-      "cb1608f2-6ca7077ff8db0e6f2c13.js",
+      "cb1608f2-562aabc6691098a4c4cc.js",
       "a9a7754c-37b23b755b8f3f33b676.js",
-      "commons-061683a23ad7ba64b515.js",
-      "component---src-pages-index-js-2af10e486bceed9277c0.js"
+      "commons-313863d11779db7a96d1.js",
+      "component---src-pages-index-js-51283b44cbb1ce0cb053.js"
     ],
     "component---src-pages-macronutrients-js": [
-      "styles.43e6ba4e545eb7bd7411.css",
+      "styles.24797eca7dbf897d71f6.css",
       "styles-89fd2ae28bdf06750a71.js",
-      "cb1608f2-6ca7077ff8db0e6f2c13.js",
+      "cb1608f2-562aabc6691098a4c4cc.js",
       "a9a7754c-37b23b755b8f3f33b676.js",
-      "commons-061683a23ad7ba64b515.js",
-      "component---src-pages-macronutrients-js-23f223f765d6ee6760a7.js"
+      "commons-313863d11779db7a96d1.js",
+      "component---src-pages-macronutrients-js-7bfaae8378bed5ed3a2d.js"
+    ],
+    "component---src-pages-routines-evening-js": [
+      "styles.24797eca7dbf897d71f6.css",
+      "styles-89fd2ae28bdf06750a71.js",
+      "cb1608f2-562aabc6691098a4c4cc.js",
+      "a9a7754c-37b23b755b8f3f33b676.js",
+      "commons-313863d11779db7a96d1.js",
+      "component---src-pages-routines-evening-js-98ef43bf81e9ea1b77c3.js"
+    ],
+    "component---src-pages-routines-morning-js": [
+      "styles.24797eca7dbf897d71f6.css",
+      "styles-89fd2ae28bdf06750a71.js",
+      "cb1608f2-562aabc6691098a4c4cc.js",
+      "a9a7754c-37b23b755b8f3f33b676.js",
+      "commons-313863d11779db7a96d1.js",
+      "component---src-pages-routines-morning-js-a9ae011d2843932a8975.js"
     ]
   }
 }

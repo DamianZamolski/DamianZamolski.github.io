@@ -376,16 +376,16 @@ svg:not(:root).svg-inline--fa {
 body {
   font-family: Roboto, sans-serif;
 }
-.area-module--area--2kuCT {
-  background-color: #8bc34a;
-  padding: 0.5rem;
-}
 .icon-text-module--icon-text--l-JV9 {
   align-items: center;
-  display: flex;
+  display: inline-flex;
 }
 .icon-text-module--icon-text--l-JV9 .icon-text-module--icon--2D_8x {
   font-size: 1.5em;
+}
+.area-module--area--2kuCT {
+  background-color: #8bc34a;
+  padding: 0.5rem;
 }
 #Footer-module--footer--V8wej {
   grid-area: footer;
