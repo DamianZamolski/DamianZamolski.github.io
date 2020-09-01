@@ -1,9 +1,18 @@
 import React from 'react'
 import Page from '../../components/page/page'
-import List from '../../components/list/list'
+import Checklist from '../../components/list/checklist/checklist'
+import { Bed } from '../../components/icons'
 
 export default () => (
   <Page title='Evening Routine'>
-    <List items={['Go to bed at 23:30']} ordered />
+    <Checklist
+      items={[
+        <h2>
+          <Bed />
+          Go to bed at 23:30
+        </h2>,
+      ]}
+      ordered
+    />
   </Page>
 )

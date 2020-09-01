@@ -1,25 +1,53 @@
 import React from 'react'
-import {
-  faBell,
-  faCoffee,
-  faShower,
-  faBlender,
-} from '@fortawesome/free-solid-svg-icons'
-import IconText from '../../components/icon-text/icon-text'
-import List from '../../components/list/list'
 import Page from '../../components/page/page'
+import Checklist from '../../components/list/checklist/checklist'
+import {
+  Beer,
+  Bell,
+  Blender,
+  Coffee,
+  Pills,
+  Shower,
+  Teeth,
+  Weight,
+} from '../../components/icons'
 
 export default () => (
   <Page title='Morning Routine'>
-    <List
+    <Checklist
       items={[
-        <IconText icon={faBell} text='Wake up at 8:00.' />,
-        <IconText icon={faCoffee} text='Brew a coffee' />,
-        <IconText icon={faShower} text='Have a shower' />,
-        <IconText
-          icon={faBlender}
-          text='Blend the coffee with protein powder'
-        />,
+        <>
+          <Bell />
+          Wake up at 8:00.
+        </>,
+        <>
+          <Coffee />
+          Brew a coffee.
+        </>,
+        <>
+          <Weight />
+          Weigh yourself.
+        </>,
+        <>
+          <Beer />
+          Drink a mug of water.
+        </>,
+        <>
+          <Shower />
+          Have a shower.
+        </>,
+        <>
+          <Blender />
+          Blend the coffee with protein powder.
+        </>,
+        <>
+          <Pills />
+          Take morning pills.
+        </>,
+        <>
+          <Teeth />
+          Clean your mouth.
+        </>,
       ]}
       ordered
     />

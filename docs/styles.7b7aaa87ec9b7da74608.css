@@ -376,22 +376,15 @@ svg:not(:root).svg-inline--fa {
 body {
   font-family: Roboto, sans-serif;
 }
-.icon-text-module--icon-text--l-JV9 {
-  align-items: center;
-  display: inline-flex;
-}
-.icon-text-module--icon-text--l-JV9 .icon-text-module--icon--2D_8x {
-  font-size: 1.5em;
-}
 .area-module--area--2kuCT {
   background-color: #8bc34a;
   padding: 0.5rem;
 }
-#Footer-module--footer--V8wej {
-  grid-area: footer;
-}
 .list-module--list--lGEmL {
   list-style: none;
+}
+#Footer-module--footer--V8wej {
+  grid-area: footer;
 }
 #Header-module--header--3OZ6N {
   grid-area: header;
@@ -412,4 +405,8 @@ body {
   display: grid;
   grid: 'nav header' 'nav main' 1fr 'nav footer' / auto 1fr;
   height: 100vh;
+}
+.checklist-module--item--BWhGa {
+  align-items: center;
+  display: flex;
 }

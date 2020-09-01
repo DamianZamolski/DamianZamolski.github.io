@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
-import { faWeight, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 import DarkArea from '../../area/dark-area/dark-area'
-import IconText from '../../../icon-text/icon-text'
 import List from '../../../list/list'
+import { Sun, Moon, Weight } from '../../../icons'
 import { nav } from './nav.module.scss'
 
-const Link = ({ icon, page, text }) => (
+const Link = ({ Icon, page, text }) => (
   <GatsbyLink to={page}>
-    <IconText icon={icon} text={text} />
+    <Icon />
+    {text}
   </GatsbyLink>
 )
 
@@ -20,13 +20,13 @@ const Nav = () => (
           Routines:
           <List
             items={[
-              <Link icon={faSun} page='/routines/morning' text='Morning' />,
-              <Link icon={faMoon} page='/routines/evening' text='Evening' />,
+              <Link Icon={Sun} page='/routines/morning' text='Morning' />,
+              <Link Icon={Moon} page='/routines/evening' text='Evening' />,
             ]}
             ordered
           />
         </>,
-        <Link icon={faWeight} page='/macronutrients' text='Macronutrients' />,
+        <Link Icon={Weight} page='/macronutrients' text='Macronutrients' />,
       ]}
     />
   </DarkArea>
