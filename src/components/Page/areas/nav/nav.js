@@ -12,11 +12,7 @@ const Nav = () => (
         <>
           <CalendarDay />
           Journal
-          <List
-            items={[<Link page='/journal/2020-09-03'>2020-09-03</Link>]}
-            ordered
-            padded
-          />
+          <List items={[]} ordered padded />
         </>,
         <>
           <BalanceScale />
