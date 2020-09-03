@@ -1,32 +1,45 @@
 import React from 'react'
-import { Link as GatsbyLink } from 'gatsby'
 import DarkArea from '../../area/dark-area/dark-area'
 import List from '../../../list/list'
-import { Sun, Moon, Weight } from '../../../icons'
+import { Link } from '../../../link'
+import { Sun, Moon, Weight, CalendarDay, BalanceScale } from '../../../icons'
 import { nav } from './nav.module.scss'
-
-const Link = ({ Icon, page, text }) => (
-  <GatsbyLink to={page}>
-    <Icon />
-    {text}
-  </GatsbyLink>
-)
 
 const Nav = () => (
   <DarkArea Component='nav' id={nav}>
     <List
       items={[
         <>
+          <CalendarDay />
+          Journal
+          <List
+            items={[<Link page='/journal/2020-09-03'>2020-09-03</Link>]}
+            ordered
+            padded
+          />
+        </>,
+        <>
+          <BalanceScale />
           Routines:
           <List
             items={[
-              <Link Icon={Sun} page='/routines/morning' text='Morning' />,
-              <Link Icon={Moon} page='/routines/evening' text='Evening' />,
+              <Link page='/routines/morning'>
+                <Sun />
+                Morning
+              </Link>,
+              <Link page='/routines/evening'>
+                <Moon />
+                Evening
+              </Link>,
             ]}
             ordered
+            padded
           />
         </>,
-        <Link Icon={Weight} page='/macronutrients' text='Macronutrients' />,
+        <Link page='/macronutrients'>
+          <Weight />
+          Macronutrients
+        </Link>,
       ]}
     />
   </DarkArea>

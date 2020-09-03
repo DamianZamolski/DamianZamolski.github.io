@@ -10,6 +10,7 @@ import {
   Shower,
   Teeth,
   Weight,
+  Tshirt,
 } from '../../components/icons'
 
 export default () => (
@@ -39,6 +40,10 @@ export default () => (
         <h2>
           <Blender />
           Blend the coffee with protein powder.
+        </h2>,
+        <h2>
+          <Tshirt />
+          Get dressed.
         </h2>,
         <h2>
           <Pills />

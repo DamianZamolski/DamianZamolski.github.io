@@ -383,6 +383,9 @@ body {
 .list-module--list--lGEmL {
   list-style: none;
 }
+.list-module--padded--pL3tO {
+  padding-left: 0.5em;
+}
 #Footer-module--footer--V8wej {
   grid-area: footer;
 }

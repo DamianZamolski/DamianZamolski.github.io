@@ -1,5 +1,5 @@
 ;(window.webpackJsonp = window.webpackJsonp || []).push([
-  [11],
+  [12],
   {
     L7Jh: function (e, t, n) {
       e.exports = { item: 'checklist-module--item--BWhGa' }
@@ -32,7 +32,7 @@
         })
       }
     },
-    xUc0: function (e, t, n) {
+    dMRG: function (e, t, n) {
       'use strict'
       n.r(t)
       var a = n('q1tI'),
@@ -43,44 +43,62 @@
       t.default = function () {
         return l.a.createElement(
           r.a,
-          { title: 'Evening Routine' },
+          { title: 'Morning Routine' },
           l.a.createElement(u.a, {
             items: [
               l.a.createElement(
                 'h2',
                 null,
-                l.a.createElement(c.j, null),
-                'Plug in the phone.'
+                l.a.createElement(c.e, null),
+                'Wake up at 8:00.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(c.i, null),
+                'Brew a coffee.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(c.t, null),
+                'Weigh yourself.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(c.d, null),
+                'Drink a mug of water.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(c.o, null),
+                'Have a shower.'
               ),
               l.a.createElement(
                 'h2',
                 null,
                 l.a.createElement(c.f, null),
-                'Start listening to an audiobook.'
+                'Blend the coffee with protein powder.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(c.s, null),
+                'Get dressed.'
               ),
               l.a.createElement(
                 'h2',
                 null,
                 l.a.createElement(c.n, null),
-                'Wash the dishes.'
+                'Take morning pills.'
               ),
               l.a.createElement(
                 'h2',
                 null,
-                l.a.createElement(c.a, null),
-                'Apply an antiperspirant.'
-              ),
-              l.a.createElement(
-                'h2',
-                null,
-                l.a.createElement(c.p, null),
+                l.a.createElement(c.r, null),
                 'Clean your mouth.'
-              ),
-              l.a.createElement(
-                'h2',
-                null,
-                l.a.createElement(c.b, null),
-                'Go to bed at 23:30'
               ),
             ],
             ordered: !0,
@@ -90,4 +108,4 @@
     },
   },
 ])
-//# sourceMappingURL=component---src-pages-routines-evening-js-6d73b72ea3e63441e78c.js.map
+//# sourceMappingURL=component---src-pages-routines-morning-js-e4d88be9230b6cdeee62.js.map
