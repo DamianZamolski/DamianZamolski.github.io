@@ -1,6 +1,6 @@
 {
-  "polyfill": ["/polyfill-26dfc8abb7f59baaa2ea.js"],
-  "app": ["/app-d07c2a0b288cfc6102ed.js"],
+  "polyfill": ["/polyfill-300fa9a4ae17d88dc319.js"],
+  "app": ["/app-6a1c1e37ee9a744a8ebd.js"],
   "component---src-pages-books-12-rules-for-life-js": [
     "/component---src-pages-books-12-rules-for-life-js-a99a7f6958182427b464.js"
   ],
@@ -10,13 +10,16 @@
   "component---src-pages-index-js": [
     "/component---src-pages-index-js-51283b44cbb1ce0cb053.js"
   ],
+  "component---src-pages-journal-2020-09-03-js": [
+    "/component---src-pages-journal-2020-09-03-js-9a98d7abbbd9420c83c2.js"
+  ],
   "component---src-pages-macronutrients-js": [
-    "/component---src-pages-macronutrients-js-7bfaae8378bed5ed3a2d.js"
+    "/component---src-pages-macronutrients-js-34c893c33f2a7f989e7d.js"
   ],
   "component---src-pages-routines-evening-js": [
-    "/component---src-pages-routines-evening-js-0bd6795bbb84b6cf9013.js"
+    "/component---src-pages-routines-evening-js-8d8d397c95a785926ab9.js"
   ],
   "component---src-pages-routines-morning-js": [
-    "/component---src-pages-routines-morning-js-e4d88be9230b6cdeee62.js"
+    "/component---src-pages-routines-morning-js-0f156d618333a49ab14f.js"
   ]
 }

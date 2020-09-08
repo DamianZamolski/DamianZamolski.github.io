@@ -5,28 +5,28 @@
   ],
   "namedChunkGroups": {
     "polyfill": {
-      "chunks": [4, 14],
+      "chunks": [4, 15],
       "assets": [
-        "webpack-runtime-eb1693ad0e7a8f23c97c.js",
-        "webpack-runtime-eb1693ad0e7a8f23c97c.js.map",
-        "polyfill-26dfc8abb7f59baaa2ea.js",
-        "polyfill-26dfc8abb7f59baaa2ea.js.map"
+        "webpack-runtime-7e9c9219db30ea9dbd67.js",
+        "webpack-runtime-7e9c9219db30ea9dbd67.js.map",
+        "polyfill-300fa9a4ae17d88dc319.js",
+        "polyfill-300fa9a4ae17d88dc319.js.map"
       ],
       "children": {},
       "childAssets": {}
     },
     "app": {
-      "chunks": [4, 0, 13, 6],
+      "chunks": [4, 0, 14, 6],
       "assets": [
-        "webpack-runtime-eb1693ad0e7a8f23c97c.js",
-        "webpack-runtime-eb1693ad0e7a8f23c97c.js.map",
+        "webpack-runtime-7e9c9219db30ea9dbd67.js",
+        "webpack-runtime-7e9c9219db30ea9dbd67.js.map",
         "styles.be7e37577fd0e3b6b62f.css",
         "styles-89fd2ae28bdf06750a71.js",
         "styles-89fd2ae28bdf06750a71.js.map",
-        "framework-0e8501c0599d79803b4b.js",
-        "framework-0e8501c0599d79803b4b.js.map",
-        "app-d07c2a0b288cfc6102ed.js",
-        "app-d07c2a0b288cfc6102ed.js.map"
+        "framework-1a1efb3f5c798a012f4a.js",
+        "framework-1a1efb3f5c798a012f4a.js.map",
+        "app-6a1c1e37ee9a744a8ebd.js",
+        "app-6a1c1e37ee9a744a8ebd.js.map"
       ],
       "children": {},
       "childAssets": {}
@@ -41,8 +41,8 @@
         "cb1608f2-211b23a320421c9a9ec6.js.map",
         "a9a7754c-37b23b755b8f3f33b676.js",
         "a9a7754c-37b23b755b8f3f33b676.js.map",
-        "commons-7f5e25ecc7cd2e206853.js",
-        "commons-7f5e25ecc7cd2e206853.js.map",
+        "commons-4fec1e1207546e38b842.js",
+        "commons-4fec1e1207546e38b842.js.map",
         "component---src-pages-books-12-rules-for-life-js-a99a7f6958182427b464.js",
         "component---src-pages-books-12-rules-for-life-js-a99a7f6958182427b464.js.map"
       ],
@@ -61,8 +61,8 @@
         "a9a7754c-37b23b755b8f3f33b676.js.map",
         "4a3ea9cd-12162a16a571b2c94f09.js",
         "4a3ea9cd-12162a16a571b2c94f09.js.map",
-        "commons-7f5e25ecc7cd2e206853.js",
-        "commons-7f5e25ecc7cd2e206853.js.map",
+        "commons-4fec1e1207546e38b842.js",
+        "commons-4fec1e1207546e38b842.js.map",
         "component---src-pages-charts-js-0323df1014a1ada324b3.js",
         "component---src-pages-charts-js-0323df1014a1ada324b3.js.map"
       ],
@@ -79,15 +79,15 @@
         "cb1608f2-211b23a320421c9a9ec6.js.map",
         "a9a7754c-37b23b755b8f3f33b676.js",
         "a9a7754c-37b23b755b8f3f33b676.js.map",
-        "commons-7f5e25ecc7cd2e206853.js",
-        "commons-7f5e25ecc7cd2e206853.js.map",
+        "commons-4fec1e1207546e38b842.js",
+        "commons-4fec1e1207546e38b842.js.map",
         "component---src-pages-index-js-51283b44cbb1ce0cb053.js",
         "component---src-pages-index-js-51283b44cbb1ce0cb053.js.map"
       ],
       "children": {},
       "childAssets": {}
     },
-    "component---src-pages-macronutrients-js": {
+    "component---src-pages-journal-2020-09-03-js": {
       "chunks": [0, 2, 1, 3, 10],
       "assets": [
         "styles.be7e37577fd0e3b6b62f.css",
@@ -97,15 +97,15 @@
         "cb1608f2-211b23a320421c9a9ec6.js.map",
         "a9a7754c-37b23b755b8f3f33b676.js",
         "a9a7754c-37b23b755b8f3f33b676.js.map",
-        "commons-7f5e25ecc7cd2e206853.js",
-        "commons-7f5e25ecc7cd2e206853.js.map",
-        "component---src-pages-macronutrients-js-7bfaae8378bed5ed3a2d.js",
-        "component---src-pages-macronutrients-js-7bfaae8378bed5ed3a2d.js.map"
+        "commons-4fec1e1207546e38b842.js",
+        "commons-4fec1e1207546e38b842.js.map",
+        "component---src-pages-journal-2020-09-03-js-9a98d7abbbd9420c83c2.js",
+        "component---src-pages-journal-2020-09-03-js-9a98d7abbbd9420c83c2.js.map"
       ],
       "children": {},
       "childAssets": {}
     },
-    "component---src-pages-routines-evening-js": {
+    "component---src-pages-macronutrients-js": {
       "chunks": [0, 2, 1, 3, 11],
       "assets": [
         "styles.be7e37577fd0e3b6b62f.css",
@@ -115,15 +115,15 @@
         "cb1608f2-211b23a320421c9a9ec6.js.map",
         "a9a7754c-37b23b755b8f3f33b676.js",
         "a9a7754c-37b23b755b8f3f33b676.js.map",
-        "commons-7f5e25ecc7cd2e206853.js",
-        "commons-7f5e25ecc7cd2e206853.js.map",
-        "component---src-pages-routines-evening-js-0bd6795bbb84b6cf9013.js",
-        "component---src-pages-routines-evening-js-0bd6795bbb84b6cf9013.js.map"
+        "commons-4fec1e1207546e38b842.js",
+        "commons-4fec1e1207546e38b842.js.map",
+        "component---src-pages-macronutrients-js-34c893c33f2a7f989e7d.js",
+        "component---src-pages-macronutrients-js-34c893c33f2a7f989e7d.js.map"
       ],
       "children": {},
       "childAssets": {}
     },
-    "component---src-pages-routines-morning-js": {
+    "component---src-pages-routines-evening-js": {
       "chunks": [0, 2, 1, 3, 12],
       "assets": [
         "styles.be7e37577fd0e3b6b62f.css",
@@ -133,10 +133,28 @@
         "cb1608f2-211b23a320421c9a9ec6.js.map",
         "a9a7754c-37b23b755b8f3f33b676.js",
         "a9a7754c-37b23b755b8f3f33b676.js.map",
-        "commons-7f5e25ecc7cd2e206853.js",
-        "commons-7f5e25ecc7cd2e206853.js.map",
-        "component---src-pages-routines-morning-js-e4d88be9230b6cdeee62.js",
-        "component---src-pages-routines-morning-js-e4d88be9230b6cdeee62.js.map"
+        "commons-4fec1e1207546e38b842.js",
+        "commons-4fec1e1207546e38b842.js.map",
+        "component---src-pages-routines-evening-js-8d8d397c95a785926ab9.js",
+        "component---src-pages-routines-evening-js-8d8d397c95a785926ab9.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-routines-morning-js": {
+      "chunks": [0, 2, 1, 3, 13],
+      "assets": [
+        "styles.be7e37577fd0e3b6b62f.css",
+        "styles-89fd2ae28bdf06750a71.js",
+        "styles-89fd2ae28bdf06750a71.js.map",
+        "cb1608f2-211b23a320421c9a9ec6.js",
+        "cb1608f2-211b23a320421c9a9ec6.js.map",
+        "a9a7754c-37b23b755b8f3f33b676.js",
+        "a9a7754c-37b23b755b8f3f33b676.js.map",
+        "commons-4fec1e1207546e38b842.js",
+        "commons-4fec1e1207546e38b842.js.map",
+        "component---src-pages-routines-morning-js-0f156d618333a49ab14f.js",
+        "component---src-pages-routines-morning-js-0f156d618333a49ab14f.js.map"
       ],
       "children": {},
       "childAssets": {}
@@ -144,22 +162,22 @@
   },
   "assetsByChunkName": {
     "polyfill": [
-      "webpack-runtime-eb1693ad0e7a8f23c97c.js",
-      "polyfill-26dfc8abb7f59baaa2ea.js"
+      "webpack-runtime-7e9c9219db30ea9dbd67.js",
+      "polyfill-300fa9a4ae17d88dc319.js"
     ],
     "app": [
-      "webpack-runtime-eb1693ad0e7a8f23c97c.js",
+      "webpack-runtime-7e9c9219db30ea9dbd67.js",
       "styles.be7e37577fd0e3b6b62f.css",
       "styles-89fd2ae28bdf06750a71.js",
-      "framework-0e8501c0599d79803b4b.js",
-      "app-d07c2a0b288cfc6102ed.js"
+      "framework-1a1efb3f5c798a012f4a.js",
+      "app-6a1c1e37ee9a744a8ebd.js"
     ],
     "component---src-pages-books-12-rules-for-life-js": [
       "styles.be7e37577fd0e3b6b62f.css",
       "styles-89fd2ae28bdf06750a71.js",
       "cb1608f2-211b23a320421c9a9ec6.js",
       "a9a7754c-37b23b755b8f3f33b676.js",
-      "commons-7f5e25ecc7cd2e206853.js",
+      "commons-4fec1e1207546e38b842.js",
       "component---src-pages-books-12-rules-for-life-js-a99a7f6958182427b464.js"
     ],
     "component---src-pages-charts-js": [
@@ -168,7 +186,7 @@
       "cb1608f2-211b23a320421c9a9ec6.js",
       "a9a7754c-37b23b755b8f3f33b676.js",
       "4a3ea9cd-12162a16a571b2c94f09.js",
-      "commons-7f5e25ecc7cd2e206853.js",
+      "commons-4fec1e1207546e38b842.js",
       "component---src-pages-charts-js-0323df1014a1ada324b3.js"
     ],
     "component---src-pages-index-js": [
@@ -176,32 +194,40 @@
       "styles-89fd2ae28bdf06750a71.js",
       "cb1608f2-211b23a320421c9a9ec6.js",
       "a9a7754c-37b23b755b8f3f33b676.js",
-      "commons-7f5e25ecc7cd2e206853.js",
+      "commons-4fec1e1207546e38b842.js",
       "component---src-pages-index-js-51283b44cbb1ce0cb053.js"
+    ],
+    "component---src-pages-journal-2020-09-03-js": [
+      "styles.be7e37577fd0e3b6b62f.css",
+      "styles-89fd2ae28bdf06750a71.js",
+      "cb1608f2-211b23a320421c9a9ec6.js",
+      "a9a7754c-37b23b755b8f3f33b676.js",
+      "commons-4fec1e1207546e38b842.js",
+      "component---src-pages-journal-2020-09-03-js-9a98d7abbbd9420c83c2.js"
     ],
     "component---src-pages-macronutrients-js": [
       "styles.be7e37577fd0e3b6b62f.css",
       "styles-89fd2ae28bdf06750a71.js",
       "cb1608f2-211b23a320421c9a9ec6.js",
       "a9a7754c-37b23b755b8f3f33b676.js",
-      "commons-7f5e25ecc7cd2e206853.js",
-      "component---src-pages-macronutrients-js-7bfaae8378bed5ed3a2d.js"
+      "commons-4fec1e1207546e38b842.js",
+      "component---src-pages-macronutrients-js-34c893c33f2a7f989e7d.js"
     ],
     "component---src-pages-routines-evening-js": [
       "styles.be7e37577fd0e3b6b62f.css",
       "styles-89fd2ae28bdf06750a71.js",
       "cb1608f2-211b23a320421c9a9ec6.js",
       "a9a7754c-37b23b755b8f3f33b676.js",
-      "commons-7f5e25ecc7cd2e206853.js",
-      "component---src-pages-routines-evening-js-0bd6795bbb84b6cf9013.js"
+      "commons-4fec1e1207546e38b842.js",
+      "component---src-pages-routines-evening-js-8d8d397c95a785926ab9.js"
     ],
     "component---src-pages-routines-morning-js": [
       "styles.be7e37577fd0e3b6b62f.css",
       "styles-89fd2ae28bdf06750a71.js",
       "cb1608f2-211b23a320421c9a9ec6.js",
       "a9a7754c-37b23b755b8f3f33b676.js",
-      "commons-7f5e25ecc7cd2e206853.js",
-      "component---src-pages-routines-morning-js-e4d88be9230b6cdeee62.js"
+      "commons-4fec1e1207546e38b842.js",
+      "component---src-pages-routines-morning-js-0f156d618333a49ab14f.js"
     ]
   }
 }

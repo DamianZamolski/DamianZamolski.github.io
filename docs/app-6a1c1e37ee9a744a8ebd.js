@@ -2358,18 +2358,23 @@
             n.bind(null, 'RXBc')
           )
         },
-        'component---src-pages-macronutrients-js': function () {
+        'component---src-pages-journal-2020-09-03-js': function () {
           return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(10)]).then(
+            n.bind(null, 'Ro7P')
+          )
+        },
+        'component---src-pages-macronutrients-js': function () {
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(11)]).then(
             n.bind(null, 'G3Xh')
           )
         },
         'component---src-pages-routines-evening-js': function () {
-          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(11)]).then(
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(12)]).then(
             n.bind(null, 'xUc0')
           )
         },
         'component---src-pages-routines-morning-js': function () {
-          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(12)]).then(
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(13)]).then(
             n.bind(null, 'dMRG')
           )
         },
@@ -4351,6 +4356,6 @@
       t.exports = n
     },
   },
-  [['UxWs', 4, 0, 13]],
+  [['UxWs', 4, 0, 14]],
 ])
-//# sourceMappingURL=app-d07c2a0b288cfc6102ed.js.map
+//# sourceMappingURL=app-6a1c1e37ee9a744a8ebd.js.map
