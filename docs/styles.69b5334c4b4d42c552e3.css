@@ -409,6 +409,9 @@ body {
   grid: 'nav header' 'nav main' 1fr 'nav footer' / auto 1fr;
   height: 100vh;
 }
+.diet-module--number-cell--1jn1q {
+  text-align: end;
+}
 .checklist-module--item--BWhGa {
   align-items: center;
   display: flex;

@@ -6,13 +6,13 @@ import Diet, {
   createMeal,
 } from '../../components/diet/diet'
 import {
-  kfdWpc,
-  mctOil,
-  butter,
-  hazelnuts,
-  oats,
   bananas,
   chickpeas,
+  hazelnuts,
+  kerrygoldButter,
+  kfdWpc,
+  mctOil,
+  oats,
 } from '../../components/diet/products'
 
 export default () => (
@@ -22,7 +22,7 @@ export default () => (
         createMeal('Bulletproof Coffee', [
           createIngredient(kfdWpc, 30),
           createIngredient(mctOil, 15),
-          createIngredient(butter, 15),
+          createIngredient(kerrygoldButter, 15),
         ]),
         createMeal('Pre-Workout smoothie', [
           createIngredient(kfdWpc, 20),

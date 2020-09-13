@@ -1,5 +1,5 @@
-import React from 'react'
-import List from '../list/list'
+import React, { Fragment } from 'react'
+import { numberCell } from './diet.module.scss'
 
 export const createIngredient = (product, quantity) => ({
   macronutrients: {
@@ -33,45 +33,67 @@ const createMacronutrients = (items) =>
     { proteins: 0, fats: 0, carbohydrates: 0 }
   )
 
+const NumberCell = ({ value }) => <td className={numberCell}>{value}</td>
+const FixedNumberCell = ({ value }) => <NumberCell value={value.toFixed(3)} />
+
 const Diet = ({
   diet: {
     macronutrients: { carbohydrates, fats, proteins },
     meals,
   },
 }) => (
-  <>
-    Proteins: {proteins}g Fats: {fats}g Carbohydrates: {carbohydrates}g
-    <List
-      items={meals.map(
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Proteins</th>
+        <th>Fats</th>
+        <th>Carbohydrates</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Total</td>
+        <td />
+        <FixedNumberCell value={proteins} />
+        <FixedNumberCell value={fats} />
+        <FixedNumberCell value={carbohydrates} />
+      </tr>
+      {meals.map(
         ({
           ingredients,
           macronutrients: { carbohydrates, fats, proteins },
           name,
         }) => (
-          <>
-            Name: {name} Proteins: {proteins}g Fats: {fats}g Carbohydrates:{' '}
-            {carbohydrates}g
-            <List
-              items={ingredients.map(
-                ({
-                  macronutrients: { carbohydrates, fats, proteins },
-                  product: { name },
-                  quantity,
-                }) => (
-                  <>
-                    Name: {name} Quantity: {quantity}g Proteins: {proteins}g
-                    Fats: {fats}g Carbohydrates: {carbohydrates}g
-                  </>
-                )
-              )}
-              padded
-            />
-          </>
+          <Fragment key={name}>
+            <tr>
+              <td>{name}</td>
+              <td />
+              <FixedNumberCell value={proteins} />
+              <FixedNumberCell value={fats} />
+              <FixedNumberCell value={carbohydrates} />
+            </tr>
+            {ingredients.map(
+              ({
+                macronutrients: { carbohydrates, fats, proteins },
+                product: { name },
+                quantity,
+              }) => (
+                <tr key={name}>
+                  <td>{name}</td>
+                  <NumberCell value={quantity} />
+                  <FixedNumberCell value={proteins} />
+                  <FixedNumberCell value={fats} />
+                  <FixedNumberCell value={carbohydrates} />
+                </tr>
+              )
+            )}
+          </Fragment>
         )
       )}
-      ordered
-    />
-  </>
+    </tbody>
+  </table>
 )
 
 export default Diet
