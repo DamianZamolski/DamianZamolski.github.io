@@ -1,5 +1,5 @@
 ;(window.webpackJsonp = window.webpackJsonp || []).push([
-  [12],
+  [14],
   {
     L7Jh: function (e, t, n) {
       e.exports = { item: 'checklist-module--item--BWhGa' }
@@ -9,7 +9,7 @@
       var a = n('q1tI'),
         l = n.n(a),
         r = n('UZXO'),
-        c = n('L7Jh')
+        u = n('L7Jh')
       t.a = function (e) {
         var t = e.items,
           n = Object(a.useMemo)(
@@ -26,73 +26,79 @@
             [t]
           )
         return l.a.createElement(r.a, {
-          itemClassName: c.item,
+          itemClassName: u.item,
           items: n,
           ordered: !0,
         })
       }
     },
-    xUc0: function (e, t, n) {
+    dMRG: function (e, t, n) {
       'use strict'
       n.r(t)
       var a = n('q1tI'),
         l = n.n(a),
         r = n('xKBe'),
-        c = n('X6dS'),
-        u = n('10BB')
+        u = n('X6dS'),
+        c = n('10BB')
       t.default = function () {
         return l.a.createElement(
           r.a,
-          { title: 'Evening Routine' },
-          l.a.createElement(c.a, {
+          { title: 'Morning Routine' },
+          l.a.createElement(u.a, {
             items: [
               l.a.createElement(
                 'h2',
                 null,
-                l.a.createElement(u.l, null),
-                'Plug in the phone.'
+                l.a.createElement(c.e, null),
+                'Wake up at 8:00.'
               ),
               l.a.createElement(
                 'h2',
                 null,
-                l.a.createElement(u.g, null),
-                'Start listening to an audiobook.'
+                l.a.createElement(c.i, null),
+                'Brew a coffee.'
               ),
               l.a.createElement(
                 'h2',
                 null,
-                l.a.createElement(u.a, null),
-                'Apply an antiperspirant.'
+                l.a.createElement(c.t, null),
+                'Weigh yourself.'
               ),
               l.a.createElement(
                 'h2',
                 null,
-                l.a.createElement(u.r, null),
+                l.a.createElement(c.d, null),
+                'Drink a mug of water.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(c.o, null),
+                'Have a shower.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(c.f, null),
+                'Blend the coffee with protein powder.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(c.s, null),
+                'Get dressed.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(c.n, null),
+                'Take morning pills.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(c.r, null),
                 'Clean your mouth.'
-              ),
-              l.a.createElement(
-                'h2',
-                null,
-                l.a.createElement(u.p, null),
-                'Wash the dishes.'
-              ),
-              l.a.createElement(
-                'h2',
-                null,
-                l.a.createElement(u.s, null),
-                'Prepare clothes.'
-              ),
-              l.a.createElement(
-                'h2',
-                null,
-                l.a.createElement(u.n, null),
-                'Prepare pills.'
-              ),
-              l.a.createElement(
-                'h2',
-                null,
-                l.a.createElement(u.c, null),
-                'Go to bed at 23:30'
               ),
             ],
             ordered: !0,
@@ -102,4 +108,4 @@
     },
   },
 ])
-//# sourceMappingURL=component---src-pages-routines-evening-js-8d8d397c95a785926ab9.js.map
+//# sourceMappingURL=component---src-pages-routines-morning-js-54afb46f1e9de2a8beb4.js.map

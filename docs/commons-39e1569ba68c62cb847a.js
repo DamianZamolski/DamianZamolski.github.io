@@ -1568,8 +1568,8 @@
                     items: [
                       a.a.createElement(
                         C,
-                        { page: '/journal/2020-09-03' },
-                        '2020-09-03'
+                        { page: '/journal/2020-09-09' },
+                        '2020-09-09'
                       ),
                     ],
                     ordered: !0,
@@ -1606,6 +1606,27 @@
                   a.a.createElement(p.t, null),
                   'Macronutrients'
                 ),
+                a.a.createElement(
+                  a.a.Fragment,
+                  null,
+                  a.a.createElement(p.g, null),
+                  'Books',
+                  a.a.createElement(f.a, {
+                    items: [
+                      a.a.createElement(
+                        C,
+                        { page: '/books/12-rules-for-life' },
+                        '12 Rules for Life'
+                      ),
+                      a.a.createElement(
+                        C,
+                        { page: '/books/first-man-in' },
+                        'First Man In'
+                      ),
+                    ],
+                    padded: !0,
+                  })
+                ),
               ],
             })
           )
@@ -1636,4 +1657,4 @@
     },
   },
 ])
-//# sourceMappingURL=commons-4fec1e1207546e38b842.js.map
+//# sourceMappingURL=commons-39e1569ba68c62cb847a.js.map

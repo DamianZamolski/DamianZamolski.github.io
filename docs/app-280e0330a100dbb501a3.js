@@ -903,7 +903,7 @@
             ]
           return e
         }
-        function X(t) {
+        function V(t) {
           return ''
             .concat(t)
             .replace(/&/g, '&amp;')
@@ -912,7 +912,7 @@
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
         }
-        function V(t) {
+        function X(t) {
           return Object.keys(t || {}).reduce(function (e, n) {
             return e + ''.concat(n, ': ').concat(t[n], ';')
           }, '')
@@ -1097,7 +1097,7 @@
                       n = t.attributes,
                       r = t.main,
                       o = t.transform,
-                      a = V(t.styles)
+                      a = X(t.styles)
                     if ((a.length > 0 && (n.style = a), Q(o))) {
                       var i = K({
                         transform: o,
@@ -1167,7 +1167,7 @@
                     i = t.transform
                   if (Q(i) && n.found && !r.found) {
                     var s = { x: n.width / n.height / 2, y: 0.5 }
-                    o.style = V(
+                    o.style = X(
                       c({}, a, {
                         'transform-origin': ''
                           .concat(s.x + i.x / 16, 'em ')
@@ -1274,14 +1274,14 @@
             o = t.children,
             a = void 0 === o ? [] : o
           return 'string' == typeof t
-            ? X(t)
+            ? V(t)
             : '<'
                 .concat(e, ' ')
                 .concat(
                   (function (t) {
                     return Object.keys(t || {})
                       .reduce(function (e, n) {
-                        return e + ''.concat(n, '="').concat(X(t[n]), '" ')
+                        return e + ''.concat(n, '="').concat(V(t[n]), '" ')
                       }, '')
                       .trim()
                   })(r),
@@ -2343,6 +2343,11 @@
             n.bind(null, 'VcKj')
           )
         },
+        'component---src-pages-books-first-man-in-js': function () {
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(8)]).then(
+            n.bind(null, '3GIG')
+          )
+        },
         'component---src-pages-charts-js': function () {
           return Promise.all([
             n.e(0),
@@ -2350,31 +2355,31 @@
             n.e(1),
             n.e(5),
             n.e(3),
-            n.e(8),
+            n.e(9),
           ]).then(n.bind(null, 'yFFX'))
         },
         'component---src-pages-index-js': function () {
-          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(9)]).then(
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(10)]).then(
             n.bind(null, 'RXBc')
           )
         },
-        'component---src-pages-journal-2020-09-03-js': function () {
-          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(10)]).then(
-            n.bind(null, 'Ro7P')
+        'component---src-pages-journal-2020-09-09-js': function () {
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(11)]).then(
+            n.bind(null, '8VgL')
           )
         },
         'component---src-pages-macronutrients-js': function () {
-          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(11)]).then(
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(12)]).then(
             n.bind(null, 'G3Xh')
           )
         },
         'component---src-pages-routines-evening-js': function () {
-          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(12)]).then(
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(13)]).then(
             n.bind(null, 'xUc0')
           )
         },
         'component---src-pages-routines-morning-js': function () {
-          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(13)]).then(
+          return Promise.all([n.e(0), n.e(2), n.e(1), n.e(3), n.e(14)]).then(
             n.bind(null, 'dMRG')
           )
         },
@@ -4356,6 +4361,6 @@
       t.exports = n
     },
   },
-  [['UxWs', 4, 0, 14]],
+  [['UxWs', 4, 0, 15]],
 ])
-//# sourceMappingURL=app-6a1c1e37ee9a744a8ebd.js.map
+//# sourceMappingURL=app-280e0330a100dbb501a3.js.map

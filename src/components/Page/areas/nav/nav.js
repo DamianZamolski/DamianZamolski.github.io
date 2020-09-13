@@ -2,7 +2,14 @@ import React from 'react'
 import DarkArea from '../../area/dark-area/dark-area'
 import List from '../../../list/list'
 import { Link } from '../../../link'
-import { Sun, Moon, Weight, CalendarDay, BalanceScale } from '../../../icons'
+import {
+  Sun,
+  Moon,
+  Weight,
+  CalendarDay,
+  BalanceScale,
+  Book,
+} from '../../../icons'
 import { nav } from './nav.module.scss'
 
 const Nav = () => (
@@ -13,7 +20,7 @@ const Nav = () => (
           <CalendarDay />
           Journal
           <List
-            items={[<Link page='/journal/2020-09-03'>2020-09-03</Link>]}
+            items={[<Link page='/journal/2020-09-09'>2020-09-09</Link>]}
             ordered
             padded
           />
@@ -40,6 +47,17 @@ const Nav = () => (
           <Weight />
           Macronutrients
         </Link>,
+        <>
+          <Book />
+          Books
+          <List
+            items={[
+              <Link page='/books/12-rules-for-life'>12 Rules for Life</Link>,
+              <Link page='/books/first-man-in'>First Man In</Link>,
+            ]}
+            padded
+          />
+        </>,
       ]}
     />
   </DarkArea>

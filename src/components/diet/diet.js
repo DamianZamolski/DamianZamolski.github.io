@@ -40,7 +40,7 @@ const Diet = ({
   },
 }) => (
   <>
-    {carbohydrates} {fats} {proteins}
+    Proteins: {proteins}g Fats: {fats}g Carbohydrates: {carbohydrates}g
     <List
       items={meals.map(
         ({
@@ -49,7 +49,8 @@ const Diet = ({
           name,
         }) => (
           <>
-            {name} {carbohydrates} {fats} {proteins}
+            Name: {name} Proteins: {proteins}g Fats: {fats}g Carbohydrates:{' '}
+            {carbohydrates}g
             <List
               items={ingredients.map(
                 ({
@@ -58,7 +59,8 @@ const Diet = ({
                   quantity,
                 }) => (
                   <>
-                    {name} {quantity} {carbohydrates} {fats} {proteins}
+                    Name: {name} Quantity: {quantity}g Proteins: {proteins}g
+                    Fats: {fats}g Carbohydrates: {carbohydrates}g
                   </>
                 )
               )}

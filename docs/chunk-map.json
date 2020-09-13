@@ -1,25 +1,28 @@
 {
-  "polyfill": ["/polyfill-300fa9a4ae17d88dc319.js"],
-  "app": ["/app-6a1c1e37ee9a744a8ebd.js"],
+  "polyfill": ["/polyfill-b4c19884e237349d4e5a.js"],
+  "app": ["/app-280e0330a100dbb501a3.js"],
   "component---src-pages-books-12-rules-for-life-js": [
-    "/component---src-pages-books-12-rules-for-life-js-a99a7f6958182427b464.js"
+    "/component---src-pages-books-12-rules-for-life-js-cc04c12bcaf0e92091e0.js"
+  ],
+  "component---src-pages-books-first-man-in-js": [
+    "/component---src-pages-books-first-man-in-js-4f285047a106dbe89711.js"
   ],
   "component---src-pages-charts-js": [
-    "/component---src-pages-charts-js-0323df1014a1ada324b3.js"
+    "/component---src-pages-charts-js-976811fc3ccac10a1ca2.js"
   ],
   "component---src-pages-index-js": [
-    "/component---src-pages-index-js-51283b44cbb1ce0cb053.js"
+    "/component---src-pages-index-js-9f7e7d3e460377b92b09.js"
   ],
-  "component---src-pages-journal-2020-09-03-js": [
-    "/component---src-pages-journal-2020-09-03-js-9a98d7abbbd9420c83c2.js"
+  "component---src-pages-journal-2020-09-09-js": [
+    "/component---src-pages-journal-2020-09-09-js-44cfd65317b1ccb8ab98.js"
   ],
   "component---src-pages-macronutrients-js": [
-    "/component---src-pages-macronutrients-js-34c893c33f2a7f989e7d.js"
+    "/component---src-pages-macronutrients-js-f314503bb08e533a72e5.js"
   ],
   "component---src-pages-routines-evening-js": [
-    "/component---src-pages-routines-evening-js-8d8d397c95a785926ab9.js"
+    "/component---src-pages-routines-evening-js-bd7abf4404cbbfa82c86.js"
   ],
   "component---src-pages-routines-morning-js": [
-    "/component---src-pages-routines-morning-js-0f156d618333a49ab14f.js"
+    "/component---src-pages-routines-morning-js-54afb46f1e9de2a8beb4.js"
   ]
 }

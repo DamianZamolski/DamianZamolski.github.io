@@ -9,7 +9,7 @@
       var a = n('q1tI'),
         l = n.n(a),
         r = n('UZXO'),
-        u = n('L7Jh')
+        c = n('L7Jh')
       t.a = function (e) {
         var t = e.items,
           n = Object(a.useMemo)(
@@ -26,79 +26,73 @@
             [t]
           )
         return l.a.createElement(r.a, {
-          itemClassName: u.item,
+          itemClassName: c.item,
           items: n,
           ordered: !0,
         })
       }
     },
-    dMRG: function (e, t, n) {
+    xUc0: function (e, t, n) {
       'use strict'
       n.r(t)
       var a = n('q1tI'),
         l = n.n(a),
         r = n('xKBe'),
-        u = n('X6dS'),
-        c = n('10BB')
+        c = n('X6dS'),
+        u = n('10BB')
       t.default = function () {
         return l.a.createElement(
           r.a,
-          { title: 'Morning Routine' },
-          l.a.createElement(u.a, {
+          { title: 'Evening Routine' },
+          l.a.createElement(c.a, {
             items: [
               l.a.createElement(
                 'h2',
                 null,
-                l.a.createElement(c.e, null),
-                'Wake up at 8:00.'
+                l.a.createElement(u.l, null),
+                'Plug in the phone.'
               ),
               l.a.createElement(
                 'h2',
                 null,
-                l.a.createElement(c.i, null),
-                'Brew a coffee.'
+                l.a.createElement(u.g, null),
+                'Start listening to an audiobook.'
               ),
               l.a.createElement(
                 'h2',
                 null,
-                l.a.createElement(c.t, null),
-                'Weigh yourself.'
+                l.a.createElement(u.a, null),
+                'Apply an antiperspirant.'
               ),
               l.a.createElement(
                 'h2',
                 null,
-                l.a.createElement(c.d, null),
-                'Drink a mug of water.'
-              ),
-              l.a.createElement(
-                'h2',
-                null,
-                l.a.createElement(c.o, null),
-                'Have a shower.'
-              ),
-              l.a.createElement(
-                'h2',
-                null,
-                l.a.createElement(c.f, null),
-                'Blend the coffee with protein powder.'
-              ),
-              l.a.createElement(
-                'h2',
-                null,
-                l.a.createElement(c.s, null),
-                'Get dressed.'
-              ),
-              l.a.createElement(
-                'h2',
-                null,
-                l.a.createElement(c.n, null),
-                'Take morning pills.'
-              ),
-              l.a.createElement(
-                'h2',
-                null,
-                l.a.createElement(c.r, null),
+                l.a.createElement(u.r, null),
                 'Clean your mouth.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(u.p, null),
+                'Wash the dishes.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(u.s, null),
+                'Prepare clothes.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(u.n, null),
+                'Prepare pills.'
+              ),
+              l.a.createElement(
+                'h2',
+                null,
+                l.a.createElement(u.c, null),
+                'Go to bed at 23:30'
               ),
             ],
             ordered: !0,
@@ -108,4 +102,4 @@
     },
   },
 ])
-//# sourceMappingURL=component---src-pages-routines-morning-js-0f156d618333a49ab14f.js.map
+//# sourceMappingURL=component---src-pages-routines-evening-js-bd7abf4404cbbfa82c86.js.map
