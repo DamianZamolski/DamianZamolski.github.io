@@ -1,0 +1,23 @@
+{
+  "name": "damian-zamolski",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export -o docs && touch docs/.nojekyll",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "",
+    "react": "",
+    "react-dom": ""
+  },
+  "devDependencies": {
+    "@types/node": "",
+    "@types/react": "",
+    "@types/react-dom": "",
+    "eslint": "",
+    "eslint-config-next": "",
+    "typescript": ""
+  }
+}
