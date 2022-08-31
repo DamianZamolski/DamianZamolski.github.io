@@ -18,6 +18,7 @@
     "@types/react-dom": "",
     "eslint": "",
     "eslint-config-next": "",
+    "prettier": "",
     "typescript": ""
   }
 }
