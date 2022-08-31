@@ -1,4 +1,6 @@
 import { ReactNode } from 'react';
+import NextLevelProvider from './Level/NextLevelProvider';
+import Heading from './Heading';
 
 interface SectionProps {
   heading: string;
@@ -7,9 +9,11 @@ interface SectionProps {
 
 export default function Section({ heading, children }: SectionProps) {
   return (
-    <section>
-      <h1>{heading}</h1>
-      {children}
-    </section>
+    <NextLevelProvider>
+      <section>
+        <Heading>{heading}</Heading>
+        {children}
+      </section>
+    </NextLevelProvider>
   );
 }
