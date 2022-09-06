@@ -3,13 +3,11 @@
   margin: 0;
   padding: 0;
 }
-
 body {
   padding: 1em;
-  font-family: 'Lato', sans-serif;
+  font-family: Lato, sans-serif;
   line-height: 1;
 }
-
 h1,
 h2,
 h3,
@@ -18,50 +16,39 @@ h5,
 h6 {
   margin-bottom: 0.5em;
 }
-
 h6 {
   font-size: 1.2em;
 }
-
 h5 {
   font-size: 1.4em;
 }
-
 h4 {
   font-size: 1.6em;
 }
-
 h3 {
   font-size: 1.8em;
 }
-
 h2 {
   font-size: 2em;
 }
-
 h1 {
   font-size: 2.2em;
 }
-
 table {
   border-collapse: collapse;
 }
-
-th,
-td {
-  border: solid 1px black;
+td,
+th {
+  border: 1px solid #000;
   padding: 0.5rem;
 }
-
-th.number,
-td.number {
+td.number,
+th.number {
   text-align: end;
 }
-
 th {
   font-size: 1.1em;
 }
-
 ul {
   list-style: none;
 }

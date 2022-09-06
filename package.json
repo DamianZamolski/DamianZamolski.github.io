@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export -o docs && touch docs/.nojekyll",
+    "format": "prettier --write",
     "lint": "next lint"
   },
   "dependencies": {
