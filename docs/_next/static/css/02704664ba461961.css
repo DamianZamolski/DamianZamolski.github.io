@@ -13,7 +13,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+nav {
   margin-bottom: 0.5em;
 }
 h6 {
@@ -34,8 +35,19 @@ h2 {
 h1 {
   font-size: 2.2em;
 }
+ol {
+  list-style: none;
+  counter-reset: item;
+}
+ol > li:before {
+  content: counters(item, '.') ' ';
+}
+ol > li {
+  counter-increment: item;
+}
 table {
   border-collapse: collapse;
+  text-align: left;
 }
 td,
 th {
@@ -51,4 +63,8 @@ th {
 }
 ul {
   list-style: none;
+}
+a,
+a:visited {
+  color: blue;
 }

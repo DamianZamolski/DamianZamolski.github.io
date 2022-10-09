@@ -5,9 +5,64 @@
       (window.__NEXT_P = window.__NEXT_P || []).push([
         '/smoothie',
         function () {
-          return c(3353);
+          return c(3199);
         },
       ]);
+    },
+    8100: function (a, b, c) {
+      'use strict';
+      c.d(b, {
+        Z: function () {
+          return f;
+        },
+      });
+      var d = c(5893),
+        e = c(2374);
+      function f(a) {
+        var b = a.children,
+          c = (0, e.Z)(),
+          f = 'h'.concat(c);
+        return (0, d.jsx)(f, { children: b });
+      }
+    },
+    3147: function (a, b, c) {
+      'use strict';
+      var d = c(7294);
+      b.Z = (0, d.createContext)(0);
+    },
+    3697: function (a, b, c) {
+      'use strict';
+      c.d(b, {
+        t: function () {
+          return h;
+        },
+      });
+      var d = c(5893),
+        e = c(3147);
+      function f(a) {
+        var b = a.level,
+          c = a.children;
+        return (0, d.jsx)(e.Z.Provider, { value: b, children: c });
+      }
+      var g = c(2374);
+      function h(a) {
+        var b = a.children,
+          c = (0, g.Z)() + 1;
+        return (0, d.jsx)(f, { level: c, children: b });
+      }
+    },
+    2374: function (a, b, c) {
+      'use strict';
+      c.d(b, {
+        Z: function () {
+          return f;
+        },
+      });
+      var d = c(7294),
+        e = c(3147);
+      function f() {
+        return (0, d.useContext)(e.Z);
+      }
     },
     1508: function (a, b, c) {
       'use strict';
@@ -28,51 +83,12 @@
         });
       }
     },
-    5671: function (a, b, c) {
-      'use strict';
-      c.d(b, {
-        Z: function () {
-          return k;
-        },
-      });
-      var d = c(5893),
-        e = c(7294),
-        f = (0, e.createContext)(0);
-      function g(a) {
-        var b = a.level,
-          c = a.children;
-        return (0, d.jsx)(f.Provider, { value: b, children: c });
-      }
-      function h() {
-        return (0, e.useContext)(f);
-      }
-      function i(a) {
-        var b = a.children,
-          c = h() + 1;
-        return (0, d.jsx)(g, { level: c, children: b });
-      }
-      function j(a) {
-        var b = a.children,
-          c = h(),
-          e = 'h'.concat(c);
-        return (0, d.jsx)(e, { children: b });
-      }
-      function k(a) {
-        var b = a.heading,
-          c = a.children;
-        return (0, d.jsx)(i, {
-          children: (0, d.jsxs)('section', {
-            children: [(0, d.jsx)(j, { children: b }), c],
-          }),
-        });
-      }
-    },
-    3353: function (a, b, c) {
+    3199: function (a, b, c) {
       'use strict';
       c.r(b),
         c.d(b, {
           default: function () {
-            return p;
+            return r;
           },
         });
       var d = c(5893),
@@ -231,14 +247,24 @@
             carbohydratesPercentage: 65,
           },
         },
-        o = c(5671);
-      function p() {
+        o = c(3697),
+        p = c(8100);
+      function q(a) {
+        var b = a.heading,
+          c = a.children;
+        return (0, d.jsx)('section', {
+          children: (0, d.jsxs)(o.t, {
+            children: [(0, d.jsx)(p.Z, { children: b }), c],
+          }),
+        });
+      }
+      function r() {
         return (0, d.jsxs)(d.Fragment, {
           children: [
             (0, d.jsx)('nav', {
               children: (0, d.jsx)(e.Z, { target: '/', children: 'Home' }),
             }),
-            (0, d.jsx)(o.Z, {
+            (0, d.jsx)(q, {
               heading: 'Smoothie',
               children: (0, d.jsx)(h, {
                 ingredients: [

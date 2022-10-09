@@ -2,18 +2,18 @@ import { ReactNode } from 'react';
 import { NextLevelProvider } from '@/Level';
 import Heading from '@/Heading';
 
-interface SectionProps {
+interface ArticleProps {
   heading: string;
   children: ReactNode;
 }
 
-export default function Section({ heading, children }: SectionProps) {
+export default function Article({ heading, children }: ArticleProps) {
   return (
-    <section>
+    <article>
       <NextLevelProvider>
         <Heading>{heading}</Heading>
         {children}
       </NextLevelProvider>
-    </section>
+    </article>
   );
 }
