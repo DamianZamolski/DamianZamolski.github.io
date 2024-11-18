@@ -15,14 +15,6 @@ export default function UnfathomablePage() {
     setShouldIncludeFromTheAbyssCharacters,
   ] = useState(true);
 
-  const [varianceThreshold, setVarianceThreshold] = useState(2);
-
-  const [resultCharacters, setResultCharacters] = useState<
-    ReadonlyArray<UnfathomableCharacter>
-  >([]);
-
-  const [variance, setVariance] = useState(0);
-
   const charactersPool = useMemo(
     () =>
       shouldIncludeFromTheAbyssCharacters
@@ -32,6 +24,34 @@ export default function UnfathomablePage() {
           ),
     [shouldIncludeFromTheAbyssCharacters],
   );
+
+  const [varianceThreshold, setVarianceThreshold] = useState(2);
+
+  const [resultCharacters, setResultCharacters] = useState<
+    ReadonlyArray<UnfathomableCharacter>
+  >([]);
+
+  const captain = resultCharacters.reduce(
+    (captain, character) =>
+      character.captain < captain.captain ? character : captain,
+    { name: '', captain: 100 },
+  );
+
+  const keeperOfTheTome = resultCharacters.reduce(
+    (keeperOfTheTome, character) =>
+      character.keeperOfTheTome < keeperOfTheTome.keeperOfTheTome
+        ? character
+        : keeperOfTheTome,
+    { name: '', keeperOfTheTome: 100 },
+  );
+
+  const titlesMap = {
+    [captain.name]: 'Captain',
+    [keeperOfTheTome.name]: 'Keeper of The Tome',
+  };
+
+  const totals = calculateCharactersTotals(resultCharacters);
+  const [variance, setVariance] = useState(0);
 
   const onPlayerCountChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -56,7 +76,7 @@ export default function UnfathomablePage() {
     [],
   );
 
-  const onPickClick = useCallback(
+  const onRandomizeClick = useCallback(
     (event: MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
       let newCharacters = [];
@@ -76,12 +96,10 @@ export default function UnfathomablePage() {
     [charactersPool, playerCount, varianceThreshold],
   );
 
-  const totals = calculateCharactersTotals(resultCharacters);
-
   return (
     <main>
       <header>
-        <h1>Unfathomable</h1>
+        <h1>Unfathomable Crew Randomizer</h1>
       </header>
       <form>
         <fieldset>
@@ -114,8 +132,8 @@ export default function UnfathomablePage() {
             Include From The Abyss Characters
           </label>
         </fieldset>
-        <button type='submit' onClick={onPickClick}>
-          Pick
+        <button type='submit' onClick={onRandomizeClick}>
+          Randomize
         </button>
       </form>
       {resultCharacters.length > 0 && (
@@ -123,37 +141,39 @@ export default function UnfathomablePage() {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Wpływ</th>
-              <th>Wiedza</th>
-              <th>Percepcja</th>
-              <th>Siła</th>
-              <th>Wola</th>
+              <th>Title</th>
+              <th>Influence</th>
+              <th>Lore</th>
+              <th>Perception</th>
+              <th>Strength</th>
+              <th>Will</th>
             </tr>
           </thead>
           <tbody>
             {resultCharacters.map((character) => (
               <tr key={character.name}>
                 <td>{character.name}</td>
-                <td>{character.wplyw ?? '-'}</td>
-                <td>{character.wiedza ?? '-'}</td>
-                <td>{character.percepcja ?? '-'}</td>
-                <td>{character.sila ?? '-'}</td>
-                <td>{character.wola ?? '-'}</td>
+                <td>{titlesMap[character.name] ?? '-'}</td>
+                <td>{character.influence ?? '-'}</td>
+                <td>{character.lore ?? '-'}</td>
+                <td>{character.perception ?? '-'}</td>
+                <td>{character.strength ?? '-'}</td>
+                <td>{character.will ?? '-'}</td>
               </tr>
             ))}
           </tbody>
           <tfoot>
             <tr>
-              <td>Total</td>
-              <td>{totals.wplyw}</td>
-              <td>{totals.wiedza}</td>
-              <td>{totals.percepcja}</td>
-              <td>{totals.sila}</td>
-              <td>{totals.wola}</td>
+              <td colSpan={2}>Total</td>
+              <td>{totals.influence}</td>
+              <td>{totals.lore}</td>
+              <td>{totals.perception}</td>
+              <td>{totals.strength}</td>
+              <td>{totals.will}</td>
             </tr>
             <tr>
               <td>Variance</td>
-              <td colSpan={5}>{variance.toFixed(2)}</td>
+              <td colSpan={6}>{variance.toFixed(2)}</td>
             </tr>
           </tfoot>
         </table>
