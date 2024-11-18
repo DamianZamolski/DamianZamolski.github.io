@@ -1,11 +1,11 @@
 'use client';
 import type { Character } from './Character';
+import { calculateCharactersTotals } from '@/calculateCharactersTotals';
 import { calculateCharactersVariance } from '@/calculateCharactersVariance';
 import { ChangeEvent, useCallback, useState } from 'react';
+import { clamp } from '@/clamp';
 import { shuffleArray } from '@/shuffleArray';
 import { unfathomableCharacters } from './characters';
-import { calculateCharactersTotals } from '@/calculateCharactersTotals';
-import { clamp } from '@/clamp';
 
 export default function UnfathomablePage() {
   const [playerCount, setPlayerCount] = useState(6);
@@ -72,44 +72,46 @@ export default function UnfathomablePage() {
         />
       </label>
       <button onClick={onPickClick}>Pick</button>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Wpływ</th>
-            <th>Wiedza</th>
-            <th>Percepcja</th>
-            <th>Siła</th>
-            <th>Wola</th>
-          </tr>
-        </thead>
-        <tbody>
-          {characters.map((character) => (
-            <tr key={character.name}>
-              <td>{character.name}</td>
-              <td>{character.wplyw ?? '-'}</td>
-              <td>{character.wiedza ?? '-'}</td>
-              <td>{character.percepcja ?? '-'}</td>
-              <td>{character.sila ?? '-'}</td>
-              <td>{character.wola ?? '-'}</td>
+      {characters.length > 0 && (
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Wpływ</th>
+              <th>Wiedza</th>
+              <th>Percepcja</th>
+              <th>Siła</th>
+              <th>Wola</th>
             </tr>
-          ))}
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>Total</td>
-            <td>{totals.wplyw}</td>
-            <td>{totals.wiedza}</td>
-            <td>{totals.percepcja}</td>
-            <td>{totals.sila}</td>
-            <td>{totals.wola}</td>
-          </tr>
-          <tr>
-            <td>Variance</td>
-            <td colSpan={5}>{variance.toFixed(2)}</td>
-          </tr>
-        </tfoot>
-      </table>
+          </thead>
+          <tbody>
+            {characters.map((character) => (
+              <tr key={character.name}>
+                <td>{character.name}</td>
+                <td>{character.wplyw ?? '-'}</td>
+                <td>{character.wiedza ?? '-'}</td>
+                <td>{character.percepcja ?? '-'}</td>
+                <td>{character.sila ?? '-'}</td>
+                <td>{character.wola ?? '-'}</td>
+              </tr>
+            ))}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <td>{totals.wplyw}</td>
+              <td>{totals.wiedza}</td>
+              <td>{totals.percepcja}</td>
+              <td>{totals.sila}</td>
+              <td>{totals.wola}</td>
+            </tr>
+            <tr>
+              <td>Variance</td>
+              <td colSpan={5}>{variance.toFixed(2)}</td>
+            </tr>
+          </tfoot>
+        </table>
+      )}
     </main>
   );
 }
