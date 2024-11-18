@@ -1,9 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///home/dz/dz/projects/dz/src/app/layout.tsx"],"sourcesContent":["import '@picocss/pico/css/pico.classless.min.css';\nimport type { Metadata } from 'next';\n\nexport const metadata: Metadata = {\n  title: 'Damian Zamolski',\n};\n\nexport default function RootLayout({\n  children,\n}: Readonly<{\n  children: React.ReactNode;\n}>) {\n  return (\n    <html lang='en'>\n      <body>{children}</body>\n    </html>\n  );\n}\n"],"names":[],"mappings":";;;;;;;AAGO,MAAM,WAAqB;IAChC,OAAO;AACT;AAEe,SAAS,WAAW,EACjC,QAAQ,EAGR;IACA,qBACE,6WAAC;QAAK,MAAK;kBACT,cAAA,6WAAC;sBAAM;;;;;;;;;;;AAGb"}},
-    {"offset": {"line": 33, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
-    {"offset": {"line": 44, "column": 0}, "map": {"version":3,"sources":["file:///home/dz/dz/projects/dz/node_modules/.pnpm/next%4015.0.3_react-dom%4018.3.1_react%4018.3.1__react%4018.3.1/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = require('../../module.compiled').vendored[\n  'react-rsc'\n].ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":";AAAAA,OAAOC,OAAO,GAAGC,QAAQ,qMAAyBC,QAAQ,CACxD,YACD,CAACC,kBAAkB","ignoreList":[0]}},
-    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

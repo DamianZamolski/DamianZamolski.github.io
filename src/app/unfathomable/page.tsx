@@ -5,6 +5,7 @@ import { ChangeEvent, useCallback, useState } from 'react';
 import { shuffleArray } from '@/shuffleArray';
 import { unfathomableCharacters } from './characters';
 import { calculateCharactersTotals } from '@/calculateCharactersTotals';
+import { clamp } from '@/clamp';
 
 export default function UnfathomablePage() {
   const [playerCount, setPlayerCount] = useState(6);
@@ -14,7 +15,7 @@ export default function UnfathomablePage() {
 
   const onPlayerCountChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
-      setPlayerCount(Number(event.target.value));
+      setPlayerCount(clamp(Number(event.target.value), 3, 6));
     },
     [],
   );
