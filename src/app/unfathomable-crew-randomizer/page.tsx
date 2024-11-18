@@ -25,7 +25,7 @@ export default function UnfathomablePage() {
     [shouldIncludeFromTheAbyssCharacters],
   );
 
-  const [varianceThreshold, setVarianceThreshold] = useState(2);
+  const [maxVariance, setMaxVariance] = useState(2);
 
   const [resultCharacters, setResultCharacters] = useState<
     ReadonlyArray<UnfathomableCharacter>
@@ -60,11 +60,11 @@ export default function UnfathomablePage() {
     [],
   );
 
-  const onVarianceThresholdChange = useCallback(
+  const onMaxVarianceChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       let newValue = Number(event.target.value);
       if (newValue < 0) newValue = 0;
-      setVarianceThreshold(newValue);
+      setMaxVariance(newValue);
     },
     [],
   );
@@ -88,12 +88,12 @@ export default function UnfathomablePage() {
           .sort((a, b) => a.name.localeCompare(b.name));
 
         newVariance = calculateCharactersVariance(newCharacters);
-      } while (newVariance > varianceThreshold);
+      } while (newVariance > maxVariance);
 
       setResultCharacters(newCharacters);
       setVariance(newVariance);
     },
-    [charactersPool, playerCount, varianceThreshold],
+    [charactersPool, playerCount, maxVariance],
   );
 
   return (
@@ -114,13 +114,13 @@ export default function UnfathomablePage() {
             />
           </label>
           <label>
-            Variance Threshold
+            Max Variance
             <input
               type='number'
               min={0}
               step={0.1}
-              value={varianceThreshold}
-              onChange={onVarianceThresholdChange}
+              value={maxVariance}
+              onChange={onMaxVarianceChange}
             />
           </label>
           <label>
@@ -173,7 +173,7 @@ export default function UnfathomablePage() {
             </tr>
             <tr>
               <td>Variance</td>
-              <td colSpan={6}>{variance.toFixed(2)}</td>
+              <td colSpan={6}>{variance}</td>
             </tr>
           </tfoot>
         </table>

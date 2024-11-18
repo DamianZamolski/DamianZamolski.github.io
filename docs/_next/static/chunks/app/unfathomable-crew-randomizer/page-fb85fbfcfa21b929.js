@@ -6,9 +6,9 @@
     },
     3819: (e, n, l) => {
       'use strict';
-      l.r(n), l.d(n, { default: () => c });
-      var r = l(632),
-        a = l(5268);
+      l.r(n), l.d(n, { default: () => o });
+      var a = l(632),
+        r = l(5268);
       let t = [
           {
             name: 'Antar Al-Fakahany',
@@ -164,16 +164,16 @@
           let n = e.reduce((e, n) => e + n, 0) / e.length;
           return e.reduce((e, l) => e + (l - n) ** 2, 0) / e.length;
         };
-      function o(e) {
+      function c(e) {
         return e.reduce(
           (e, n) => {
-            var l, r, a, t, i;
+            var l, a, r, t, i;
             return (
               (e.influence +=
                 null !== (l = n.influence) && void 0 !== l ? l : 0),
-              (e.lore += null !== (r = n.lore) && void 0 !== r ? r : 0),
+              (e.lore += null !== (a = n.lore) && void 0 !== a ? a : 0),
               (e.perception +=
-                null !== (a = n.perception) && void 0 !== a ? a : 0),
+                null !== (r = n.perception) && void 0 !== r ? r : 0),
               (e.strength += null !== (t = n.strength) && void 0 !== t ? t : 0),
               (e.will += null !== (i = n.will) && void 0 !== i ? i : 0),
               e
@@ -182,15 +182,15 @@
           { influence: 0, lore: 0, perception: 0, strength: 0, will: 0 },
         );
       }
-      function c() {
-        let [e, n] = (0, a.useState)(6),
-          [l, c] = (0, a.useState)(!0),
-          s = (0, a.useMemo)(
+      function o() {
+        let [e, n] = (0, r.useState)(6),
+          [l, o] = (0, r.useState)(!0),
+          s = (0, r.useMemo)(
             () => (l ? t : t.filter((e) => 'from-the-abyss' !== e.expansion)),
             [l],
           ),
-          [h, p] = (0, a.useState)(2),
-          [d, m] = (0, a.useState)([]),
+          [h, p] = (0, r.useState)(2),
+          [d, m] = (0, r.useState)([]),
           u = d.reduce((e, n) => (n.captain < e.captain ? n : e), {
             name: '',
             captain: 100,
@@ -200,27 +200,27 @@
             { name: '', keeperOfTheTome: 100 },
           ),
           x = { [u.name]: 'Captain', [f.name]: 'Keeper of The Tome' },
-          T = o(d),
-          [j, k] = (0, a.useState)(0),
-          b = (0, a.useCallback)((e) => {
+          T = c(d),
+          [j, k] = (0, r.useState)(0),
+          b = (0, r.useCallback)((e) => {
             n(Math.min(Math.max(Number(e.target.value), 3), 6));
           }, []),
-          g = (0, a.useCallback)((e) => {
+          g = (0, r.useCallback)((e) => {
             let n = Number(e.target.value);
             n < 0 && (n = 0), p(n);
           }, []),
-          v = (0, a.useCallback)((e) => {
-            c(e.target.checked);
+          v = (0, r.useCallback)((e) => {
+            o(e.target.checked);
           }, []),
-          O = (0, a.useCallback)(
+          O = (0, r.useCallback)(
             (n) => {
               n.preventDefault();
               let l = [],
-                r = 0;
+                a = 0;
               do
-                r = i(
+                a = i(
                   Object.values(
-                    o(
+                    c(
                       (l = (function (e) {
                         let n = e.slice();
                         for (let e = n.length - 1; e > 0; e--) {
@@ -234,26 +234,26 @@
                     ),
                   ),
                 );
-              while (r > h);
-              m(l), k(r);
+              while (a > h);
+              m(l), k(a);
             },
             [s, e, h],
           );
-        return (0, r.jsxs)('main', {
+        return (0, a.jsxs)('main', {
           children: [
-            (0, r.jsx)('header', {
-              children: (0, r.jsx)('h1', {
+            (0, a.jsx)('header', {
+              children: (0, a.jsx)('h1', {
                 children: 'Unfathomable Crew Randomizer',
               }),
             }),
-            (0, r.jsxs)('form', {
+            (0, a.jsxs)('form', {
               children: [
-                (0, r.jsxs)('fieldset', {
+                (0, a.jsxs)('fieldset', {
                   children: [
-                    (0, r.jsxs)('label', {
+                    (0, a.jsxs)('label', {
                       children: [
                         'Player Count',
-                        (0, r.jsx)('input', {
+                        (0, a.jsx)('input', {
                           type: 'number',
                           min: 3,
                           max: 6,
@@ -262,10 +262,10 @@
                         }),
                       ],
                     }),
-                    (0, r.jsxs)('label', {
+                    (0, a.jsxs)('label', {
                       children: [
-                        'Variance Threshold',
-                        (0, r.jsx)('input', {
+                        'Max Variance',
+                        (0, a.jsx)('input', {
                           type: 'number',
                           min: 0,
                           step: 0.1,
@@ -274,9 +274,9 @@
                         }),
                       ],
                     }),
-                    (0, r.jsxs)('label', {
+                    (0, a.jsxs)('label', {
                       children: [
-                        (0, r.jsx)('input', {
+                        (0, a.jsx)('input', {
                           type: 'checkbox',
                           checked: l,
                           onChange: v,
@@ -286,7 +286,7 @@
                     }),
                   ],
                 }),
-                (0, r.jsx)('button', {
+                (0, a.jsx)('button', {
                   type: 'submit',
                   onClick: O,
                   children: 'Randomize',
@@ -294,60 +294,60 @@
               ],
             }),
             d.length > 0 &&
-              (0, r.jsxs)('table', {
+              (0, a.jsxs)('table', {
                 children: [
-                  (0, r.jsx)('thead', {
-                    children: (0, r.jsxs)('tr', {
+                  (0, a.jsx)('thead', {
+                    children: (0, a.jsxs)('tr', {
                       children: [
-                        (0, r.jsx)('th', { children: 'Name' }),
-                        (0, r.jsx)('th', { children: 'Title' }),
-                        (0, r.jsx)('th', { children: 'Influence' }),
-                        (0, r.jsx)('th', { children: 'Lore' }),
-                        (0, r.jsx)('th', { children: 'Perception' }),
-                        (0, r.jsx)('th', { children: 'Strength' }),
-                        (0, r.jsx)('th', { children: 'Will' }),
+                        (0, a.jsx)('th', { children: 'Name' }),
+                        (0, a.jsx)('th', { children: 'Title' }),
+                        (0, a.jsx)('th', { children: 'Influence' }),
+                        (0, a.jsx)('th', { children: 'Lore' }),
+                        (0, a.jsx)('th', { children: 'Perception' }),
+                        (0, a.jsx)('th', { children: 'Strength' }),
+                        (0, a.jsx)('th', { children: 'Will' }),
                       ],
                     }),
                   }),
-                  (0, r.jsx)('tbody', {
+                  (0, a.jsx)('tbody', {
                     children: d.map((e) => {
-                      var n, l, a, t, i, o;
-                      return (0, r.jsxs)(
+                      var n, l, r, t, i, c;
+                      return (0, a.jsxs)(
                         'tr',
                         {
                           children: [
-                            (0, r.jsx)('td', { children: e.name }),
-                            (0, r.jsx)('td', {
+                            (0, a.jsx)('td', { children: e.name }),
+                            (0, a.jsx)('td', {
                               children:
                                 null !== (n = x[e.name]) && void 0 !== n
                                   ? n
                                   : '-',
                             }),
-                            (0, r.jsx)('td', {
+                            (0, a.jsx)('td', {
                               children:
                                 null !== (l = e.influence) && void 0 !== l
                                   ? l
                                   : '-',
                             }),
-                            (0, r.jsx)('td', {
+                            (0, a.jsx)('td', {
                               children:
-                                null !== (a = e.lore) && void 0 !== a ? a : '-',
+                                null !== (r = e.lore) && void 0 !== r ? r : '-',
                             }),
-                            (0, r.jsx)('td', {
+                            (0, a.jsx)('td', {
                               children:
                                 null !== (t = e.perception) && void 0 !== t
                                   ? t
                                   : '-',
                             }),
-                            (0, r.jsx)('td', {
+                            (0, a.jsx)('td', {
                               children:
                                 null !== (i = e.strength) && void 0 !== i
                                   ? i
                                   : '-',
                             }),
-                            (0, r.jsx)('td', {
+                            (0, a.jsx)('td', {
                               children:
-                                null !== (o = e.will) && void 0 !== o ? o : '-',
+                                null !== (c = e.will) && void 0 !== c ? c : '-',
                             }),
                           ],
                         },
@@ -355,25 +355,22 @@
                       );
                     }),
                   }),
-                  (0, r.jsxs)('tfoot', {
+                  (0, a.jsxs)('tfoot', {
                     children: [
-                      (0, r.jsxs)('tr', {
+                      (0, a.jsxs)('tr', {
                         children: [
-                          (0, r.jsx)('td', { colSpan: 2, children: 'Total' }),
-                          (0, r.jsx)('td', { children: T.influence }),
-                          (0, r.jsx)('td', { children: T.lore }),
-                          (0, r.jsx)('td', { children: T.perception }),
-                          (0, r.jsx)('td', { children: T.strength }),
-                          (0, r.jsx)('td', { children: T.will }),
+                          (0, a.jsx)('td', { colSpan: 2, children: 'Total' }),
+                          (0, a.jsx)('td', { children: T.influence }),
+                          (0, a.jsx)('td', { children: T.lore }),
+                          (0, a.jsx)('td', { children: T.perception }),
+                          (0, a.jsx)('td', { children: T.strength }),
+                          (0, a.jsx)('td', { children: T.will }),
                         ],
                       }),
-                      (0, r.jsxs)('tr', {
+                      (0, a.jsxs)('tr', {
                         children: [
-                          (0, r.jsx)('td', { children: 'Variance' }),
-                          (0, r.jsx)('td', {
-                            colSpan: 6,
-                            children: j.toFixed(2),
-                          }),
+                          (0, a.jsx)('td', { children: 'Variance' }),
+                          (0, a.jsx)('td', { colSpan: 6, children: j }),
                         ],
                       }),
                     ],
