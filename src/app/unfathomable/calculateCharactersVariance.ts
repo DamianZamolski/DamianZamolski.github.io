@@ -7,5 +7,6 @@ export function calculateCharactersVariance(
 ): number {
   const totalsObject = calculateCharactersTotals(characters);
   const totalsArray = Object.values(totalsObject);
+
   return calculateVariance(totalsArray);
 }

@@ -1,5 +1,5 @@
 'use client';
-import { ChangeEvent, useCallback, useState } from 'react';
+import { ChangeEvent, useCallback, useMemo, useState } from 'react';
 import { UnfathomableCharacter } from './UnfathomableCharacter';
 import { clamp } from '@/utils/clamp';
 import { shuffleArray } from '@/utils/shuffleArray';
@@ -9,15 +9,29 @@ import { calculateCharactersTotals } from './calculateCharactersTotals';
 
 export default function UnfathomablePage() {
   const [playerCount, setPlayerCount] = useState(6);
+
   const [
     shouldIncludeFromTheAbyssCharacters,
     setShouldIncludeFromTheAbyssCharacters,
   ] = useState(true);
+
   const [varianceThreshold, setVarianceThreshold] = useState(2);
-  const [characters, setCharacters] = useState<
+
+  const [resultCharacters, setResultCharacters] = useState<
     ReadonlyArray<UnfathomableCharacter>
   >([]);
+
   const [variance, setVariance] = useState(0);
+
+  const charactersPool = useMemo(
+    () =>
+      shouldIncludeFromTheAbyssCharacters
+        ? unfathomableCharacters
+        : unfathomableCharacters.filter(
+            (character) => character.expansion !== 'from-the-abyss',
+          ),
+    [shouldIncludeFromTheAbyssCharacters],
+  );
 
   const onPlayerCountChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -47,17 +61,18 @@ export default function UnfathomablePage() {
     let newVariance = 0;
 
     do {
-      newCharacters = shuffleArray(unfathomableCharacters)
+      newCharacters = shuffleArray(charactersPool)
         .slice(0, playerCount)
         .sort((a, b) => a.name.localeCompare(b.name));
+
       newVariance = calculateCharactersVariance(newCharacters);
     } while (newVariance > varianceThreshold);
 
-    setCharacters(newCharacters);
+    setResultCharacters(newCharacters);
     setVariance(newVariance);
-  }, [playerCount, varianceThreshold]);
+  }, [charactersPool, playerCount, varianceThreshold]);
 
-  const totals = calculateCharactersTotals(characters);
+  const totals = calculateCharactersTotals(resultCharacters);
 
   return (
     <main>
@@ -93,7 +108,7 @@ export default function UnfathomablePage() {
         Include From The Abyss Characters
       </label>
       <button onClick={onPickClick}>Pick</button>
-      {characters.length > 0 && (
+      {resultCharacters.length > 0 && (
         <table>
           <thead>
             <tr>
@@ -106,7 +121,7 @@ export default function UnfathomablePage() {
             </tr>
           </thead>
           <tbody>
-            {characters.map((character) => (
+            {resultCharacters.map((character) => (
               <tr key={character.name}>
                 <td>{character.name}</td>
                 <td>{character.wplyw ?? '-'}</td>
