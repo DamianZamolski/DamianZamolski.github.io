@@ -102,7 +102,9 @@
       let n = r(9884),
         o = r(9308);
       function a(e, t) {
-        return (0, o.normalizePathTrailingSlash)((0, n.addPathPrefix)(e, ''));
+        return (0, o.normalizePathTrailingSlash)(
+          (0, n.addPathPrefix)(e, '/damianzamolski.github.io'),
+        );
       }
       ('function' == typeof t.default ||
         ('object' == typeof t.default && null !== t.default)) &&
@@ -227,7 +229,7 @@
         Object.defineProperty(t, 'hydrate', {
           enumerable: !0,
           get: function () {
-            return k;
+            return D;
           },
         });
       let a = r(3032),
@@ -335,12 +337,12 @@
         let { children: t } = e;
         return t;
       }
-      let D = {
+      let k = {
         onRecoverableError: d.onRecoverableError,
         onCaughtError: p.onCaughtError,
         onUncaughtError: p.onUncaughtError,
       };
-      function k() {
+      function D() {
         let e = (0, l.jsx)(A, {
             children: (0, l.jsx)(f.HeadManagerContext.Provider, {
               value: { appDir: !0 },
@@ -350,9 +352,9 @@
           t = window.__next_root_layout_missing_tags,
           r = !!(null == t ? void 0 : t.length);
         '__next_error__' === document.documentElement.id || r
-          ? i.default.createRoot(m, D).render(e)
+          ? i.default.createRoot(m, k).render(e)
           : s.default.startTransition(() =>
-              i.default.hydrateRoot(m, e, { ...D, formState: E }),
+              i.default.hydrateRoot(m, e, { ...k, formState: E }),
             );
       }
       ('function' == typeof t.default ||
@@ -692,7 +694,7 @@
             [f],
           );
         (0, O.useServerActionDispatcher)(f);
-        let D = (0, a.useMemo)(
+        let k = (0, a.useMemo)(
           () => ({
             back: () => window.history.back(),
             forward: () => window.history.forward(),
@@ -750,8 +752,8 @@
           [f, C],
         );
         (0, a.useEffect)(() => {
-          window.next && (window.next.router = D);
-        }, [D]),
+          window.next && (window.next.router = k);
+        }, [k]),
           (0, a.useEffect)(() => {
             function e(e) {
               var t;
@@ -780,8 +782,8 @@
                 e.preventDefault();
                 let r = (0, E.getURLFromRedirectError)(t);
                 (0, E.getRedirectTypeFromError)(t) === E.RedirectType.push
-                  ? D.push(r, {})
-                  : D.replace(r, {});
+                  ? k.push(r, {})
+                  : k.replace(r, {});
               }
             }
             return (
@@ -792,7 +794,7 @@
                   window.removeEventListener('unhandledrejection', e);
               }
             );
-          }, [D]);
+          }, [k]);
         let { pushRef: N } = (0, c.useUnwrapState)(i);
         if (N.mpaNavigation) {
           if (S.pendingMpaPath !== P) {
@@ -897,7 +899,7 @@
         return (0, o.jsxs)(o.Fragment, {
           children: [
             (0, o.jsx)(j, { appRouterState: (0, c.useUnwrapState)(i) }),
-            (0, o.jsx)(k, {}),
+            (0, o.jsx)(D, {}),
             (0, o.jsx)(s.PathParamsContext.Provider, {
               value: B,
               children: (0, o.jsx)(s.PathnameContext.Provider, {
@@ -907,7 +909,7 @@
                   children: (0, o.jsx)(u.GlobalLayoutRouterContext.Provider, {
                     value: G,
                     children: (0, o.jsx)(u.AppRouterContext.Provider, {
-                      value: D,
+                      value: k,
                       children: (0, o.jsx)(u.LayoutRouterContext.Provider, {
                         value: W,
                         children: K,
@@ -936,18 +938,18 @@
         );
       }
       let C = new Set(),
-        D = new Set();
-      function k() {
+        k = new Set();
+      function D() {
         let [, e] = a.default.useState(0),
           t = C.size;
         return (
           (0, a.useEffect)(() => {
             let r = () => e((e) => e + 1);
             return (
-              D.add(r),
+              k.add(r),
               t !== C.size && r(),
               () => {
-                D.delete(r);
+                k.delete(r);
               }
             );
           }, [t, e]),
@@ -963,7 +965,7 @@
       (globalThis._N_E_STYLE_LOAD = function (e) {
         let t = C.size;
         return (
-          C.add(e), C.size !== t && D.forEach((e) => e()), Promise.resolve()
+          C.add(e), C.size !== t && k.forEach((e) => e()), Promise.resolve()
         );
       }),
         ('function' == typeof t.default ||
@@ -4420,8 +4422,8 @@
                       let n = (0, _.handleAliasedPrefetchEntry)(t, g, P, j);
                       return !1 === n ? e(t, { ...r, allowAliasing: !1 }) : n;
                     }
-                    let D = t.tree,
-                      k = t.cache,
+                    let k = t.tree,
+                      D = t.cache,
                       N = [];
                     for (let e of g) {
                       let {
@@ -4432,18 +4434,18 @@
                         } = e,
                         g = e.tree,
                         _ = ['', ...r],
-                        O = (0, u.applyRouterStatePatchToTree)(_, D, g, T);
+                        O = (0, u.applyRouterStatePatchToTree)(_, k, g, T);
                       if (
                         (null === O &&
                           (O = (0, u.applyRouterStatePatchToTree)(_, A, g, T)),
                         null !== O)
                       ) {
-                        if ((0, i.isNavigatingToNewRootLayout)(D, O))
+                        if ((0, i.isNavigatingToNewRootLayout)(k, O))
                           return m(t, j, T, M);
                         if (o && d && E) {
                           let e = (0, y.updateCacheNodeOnNavigation)(
-                            k,
                             D,
+                            k,
                             g,
                             o,
                             c,
@@ -4452,7 +4454,7 @@
                             if (((O = e.route), null !== e.node)) {
                               let r = e.node,
                                 o = (0, n.fetchServerResponse)(P, {
-                                  flightRouterState: D,
+                                  flightRouterState: k,
                                   nextUrl: t.nextUrl,
                                   buildId: t.buildId,
                                 });
@@ -4464,7 +4466,7 @@
                           let t = (0, p.createEmptyCacheNode)(),
                             n = !1;
                           x.status !== s.PrefetchCacheEntryStatus.stale || R
-                            ? (n = (0, f.applyFlightData)(k, t, e, x))
+                            ? (n = (0, f.applyFlightData)(D, t, e, x))
                             : ((n = (function (e, t, r, n) {
                                 let o = !1;
                                 for (let a of ((e.rsc = t.rsc),
@@ -4479,20 +4481,20 @@
                                   ),
                                     (o = !0);
                                 return o;
-                              })(t, k, r, g)),
+                              })(t, D, r, g)),
                               (x.lastUsedTime = Date.now())),
-                            (0, l.shouldHardNavigate)(_, D)
-                              ? ((t.rsc = k.rsc),
-                                (t.prefetchRsc = k.prefetchRsc),
+                            (0, l.shouldHardNavigate)(_, k)
+                              ? ((t.rsc = D.rsc),
+                                (t.prefetchRsc = D.prefetchRsc),
                                 (0, a.invalidateCacheBelowFlightSegmentPath)(
                                   t,
-                                  k,
+                                  D,
                                   r,
                                 ),
                                 (j.cache = t))
-                              : n && ((j.cache = t), (k = t));
+                              : n && ((j.cache = t), (D = t));
                         }
-                        for (let e of ((D = O), v(g))) {
+                        for (let e of ((k = O), v(g))) {
                           let t = [...r, ...e];
                           t[t.length - 1] !== h.DEFAULT_SEGMENT_KEY &&
                             N.push(t);
@@ -4500,7 +4502,7 @@
                       }
                     }
                     return (
-                      (j.patchedTree = D),
+                      (j.patchedTree = k),
                       (j.canonicalUrl = C),
                       (j.scrollableSegments = N),
                       (j.hashFragment = w),
@@ -5387,7 +5389,7 @@
         });
       let n = r(4073);
       function o(e) {
-        return (0, n.pathHasPrefix)(e, '');
+        return (0, n.pathHasPrefix)(e, '/damianzamolski.github.io');
       }
       ('function' == typeof t.default ||
         ('object' == typeof t.default && null !== t.default)) &&
@@ -5596,23 +5598,29 @@
     },
     6968: (e, t, r) => {
       'use strict';
-      function n(e) {
-        return e;
-      }
       Object.defineProperty(t, '__esModule', { value: !0 }),
         Object.defineProperty(t, 'removeBasePath', {
           enumerable: !0,
           get: function () {
-            return n;
+            return o;
           },
         }),
-        r(9496),
-        ('function' == typeof t.default ||
-          ('object' == typeof t.default && null !== t.default)) &&
-          void 0 === t.default.__esModule &&
-          (Object.defineProperty(t.default, '__esModule', { value: !0 }),
-          Object.assign(t.default, t),
-          (e.exports = t.default));
+        r(9496);
+      let n = '/damianzamolski.github.io';
+      function o(e) {
+        return (
+          0 === n.length ||
+            (e = e.slice(n.length)).startsWith('/') ||
+            (e = '/' + e),
+          e
+        );
+      }
+      ('function' == typeof t.default ||
+        ('object' == typeof t.default && null !== t.default)) &&
+        void 0 === t.default.__esModule &&
+        (Object.defineProperty(t.default, '__esModule', { value: !0 }),
+        Object.assign(t.default, t),
+        (e.exports = t.default));
     },
     8947: (e) => {
       !(function () {
@@ -6239,7 +6247,7 @@
             return N;
           },
           formatDynamicAPIAccesses: function () {
-            return D;
+            return k;
           },
           getFirstDynamicReason: function () {
             return p;
@@ -6404,7 +6412,7 @@
         S(t, e, r && 'prerender-ppr' === r.type ? r.dynamicTracking : null);
       }
       function S(e, t, r) {
-        k(),
+        D(),
           r &&
             r.dynamicAccesses.push({
               stack: r.isDebugDynamicAccesses ? Error().stack : void 0,
@@ -6458,7 +6466,7 @@
       function C(e, t) {
         return e.dynamicAccesses.push(...t.dynamicAccesses), e.dynamicAccesses;
       }
-      function D(e) {
+      function k(e) {
         return e
           .filter((e) => 'string' == typeof e.stack && e.stack.length > 0)
           .map(
@@ -6480,14 +6488,14 @@ ${t}`
             ),
           );
       }
-      function k() {
+      function D() {
         if (!c)
           throw Error(
             'Invariant: React.unstable_postpone is not defined. This suggests the wrong version of React was loaded. This is a bug in Next.js',
           );
       }
       function N(e) {
-        k();
+        D();
         let t = new AbortController();
         try {
           n.default.unstable_postpone(e);
@@ -8403,7 +8411,7 @@ ${t}`
             C(e);
             break;
           case 'resolved_module':
-            D(e);
+            k(e);
         }
         switch (e.status) {
           case 'fulfilled':
@@ -8475,7 +8483,7 @@ ${t}`
             n = e.reason;
           (e.status = 'resolved_module'),
             (e.value = t),
-            null !== r && (D(e), R(e, r, n));
+            null !== r && (k(e), R(e, r, n));
         }
       }
       (P.prototype = Object.create(Promise.prototype)),
@@ -8485,7 +8493,7 @@ ${t}`
               C(this);
               break;
             case 'resolved_module':
-              D(this);
+              k(this);
           }
           switch (this.status) {
             case 'fulfilled':
@@ -8529,7 +8537,7 @@ ${t}`
           A = t;
         }
       }
-      function D(e) {
+      function k(e) {
         try {
           var t = s(e.value);
           (e.status = 'fulfilled'), (e.value = t);
@@ -8537,7 +8545,7 @@ ${t}`
           (e.status = 'rejected'), (e.reason = t);
         }
       }
-      function k(e, t) {
+      function D(e, t) {
         e._chunks.forEach(function (e) {
           'pending' === e.status && j(e, t);
         });
@@ -8696,7 +8704,7 @@ ${t}`
             C(a);
             break;
           case 'resolved_module':
-            D(a);
+            k(a);
         }
         switch (a.status) {
           case 'fulfilled':
@@ -9056,13 +9064,13 @@ ${t}`
       }
       function en(e, t) {
         function r(t) {
-          k(e, t);
+          D(e, t);
         }
         var n = t.getReader();
         n.read()
           .then(function t(a) {
             var u = a.value;
-            if (a.done) k(e, Error('Connection closed.'));
+            if (a.done) D(e, Error('Connection closed.'));
             else {
               var l = 0,
                 s = e._rowState;
@@ -9316,7 +9324,7 @@ ${t}`
               en(r, e.body);
             },
             function (e) {
-              k(r, e);
+              D(r, e);
             },
           ),
           U(r, 0)
@@ -9405,17 +9413,17 @@ ${t}`
                   }
                   if ('function' == typeof P.then) {
                     null === c && (c = new FormData()), s++;
-                    var D = i++;
+                    var k = i++;
                     return (
                       P.then(function (e) {
                         try {
-                          var r = l(e, D);
-                          (e = c).append(t + D, r), s--, 0 === s && n(e);
+                          var r = l(e, k);
+                          (e = c).append(t + k, r), s--, 0 === s && n(e);
                         } catch (e) {
                           o(e);
                         }
                       }, o),
-                      '$@' + D.toString(16)
+                      '$@' + k.toString(16)
                     );
                   }
                   if (void 0 !== (w = f.get(P))) {
@@ -9430,11 +9438,11 @@ ${t}`
                   if (b(P)) return P;
                   if (P instanceof FormData) {
                     null === c && (c = new FormData());
-                    var k = c,
+                    var D = c,
                       N = t + (e = i++) + '_';
                     return (
                       P.forEach(function (e, t) {
-                        k.append(N + t, e);
+                        D.append(N + t, e);
                       }),
                       '$K' + e.toString(16)
                     );
@@ -9940,7 +9948,7 @@ ${t}`
         if (1 === e._status) return e._result.default;
         throw e._result;
       }
-      var D =
+      var k =
         'function' == typeof reportError
           ? reportError
           : function (e) {
@@ -9966,7 +9974,7 @@ ${t}`
               }
               console.error(e);
             };
-      function k() {}
+      function D() {}
       (t.Children = {
         map: A,
         forEach: function (e, t, r) {
@@ -10108,9 +10116,9 @@ ${t}`
               'object' == typeof n &&
                 null !== n &&
                 'function' == typeof n.then &&
-                n.then(k, D);
+                n.then(D, k);
           } catch (e) {
-            D(e);
+            k(e);
           } finally {
             S.T = t;
           }

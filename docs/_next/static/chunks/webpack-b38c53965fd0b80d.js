@@ -5,34 +5,34 @@
   function r(o) {
     var n = t[o];
     if (void 0 !== n) return n.exports;
-    var a = (t[o] = { exports: {} }),
-      i = !0;
+    var i = (t[o] = { exports: {} }),
+      a = !0;
     try {
-      e[o](a, a.exports, r), (i = !1);
+      e[o](i, i.exports, r), (a = !1);
     } finally {
-      i && delete t[o];
+      a && delete t[o];
     }
-    return a.exports;
+    return i.exports;
   }
   (r.m = e),
     (() => {
       var e = [];
-      r.O = (t, o, n, a) => {
+      r.O = (t, o, n, i) => {
         if (o) {
-          a = a || 0;
-          for (var i = e.length; i > 0 && e[i - 1][2] > a; i--) e[i] = e[i - 1];
-          e[i] = [o, n, a];
+          i = i || 0;
+          for (var a = e.length; a > 0 && e[a - 1][2] > i; a--) e[a] = e[a - 1];
+          e[a] = [o, n, i];
           return;
         }
-        for (var u = 1 / 0, i = 0; i < e.length; i++) {
-          for (var [o, n, a] = e[i], l = !0, c = 0; c < o.length; c++)
-            (!1 & a || u >= a) && Object.keys(r.O).every((e) => r.O[e](o[c]))
+        for (var u = 1 / 0, a = 0; a < e.length; a++) {
+          for (var [o, n, i] = e[a], l = !0, c = 0; c < o.length; c++)
+            (!1 & i || u >= i) && Object.keys(r.O).every((e) => r.O[e](o[c]))
               ? o.splice(c--, 1)
-              : ((l = !1), a < u && (u = a));
+              : ((l = !1), i < u && (u = i));
           if (l) {
-            e.splice(i--, 1);
-            var f = n();
-            void 0 !== f && (t = f);
+            e.splice(a--, 1);
+            var s = n();
+            void 0 !== s && (t = s);
           }
         }
         return t;
@@ -53,17 +53,17 @@
                 (16 & n && 'function' == typeof o.then))))
         )
           return o;
-        var a = Object.create(null);
-        r.r(a);
-        var i = {};
+        var i = Object.create(null);
+        r.r(i);
+        var a = {};
         e = e || [null, t({}), t([]), t(t)];
         for (
           var u = 2 & n && o;
           'object' == typeof u && !~e.indexOf(u);
           u = t(u)
         )
-          Object.getOwnPropertyNames(u).forEach((e) => (i[e] = () => o[e]));
-        return (i.default = () => o), r.d(a, i), a;
+          Object.getOwnPropertyNames(u).forEach((e) => (a[e] = () => o[e]));
+        return (a.default = () => o), r.d(i, a), i;
       };
     })(),
     (r.d = (e, t) => {
@@ -89,23 +89,23 @@
     (() => {
       var e = {},
         t = '_N_E:';
-      r.l = (o, n, a, i) => {
+      r.l = (o, n, i, a) => {
         if (e[o]) {
           e[o].push(n);
           return;
         }
-        if (void 0 !== a)
+        if (void 0 !== i)
           for (
-            var u, l, c = document.getElementsByTagName('script'), f = 0;
-            f < c.length;
-            f++
+            var u, l, c = document.getElementsByTagName('script'), s = 0;
+            s < c.length;
+            s++
           ) {
-            var s = c[f];
+            var f = c[s];
             if (
-              s.getAttribute('src') == o ||
-              s.getAttribute('data-webpack') == t + a
+              f.getAttribute('src') == o ||
+              f.getAttribute('data-webpack') == t + i
             ) {
-              u = s;
+              u = f;
               break;
             }
           }
@@ -114,7 +114,7 @@
           ((u = document.createElement('script')).charset = 'utf-8'),
           (u.timeout = 120),
           r.nc && u.setAttribute('nonce', r.nc),
-          u.setAttribute('data-webpack', t + a),
+          u.setAttribute('data-webpack', t + i),
           (u.src = r.tu(o))),
           (e[o] = [n]);
         var d = (t, r) => {
@@ -155,7 +155,7 @@
       );
     })(),
     (r.tu = (e) => r.tt().createScriptURL(e)),
-    (r.p = './_next/'),
+    (r.p = '/damianzamolski.github.io/_next/'),
     (() => {
       var e = { 68: 0, 213: 0 };
       (r.f.j = (t, o) => {
@@ -164,21 +164,21 @@
           if (n) o.push(n[2]);
           else if (/^(213|68)$/.test(t)) e[t] = 0;
           else {
-            var a = new Promise((r, o) => (n = e[t] = [r, o]));
-            o.push((n[2] = a));
-            var i = r.p + r.u(t),
+            var i = new Promise((r, o) => (n = e[t] = [r, o]));
+            o.push((n[2] = i));
+            var a = r.p + r.u(t),
               u = Error();
             r.l(
-              i,
+              a,
               (o) => {
                 if (r.o(e, t) && (0 !== (n = e[t]) && (e[t] = void 0), n)) {
-                  var a = o && ('load' === o.type ? 'missing' : o.type),
-                    i = o && o.target && o.target.src;
+                  var i = o && ('load' === o.type ? 'missing' : o.type),
+                    a = o && o.target && o.target.src;
                   (u.message =
-                    'Loading chunk ' + t + ' failed.\n(' + a + ': ' + i + ')'),
+                    'Loading chunk ' + t + ' failed.\n(' + i + ': ' + a + ')'),
                     (u.name = 'ChunkLoadError'),
-                    (u.type = a),
-                    (u.request = i),
+                    (u.type = i),
+                    (u.request = a),
                     n[1](u);
                 }
               },
@@ -191,16 +191,16 @@
         (r.O.j = (t) => 0 === e[t]);
       var t = (t, o) => {
           var n,
-            a,
-            [i, u, l] = o,
+            i,
+            [a, u, l] = o,
             c = 0;
-          if (i.some((t) => 0 !== e[t])) {
+          if (a.some((t) => 0 !== e[t])) {
             for (n in u) r.o(u, n) && (r.m[n] = u[n]);
-            if (l) var f = l(r);
+            if (l) var s = l(r);
           }
-          for (t && t(o); c < i.length; c++)
-            (a = i[c]), r.o(e, a) && e[a] && e[a][0](), (e[a] = 0);
-          return r.O(f);
+          for (t && t(o); c < a.length; c++)
+            (i = a[c]), r.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
+          return r.O(s);
         },
         o = (self.webpackChunk_N_E = self.webpackChunk_N_E || []);
       o.forEach(t.bind(null, 0)), (o.push = t.bind(null, o.push.bind(o)));

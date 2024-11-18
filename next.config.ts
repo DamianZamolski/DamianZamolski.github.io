@@ -3,8 +3,8 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   output: 'export',
   distDir: 'docs',
-  basePath: '/DamianZamolski.github.io',
-  assetPrefix: '/DamianZamolski.github.io/',
+  basePath: '/damianzamolski.github.io',
+  assetPrefix: '/damianzamolski.github.io/',
 };
 
 export default nextConfig;

@@ -5,8 +5,8 @@
       beforeFiles: [
         {
           has: void 0,
-          source: '/.//_next/:path+',
-          destination: '/_next/:path+',
+          source: '/damianzamolski.github.io//_next/:path+',
+          destination: '/damianzamolski.github.io/_next/:path+',
         },
       ],
       fallback: [],
