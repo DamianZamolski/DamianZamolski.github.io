@@ -214,9 +214,8 @@
           }, []),
           O = (0, r.useCallback)(
             (n) => {
+              let l, a;
               n.preventDefault();
-              let l = [],
-                a = 0;
               do
                 a = i(
                   Object.values(

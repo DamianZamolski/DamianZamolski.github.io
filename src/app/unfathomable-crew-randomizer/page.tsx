@@ -79,8 +79,8 @@ export default function UnfathomablePage() {
   const onRandomizeClick = useCallback(
     (event: MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
-      let newCharacters = [];
-      let newVariance = 0;
+      let newCharacters: ReadonlyArray<UnfathomableCharacter>;
+      let newVariance: number;
 
       do {
         newCharacters = shuffleArray(charactersPool)
