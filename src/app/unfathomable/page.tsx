@@ -1,5 +1,5 @@
 'use client';
-import { ChangeEvent, useCallback, useMemo, useState } from 'react';
+import { ChangeEvent, useCallback, useMemo, useState, MouseEvent } from 'react';
 import { UnfathomableCharacter } from './UnfathomableCharacter';
 import { clamp } from '@/utils/clamp';
 import { shuffleArray } from '@/utils/shuffleArray';
@@ -56,21 +56,25 @@ export default function UnfathomablePage() {
     [],
   );
 
-  const onPickClick = useCallback(() => {
-    let newCharacters = [];
-    let newVariance = 0;
+  const onPickClick = useCallback(
+    (event: MouseEvent<HTMLButtonElement>) => {
+      event.preventDefault();
+      let newCharacters = [];
+      let newVariance = 0;
 
-    do {
-      newCharacters = shuffleArray(charactersPool)
-        .slice(0, playerCount)
-        .sort((a, b) => a.name.localeCompare(b.name));
+      do {
+        newCharacters = shuffleArray(charactersPool)
+          .slice(0, playerCount)
+          .sort((a, b) => a.name.localeCompare(b.name));
 
-      newVariance = calculateCharactersVariance(newCharacters);
-    } while (newVariance > varianceThreshold);
+        newVariance = calculateCharactersVariance(newCharacters);
+      } while (newVariance > varianceThreshold);
 
-    setResultCharacters(newCharacters);
-    setVariance(newVariance);
-  }, [charactersPool, playerCount, varianceThreshold]);
+      setResultCharacters(newCharacters);
+      setVariance(newVariance);
+    },
+    [charactersPool, playerCount, varianceThreshold],
+  );
 
   const totals = calculateCharactersTotals(resultCharacters);
 
@@ -79,35 +83,41 @@ export default function UnfathomablePage() {
       <header>
         <h1>Unfathomable</h1>
       </header>
-      <label>
-        Player Count
-        <input
-          type='number'
-          min={3}
-          max={6}
-          value={playerCount}
-          onChange={onPlayerCountChange}
-        />
-      </label>
-      <label>
-        Variance Threshold
-        <input
-          type='number'
-          min={0}
-          step={0.1}
-          value={varianceThreshold}
-          onChange={onVarianceThresholdChange}
-        />
-      </label>
-      <label>
-        <input
-          type='checkbox'
-          checked={shouldIncludeFromTheAbyssCharacters}
-          onChange={onShouldIncludeFromTheAbyssCharactersChange}
-        />
-        Include From The Abyss Characters
-      </label>
-      <button onClick={onPickClick}>Pick</button>
+      <form>
+        <fieldset>
+          <label>
+            Player Count
+            <input
+              type='number'
+              min={3}
+              max={6}
+              value={playerCount}
+              onChange={onPlayerCountChange}
+            />
+          </label>
+          <label>
+            Variance Threshold
+            <input
+              type='number'
+              min={0}
+              step={0.1}
+              value={varianceThreshold}
+              onChange={onVarianceThresholdChange}
+            />
+          </label>
+          <label>
+            <input
+              type='checkbox'
+              checked={shouldIncludeFromTheAbyssCharacters}
+              onChange={onShouldIncludeFromTheAbyssCharactersChange}
+            />
+            Include From The Abyss Characters
+          </label>
+        </fieldset>
+        <button type='submit' onClick={onPickClick}>
+          Pick
+        </button>
+      </form>
       {resultCharacters.length > 0 && (
         <table>
           <thead>
