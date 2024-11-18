@@ -1,4 +1,4 @@
-export type Character = {
+export type UnfathomableCharacter = {
   name: string;
   wplyw?: number;
   wiedza?: number;

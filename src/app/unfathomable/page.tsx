@@ -1,16 +1,22 @@
 'use client';
-import type { Character } from './Character';
-import { calculateCharactersTotals } from '@/calculateCharactersTotals';
-import { calculateCharactersVariance } from '@/calculateCharactersVariance';
 import { ChangeEvent, useCallback, useState } from 'react';
-import { clamp } from '@/clamp';
-import { shuffleArray } from '@/shuffleArray';
-import { unfathomableCharacters } from './characters';
+import { UnfathomableCharacter } from './UnfathomableCharacter';
+import { clamp } from '@/utils/clamp';
+import { shuffleArray } from '@/utils/shuffleArray';
+import { unfathomableCharacters } from './unfathomableCharacters';
+import { calculateCharactersVariance } from './calculateCharactersVariance';
+import { calculateCharactersTotals } from './calculateCharactersTotals';
 
 export default function UnfathomablePage() {
   const [playerCount, setPlayerCount] = useState(6);
+  const [
+    shouldIncludeFromTheAbyssCharacters,
+    setShouldIncludeFromTheAbyssCharacters,
+  ] = useState(true);
   const [varianceThreshold, setVarianceThreshold] = useState(2);
-  const [characters, setCharacters] = useState<ReadonlyArray<Character>>([]);
+  const [characters, setCharacters] = useState<
+    ReadonlyArray<UnfathomableCharacter>
+  >([]);
   const [variance, setVariance] = useState(0);
 
   const onPlayerCountChange = useCallback(
@@ -25,6 +31,13 @@ export default function UnfathomablePage() {
       let newValue = Number(event.target.value);
       if (newValue < 0) newValue = 0;
       setVarianceThreshold(newValue);
+    },
+    [],
+  );
+
+  const onShouldIncludeFromTheAbyssCharactersChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setShouldIncludeFromTheAbyssCharacters(event.target.checked);
     },
     [],
   );
@@ -70,6 +83,14 @@ export default function UnfathomablePage() {
           value={varianceThreshold}
           onChange={onVarianceThresholdChange}
         />
+      </label>
+      <label>
+        <input
+          type='checkbox'
+          checked={shouldIncludeFromTheAbyssCharacters}
+          onChange={onShouldIncludeFromTheAbyssCharactersChange}
+        />
+        Include From The Abyss Characters
       </label>
       <button onClick={onPickClick}>Pick</button>
       {characters.length > 0 && (

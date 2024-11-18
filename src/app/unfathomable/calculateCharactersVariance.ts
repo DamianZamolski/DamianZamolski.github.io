@@ -1,9 +1,9 @@
-import { Character } from './app/unfathomable/Character';
+import { calculateVariance } from '@/utils/calculateVariance';
 import { calculateCharactersTotals } from './calculateCharactersTotals';
-import { calculateVariance } from './calculateVariance';
+import { UnfathomableCharacter } from './UnfathomableCharacter';
 
 export function calculateCharactersVariance(
-  characters: ReadonlyArray<Character>,
+  characters: ReadonlyArray<UnfathomableCharacter>,
 ): number {
   const totalsObject = calculateCharactersTotals(characters);
   const totalsArray = Object.values(totalsObject);

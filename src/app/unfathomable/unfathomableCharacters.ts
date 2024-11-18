@@ -1,6 +1,6 @@
-import { Character } from './Character';
+import { UnfathomableCharacter } from './UnfathomableCharacter';
 
-export const unfathomableCharacters: ReadonlyArray<Character> = [
+export const unfathomableCharacters: ReadonlyArray<UnfathomableCharacter> = [
   { name: 'antar al-fakahany', wiedza: 2, percepcja: 3 },
   { name: 'arjun singh', wplyw: 2, percepcja: 1, sila: 2 },
   { name: 'avery engelbrecht', wplyw: 2, sila: 2, wola: 1 },
