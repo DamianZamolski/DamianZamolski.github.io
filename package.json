@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && touch docs/.nojekyll",
+    "build": "next build && touch docs/.nojekyll && pnpm lint",
     "start": "next start",
-    "lint": "next lint --fix"
+    "lint": "prettier --write . && next lint --fix"
   },
   "dependencies": {
     "@picocss/pico": "^2.0.6",

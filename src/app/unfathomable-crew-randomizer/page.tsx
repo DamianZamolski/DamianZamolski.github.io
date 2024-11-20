@@ -1,11 +1,12 @@
 'use client';
-import { ChangeEvent, useCallback, useMemo, useState, MouseEvent } from 'react';
-import { UnfathomableCharacter } from './UnfathomableCharacter';
-import { clamp } from '@/utils/clamp';
-import { shuffleArray } from '@/utils/shuffleArray';
-import { unfathomableCharacters } from './unfathomableCharacters';
-import { calculateCharactersVariance } from './calculateCharactersVariance';
 import { calculateCharactersTotals } from './calculateCharactersTotals';
+import { calculateCharactersVariance } from './calculateCharactersVariance';
+import { ChangeEvent, useCallback, useMemo, useState } from 'react';
+import { clamp } from '@/utils/clamp';
+import { emptyCharacter } from './emptyCharacter';
+import { shuffleArray } from '@/utils/shuffleArray';
+import { UnfathomableCharacter } from './UnfathomableCharacter';
+import { unfathomableCharacters } from './unfathomableCharacters';
 
 export default function UnfathomablePage() {
   const [playerCount, setPlayerCount] = useState(6);
@@ -76,25 +77,21 @@ export default function UnfathomablePage() {
     [],
   );
 
-  const onRandomizeClick = useCallback(
-    (event: MouseEvent<HTMLButtonElement>) => {
-      event.preventDefault();
-      let newCharacters: ReadonlyArray<UnfathomableCharacter>;
-      let newVariance: number;
+  const onRandomizeClick = useCallback(() => {
+    let newCharacters: ReadonlyArray<UnfathomableCharacter>;
+    let newVariance: number;
 
-      do {
-        newCharacters = shuffleArray(charactersPool)
-          .slice(0, playerCount)
-          .sort((a, b) => a.name.localeCompare(b.name));
+    do {
+      newCharacters = shuffleArray(charactersPool)
+        .slice(0, playerCount)
+        .sort((a, b) => a.name.localeCompare(b.name));
 
-        newVariance = calculateCharactersVariance(newCharacters);
-      } while (newVariance > maxVariance);
+      newVariance = calculateCharactersVariance(newCharacters);
+    } while (newVariance > maxVariance);
 
-      setResultCharacters(newCharacters);
-      setVariance(newVariance);
-    },
-    [charactersPool, playerCount, maxVariance],
-  );
+    setResultCharacters(newCharacters);
+    setVariance(newVariance);
+  }, [charactersPool, playerCount, maxVariance]);
 
   return (
     <main>
@@ -132,9 +129,7 @@ export default function UnfathomablePage() {
             Include From The Abyss Characters
           </label>
         </fieldset>
-        <button type='submit' onClick={onRandomizeClick}>
-          Randomize
-        </button>
+        <input type='button' value='Randomize' onClick={onRandomizeClick} />
       </form>
       {resultCharacters.length > 0 && (
         <table>
@@ -153,12 +148,12 @@ export default function UnfathomablePage() {
             {resultCharacters.map((character) => (
               <tr key={character.name}>
                 <td>{character.name}</td>
-                <td>{titlesMap[character.name] ?? '-'}</td>
-                <td>{character.influence ?? '-'}</td>
-                <td>{character.lore ?? '-'}</td>
-                <td>{character.perception ?? '-'}</td>
-                <td>{character.strength ?? '-'}</td>
-                <td>{character.will ?? '-'}</td>
+                <td>{titlesMap[character.name] ?? emptyCharacter}</td>
+                <td>{character.influence ?? emptyCharacter}</td>
+                <td>{character.lore ?? emptyCharacter}</td>
+                <td>{character.perception ?? emptyCharacter}</td>
+                <td>{character.strength ?? emptyCharacter}</td>
+                <td>{character.will ?? emptyCharacter}</td>
               </tr>
             ))}
           </tbody>
