@@ -189,7 +189,7 @@
             () => (l ? c : c.filter((e) => 'from-the-abyss' !== e.expansion)),
             [l],
           ),
-          [h, p] = (0, i.useState)(2),
+          [h, p] = (0, i.useState)(0.5),
           [d, m] = (0, i.useState)([]),
           u = d.reduce((e, n) => (n.captain < e.captain ? n : e), {
             name: '',
@@ -207,7 +207,7 @@
           }, []),
           g = (0, i.useCallback)((e) => {
             let n = Number(e.target.value);
-            n < 0 && (n = 0), p(n);
+            n < 0.5 && (n = 0.5), p(n);
           }, []),
           v = (0, i.useCallback)((e) => {
             o(e.target.checked);
@@ -263,7 +263,7 @@
                         (0, a.jsx)('input', {
                           type: 'number',
                           min: 0,
-                          step: 0.1,
+                          step: 0.5,
                           value: h,
                           onChange: g,
                         }),

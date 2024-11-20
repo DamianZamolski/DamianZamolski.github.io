@@ -26,7 +26,7 @@ export default function UnfathomablePage() {
     [shouldIncludeFromTheAbyssCharacters],
   );
 
-  const [maxVariance, setMaxVariance] = useState(2);
+  const [maxVariance, setMaxVariance] = useState(0.5);
 
   const [resultCharacters, setResultCharacters] = useState<
     ReadonlyArray<UnfathomableCharacter>
@@ -64,7 +64,7 @@ export default function UnfathomablePage() {
   const onMaxVarianceChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       let newValue = Number(event.target.value);
-      if (newValue < 0) newValue = 0;
+      if (newValue < 0.5) newValue = 0.5;
       setMaxVariance(newValue);
     },
     [],
@@ -115,7 +115,7 @@ export default function UnfathomablePage() {
             <input
               type='number'
               min={0}
-              step={0.1}
+              step={0.5}
               value={maxVariance}
               onChange={onMaxVarianceChange}
             />
