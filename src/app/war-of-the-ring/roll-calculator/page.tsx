@@ -2,6 +2,25 @@
 
 type SuccessProbabilities = Record<number, number>;
 
+function calculateExpectedValue(
+  rolls: number,
+  rollSuccessValue: number,
+  rerolls: number,
+  rerollSuccessValue: number,
+): number {
+  rerolls = Math.min(rolls, rerolls);
+  const noRerolls = rolls - rerolls;
+
+  const rollSuccessChance = getSuccessChance(rollSuccessValue);
+  const rerollSuccessChance = getSuccessChance(rerollSuccessValue);
+
+  return (
+    rerolls * rollSuccessChance +
+    rerolls * (1 - rollSuccessChance) * rerollSuccessChance +
+    noRerolls * rollSuccessChance
+  );
+}
+
 function calculateAtLeastSuccessProbabilities(
   rolls: number,
   rollMinSuccessValue: number,
@@ -117,6 +136,13 @@ export default function Page() {
     [],
   );
 
+  const expectedValue = calculateExpectedValue(
+    rolls,
+    rollSuccessValue,
+    rerolls,
+    rerollSuccessValue,
+  );
+
   const probabilities = calculateAtLeastSuccessProbabilities(
     rolls,
     rollSuccessValue,
@@ -184,6 +210,10 @@ export default function Page() {
       {Object.keys(probabilities).length > 0 && (
         <table>
           <thead>
+            <tr>
+              <th>Expected Value</th>
+              <th>{expectedValue.toFixed(2)}</th>
+            </tr>
             <tr>
               <th>Successes</th>
               <th>Probability</th>
