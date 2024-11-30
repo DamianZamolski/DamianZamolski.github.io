@@ -6,7 +6,7 @@
     },
     4639: (e, n, l) => {
       'use strict';
-      l.r(n), l.d(n, { default: () => s });
+      l.r(n), l.d(n, { default: () => o });
       var r = l(632);
       function a(e) {
         return e.reduce(
@@ -30,9 +30,8 @@
         let n = e.reduce((e, n) => e + n, 0) / e.length;
         return e.reduce((e, l) => e + (l - n) ** 2, 0) / e.length;
       };
-      var i = l(5268),
-        c = l(9999);
-      let o = [
+      var i = l(5268);
+      let c = [
         {
           name: 'Antar Al-Fakahany',
           expansion: 'from-the-abyss',
@@ -183,37 +182,37 @@
           will: 2,
         },
       ];
-      function s() {
+      function o() {
         let [e, n] = (0, i.useState)(6),
-          [l, s] = (0, i.useState)(!0),
-          h = (0, i.useMemo)(
-            () => (l ? o : o.filter((e) => 'from-the-abyss' !== e.expansion)),
+          [l, o] = (0, i.useState)(!0),
+          s = (0, i.useMemo)(
+            () => (l ? c : c.filter((e) => 'from-the-abyss' !== e.expansion)),
             [l],
           ),
-          [p, d] = (0, i.useState)(0.5),
-          [u, m] = (0, i.useState)([]),
-          f = u.reduce((e, n) => (n.captain < e.captain ? n : e), {
+          [h, p] = (0, i.useState)(0.5),
+          [d, m] = (0, i.useState)([]),
+          u = d.reduce((e, n) => (n.captain < e.captain ? n : e), {
             name: '',
             captain: 100,
           }),
-          x = u.reduce(
+          f = d.reduce(
             (e, n) => (n.keeperOfTheTome < e.keeperOfTheTome ? n : e),
             { name: '', keeperOfTheTome: 100 },
           ),
-          T = { [f.name]: 'Captain', [x.name]: 'Keeper of The Tome' },
-          j = a(u),
-          [k, b] = (0, i.useState)(0),
+          x = { [u.name]: 'Captain', [f.name]: 'Keeper of The Tome' },
+          T = a(d),
+          [j, k] = (0, i.useState)(0),
           g = (0, i.useCallback)((e) => {
-            n((0, c.q)(Number(e.target.value), 3, 6));
+            n(Number(e.target.value));
+          }, []),
+          b = (0, i.useCallback)((e) => {
+            let n = Number(e.target.value);
+            n < 0.5 && (n = 0.5), p(n);
           }, []),
           v = (0, i.useCallback)((e) => {
-            let n = Number(e.target.value);
-            n < 0.5 && (n = 0.5), d(n);
+            o(e.target.checked);
           }, []),
-          O = (0, i.useCallback)((e) => {
-            s(e.target.checked);
-          }, []),
-          w = (0, i.useCallback)(() => {
+          O = (0, i.useCallback)(() => {
             let n, l;
             do
               l = t(
@@ -226,15 +225,15 @@
                         [n[e], n[l]] = [n[l], n[e]];
                       }
                       return n;
-                    })(h)
+                    })(s)
                       .slice(0, e)
                       .sort((e, n) => e.name.localeCompare(n.name))),
                   ),
                 ),
               );
-            while (l > p);
-            m(n), b(l);
-          }, [h, e, p]);
+            while (l > h);
+            m(n), k(l);
+          }, [s, e, h]);
         return (0, r.jsxs)('main', {
           children: [
             (0, r.jsx)('header', {
@@ -249,12 +248,15 @@
                     (0, r.jsxs)('label', {
                       children: [
                         'Player Count',
-                        (0, r.jsx)('input', {
-                          type: 'number',
-                          min: 3,
-                          max: 6,
+                        (0, r.jsx)('select', {
                           value: e,
                           onChange: g,
+                          children: Array.from(
+                            { length: 4 },
+                            (e, n) => n + 3,
+                          ).map((e) =>
+                            (0, r.jsx)('option', { value: e, children: e }, e),
+                          ),
                         }),
                       ],
                     }),
@@ -265,8 +267,8 @@
                           type: 'number',
                           min: 0,
                           step: 0.5,
-                          value: p,
-                          onChange: v,
+                          value: h,
+                          onChange: b,
                         }),
                       ],
                     }),
@@ -275,7 +277,7 @@
                         (0, r.jsx)('input', {
                           type: 'checkbox',
                           checked: l,
-                          onChange: O,
+                          onChange: v,
                         }),
                         'Include From The Abyss Characters',
                       ],
@@ -285,11 +287,11 @@
                 (0, r.jsx)('input', {
                   type: 'button',
                   value: 'Randomize',
-                  onClick: w,
+                  onClick: O,
                 }),
               ],
             }),
-            u.length > 0 &&
+            d.length > 0 &&
               (0, r.jsxs)('table', {
                 children: [
                   (0, r.jsx)('thead', {
@@ -306,7 +308,7 @@
                     }),
                   }),
                   (0, r.jsx)('tbody', {
-                    children: u.map((e) => {
+                    children: d.map((e) => {
                       var n, l, a, t, i, c;
                       return (0, r.jsxs)(
                         'tr',
@@ -315,7 +317,7 @@
                             (0, r.jsx)('td', { children: e.name }),
                             (0, r.jsx)('td', {
                               children:
-                                null !== (n = T[e.name]) && void 0 !== n
+                                null !== (n = x[e.name]) && void 0 !== n
                                   ? n
                                   : '',
                             }),
@@ -356,17 +358,17 @@
                       (0, r.jsxs)('tr', {
                         children: [
                           (0, r.jsx)('td', { colSpan: 2, children: 'Total' }),
-                          (0, r.jsx)('td', { children: j.influence }),
-                          (0, r.jsx)('td', { children: j.lore }),
-                          (0, r.jsx)('td', { children: j.perception }),
-                          (0, r.jsx)('td', { children: j.strength }),
-                          (0, r.jsx)('td', { children: j.will }),
+                          (0, r.jsx)('td', { children: T.influence }),
+                          (0, r.jsx)('td', { children: T.lore }),
+                          (0, r.jsx)('td', { children: T.perception }),
+                          (0, r.jsx)('td', { children: T.strength }),
+                          (0, r.jsx)('td', { children: T.will }),
                         ],
                       }),
                       (0, r.jsxs)('tr', {
                         children: [
                           (0, r.jsx)('td', { children: 'Variance' }),
-                          (0, r.jsx)('td', { colSpan: 6, children: k }),
+                          (0, r.jsx)('td', { colSpan: 6, children: j }),
                         ],
                       }),
                     ],
@@ -376,13 +378,6 @@
           ],
         });
       }
-    },
-    9999: (e, n, l) => {
-      'use strict';
-      function r(e, n, l) {
-        return Math.min(Math.max(e, n), l);
-      }
-      l.d(n, { q: () => r });
     },
   },
   (e) => {

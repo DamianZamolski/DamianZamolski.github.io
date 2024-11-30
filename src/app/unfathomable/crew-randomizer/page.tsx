@@ -2,7 +2,6 @@
 import { calculateCharactersTotals } from './calculateCharactersTotals';
 import { calculateCharactersVariance } from './calculateCharactersVariance';
 import { ChangeEvent, useCallback, useMemo, useState } from 'react';
-import { clamp } from '@/utils/clamp';
 import { emptyCharacter } from './emptyCharacter';
 import { shuffleArray } from '@/utils/shuffleArray';
 import { UnfathomableCharacter } from './UnfathomableCharacter';
@@ -55,8 +54,8 @@ export default function UnfathomablePage() {
   const [variance, setVariance] = useState(0);
 
   const onPlayerCountChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setPlayerCount(clamp(Number(event.target.value), 3, 6));
+    (event: ChangeEvent<HTMLSelectElement>) => {
+      setPlayerCount(Number(event.target.value));
     },
     [],
   );
@@ -102,13 +101,13 @@ export default function UnfathomablePage() {
         <fieldset>
           <label>
             Player Count
-            <input
-              type='number'
-              min={3}
-              max={6}
-              value={playerCount}
-              onChange={onPlayerCountChange}
-            />
+            <select value={playerCount} onChange={onPlayerCountChange}>
+              {Array.from({ length: 4 }, (_, i) => i + 3).map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             Max Variance

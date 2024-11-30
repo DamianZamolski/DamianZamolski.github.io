@@ -1,4 +1,5 @@
 'use client';
+
 type SuccessProbabilities = Record<number, number>;
 
 function calculateAtLeastSuccessProbabilities(
@@ -35,7 +36,6 @@ function calculateAtLeast(
   if (diceLeft === 0) return minSuccess <= 0 ? 1 : 0; // No dice left: success depends on minSuccess
   if (minSuccess <= 0) return 1; // Already achieved required successes
 
-  // Success case
   const successBranch =
     successChance *
     calculateAtLeast(
@@ -46,7 +46,6 @@ function calculateAtLeast(
       rerollSuccessChance,
     );
 
-  // Failure case
   const failureBranch =
     (1 - successChance) *
     (rerollsLeft > 0
@@ -102,7 +101,6 @@ function getSuccessChance(minValue: number): number {
   return (7 - minValue) / 6;
 }
 
-import { clamp } from '@/utils/clamp';
 import { ChangeEvent, useCallback, useState } from 'react';
 
 export default function Page() {
@@ -111,32 +109,11 @@ export default function Page() {
   const [rerolls, setRerolls] = useState(0);
   const [rerollSuccessValue, setRerollSuccessValue] = useState(6);
 
-  const onRollsChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
-    const newValue = clamp(Number(event.target.value), 1, 5);
-    setRolls(newValue);
-  }, []);
-
-  const onRollSuccessValueChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      const newValue = clamp(Number(event.target.value), 2, 6);
-      setRollSuccessValue(newValue);
-    },
-    [],
-  );
-
-  const onRerollsChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      const newValue = clamp(Number(event.target.value), 0, 5);
-      setRerolls(newValue);
-    },
-    [],
-  );
-
-  const onRerollSuccessValueChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      const newValue = clamp(Number(event.target.value), 2, 6);
-      setRerollSuccessValue(newValue);
-    },
+  const handleSelectChange = useCallback(
+    (setter: (value: number) => void) =>
+      (event: ChangeEvent<HTMLSelectElement>) => {
+        setter(Number(event.target.value));
+      },
     [],
   );
 
@@ -153,52 +130,55 @@ export default function Page() {
         <h1>War of the Ring Roll Calculator</h1>
       </header>
       <form>
-        <fieldset>
-          <fieldset role='group'>
-            <label>
-              Rolls
-              <input
-                type='number'
-                min={1}
-                max={5}
-                value={rolls}
-                onChange={onRollsChange}
-              />
-            </label>
-            <label>
-              Roll Min Success Value
-              <input
-                type='number'
-                min={1}
-                max={6}
-                value={rollSuccessValue}
-                onChange={onRollSuccessValueChange}
-              />
-            </label>
-          </fieldset>
-
-          <fieldset role='group'>
-            <label>
-              Rerolls
-              <input
-                type='number'
-                min={0}
-                max={5}
-                value={rerolls}
-                onChange={onRerollsChange}
-              />
-            </label>
-            <label>
-              Reroll Min Success Value
-              <input
-                type='number'
-                min={1}
-                max={6}
-                value={rerollSuccessValue}
-                onChange={onRerollSuccessValueChange}
-              />
-            </label>
-          </fieldset>
+        <fieldset role='group'>
+          <label>
+            Rolls
+            <select value={rolls} onChange={handleSelectChange(setRolls)}>
+              {Array.from({ length: 5 }, (_, i) => i + 1).map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Roll Min Success Value
+            <select
+              value={rollSuccessValue}
+              onChange={handleSelectChange(setRollSuccessValue)}
+            >
+              {Array.from({ length: 5 }, (_, i) => i + 2).map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+          </label>
+        </fieldset>
+        <fieldset role='group'>
+          <label>
+            Rerolls
+            <select value={rerolls} onChange={handleSelectChange(setRerolls)}>
+              {Array.from({ length: 6 }, (_, i) => i).map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Reroll Min Success Value
+            <select
+              value={rerollSuccessValue}
+              onChange={handleSelectChange(setRerollSuccessValue)}
+            >
+              {Array.from({ length: 5 }, (_, i) => i + 2).map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+          </label>
         </fieldset>
       </form>
       {Object.keys(probabilities).length > 0 && (
