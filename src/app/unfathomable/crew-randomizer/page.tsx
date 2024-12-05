@@ -1,159 +1,241 @@
 'use client';
-import { calculateCharactersTotals } from './calculateCharactersTotals';
-import { calculateCharactersVariance } from './calculateCharactersVariance';
-import { ChangeEvent, Fragment, useCallback, useMemo, useState } from 'react';
-import { emptyCharacter } from './emptyCharacter';
-import { shuffleArray } from '@/utils/shuffleArray';
-import { UnfathomableCharacter } from './UnfathomableCharacter';
-import { unfathomableCharacters } from './unfathomableCharacters';
+import { ChangeEvent, Fragment, useCallback, useState } from 'react';
+
+type SuccessProbabilities = Record<number, number>;
+
+function calculateExpectedValue(
+  rolls: number,
+  rollSuccessValue: number,
+  rerolls: number,
+  rerollSuccessValue: number,
+): number {
+  rerolls = Math.min(rolls, rerolls);
+  const noRerolls = rolls - rerolls;
+
+  const rollSuccessChance = getSuccessChance(rollSuccessValue);
+  const rerollSuccessChance = getSuccessChance(rerollSuccessValue);
+
+  return (
+    rerolls * rollSuccessChance +
+    rerolls * (1 - rollSuccessChance) * rerollSuccessChance +
+    noRerolls * rollSuccessChance
+  );
+}
+
+function calculateAtLeastSuccessProbabilities(
+  rolls: number,
+  rollMinSuccessValue: number,
+  rerolls: number,
+  rerollMinSuccessValue: number,
+): SuccessProbabilities {
+  const rollSuccessChance = getSuccessChance(rollMinSuccessValue);
+  const rerollSuccessChance = getSuccessChance(rerollMinSuccessValue);
+
+  const results: SuccessProbabilities = {};
+
+  for (let i = 1; i <= rolls; i++) {
+    results[i] = calculateAtLeast(
+      rolls,
+      i,
+      rerolls,
+      rollSuccessChance,
+      rerollSuccessChance,
+    );
+  }
+
+  return results;
+}
+
+function calculateAtLeast(
+  diceLeft: number,
+  minSuccess: number,
+  rerollsLeft: number,
+  successChance: number,
+  rerollSuccessChance: number,
+): number {
+  if (diceLeft === 0) return minSuccess <= 0 ? 1 : 0;
+  if (minSuccess <= 0) return 1;
+
+  const successBranch =
+    successChance *
+    calculateAtLeast(
+      diceLeft - 1,
+      minSuccess - 1,
+      rerollsLeft,
+      successChance,
+      rerollSuccessChance,
+    );
+
+  const failureBranch =
+    (1 - successChance) *
+    (rerollsLeft > 0
+      ? rerollFailureBranch(
+          diceLeft,
+          minSuccess,
+          rerollsLeft,
+          successChance,
+          rerollSuccessChance,
+        )
+      : calculateAtLeast(
+          diceLeft - 1,
+          minSuccess,
+          rerollsLeft,
+          successChance,
+          rerollSuccessChance,
+        ));
+
+  return successBranch + failureBranch;
+}
+
+function rerollFailureBranch(
+  diceLeft: number,
+  minSuccess: number,
+  rerollsLeft: number,
+  successChance: number,
+  rerollSuccessChance: number,
+): number {
+  const rerollSuccessBranch =
+    rerollSuccessChance *
+    calculateAtLeast(
+      diceLeft - 1,
+      minSuccess - 1,
+      rerollsLeft - 1,
+      successChance,
+      rerollSuccessChance,
+    );
+
+  const rerollFailureBranch =
+    (1 - rerollSuccessChance) *
+    calculateAtLeast(
+      diceLeft - 1,
+      minSuccess,
+      rerollsLeft - 1,
+      successChance,
+      rerollSuccessChance,
+    );
+
+  return rerollSuccessBranch + rerollFailureBranch;
+}
+
+function getSuccessChance(minValue: number): number {
+  return (7 - minValue) / 6;
+}
 
 export default function Page() {
-  const [playerCount, setPlayerCount] = useState(3);
+  const [rolls, setRolls] = useState(5);
+  const [rollSuccessValue, setRollSuccessValue] = useState(6);
+  const [rerolls, setRerolls] = useState(0);
+  const [rerollSuccessValue, setRerollSuccessValue] = useState(6);
 
-  const [
-    shouldIncludeFromTheAbyssCharacters,
-    setShouldIncludeFromTheAbyssCharacters,
-  ] = useState(true);
-
-  const charactersPool = useMemo(
-    () =>
-      shouldIncludeFromTheAbyssCharacters
-        ? unfathomableCharacters
-        : unfathomableCharacters.filter(
-            (character) => character.expansion !== 'from-the-abyss',
-          ),
-    [shouldIncludeFromTheAbyssCharacters],
-  );
-
-  const [resultCharacters, setResultCharacters] = useState<
-    ReadonlyArray<UnfathomableCharacter>
-  >([]);
-
-  const captain = resultCharacters.reduce(
-    (captain, character) =>
-      character.captain < captain.captain ? character : captain,
-    { name: '', captain: 100 },
-  );
-
-  const keeperOfTheTome = resultCharacters.reduce(
-    (keeperOfTheTome, character) =>
-      character.keeperOfTheTome < keeperOfTheTome.keeperOfTheTome
-        ? character
-        : keeperOfTheTome,
-    { name: '', keeperOfTheTome: 100 },
-  );
-
-  const titlesMap = {
-    [captain.name]: 'Captain',
-    [keeperOfTheTome.name]: 'Keeper of The Tome',
-  };
-
-  const totals = calculateCharactersTotals(resultCharacters);
-  const [variance, setVariance] = useState(0);
-
-  const onPlayerCountChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setPlayerCount(Number(event.target.value));
-    },
+  const handleRadioChange = useCallback(
+    (setter: (value: number) => void) =>
+      (event: ChangeEvent<HTMLInputElement>) => {
+        setter(Number(event.target.value));
+      },
     [],
   );
 
-  const onShouldIncludeFromTheAbyssCharactersChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setShouldIncludeFromTheAbyssCharacters(event.target.checked);
-    },
-    [],
+  const expectedValue = calculateExpectedValue(
+    rolls,
+    rollSuccessValue,
+    rerolls,
+    rerollSuccessValue,
   );
 
-  const onRandomizeClick = useCallback(() => {
-    let newCharacters: ReadonlyArray<UnfathomableCharacter>;
-    let newVariance: number;
-
-    do {
-      newCharacters = shuffleArray(charactersPool)
-        .slice(0, playerCount)
-        .sort((a, b) => a.name.localeCompare(b.name));
-
-      newVariance = calculateCharactersVariance(newCharacters);
-    } while (newVariance > 0.5);
-
-    setResultCharacters(newCharacters);
-    setVariance(newVariance);
-  }, [charactersPool, playerCount]);
+  const probabilities = calculateAtLeastSuccessProbabilities(
+    rolls,
+    rollSuccessValue,
+    rerolls,
+    rerollSuccessValue,
+  );
 
   return (
     <main>
       <header>
-        <h1>Unfathomable Crew Randomizer</h1>
+        <h1>War of the Ring Roll Calculator</h1>
       </header>
       <form>
         <fieldset>
-          <fieldset>
-            <legend>Player Count</legend>
-            {Array.from({ length: 4 }, (_, i) => i + 3).map((value) => (
-              <Fragment key={value}>
-                <input
-                  id={`player-count-${value}`}
-                  type='radio'
-                  value={value}
-                  checked={playerCount === value}
-                  onChange={onPlayerCountChange}
-                />
-                <label htmlFor={`player-count-${value}`}>{value}</label>
-              </Fragment>
-            ))}
-          </fieldset>
-          <label>
-            <input
-              type='checkbox'
-              checked={shouldIncludeFromTheAbyssCharacters}
-              onChange={onShouldIncludeFromTheAbyssCharactersChange}
-            />
-            Include From The Abyss Characters
-          </label>
+          <legend>Rolls</legend>
+          {Array.from({ length: 5 }, (_, i) => i + 1).map((value) => (
+            <Fragment key={value}>
+              <input
+                id={`rolls-${value}`}
+                type='radio'
+                value={value}
+                checked={rolls === value}
+                onChange={handleRadioChange(setRolls)}
+              />
+              <label htmlFor={`rolls-${value}`}>{value}</label>
+            </Fragment>
+          ))}
         </fieldset>
-        <input type='button' value='Randomize' onClick={onRandomizeClick} />
+        <fieldset>
+          <legend>Roll Success Value</legend>
+          {Array.from({ length: 5 }, (_, i) => i + 2).map((value) => (
+            <Fragment key={value}>
+              <input
+                id={`roll-success-${value}`}
+                type='radio'
+                value={value}
+                checked={rollSuccessValue === value}
+                onChange={handleRadioChange(setRollSuccessValue)}
+              />
+              <label htmlFor={`roll-success-${value}`}>{value}</label>
+            </Fragment>
+          ))}
+        </fieldset>
+        <fieldset>
+          <legend>Rerolls</legend>
+          {Array.from({ length: 6 }, (_, i) => i).map((value) => (
+            <Fragment key={value}>
+              <input
+                id={`rerolls-${value}`}
+                type='radio'
+                value={value}
+                checked={rerolls === value}
+                onChange={handleRadioChange(setRerolls)}
+              />
+              <label htmlFor={`rerolls-${value}`}>{value}</label>
+            </Fragment>
+          ))}
+        </fieldset>
+        <fieldset>
+          <legend>Reroll Success Value</legend>
+          {Array.from({ length: 5 }, (_, i) => i + 2).map((value) => (
+            <Fragment key={value}>
+              <input
+                id={`reroll-success-${value}`}
+                type='radio'
+                value={value}
+                checked={rerollSuccessValue === value}
+                onChange={handleRadioChange(setRerollSuccessValue)}
+              />
+              <label htmlFor={`reroll-success-${value}`}>{value}</label>
+            </Fragment>
+          ))}
+        </fieldset>
       </form>
-      {resultCharacters.length > 0 && (
+      {Object.keys(probabilities).length > 0 && (
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Title</th>
-              <th>Influence</th>
-              <th>Lore</th>
-              <th>Perception</th>
-              <th>Strength</th>
-              <th>Will</th>
+              <th>Expected Value</th>
+              <th>{expectedValue.toFixed(2)}</th>
+            </tr>
+            <tr>
+              <th>Successes</th>
+              <th>Probability</th>
             </tr>
           </thead>
           <tbody>
-            {resultCharacters.map((character) => (
-              <tr key={character.name}>
-                <td>{character.name}</td>
-                <td>{titlesMap[character.name] ?? emptyCharacter}</td>
-                <td>{character.influence ?? emptyCharacter}</td>
-                <td>{character.lore ?? emptyCharacter}</td>
-                <td>{character.perception ?? emptyCharacter}</td>
-                <td>{character.strength ?? emptyCharacter}</td>
-                <td>{character.will ?? emptyCharacter}</td>
+            {Object.entries(probabilities).map(([successes, probability]) => (
+              <tr key={successes}>
+                <td>{successes}</td>
+                <td>{(probability * 100).toFixed(2)}%</td>
               </tr>
             ))}
           </tbody>
-          <tfoot>
-            <tr>
-              <td colSpan={2}>Total</td>
-              <td>{totals.influence}</td>
-              <td>{totals.lore}</td>
-              <td>{totals.perception}</td>
-              <td>{totals.strength}</td>
-              <td>{totals.will}</td>
-            </tr>
-            <tr>
-              <td>Variance</td>
-              <td colSpan={6}>{variance}</td>
-            </tr>
-          </tfoot>
         </table>
       )}
     </main>
