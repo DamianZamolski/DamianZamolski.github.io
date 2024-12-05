@@ -1,14 +1,14 @@
 'use client';
 import { calculateCharactersTotals } from './calculateCharactersTotals';
 import { calculateCharactersVariance } from './calculateCharactersVariance';
-import { ChangeEvent, useCallback, useMemo, useState } from 'react';
+import { ChangeEvent, Fragment, useCallback, useMemo, useState } from 'react';
 import { emptyCharacter } from './emptyCharacter';
 import { shuffleArray } from '@/utils/shuffleArray';
 import { UnfathomableCharacter } from './UnfathomableCharacter';
 import { unfathomableCharacters } from './unfathomableCharacters';
 
-export default function UnfathomablePage() {
-  const [playerCount, setPlayerCount] = useState(6);
+export default function Page() {
+  const [playerCount, setPlayerCount] = useState(3);
 
   const [
     shouldIncludeFromTheAbyssCharacters,
@@ -54,7 +54,7 @@ export default function UnfathomablePage() {
   const [variance, setVariance] = useState(0);
 
   const onPlayerCountChange = useCallback(
-    (event: ChangeEvent<HTMLSelectElement>) => {
+    (event: ChangeEvent<HTMLInputElement>) => {
       setPlayerCount(Number(event.target.value));
     },
     [],
@@ -99,16 +99,21 @@ export default function UnfathomablePage() {
       </header>
       <form>
         <fieldset>
-          <label>
-            Player Count
-            <select value={playerCount} onChange={onPlayerCountChange}>
-              {Array.from({ length: 4 }, (_, i) => i + 3).map((value) => (
-                <option key={value} value={value}>
-                  {value}
-                </option>
-              ))}
-            </select>
-          </label>
+          <fieldset>
+            <legend>Player Count</legend>
+            {Array.from({ length: 4 }, (_, i) => i + 3).map((value) => (
+              <Fragment key={value}>
+                <input
+                  id={`player-count-${value}`}
+                  type='radio'
+                  value={value}
+                  checked={playerCount === value}
+                  onChange={onPlayerCountChange}
+                />
+                <label htmlFor={`player-count-${value}`}>{value}</label>
+              </Fragment>
+            ))}
+          </fieldset>
           <label>
             Max Variance
             <input

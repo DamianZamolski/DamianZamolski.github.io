@@ -12,8 +12,8 @@
       function t() {
         let [e, l] = (0, n.useState)(5),
           [r, t] = (0, n.useState)(6),
-          [i, c] = (0, n.useState)(0),
-          [h, a] = (0, n.useState)(6),
+          [c, h] = (0, n.useState)(0),
+          [i, a] = (0, n.useState)(6),
           d = (0, n.useCallback)(
             (e) => (l) => {
               e(Number(l.target.value));
@@ -25,13 +25,13 @@
             let n = e - r,
               t = (7 - l) / 6;
             return r * t + r * (1 - t) * ((7 - s) / 6) + n * t;
-          })(e, r, i, h),
+          })(e, r, c, i),
           u = (function (e, l, r, s) {
             let n = (7 - l) / 6,
               t = (7 - s) / 6,
-              i = {};
+              c = {};
             for (let l = 1; l <= e; l++)
-              i[l] = (function e(l, r, s, n, t) {
+              c[l] = (function e(l, r, s, n, t) {
                 return 0 === l
                   ? r <= 0
                     ? 1
@@ -45,8 +45,8 @@
                             (1 - t) * e(l - 1, r, s - 1, n, t)
                           : e(l - 1, r, s, n, t));
               })(e, l, r, n, t);
-            return i;
-          })(e, r, i, h);
+            return c;
+          })(e, r, c, i);
         return (0, s.jsxs)('main', {
           children: [
             (0, s.jsx)('header', {
@@ -76,7 +76,7 @@
                     }),
                     (0, s.jsxs)('label', {
                       children: [
-                        'Roll Min Success Value',
+                        'Roll Success Value',
                         (0, s.jsx)('select', {
                           value: r,
                           onChange: d(t),
@@ -98,8 +98,8 @@
                       children: [
                         'Rerolls',
                         (0, s.jsx)('select', {
-                          value: i,
-                          onChange: d(c),
+                          value: c,
+                          onChange: d(h),
                           children: Array.from({ length: 6 }, (e, l) => l).map(
                             (e) =>
                               (0, s.jsx)(
@@ -113,9 +113,9 @@
                     }),
                     (0, s.jsxs)('label', {
                       children: [
-                        'Reroll Min Success Value',
+                        'Reroll Success Value',
                         (0, s.jsx)('select', {
-                          value: h,
+                          value: i,
                           onChange: d(a),
                           children: Array.from(
                             { length: 5 },

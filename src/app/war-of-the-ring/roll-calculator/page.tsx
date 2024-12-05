@@ -168,7 +168,7 @@ export default function Page() {
             </select>
           </label>
           <label>
-            Roll Min Success Value
+            Roll Success Value
             <select
               value={rollSuccessValue}
               onChange={handleSelectChange(setRollSuccessValue)}
@@ -193,7 +193,7 @@ export default function Page() {
             </select>
           </label>
           <label>
-            Reroll Min Success Value
+            Reroll Success Value
             <select
               value={rerollSuccessValue}
               onChange={handleSelectChange(setRerollSuccessValue)}

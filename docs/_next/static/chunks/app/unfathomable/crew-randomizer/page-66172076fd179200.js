@@ -183,7 +183,7 @@
         },
       ];
       function o() {
-        let [e, n] = (0, i.useState)(6),
+        let [e, n] = (0, i.useState)(3),
           [l, o] = (0, i.useState)(!0),
           s = (0, i.useMemo)(
             () => (l ? c : c.filter((e) => 'from-the-abyss' !== e.expansion)),
@@ -200,8 +200,8 @@
             { name: '', keeperOfTheTome: 100 },
           ),
           x = { [u.name]: 'Captain', [f.name]: 'Keeper of The Tome' },
-          T = a(d),
-          [j, k] = (0, i.useState)(0),
+          j = a(d),
+          [T, k] = (0, i.useState)(0),
           g = (0, i.useCallback)((e) => {
             n(Number(e.target.value));
           }, []),
@@ -245,19 +245,30 @@
               children: [
                 (0, r.jsxs)('fieldset', {
                   children: [
-                    (0, r.jsxs)('label', {
+                    (0, r.jsxs)('fieldset', {
                       children: [
-                        'Player Count',
-                        (0, r.jsx)('select', {
-                          value: e,
-                          onChange: g,
-                          children: Array.from(
-                            { length: 4 },
-                            (e, n) => n + 3,
-                          ).map((e) =>
-                            (0, r.jsx)('option', { value: e, children: e }, e),
+                        (0, r.jsx)('legend', { children: 'Player Count' }),
+                        Array.from({ length: 4 }, (e, n) => n + 3).map((n) =>
+                          (0, r.jsxs)(
+                            i.Fragment,
+                            {
+                              children: [
+                                (0, r.jsx)('input', {
+                                  id: 'player-count-'.concat(n),
+                                  type: 'radio',
+                                  value: n,
+                                  checked: e === n,
+                                  onChange: g,
+                                }),
+                                (0, r.jsx)('label', {
+                                  htmlFor: 'player-count-'.concat(n),
+                                  children: n,
+                                }),
+                              ],
+                            },
+                            n,
                           ),
-                        }),
+                        ),
                       ],
                     }),
                     (0, r.jsxs)('label', {
@@ -358,17 +369,17 @@
                       (0, r.jsxs)('tr', {
                         children: [
                           (0, r.jsx)('td', { colSpan: 2, children: 'Total' }),
-                          (0, r.jsx)('td', { children: T.influence }),
-                          (0, r.jsx)('td', { children: T.lore }),
-                          (0, r.jsx)('td', { children: T.perception }),
-                          (0, r.jsx)('td', { children: T.strength }),
-                          (0, r.jsx)('td', { children: T.will }),
+                          (0, r.jsx)('td', { children: j.influence }),
+                          (0, r.jsx)('td', { children: j.lore }),
+                          (0, r.jsx)('td', { children: j.perception }),
+                          (0, r.jsx)('td', { children: j.strength }),
+                          (0, r.jsx)('td', { children: j.will }),
                         ],
                       }),
                       (0, r.jsxs)('tr', {
                         children: [
                           (0, r.jsx)('td', { children: 'Variance' }),
-                          (0, r.jsx)('td', { colSpan: 6, children: j }),
+                          (0, r.jsx)('td', { colSpan: 6, children: T }),
                         ],
                       }),
                     ],
