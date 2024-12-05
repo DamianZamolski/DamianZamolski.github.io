@@ -1,4 +1,4 @@
-import '@picocss/pico/css/pico.classless.blue.min.css';
+import '@picocss/pico/css/pico.classless.green.min.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

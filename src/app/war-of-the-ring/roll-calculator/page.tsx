@@ -157,7 +157,7 @@ export default function Page() {
       </header>
       <form>
         <fieldset>
-          <legend>Rolls</legend>
+          <legend># Rolls</legend>
           {Array.from({ length: 5 }, (_, i) => i + 1).map((value) => (
             <Fragment key={value}>
               <input
@@ -187,7 +187,7 @@ export default function Page() {
           ))}
         </fieldset>
         <fieldset>
-          <legend>Rerolls</legend>
+          <legend># Rerolls</legend>
           {Array.from({ length: 6 }, (_, i) => i).map((value) => (
             <Fragment key={value}>
               <input

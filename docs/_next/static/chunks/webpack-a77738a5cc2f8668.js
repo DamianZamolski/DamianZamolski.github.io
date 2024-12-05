@@ -157,12 +157,12 @@
     (r.tu = (e) => r.tt().createScriptURL(e)),
     (r.p = '/_next/'),
     (() => {
-      var e = { 68: 0, 939: 0 };
+      var e = { 68: 0, 550: 0 };
       (r.f.j = (t, o) => {
         var n = r.o(e, t) ? e[t] : void 0;
         if (0 !== n) {
           if (n) o.push(n[2]);
-          else if (/^(68|939)$/.test(t)) e[t] = 0;
+          else if (/^(550|68)$/.test(t)) e[t] = 0;
           else {
             var a = new Promise((r, o) => (n = e[t] = [r, o]));
             o.push((n[2] = a));

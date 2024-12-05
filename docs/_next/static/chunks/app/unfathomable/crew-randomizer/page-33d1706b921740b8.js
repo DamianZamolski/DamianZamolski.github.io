@@ -58,7 +58,7 @@
               children: [
                 (0, s.jsxs)('fieldset', {
                   children: [
-                    (0, s.jsx)('legend', { children: 'Rolls' }),
+                    (0, s.jsx)('legend', { children: '# Rolls' }),
                     Array.from({ length: 5 }, (e, l) => l + 1).map((r) =>
                       (0, s.jsxs)(
                         n.Fragment,
@@ -110,7 +110,7 @@
                 }),
                 (0, s.jsxs)('fieldset', {
                   children: [
-                    (0, s.jsx)('legend', { children: 'Rerolls' }),
+                    (0, s.jsx)('legend', { children: '# Rerolls' }),
                     Array.from({ length: 6 }, (e, l) => l).map((e) =>
                       (0, s.jsxs)(
                         n.Fragment,
