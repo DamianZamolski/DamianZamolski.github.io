@@ -25,8 +25,6 @@ export default function Page() {
     [shouldIncludeFromTheAbyssCharacters],
   );
 
-  const [maxVariance, setMaxVariance] = useState(0.5);
-
   const [resultCharacters, setResultCharacters] = useState<
     ReadonlyArray<UnfathomableCharacter>
   >([]);
@@ -60,15 +58,6 @@ export default function Page() {
     [],
   );
 
-  const onMaxVarianceChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      let newValue = Number(event.target.value);
-      if (newValue < 0.5) newValue = 0.5;
-      setMaxVariance(newValue);
-    },
-    [],
-  );
-
   const onShouldIncludeFromTheAbyssCharactersChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       setShouldIncludeFromTheAbyssCharacters(event.target.checked);
@@ -86,11 +75,11 @@ export default function Page() {
         .sort((a, b) => a.name.localeCompare(b.name));
 
       newVariance = calculateCharactersVariance(newCharacters);
-    } while (newVariance > maxVariance);
+    } while (newVariance > 0.5);
 
     setResultCharacters(newCharacters);
     setVariance(newVariance);
-  }, [charactersPool, playerCount, maxVariance]);
+  }, [charactersPool, playerCount]);
 
   return (
     <main>
@@ -114,16 +103,6 @@ export default function Page() {
               </Fragment>
             ))}
           </fieldset>
-          <label>
-            Max Variance
-            <input
-              type='number'
-              min={0}
-              step={0.5}
-              value={maxVariance}
-              onChange={onMaxVarianceChange}
-            />
-          </label>
           <label>
             <input
               type='checkbox'

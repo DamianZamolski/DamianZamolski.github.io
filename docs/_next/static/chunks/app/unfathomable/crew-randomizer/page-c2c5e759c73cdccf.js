@@ -185,34 +185,29 @@
       function o() {
         let [e, n] = (0, i.useState)(3),
           [l, o] = (0, i.useState)(!0),
-          s = (0, i.useMemo)(
+          h = (0, i.useMemo)(
             () => (l ? c : c.filter((e) => 'from-the-abyss' !== e.expansion)),
             [l],
           ),
-          [h, p] = (0, i.useState)(0.5),
-          [d, m] = (0, i.useState)([]),
-          u = d.reduce((e, n) => (n.captain < e.captain ? n : e), {
+          [s, p] = (0, i.useState)([]),
+          d = s.reduce((e, n) => (n.captain < e.captain ? n : e), {
             name: '',
             captain: 100,
           }),
-          f = d.reduce(
+          m = s.reduce(
             (e, n) => (n.keeperOfTheTome < e.keeperOfTheTome ? n : e),
             { name: '', keeperOfTheTome: 100 },
           ),
-          x = { [u.name]: 'Captain', [f.name]: 'Keeper of The Tome' },
-          j = a(d),
-          [T, k] = (0, i.useState)(0),
-          g = (0, i.useCallback)((e) => {
+          u = { [d.name]: 'Captain', [m.name]: 'Keeper of The Tome' },
+          f = a(s),
+          [x, T] = (0, i.useState)(0),
+          j = (0, i.useCallback)((e) => {
             n(Number(e.target.value));
           }, []),
-          b = (0, i.useCallback)((e) => {
-            let n = Number(e.target.value);
-            n < 0.5 && (n = 0.5), p(n);
-          }, []),
-          v = (0, i.useCallback)((e) => {
+          k = (0, i.useCallback)((e) => {
             o(e.target.checked);
           }, []),
-          O = (0, i.useCallback)(() => {
+          g = (0, i.useCallback)(() => {
             let n, l;
             do
               l = t(
@@ -225,15 +220,15 @@
                         [n[e], n[l]] = [n[l], n[e]];
                       }
                       return n;
-                    })(s)
+                    })(h)
                       .slice(0, e)
                       .sort((e, n) => e.name.localeCompare(n.name))),
                   ),
                 ),
               );
-            while (l > h);
-            m(n), k(l);
-          }, [s, e, h]);
+            while (l > 0.5);
+            p(n), T(l);
+          }, [h, e]);
         return (0, r.jsxs)('main', {
           children: [
             (0, r.jsx)('header', {
@@ -258,7 +253,7 @@
                                   type: 'radio',
                                   value: n,
                                   checked: e === n,
-                                  onChange: g,
+                                  onChange: j,
                                 }),
                                 (0, r.jsx)('label', {
                                   htmlFor: 'player-count-'.concat(n),
@@ -273,22 +268,10 @@
                     }),
                     (0, r.jsxs)('label', {
                       children: [
-                        'Max Variance',
-                        (0, r.jsx)('input', {
-                          type: 'number',
-                          min: 0,
-                          step: 0.5,
-                          value: h,
-                          onChange: b,
-                        }),
-                      ],
-                    }),
-                    (0, r.jsxs)('label', {
-                      children: [
                         (0, r.jsx)('input', {
                           type: 'checkbox',
                           checked: l,
-                          onChange: v,
+                          onChange: k,
                         }),
                         'Include From The Abyss Characters',
                       ],
@@ -298,11 +281,11 @@
                 (0, r.jsx)('input', {
                   type: 'button',
                   value: 'Randomize',
-                  onClick: O,
+                  onClick: g,
                 }),
               ],
             }),
-            d.length > 0 &&
+            s.length > 0 &&
               (0, r.jsxs)('table', {
                 children: [
                   (0, r.jsx)('thead', {
@@ -319,7 +302,7 @@
                     }),
                   }),
                   (0, r.jsx)('tbody', {
-                    children: d.map((e) => {
+                    children: s.map((e) => {
                       var n, l, a, t, i, c;
                       return (0, r.jsxs)(
                         'tr',
@@ -328,7 +311,7 @@
                             (0, r.jsx)('td', { children: e.name }),
                             (0, r.jsx)('td', {
                               children:
-                                null !== (n = x[e.name]) && void 0 !== n
+                                null !== (n = u[e.name]) && void 0 !== n
                                   ? n
                                   : '',
                             }),
@@ -369,17 +352,17 @@
                       (0, r.jsxs)('tr', {
                         children: [
                           (0, r.jsx)('td', { colSpan: 2, children: 'Total' }),
-                          (0, r.jsx)('td', { children: j.influence }),
-                          (0, r.jsx)('td', { children: j.lore }),
-                          (0, r.jsx)('td', { children: j.perception }),
-                          (0, r.jsx)('td', { children: j.strength }),
-                          (0, r.jsx)('td', { children: j.will }),
+                          (0, r.jsx)('td', { children: f.influence }),
+                          (0, r.jsx)('td', { children: f.lore }),
+                          (0, r.jsx)('td', { children: f.perception }),
+                          (0, r.jsx)('td', { children: f.strength }),
+                          (0, r.jsx)('td', { children: f.will }),
                         ],
                       }),
                       (0, r.jsxs)('tr', {
                         children: [
                           (0, r.jsx)('td', { children: 'Variance' }),
-                          (0, r.jsx)('td', { colSpan: 6, children: T }),
+                          (0, r.jsx)('td', { colSpan: 6, children: x }),
                         ],
                       }),
                     ],
