@@ -8,60 +8,64 @@
       'use strict';
       r.r(l), r.d(l, { default: () => t });
       var s = r(632),
-        n = r(5268);
+        n = r(7691),
+        c = r(5268);
       function t() {
-        let [e, l] = (0, n.useState)(5),
-          [r, t] = (0, n.useState)(6),
-          [c, d] = (0, n.useState)(0),
-          [i, a] = (0, n.useState)(6),
-          h = (0, n.useCallback)(
+        let [e, l] = (0, c.useState)(5),
+          [r, t] = (0, c.useState)(6),
+          [i, a] = (0, c.useState)(0),
+          [d, h] = (0, c.useState)(6),
+          o = (0, c.useCallback)(
             (e) => (l) => {
               e(Number(l.target.value));
             },
             [],
           ),
-          o = (function (e, l, r, s) {
+          u = (function (e, l, r, s) {
             r = Math.min(e, r);
             let n = e - r,
-              t = (7 - l) / 6;
-            return r * t + r * (1 - t) * ((7 - s) / 6) + n * t;
-          })(e, r, c, i),
-          u = (function (e, l, r, s) {
+              c = (7 - l) / 6;
+            return r * c + r * (1 - c) * ((7 - s) / 6) + n * c;
+          })(e, r, i, d),
+          j = (function (e, l, r, s) {
             let n = (7 - l) / 6,
-              t = (7 - s) / 6,
-              c = {};
+              c = (7 - s) / 6,
+              t = {};
             for (let l = 1; l <= e; l++)
-              c[l] = (function e(l, r, s, n, t) {
+              t[l] = (function e(l, r, s, n, c) {
                 return 0 === l
                   ? r <= 0
                     ? 1
                     : 0
                   : r <= 0
                     ? 1
-                    : n * e(l - 1, r - 1, s, n, t) +
+                    : n * e(l - 1, r - 1, s, n, c) +
                       (1 - n) *
                         (s > 0
-                          ? t * e(l - 1, r - 1, s - 1, n, t) +
-                            (1 - t) * e(l - 1, r, s - 1, n, t)
-                          : e(l - 1, r, s, n, t));
-              })(e, l, r, n, t);
-            return c;
-          })(e, r, c, i);
+                          ? c * e(l - 1, r - 1, s - 1, n, c) +
+                            (1 - c) * e(l - 1, r, s - 1, n, c)
+                          : e(l - 1, r, s, n, c));
+              })(e, l, r, n, c);
+            return t;
+          })(e, r, i, d);
         return (0, s.jsxs)('main', {
           children: [
-            (0, s.jsx)('header', {
-              children: (0, s.jsx)('h1', {
-                children: 'War of the Ring Roll Calculator',
-              }),
+            (0, s.jsxs)('header', {
+              children: [
+                (0, s.jsx)(n.Breadcrumbs, {}),
+                (0, s.jsx)('h1', {
+                  children: 'War of the Ring Roll Calculator',
+                }),
+              ],
             }),
             (0, s.jsxs)('form', {
               children: [
                 (0, s.jsxs)('fieldset', {
                   children: [
-                    (0, s.jsx)('legend', { children: '# Rolls' }),
+                    (0, s.jsx)('legend', { children: 'Rolls' }),
                     Array.from({ length: 5 }, (e, l) => l + 1).map((r) =>
                       (0, s.jsxs)(
-                        n.Fragment,
+                        c.Fragment,
                         {
                           children: [
                             (0, s.jsx)('input', {
@@ -69,7 +73,7 @@
                               type: 'radio',
                               value: r,
                               checked: e === r,
-                              onChange: h(l),
+                              onChange: o(l),
                             }),
                             (0, s.jsx)('label', {
                               htmlFor: 'rolls-'.concat(r),
@@ -87,7 +91,7 @@
                     (0, s.jsx)('legend', { children: 'Roll Success Value' }),
                     Array.from({ length: 5 }, (e, l) => l + 2).map((e) =>
                       (0, s.jsxs)(
-                        n.Fragment,
+                        c.Fragment,
                         {
                           children: [
                             (0, s.jsx)('input', {
@@ -95,7 +99,7 @@
                               type: 'radio',
                               value: e,
                               checked: r === e,
-                              onChange: h(t),
+                              onChange: o(t),
                             }),
                             (0, s.jsx)('label', {
                               htmlFor: 'roll-success-'.concat(e),
@@ -110,18 +114,18 @@
                 }),
                 (0, s.jsxs)('fieldset', {
                   children: [
-                    (0, s.jsx)('legend', { children: '# Rerolls' }),
+                    (0, s.jsx)('legend', { children: 'Rerolls' }),
                     Array.from({ length: 6 }, (e, l) => l).map((e) =>
                       (0, s.jsxs)(
-                        n.Fragment,
+                        c.Fragment,
                         {
                           children: [
                             (0, s.jsx)('input', {
                               id: 'rerolls-'.concat(e),
                               type: 'radio',
                               value: e,
-                              checked: c === e,
-                              onChange: h(d),
+                              checked: i === e,
+                              onChange: o(a),
                             }),
                             (0, s.jsx)('label', {
                               htmlFor: 'rerolls-'.concat(e),
@@ -139,15 +143,15 @@
                     (0, s.jsx)('legend', { children: 'Reroll Success Value' }),
                     Array.from({ length: 5 }, (e, l) => l + 2).map((e) =>
                       (0, s.jsxs)(
-                        n.Fragment,
+                        c.Fragment,
                         {
                           children: [
                             (0, s.jsx)('input', {
                               id: 'reroll-success-'.concat(e),
                               type: 'radio',
                               value: e,
-                              checked: i === e,
-                              onChange: h(a),
+                              checked: d === e,
+                              onChange: o(h),
                             }),
                             (0, s.jsx)('label', {
                               htmlFor: 'reroll-success-'.concat(e),
@@ -162,7 +166,7 @@
                 }),
               ],
             }),
-            Object.keys(u).length > 0 &&
+            Object.keys(j).length > 0 &&
               (0, s.jsxs)('table', {
                 children: [
                   (0, s.jsxs)('thead', {
@@ -170,7 +174,7 @@
                       (0, s.jsxs)('tr', {
                         children: [
                           (0, s.jsx)('th', { children: 'Expected Value' }),
-                          (0, s.jsx)('th', { children: o.toFixed(2) }),
+                          (0, s.jsx)('th', { children: u.toFixed(2) }),
                         ],
                       }),
                       (0, s.jsxs)('tr', {
@@ -182,7 +186,7 @@
                     ],
                   }),
                   (0, s.jsx)('tbody', {
-                    children: Object.entries(u).map((e) => {
+                    children: Object.entries(j).map((e) => {
                       let [l, r] = e;
                       return (0, s.jsxs)(
                         'tr',
@@ -204,9 +208,44 @@
         });
       }
     },
+    7691: (e, l, r) => {
+      'use strict';
+      r.d(l, { Breadcrumbs: () => t });
+      var s = r(632),
+        n = r(715),
+        c = r(641);
+      function t() {
+        let e = (0, c.usePathname)().split('/').slice(0, -1).filter(Boolean);
+        return (0, s.jsx)('nav', {
+          'aria-label': 'breadcrumb',
+          children: (0, s.jsxs)('ul', {
+            children: [
+              (0, s.jsx)('li', {
+                children: (0, s.jsx)(n.default, {
+                  href: '/',
+                  children: 'Home',
+                }),
+              }),
+              e.map((l, r) => {
+                let c = '/' + e.slice(0, r + 1).join('/'),
+                  t = l
+                    .replace(/-/g, ' ')
+                    .trim()
+                    .replace(/\b\w/g, (e) => e.toUpperCase());
+                return (0, s.jsx)(
+                  'li',
+                  { children: (0, s.jsx)(n.default, { href: c, children: t }) },
+                  c,
+                );
+              }),
+            ],
+          }),
+        });
+      }
+    },
   },
   (e) => {
     var l = (l) => e((e.s = l));
-    e.O(0, [15, 723, 358], () => l(6354)), (_N_E = e.O());
+    e.O(0, [63, 15, 723, 358], () => l(6354)), (_N_E = e.O());
   },
 ]);

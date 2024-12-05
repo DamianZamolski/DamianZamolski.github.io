@@ -6,7 +6,7 @@
     },
     4639: (e, n, l) => {
       'use strict';
-      l.r(n), l.d(n, { default: () => c });
+      l.r(n), l.d(n, { default: () => s });
       var r = l(632);
       function a(e) {
         return e.reduce(
@@ -31,7 +31,7 @@
         return e.reduce((e, l) => e + (l - n) ** 2, 0) / e.length;
       };
       var i = l(5268);
-      let o = [
+      let c = [
         {
           name: 'Antar Al-Fakahany',
           expansion: 'from-the-abyss',
@@ -182,31 +182,32 @@
           will: 2,
         },
       ];
-      function c() {
+      var o = l(7691);
+      function s() {
         let [e, n] = (0, i.useState)(3),
-          [l, c] = (0, i.useState)(!0),
+          [l, s] = (0, i.useState)(!0),
           h = (0, i.useMemo)(
-            () => (l ? o : o.filter((e) => 'from-the-abyss' !== e.expansion)),
+            () => (l ? c : c.filter((e) => 'from-the-abyss' !== e.expansion)),
             [l],
           ),
-          [s, p] = (0, i.useState)([]),
-          d = s.reduce((e, n) => (n.captain < e.captain ? n : e), {
+          [p, d] = (0, i.useState)([]),
+          m = p.reduce((e, n) => (n.captain < e.captain ? n : e), {
             name: '',
             captain: 100,
           }),
-          m = s.reduce(
+          u = p.reduce(
             (e, n) => (n.keeperOfTheTome < e.keeperOfTheTome ? n : e),
             { name: '', keeperOfTheTome: 100 },
           ),
-          u = { [d.name]: 'Captain', [m.name]: 'Keeper of The Tome' },
-          f = a(s),
-          x = (0, i.useCallback)((e) => {
+          f = { [m.name]: 'Captain', [u.name]: 'Keeper of The Tome' },
+          x = a(p),
+          j = (0, i.useCallback)((e) => {
             n(Number(e.target.value));
           }, []),
           T = (0, i.useCallback)((e) => {
-            c(e.target.checked);
+            s(e.target.checked);
           }, []),
-          j = (0, i.useCallback)(() => {
+          k = (0, i.useCallback)(() => {
             let n, l;
             do
               l = t(
@@ -226,14 +227,15 @@
                 ),
               );
             while (l > 0.5);
-            p(n);
+            d(n);
           }, [h, e]);
         return (0, r.jsxs)('main', {
           children: [
-            (0, r.jsx)('header', {
-              children: (0, r.jsx)('h1', {
-                children: 'Unfathomable Crew Randomizer',
-              }),
+            (0, r.jsxs)('header', {
+              children: [
+                (0, r.jsx)(o.Breadcrumbs, {}),
+                (0, r.jsx)('h1', { children: 'Unfathomable Crew Randomizer' }),
+              ],
             }),
             (0, r.jsxs)('form', {
               children: [
@@ -252,7 +254,7 @@
                                   type: 'radio',
                                   value: n,
                                   checked: e === n,
-                                  onChange: x,
+                                  onChange: j,
                                 }),
                                 (0, r.jsx)('label', {
                                   htmlFor: 'player-count-'.concat(n),
@@ -280,11 +282,11 @@
                 (0, r.jsx)('input', {
                   type: 'button',
                   value: 'Randomize',
-                  onClick: j,
+                  onClick: k,
                 }),
               ],
             }),
-            s.length > 0 &&
+            p.length > 0 &&
               (0, r.jsxs)('table', {
                 children: [
                   (0, r.jsx)('thead', {
@@ -301,8 +303,8 @@
                     }),
                   }),
                   (0, r.jsx)('tbody', {
-                    children: s.map((e) => {
-                      var n, l, a, t, i, o;
+                    children: p.map((e) => {
+                      var n, l, a, t, i, c;
                       return (0, r.jsxs)(
                         'tr',
                         {
@@ -310,7 +312,7 @@
                             (0, r.jsx)('td', { children: e.name }),
                             (0, r.jsx)('td', {
                               children:
-                                null !== (n = u[e.name]) && void 0 !== n
+                                null !== (n = f[e.name]) && void 0 !== n
                                   ? n
                                   : '',
                             }),
@@ -338,7 +340,7 @@
                             }),
                             (0, r.jsx)('td', {
                               children:
-                                null !== (o = e.will) && void 0 !== o ? o : '',
+                                null !== (c = e.will) && void 0 !== c ? c : '',
                             }),
                           ],
                         },
@@ -350,11 +352,11 @@
                     children: (0, r.jsxs)('tr', {
                       children: [
                         (0, r.jsx)('td', { colSpan: 2, children: 'Total' }),
-                        (0, r.jsx)('td', { children: f.influence }),
-                        (0, r.jsx)('td', { children: f.lore }),
-                        (0, r.jsx)('td', { children: f.perception }),
-                        (0, r.jsx)('td', { children: f.strength }),
-                        (0, r.jsx)('td', { children: f.will }),
+                        (0, r.jsx)('td', { children: x.influence }),
+                        (0, r.jsx)('td', { children: x.lore }),
+                        (0, r.jsx)('td', { children: x.perception }),
+                        (0, r.jsx)('td', { children: x.strength }),
+                        (0, r.jsx)('td', { children: x.will }),
                       ],
                     }),
                   }),
@@ -364,9 +366,44 @@
         });
       }
     },
+    7691: (e, n, l) => {
+      'use strict';
+      l.d(n, { Breadcrumbs: () => i });
+      var r = l(632),
+        a = l(715),
+        t = l(641);
+      function i() {
+        let e = (0, t.usePathname)().split('/').slice(0, -1).filter(Boolean);
+        return (0, r.jsx)('nav', {
+          'aria-label': 'breadcrumb',
+          children: (0, r.jsxs)('ul', {
+            children: [
+              (0, r.jsx)('li', {
+                children: (0, r.jsx)(a.default, {
+                  href: '/',
+                  children: 'Home',
+                }),
+              }),
+              e.map((n, l) => {
+                let t = '/' + e.slice(0, l + 1).join('/'),
+                  i = n
+                    .replace(/-/g, ' ')
+                    .trim()
+                    .replace(/\b\w/g, (e) => e.toUpperCase());
+                return (0, r.jsx)(
+                  'li',
+                  { children: (0, r.jsx)(a.default, { href: t, children: i }) },
+                  t,
+                );
+              }),
+            ],
+          }),
+        });
+      }
+    },
   },
   (e) => {
     var n = (n) => e((e.s = n));
-    e.O(0, [15, 723, 358], () => n(1106)), (_N_E = e.O());
+    e.O(0, [63, 15, 723, 358], () => n(1106)), (_N_E = e.O());
   },
 ]);

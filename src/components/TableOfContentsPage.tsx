@@ -1,3 +1,4 @@
+import { Breadcrumbs } from './Breadcrumbs';
 import { TableOfContents } from './TableOfContents';
 
 export function TableOfContentsPage({
@@ -10,6 +11,7 @@ export function TableOfContentsPage({
   return (
     <main>
       <header>
+        <Breadcrumbs />
         <h1>{title}</h1>
       </header>
       <TableOfContents url={url} />

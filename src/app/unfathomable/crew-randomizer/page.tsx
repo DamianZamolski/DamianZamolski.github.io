@@ -6,6 +6,7 @@ import { emptyCharacter } from './emptyCharacter';
 import { shuffleArray } from '@/utils/shuffleArray';
 import { UnfathomableCharacter } from './UnfathomableCharacter';
 import { unfathomableCharacters } from './unfathomableCharacters';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export default function Page() {
   const [playerCount, setPlayerCount] = useState(3);
@@ -82,6 +83,7 @@ export default function Page() {
   return (
     <main>
       <header>
+        <Breadcrumbs />
         <h1>Unfathomable Crew Randomizer</h1>
       </header>
       <form>
