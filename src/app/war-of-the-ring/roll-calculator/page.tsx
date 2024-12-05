@@ -156,69 +156,65 @@ export default function Page() {
         <h1>War of the Ring Roll Calculator</h1>
       </header>
       <form>
-        <fieldset role='group'>
-          <fieldset>
-            <legend>Rolls</legend>
-            {Array.from({ length: 5 }, (_, i) => i + 1).map((value) => (
-              <Fragment key={value}>
-                <input
-                  id={`rolls-${value}`}
-                  type='radio'
-                  value={value}
-                  checked={rolls === value}
-                  onChange={handleRadioChange(setRolls)}
-                />
-                <label htmlFor={`rolls-${value}`}>{value}</label>
-              </Fragment>
-            ))}
-          </fieldset>
-          <fieldset>
-            <legend>Roll Success Value</legend>
-            {Array.from({ length: 5 }, (_, i) => i + 2).map((value) => (
-              <Fragment key={value}>
-                <input
-                  id={`roll-success-${value}`}
-                  type='radio'
-                  value={value}
-                  checked={rollSuccessValue === value}
-                  onChange={handleRadioChange(setRollSuccessValue)}
-                />
-                <label htmlFor={`roll-success-${value}`}>{value}</label>
-              </Fragment>
-            ))}
-          </fieldset>
+        <fieldset>
+          <legend>Rolls</legend>
+          {Array.from({ length: 5 }, (_, i) => i + 1).map((value) => (
+            <Fragment key={value}>
+              <input
+                id={`rolls-${value}`}
+                type='radio'
+                value={value}
+                checked={rolls === value}
+                onChange={handleRadioChange(setRolls)}
+              />
+              <label htmlFor={`rolls-${value}`}>{value}</label>
+            </Fragment>
+          ))}
         </fieldset>
-        <fieldset role='group'>
-          <fieldset>
-            <legend>Rerolls</legend>
-            {Array.from({ length: 6 }, (_, i) => i).map((value) => (
-              <Fragment key={value}>
-                <input
-                  id={`rerolls-${value}`}
-                  type='radio'
-                  value={value}
-                  checked={rerolls === value}
-                  onChange={handleRadioChange(setRerolls)}
-                />
-                <label htmlFor={`rerolls-${value}`}>{value}</label>
-              </Fragment>
-            ))}
-          </fieldset>
-          <fieldset>
-            <legend>Reroll Success Value</legend>
-            {Array.from({ length: 5 }, (_, i) => i + 2).map((value) => (
-              <Fragment key={value}>
-                <input
-                  id={`reroll-success-${value}`}
-                  type='radio'
-                  value={value}
-                  checked={rerollSuccessValue === value}
-                  onChange={handleRadioChange(setRerollSuccessValue)}
-                />
-                <label htmlFor={`reroll-success-${value}`}>{value}</label>
-              </Fragment>
-            ))}
-          </fieldset>
+        <fieldset>
+          <legend>Roll Success Value</legend>
+          {Array.from({ length: 5 }, (_, i) => i + 2).map((value) => (
+            <Fragment key={value}>
+              <input
+                id={`roll-success-${value}`}
+                type='radio'
+                value={value}
+                checked={rollSuccessValue === value}
+                onChange={handleRadioChange(setRollSuccessValue)}
+              />
+              <label htmlFor={`roll-success-${value}`}>{value}</label>
+            </Fragment>
+          ))}
+        </fieldset>
+        <fieldset>
+          <legend>Rerolls</legend>
+          {Array.from({ length: 6 }, (_, i) => i).map((value) => (
+            <Fragment key={value}>
+              <input
+                id={`rerolls-${value}`}
+                type='radio'
+                value={value}
+                checked={rerolls === value}
+                onChange={handleRadioChange(setRerolls)}
+              />
+              <label htmlFor={`rerolls-${value}`}>{value}</label>
+            </Fragment>
+          ))}
+        </fieldset>
+        <fieldset>
+          <legend>Reroll Success Value</legend>
+          {Array.from({ length: 5 }, (_, i) => i + 2).map((value) => (
+            <Fragment key={value}>
+              <input
+                id={`reroll-success-${value}`}
+                type='radio'
+                value={value}
+                checked={rerollSuccessValue === value}
+                onChange={handleRadioChange(setRerollSuccessValue)}
+              />
+              <label htmlFor={`reroll-success-${value}`}>{value}</label>
+            </Fragment>
+          ))}
         </fieldset>
       </form>
       {Object.keys(probabilities).length > 0 && (
