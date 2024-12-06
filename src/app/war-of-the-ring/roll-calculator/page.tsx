@@ -128,14 +128,6 @@ export default function Page() {
   const [rerolls, setRerolls] = useState(0);
   const [rerollSuccessValue, setRerollSuccessValue] = useState(6);
 
-  const handleRadioChange = useCallback(
-    (setter: (value: number) => void) =>
-      (event: ChangeEvent<HTMLInputElement>) => {
-        setter(Number(event.target.value));
-      },
-    [],
-  );
-
   const expectedValue = calculateExpectedValue(
     rolls,
     rollSuccessValue,
@@ -148,6 +140,26 @@ export default function Page() {
     rollSuccessValue,
     rerolls,
     rerollSuccessValue,
+  );
+
+  const onRollsChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const newValue = Number(event.target.value);
+      setRolls(newValue);
+
+      if (newValue < rerolls) {
+        setRerolls(newValue);
+      }
+    },
+    [rerolls],
+  );
+
+  const handleRadioChange = useCallback(
+    (setter: (value: number) => void) =>
+      (event: ChangeEvent<HTMLInputElement>) => {
+        setter(Number(event.target.value));
+      },
+    [],
   );
 
   return (
@@ -166,7 +178,7 @@ export default function Page() {
                 type='radio'
                 value={value}
                 checked={rolls === value}
-                onChange={handleRadioChange(setRolls)}
+                onChange={onRollsChange}
               />
               <label htmlFor={`rolls-${value}`}>{value}</label>
             </Fragment>
@@ -189,7 +201,7 @@ export default function Page() {
         </fieldset>
         <fieldset>
           <legend>Rerolls</legend>
-          {Array.from({ length: 6 }, (_, i) => i).map((value) => (
+          {Array.from({ length: rolls + 1 }, (_, i) => i).map((value) => (
             <Fragment key={value}>
               <input
                 id={`rerolls-${value}`}
