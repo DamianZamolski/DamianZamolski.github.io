@@ -191,15 +191,15 @@
             [l],
           ),
           [p, d] = (0, i.useState)([]),
-          m = p.reduce((e, n) => (n.captain < e.captain ? n : e), {
+          u = p.reduce((e, n) => (n.captain < e.captain ? n : e), {
             name: '',
             captain: 100,
           }),
-          u = p.reduce(
+          m = p.reduce(
             (e, n) => (n.keeperOfTheTome < e.keeperOfTheTome ? n : e),
             { name: '', keeperOfTheTome: 100 },
           ),
-          f = { [m.name]: 'Captain', [u.name]: 'Keeper of The Tome' },
+          f = { [u.name]: 'Captain', [m.name]: 'Keeper of The Tome' },
           x = a(p),
           j = (0, i.useCallback)((e) => {
             n(Number(e.target.value));
@@ -220,9 +220,7 @@
                         [n[e], n[l]] = [n[l], n[e]];
                       }
                       return n;
-                    })(h)
-                      .slice(0, e)
-                      .sort((e, n) => e.name.localeCompare(n.name))),
+                    })(h).slice(0, e)),
                   ),
                 ),
               );

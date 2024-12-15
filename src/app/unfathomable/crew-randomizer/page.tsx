@@ -70,9 +70,7 @@ export default function Page() {
     let newVariance: number;
 
     do {
-      newCharacters = shuffleArray(charactersPool)
-        .slice(0, playerCount)
-        .sort((a, b) => a.name.localeCompare(b.name));
+      newCharacters = shuffleArray(charactersPool).slice(0, playerCount);
 
       newVariance = calculateCharactersVariance(newCharacters);
     } while (newVariance > 0.5);
