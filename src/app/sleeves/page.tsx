@@ -32,12 +32,13 @@ export default function Page() {
         }}
       >
         <label>
-          Games
+          BGG URLs
           <textarea
-            style={{ resize: 'none' }}
-            rows={text.split('\n').length + 2}
-            value={text}
             onChange={(e) => setText(e.target.value)}
+            placeholder='Paste BGG URLs here. Separate them with spaces or enters.'
+            rows={text.split('\n').length + 2}
+            style={{ resize: 'none' }}
+            value={text}
           />
         </label>
         <input type='submit' value='Fetch' />

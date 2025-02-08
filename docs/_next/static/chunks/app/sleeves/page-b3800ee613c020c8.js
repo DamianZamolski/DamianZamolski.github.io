@@ -47,17 +47,18 @@
         );
       }
       var u = r(8886),
-        j = r(6672);
-      let p = (0, u.KU)(() => localStorage),
-        x = (0, u.tG)('text', '', p);
+        p = r(6672);
+      let j = (0, u.KU)(() => localStorage),
+        x = (0, u.tG)('text', '', j);
       function b() {
-        let [e, t] = (0, j.fp)(x),
+        let [e, t] = (0, p.fp)(x),
           [r, l] = (0, a.useState)({}),
           i = async () => {
             let t = Array.from(
               new Set(
                 e
                   .split('\n')
+                  .flatMap((e) => e.split(/\s+/))
                   .map((e) => {
                     var t;
                     return null === (t = /\d+/.exec(e)) || void 0 === t
@@ -84,12 +85,14 @@
               children: [
                 (0, s.jsxs)('label', {
                   children: [
-                    'Games',
+                    'BGG URLs',
                     (0, s.jsx)('textarea', {
-                      style: { resize: 'none' },
-                      rows: e.split('\n').length + 2,
-                      value: e,
                       onChange: (e) => t(e.target.value),
+                      placeholder:
+                        'Paste BGG URLs here. Separate them with spaces or enters.',
+                      rows: e.split('\n').length + 2,
+                      style: { resize: 'none' },
+                      value: e,
                     }),
                   ],
                 }),
