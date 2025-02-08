@@ -1,55 +1,55 @@
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
   [755],
   {
-    6354: (e, l, r) => {
-      Promise.resolve().then(r.bind(r, 2120));
+    4027: (e, l, r) => {
+      Promise.resolve().then(r.bind(r, 1528));
     },
-    2120: (e, l, r) => {
+    1528: (e, l, r) => {
       'use strict';
-      r.r(l), r.d(l, { default: () => c });
-      var s = r(632),
-        n = r(7691),
-        t = r(5268);
-      function c() {
-        let [e, l] = (0, t.useState)(5),
-          [r, c] = (0, t.useState)(6),
-          [a, i] = (0, t.useState)(0),
-          [d, h] = (0, t.useState)(6),
+      r.r(l), r.d(l, { default: () => t });
+      var s = r(1047),
+        n = r(8219),
+        c = r(6847);
+      function t() {
+        let [e, l] = (0, c.useState)(5),
+          [r, t] = (0, c.useState)(6),
+          [a, i] = (0, c.useState)(0),
+          [d, h] = (0, c.useState)(6),
           o = (function (e, l, r, s) {
             r = Math.min(e, r);
             let n = e - r,
-              t = (7 - l) / 6;
-            return r * t + r * (1 - t) * ((7 - s) / 6) + n * t;
+              c = (7 - l) / 6;
+            return r * c + r * (1 - c) * ((7 - s) / 6) + n * c;
           })(e, r, a, d),
           u = (function (e, l, r, s) {
             let n = (7 - l) / 6,
-              t = (7 - s) / 6,
-              c = {};
+              c = (7 - s) / 6,
+              t = {};
             for (let l = 1; l <= e; l++)
-              c[l] = (function e(l, r, s, n, t) {
+              t[l] = (function e(l, r, s, n, c) {
                 return 0 === l
                   ? r <= 0
                     ? 1
                     : 0
                   : r <= 0
                     ? 1
-                    : n * e(l - 1, r - 1, s, n, t) +
+                    : n * e(l - 1, r - 1, s, n, c) +
                       (1 - n) *
                         (s > 0
-                          ? t * e(l - 1, r - 1, s - 1, n, t) +
-                            (1 - t) * e(l - 1, r, s - 1, n, t)
-                          : e(l - 1, r, s, n, t));
-              })(e, l, r, n, t);
-            return c;
+                          ? c * e(l - 1, r - 1, s - 1, n, c) +
+                            (1 - c) * e(l - 1, r, s - 1, n, c)
+                          : e(l - 1, r, s, n, c));
+              })(e, l, r, n, c);
+            return t;
           })(e, r, a, d),
-          j = (0, t.useCallback)(
+          j = (0, c.useCallback)(
             (e) => {
               let r = Number(e.target.value);
               l(r), r < a && i(r);
             },
             [a],
           ),
-          x = (0, t.useCallback)(
+          x = (0, c.useCallback)(
             (e) => (l) => {
               e(Number(l.target.value));
             },
@@ -72,7 +72,7 @@
                     (0, s.jsx)('legend', { children: 'Rolls' }),
                     Array.from({ length: 5 }, (e, l) => l + 1).map((l) =>
                       (0, s.jsxs)(
-                        t.Fragment,
+                        c.Fragment,
                         {
                           children: [
                             (0, s.jsx)('input', {
@@ -98,7 +98,7 @@
                     (0, s.jsx)('legend', { children: 'Roll Success Value' }),
                     Array.from({ length: 5 }, (e, l) => l + 2).map((e) =>
                       (0, s.jsxs)(
-                        t.Fragment,
+                        c.Fragment,
                         {
                           children: [
                             (0, s.jsx)('input', {
@@ -106,7 +106,7 @@
                               type: 'radio',
                               value: e,
                               checked: r === e,
-                              onChange: x(c),
+                              onChange: x(t),
                             }),
                             (0, s.jsx)('label', {
                               htmlFor: 'roll-success-'.concat(e),
@@ -124,7 +124,7 @@
                     (0, s.jsx)('legend', { children: 'Rerolls' }),
                     Array.from({ length: e + 1 }, (e, l) => l).map((e) =>
                       (0, s.jsxs)(
-                        t.Fragment,
+                        c.Fragment,
                         {
                           children: [
                             (0, s.jsx)('input', {
@@ -150,7 +150,7 @@
                     (0, s.jsx)('legend', { children: 'Reroll Success Value' }),
                     Array.from({ length: 5 }, (e, l) => l + 2).map((e) =>
                       (0, s.jsxs)(
-                        t.Fragment,
+                        c.Fragment,
                         {
                           children: [
                             (0, s.jsx)('input', {
@@ -215,34 +215,32 @@
         });
       }
     },
-    7691: (e, l, r) => {
+    8219: (e, l, r) => {
       'use strict';
-      r.d(l, { Breadcrumbs: () => c });
-      var s = r(632),
-        n = r(715),
-        t = r(641);
-      function c() {
+      r.d(l, { Breadcrumbs: () => a });
+      var s = r(1047),
+        n = r(8001),
+        c = r.n(n),
+        t = r(210);
+      function a() {
         let e = (0, t.usePathname)().split('/').slice(0, -1).filter(Boolean);
         return (0, s.jsx)('nav', {
           'aria-label': 'breadcrumb',
           children: (0, s.jsxs)('ul', {
             children: [
               (0, s.jsx)('li', {
-                children: (0, s.jsx)(n.default, {
-                  href: '/',
-                  children: 'Home',
-                }),
+                children: (0, s.jsx)(c(), { href: '/', children: 'Home' }),
               }),
               e.map((l, r) => {
-                let t = '/' + e.slice(0, r + 1).join('/'),
-                  c = l
+                let n = '/' + e.slice(0, r + 1).join('/'),
+                  t = l
                     .replace(/-/g, ' ')
                     .trim()
                     .replace(/\b\w/g, (e) => e.toUpperCase());
                 return (0, s.jsx)(
                   'li',
-                  { children: (0, s.jsx)(n.default, { href: t, children: c }) },
-                  t,
+                  { children: (0, s.jsx)(c(), { href: n, children: t }) },
+                  n,
                 );
               }),
             ],
@@ -253,6 +251,6 @@
   },
   (e) => {
     var l = (l) => e((e.s = l));
-    e.O(0, [63, 15, 723, 358], () => l(6354)), (_N_E = e.O());
+    e.O(0, [254, 721, 59, 358], () => l(4027)), (_N_E = e.O());
   },
 ]);
