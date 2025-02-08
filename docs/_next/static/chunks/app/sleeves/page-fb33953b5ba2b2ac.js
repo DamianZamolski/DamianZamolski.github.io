@@ -10,16 +10,16 @@
       var s = r(1047),
         a = r(6847),
         n = r(8219),
-        i = r(7714);
-      let l = i.z
+        l = r(7714);
+      let i = l.z
           .object({
-            width: i.z.string(),
-            height: i.z.string(),
-            quantity: i.z.string(),
+            width: l.z.string(),
+            height: l.z.string(),
+            quantity: l.z.string(),
           })
           .passthrough(),
-        c = i.z.object({ cardTypes: i.z.array(l) }).passthrough(),
-        h = i.z.object({ cardSets: i.z.array(c) }).passthrough();
+        c = l.z.object({ cardTypes: l.z.array(i) }).passthrough(),
+        h = l.z.object({ cardSets: l.z.array(c) }).passthrough();
       async function d(e) {
         let t = await fetch(
           'https://corsproxy.io/?url=https://api.geekdo.com/api/cardsetsbygame?objectid='.concat(
@@ -48,12 +48,12 @@
       }
       var u = r(8886),
         j = r(6672);
-      let p = (0, u.KU)(() => sessionStorage),
+      let p = (0, u.KU)(() => localStorage),
         x = (0, u.tG)('text', '', p);
       function b() {
         let [e, t] = (0, j.fp)(x),
-          [r, i] = (0, a.useState)({}),
-          l = async () => {
+          [r, l] = (0, a.useState)({}),
+          i = async () => {
             let t = Array.from(
               new Set(
                 e
@@ -67,7 +67,7 @@
                   .filter(Boolean),
               ),
             );
-            i(await o(t));
+            l(await o(t));
           };
         return (0, s.jsxs)('main', {
           children: [
@@ -79,7 +79,7 @@
             }),
             (0, s.jsxs)('form', {
               onSubmit: (e) => {
-                e.preventDefault(), l();
+                e.preventDefault(), i();
               },
               children: [
                 (0, s.jsxs)('label', {
@@ -132,13 +132,13 @@
     },
     8219: (e, t, r) => {
       'use strict';
-      r.d(t, { Breadcrumbs: () => l });
+      r.d(t, { Breadcrumbs: () => i });
       var s = r(1047),
         a = r(8001),
         n = r.n(a),
-        i = r(210);
-      function l() {
-        let e = (0, i.usePathname)().split('/').slice(0, -1).filter(Boolean);
+        l = r(210);
+      function i() {
+        let e = (0, l.usePathname)().split('/').slice(0, -1).filter(Boolean);
         return (0, s.jsx)('nav', {
           'aria-label': 'breadcrumb',
           children: (0, s.jsxs)('ul', {
@@ -148,13 +148,13 @@
               }),
               e.map((t, r) => {
                 let a = '/' + e.slice(0, r + 1).join('/'),
-                  i = t
+                  l = t
                     .replace(/-/g, ' ')
                     .trim()
                     .replace(/\b\w/g, (e) => e.toUpperCase());
                 return (0, s.jsx)(
                   'li',
-                  { children: (0, s.jsx)(n(), { href: a, children: i }) },
+                  { children: (0, s.jsx)(n(), { href: a, children: l }) },
                   a,
                 );
               }),

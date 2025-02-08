@@ -6,7 +6,7 @@ import { fetchGamesSleevesData } from './fetchGamesSleevesData';
 import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 
-const storage = createJSONStorage<string>(() => sessionStorage);
+const storage = createJSONStorage<string>(() => localStorage);
 const textAtom = atomWithStorage('text', '', storage);
 
 export default function Page() {
