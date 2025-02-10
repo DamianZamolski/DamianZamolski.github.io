@@ -52,8 +52,10 @@
         x = (0, u.tG)('text', '', j);
       function b() {
         let [e, t] = (0, p.fp)(x),
-          [r, l] = (0, a.useState)({}),
-          i = async () => {
+          [r, l] = (0, a.useState)(!1),
+          [i, c] = (0, a.useState)({}),
+          h = async () => {
+            l(!0);
             let t = Array.from(
               new Set(
                 e
@@ -68,7 +70,7 @@
                   .filter(Boolean),
               ),
             );
-            l(await o(t));
+            c(await o(t)), l(!1);
           };
         return (0, s.jsxs)('main', {
           children: [
@@ -80,7 +82,7 @@
             }),
             (0, s.jsxs)('form', {
               onSubmit: (e) => {
-                e.preventDefault(), i();
+                e.preventDefault(), h();
               },
               children: [
                 (0, s.jsxs)('label', {
@@ -96,10 +98,15 @@
                     }),
                   ],
                 }),
-                (0, s.jsx)('input', { type: 'submit', value: 'Fetch' }),
+                (0, s.jsx)('button', {
+                  type: 'submit',
+                  'aria-busy': r,
+                  disabled: r,
+                  children: 'Count sleeves',
+                }),
               ],
             }),
-            Object.keys(r).length > 0 &&
+            Object.keys(i).length > 0 &&
               (0, s.jsxs)('table', {
                 children: [
                   (0, s.jsx)('thead', {
@@ -111,7 +118,7 @@
                     }),
                   }),
                   (0, s.jsx)('tbody', {
-                    children: Object.entries(r)
+                    children: Object.entries(i)
                       .sort()
                       .map((e) => {
                         let [t, r] = e;

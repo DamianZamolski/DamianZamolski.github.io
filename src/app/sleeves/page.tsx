@@ -11,12 +11,15 @@ const textAtom = atomWithStorage('text', '', storage);
 
 export default function Page() {
   const [text, setText] = useAtom(textAtom);
+  const [isFetching, setFetching] = useState(false);
   const [results, setResults] = useState<Record<string, number>>({});
 
   const handleFetch = async () => {
+    setFetching(true);
     const gameIds = findGameIds(text);
     const data = await fetchGamesSleevesData(gameIds);
     setResults(data);
+    setFetching(false);
   };
 
   return (
@@ -41,7 +44,9 @@ export default function Page() {
             value={text}
           />
         </label>
-        <input type='submit' value='Fetch' />
+        <button type='submit' aria-busy={isFetching} disabled={isFetching}>
+          Count sleeves
+        </button>
       </form>
       {Object.keys(results).length > 0 && (
         <table>
