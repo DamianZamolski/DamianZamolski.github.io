@@ -1,57 +1,9 @@
-import { Breadcrumbs } from '@/components/Breadcrumbs';
-
-const skills = [
-  'continous deployment',
-  'docker',
-  'drizzle',
-  'eslint',
-  'expo',
-  'express',
-  'git',
-  'github actions',
-  'grafana',
-  'graphql',
-  'jest',
-  'jira',
-  'jotai',
-  'jwt',
-  'kafka',
-  'kubernetes',
-  'linux',
-  'mongodb',
-  'msw',
-  'nest',
-  'next',
-  'nvm',
-  'oauth2',
-  'playwright',
-  'pnpm',
-  'postgresql',
-  'prettier',
-  'prisma',
-  'rabbitmq',
-  'react hook form',
-  'react native',
-  'react',
-  'redis',
-  'redux',
-  'rest',
-  'scrum',
-  'soap',
-  'sql',
-  'strict typescript',
-  'typeorm',
-  'vite',
-  'vitest',
-  'zod',
-  'zustand',
-];
+import { skills } from './skills';
+import { Page } from '@/components/Page';
 
 export default function ResumePage() {
   return (
-    <main>
-      <Breadcrumbs />
-      <h1>Damian Zamolski</h1>
+    <Page title='Damian Zamolski'>
       <h2>Employment</h2>
       <div style={{ display: 'flex' }}>
         <div style={{ flex: 1, textAlign: 'left' }}>Beesafe</div>
@@ -112,6 +64,6 @@ export default function ResumePage() {
           </li>
         ))}
       </ul>
-    </main>
+    </Page>
   );
 }
