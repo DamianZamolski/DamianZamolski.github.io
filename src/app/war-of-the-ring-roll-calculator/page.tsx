@@ -121,18 +121,18 @@ export default function WarOfTheRingRollCalculatorPage() {
         <table>
           <thead>
             <tr>
-              <th>Expected Value</th>
-              <th>{expectedValue.toFixed(2)}</th>
+              <th scope='row'>Expected Value</th>
+              <td>{expectedValue.toFixed(2)}</td>
             </tr>
             <tr>
-              <th>Successes</th>
-              <th>Probability</th>
+              <th scope='col'>Successes</th>
+              <th scope='col'>Probability</th>
             </tr>
           </thead>
           <tbody>
             {Object.entries(probabilities).map(([successes, probability]) => (
               <tr key={successes}>
-                <td>{successes}</td>
+                <th scope='row'>{successes}</th>
                 <td>{(probability * 100).toFixed(2)}%</td>
               </tr>
             ))}
