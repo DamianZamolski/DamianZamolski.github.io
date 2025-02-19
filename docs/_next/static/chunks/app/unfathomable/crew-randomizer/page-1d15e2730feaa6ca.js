@@ -1,13 +1,13 @@
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
   [385],
   {
-    7789: (e, n, r) => {
-      Promise.resolve().then(r.bind(r, 4230));
+    270: (e, n, r) => {
+      Promise.resolve().then(r.bind(r, 5270));
     },
-    4230: (e, n, r) => {
+    5270: (e, n, r) => {
       'use strict';
       r.r(n), r.d(n, { default: () => s });
-      var l = r(1047);
+      var l = r(4884);
       function a(e) {
         return e.reduce(
           (e, n) => {
@@ -30,7 +30,7 @@
         let n = e.reduce((e, n) => e + n, 0) / e.length;
         return e.reduce((e, r) => e + (r - n) ** 2, 0) / e.length;
       };
-      var i = r(6847);
+      var i = r(4843);
       let c = [
         {
           name: 'Antar Al-Fakahany',
@@ -182,7 +182,7 @@
           will: 2,
         },
       ];
-      var o = r(8219);
+      var o = r(3831);
       function s() {
         let [e, n] = (0, i.useState)(3),
           [r, s] = (0, i.useState)(!0),
@@ -364,13 +364,13 @@
         });
       }
     },
-    8219: (e, n, r) => {
+    3831: (e, n, r) => {
       'use strict';
       r.d(n, { Breadcrumbs: () => c });
-      var l = r(1047),
-        a = r(8001),
+      var l = r(4884),
+        a = r(1968),
         t = r.n(a),
-        i = r(210);
+        i = r(9269);
       function c() {
         let e = (0, i.usePathname)().split('/').slice(0, -1).filter(Boolean);
         return (0, l.jsx)('nav', {
@@ -400,6 +400,6 @@
   },
   (e) => {
     var n = (n) => e((e.s = n));
-    e.O(0, [254, 721, 59, 358], () => n(7789)), (_N_E = e.O());
+    e.O(0, [812, 449, 919, 358], () => n(270)), (_N_E = e.O());
   },
 ]);

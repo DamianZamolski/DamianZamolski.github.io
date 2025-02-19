@@ -1,26 +1,25 @@
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
   [376],
   {
-    5224: (e, t, r) => {
-      Promise.resolve().then(r.bind(r, 8464));
+    8989: (e, t, r) => {
+      Promise.resolve().then(r.bind(r, 8558));
     },
-    8464: (e, t, r) => {
+    8558: (e, t, r) => {
       'use strict';
-      r.r(t), r.d(t, { default: () => b });
-      var s = r(1047),
-        a = r(6847),
-        n = r(8219),
-        l = r(7714);
-      let i = l.z
+      r.r(t), r.d(t, { default: () => m });
+      var s = r(4884),
+        a = r(5546),
+        n = r(6923);
+      let l = n.z
           .object({
-            width: l.z.string(),
-            height: l.z.string(),
-            quantity: l.z.string(),
+            width: n.z.string(),
+            height: n.z.string(),
+            quantity: n.z.string(),
           })
           .passthrough(),
-        c = l.z.object({ cardTypes: l.z.array(i) }).passthrough(),
-        h = l.z.object({ cardSets: l.z.array(c) }).passthrough();
-      async function d(e) {
+        i = n.z.object({ cardTypes: n.z.array(l) }).passthrough(),
+        c = n.z.object({ cardSets: n.z.array(i) }).passthrough();
+      async function h(e) {
         let t = await fetch(
           'https://corsproxy.io/?url=https://api.geekdo.com/api/cardsetsbygame?objectid='.concat(
             e,
@@ -28,13 +27,13 @@
         );
         if (!t.ok) return {};
         let r = await t.json();
-        return h.parse(r).cardSets[0].cardTypes.reduce((e, t) => {
+        return c.parse(r).cardSets[0].cardTypes.reduce((e, t) => {
           let { width: r, height: s, quantity: a } = t;
           return (e[''.concat(r, ' - ').concat(s)] = parseInt(a, 10)), e;
         }, {});
       }
-      async function o(e) {
-        return (await Promise.all(e.map(d))).reduce(
+      async function d(e) {
+        return (await Promise.all(e.map(h))).reduce(
           (e, t) => (
             Object.entries(t).forEach((t) => {
               var r;
@@ -46,43 +45,40 @@
           {},
         );
       }
-      var u = r(8886),
-        p = r(6672);
-      let j = (0, u.KU)(() => localStorage),
-        x = (0, u.tG)('text', '', j);
-      function b() {
-        let [e, t] = (0, p.fp)(x),
-          [r, l] = (0, a.useState)(!1),
-          [i, c] = (0, a.useState)({}),
-          h = async () => {
-            l(!0);
-            let t = Array.from(
-              new Set(
-                e
-                  .split('\n')
-                  .flatMap((e) => e.split(/\s+/))
-                  .map((e) => {
-                    var t;
-                    return null === (t = /\d+/.exec(e)) || void 0 === t
-                      ? void 0
-                      : t[0];
-                  })
-                  .filter(Boolean),
-              ),
-            );
-            c(await o(t)), l(!1);
-          };
+      let o = /\d+/g;
+      var u = r(3831);
+      function j(e) {
+        let { title: t, children: r } = e;
         return (0, s.jsxs)('main', {
           children: [
             (0, s.jsxs)('header', {
               children: [
-                (0, s.jsx)(n.Breadcrumbs, {}),
-                (0, s.jsx)('h1', { children: 'Sleeves' }),
+                (0, s.jsx)(u.Breadcrumbs, {}),
+                (0, s.jsx)('h1', { children: t }),
               ],
             }),
+            r,
+          ],
+        });
+      }
+      var p = r(2676),
+        x = r(4843);
+      let b = (0, a.tG)('text', '');
+      function m() {
+        let [e, t] = (0, p.fp)(b),
+          [r, a] = (0, x.useState)(!1),
+          [n, l] = (0, x.useState)({}),
+          i = async () => {
+            a(!0);
+            let t = Array.from(new Set(e.matchAll(o).map(String)));
+            l(await d(t)), a(!1);
+          };
+        return (0, s.jsxs)(j, {
+          title: 'Sleeves',
+          children: [
             (0, s.jsxs)('form', {
               onSubmit: (e) => {
-                e.preventDefault(), h();
+                e.preventDefault(), i();
               },
               children: [
                 (0, s.jsxs)('label', {
@@ -106,7 +102,7 @@
                 }),
               ],
             }),
-            Object.keys(i).length > 0 &&
+            Object.keys(n).length > 0 &&
               (0, s.jsxs)('table', {
                 children: [
                   (0, s.jsx)('thead', {
@@ -118,7 +114,7 @@
                     }),
                   }),
                   (0, s.jsx)('tbody', {
-                    children: Object.entries(i)
+                    children: Object.entries(n)
                       .sort()
                       .map((e) => {
                         let [t, r] = e;
@@ -140,13 +136,13 @@
         });
       }
     },
-    8219: (e, t, r) => {
+    3831: (e, t, r) => {
       'use strict';
       r.d(t, { Breadcrumbs: () => i });
-      var s = r(1047),
-        a = r(8001),
+      var s = r(4884),
+        a = r(1968),
         n = r.n(a),
-        l = r(210);
+        l = r(9269);
       function i() {
         let e = (0, l.usePathname)().split('/').slice(0, -1).filter(Boolean);
         return (0, s.jsx)('nav', {
@@ -176,6 +172,6 @@
   },
   (e) => {
     var t = (t) => e((e.s = t));
-    e.O(0, [254, 428, 721, 59, 358], () => t(5224)), (_N_E = e.O());
+    e.O(0, [812, 715, 449, 919, 358], () => t(8989)), (_N_E = e.O());
   },
 ]);

@@ -1,33 +1,28 @@
 'use client';
-import { useState } from 'react';
-import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { findGameIds } from './findGameIds';
+import { atomWithStorage } from 'jotai/utils';
 import { fetchGamesSleevesData } from './fetchGamesSleevesData';
-import { atomWithStorage, createJSONStorage } from 'jotai/utils';
+import { findGameIds } from './findGameIds';
+import { Page } from '@/components/Page';
 import { useAtom } from 'jotai';
+import { useState } from 'react';
 
-const storage = createJSONStorage<string>(() => localStorage);
-const textAtom = atomWithStorage('text', '', storage);
+const textAtom = atomWithStorage('text', '');
 
-export default function Page() {
+export default function SleevesPage() {
   const [text, setText] = useAtom(textAtom);
   const [isFetching, setFetching] = useState(false);
-  const [results, setResults] = useState<Record<string, number>>({});
+  const [sleevesData, setSleevesData] = useState<Record<string, number>>({});
 
   const handleFetch = async () => {
     setFetching(true);
     const gameIds = findGameIds(text);
-    const data = await fetchGamesSleevesData(gameIds);
-    setResults(data);
+    const sleevesData = await fetchGamesSleevesData(gameIds);
+    setSleevesData(sleevesData);
     setFetching(false);
   };
 
   return (
-    <main>
-      <header>
-        <Breadcrumbs />
-        <h1>Sleeves</h1>
-      </header>
+    <Page title='Sleeves'>
       <form
         onSubmit={(event) => {
           event.preventDefault();
@@ -48,7 +43,7 @@ export default function Page() {
           Count sleeves
         </button>
       </form>
-      {Object.keys(results).length > 0 && (
+      {Object.keys(sleevesData).length > 0 && (
         <table>
           <thead>
             <tr>
@@ -57,7 +52,7 @@ export default function Page() {
             </tr>
           </thead>
           <tbody>
-            {Object.entries(results)
+            {Object.entries(sleevesData)
               .sort()
               .map(([key, quantity]) => (
                 <tr key={key}>
@@ -68,6 +63,6 @@ export default function Page() {
           </tbody>
         </table>
       )}
-    </main>
+    </Page>
   );
 }

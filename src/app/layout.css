@@ -1,0 +1,7 @@
+main {
+  max-width: 70ch !important;
+}
+
+li {
+  list-style: inside !important;
+}

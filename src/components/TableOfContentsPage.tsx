@@ -1,4 +1,4 @@
-import { Breadcrumbs } from './Breadcrumbs';
+import { Page } from './Page';
 import { TableOfContents } from './TableOfContents';
 
 export function TableOfContentsPage({
@@ -9,12 +9,8 @@ export function TableOfContentsPage({
   url: string;
 }) {
   return (
-    <main>
-      <header>
-        <Breadcrumbs />
-        <h1>{title}</h1>
-      </header>
+    <Page title={title}>
       <TableOfContents url={url} />
-    </main>
+    </Page>
   );
 }
