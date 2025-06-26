@@ -1,17 +1,17 @@
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
   [974],
   {
-    8726: (e, r, l) => {
-      Promise.resolve().then(l.t.bind(l, 1968, 23)),
-        Promise.resolve().then(l.bind(l, 3831));
+    5657: (e, r, l) => {
+      (Promise.resolve().then(l.t.bind(l, 1235, 23)),
+        Promise.resolve().then(l.bind(l, 9326)));
     },
-    3831: (e, r, l) => {
+    9326: (e, r, l) => {
       'use strict';
       l.d(r, { Breadcrumbs: () => c });
-      var s = l(4884),
-        i = l(1968),
+      var s = l(6814),
+        i = l(1235),
         n = l.n(i),
-        a = l(9269);
+        a = l(2900);
       function c() {
         let e = (0, a.usePathname)().split('/').slice(0, -1).filter(Boolean);
         return (0, s.jsx)('nav', {
@@ -41,6 +41,6 @@
   },
   (e) => {
     var r = (r) => e((e.s = r));
-    e.O(0, [812, 449, 919, 358], () => r(8726)), (_N_E = e.O());
+    (e.O(0, [46, 788, 97, 358], () => r(5657)), (_N_E = e.O()));
   },
 ]);

@@ -3,7 +3,7 @@ import './layout.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Damian Zamolski',
+  title: 'Damian Zamolski Website',
 };
 
 export default function RootLayout({

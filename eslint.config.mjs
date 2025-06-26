@@ -1,32 +1,34 @@
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
+import prettier from 'eslint-plugin-prettier/recommended';
+import unusedImports from 'eslint-plugin-unused-imports';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
-
-export default [
-  ...compat.extends(
-    'next/core-web-vitals',
-    'next/typescript',
-    'plugin:prettier/recommended',
-  ),
+const config = [
+  ...new FlatCompat().extends('next/core-web-vitals', 'next/typescript'),
+  prettier,
   {
+    plugins: {
+      'unused-imports': unusedImports,
+    },
     rules: {
-      'import/no-anonymous-default-export': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-unused-vars': 'off',
+      'no-unused-vars': 'off',
+      'unused-imports/no-unused-imports': 'warn',
+      'unused-imports/no-unused-vars': [
+        'warn',
+        {
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+          vars: 'all',
+          varsIgnorePattern: '^_',
+        },
+      ],
       'padding-line-between-statements': [
         'warn',
         {
           blankLine: 'always',
           prev: [
-            'class',
             'import',
             'multiline-block-like',
             'multiline-const',
@@ -34,18 +36,12 @@ export default [
             'multiline-let',
             'multiline-var',
           ],
-
           next: '*',
         },
-        {
-          blankLine: 'never',
-          prev: 'import',
-          next: 'import',
-        },
+        { blankLine: 'never', prev: 'import', next: 'import' },
         {
           blankLine: 'always',
           prev: '*',
-
           next: [
             'multiline-block-like',
             'multiline-const',
@@ -60,3 +56,5 @@ export default [
     },
   },
 ];
+
+export default config;

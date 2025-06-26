@@ -1,25 +1,43 @@
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
   [251],
   {
-    9738: (e, n, l) => {
-      Promise.resolve().then(l.bind(l, 3063));
-    },
-    3063: (e, n, l) => {
+    3481: (e, n, l) => {
       'use strict';
-      l.r(n), l.d(n, { default: () => p });
-      var r = l(4884);
+      l.d(n, { Y: () => t });
+      var r = l(6814),
+        a = l(9326);
+      function t(e) {
+        let { title: n, children: l } = e;
+        return (0, r.jsxs)('main', {
+          children: [
+            (0, r.jsxs)('header', {
+              children: [
+                (0, r.jsx)(a.Breadcrumbs, {}),
+                (0, r.jsx)('h1', { children: n }),
+              ],
+            }),
+            l,
+          ],
+        });
+      }
+    },
+    7118: (e) => {
+      e.exports = { center: 'styles_center__NC8Js' };
+    },
+    7173: (e, n, l) => {
+      'use strict';
+      (l.r(n), l.d(n, { default: () => p }));
+      var r = l(6814);
       function a(e) {
         return e.reduce(
           (e, n) => {
             var l, r, a, t, c;
             return (
-              (e.influence +=
-                null !== (l = n.influence) && void 0 !== l ? l : 0),
-              (e.lore += null !== (r = n.lore) && void 0 !== r ? r : 0),
-              (e.perception +=
-                null !== (a = n.perception) && void 0 !== a ? a : 0),
-              (e.strength += null !== (t = n.strength) && void 0 !== t ? t : 0),
-              (e.will += null !== (c = n.will) && void 0 !== c ? c : 0),
+              (e.influence += null != (l = n.influence) ? l : 0),
+              (e.lore += null != (r = n.lore) ? r : 0),
+              (e.perception += null != (a = n.perception) ? a : 0),
+              (e.strength += null != (t = n.strength) ? t : 0),
+              (e.will += null != (c = n.will) ? c : 0),
               e
             );
           },
@@ -30,8 +48,8 @@
         let n = e.reduce((e, n) => e + n, 0) / e.length;
         return e.reduce((e, l) => e + (l - n) ** 2, 0) / e.length;
       };
-      var c = l(4843);
-      let i = [
+      var c = l(2094);
+      let s = [
         {
           name: 'Antar Al-Fakahany',
           expansion: 'from-the-abyss',
@@ -182,43 +200,43 @@
           will: 2,
         },
       ];
-      var s = l(1330),
-        o = l.n(s),
-        h = l(3278);
+      var i = l(7118),
+        o = l.n(i),
+        h = l(3481);
       function p() {
         let [e, n] = (0, c.useState)(3),
-          [l, s] = (0, c.useState)(!0),
+          [l, i] = (0, c.useState)(!0),
           p = (0, c.useMemo)(
-            () => (l ? i : i.filter((e) => 'from-the-abyss' !== e.expansion)),
+            () => (l ? s : s.filter((e) => 'from-the-abyss' !== e.expansion)),
             [l],
           ),
-          [d, m] = (0, c.useState)([]),
-          u = (0, c.useMemo)(
+          [m, u] = (0, c.useState)([]),
+          d = (0, c.useMemo)(
             () =>
-              d.reduce((e, n) => (n.captain < e.captain ? n : e), {
+              m.reduce((e, n) => (n.captain < e.captain ? n : e), {
                 name: '',
                 captain: 100,
               }),
-            [d],
+            [m],
           ),
           f = (0, c.useMemo)(
             () =>
-              d.reduce(
+              m.reduce(
                 (e, n) => (n.keeperOfTheTome < e.keeperOfTheTome ? n : e),
                 { name: '', keeperOfTheTome: 100 },
               ),
-            [d],
+            [m],
           ),
           x = (0, c.useMemo)(
-            () => ({ [u.name]: 'Captain', [f.name]: 'Keeper of The Tome' }),
-            [u.name, f.name],
+            () => ({ [d.name]: 'Captain', [f.name]: 'Keeper of The Tome' }),
+            [d.name, f.name],
           ),
-          j = (0, c.useMemo)(() => a(d), [d]),
+          j = (0, c.useMemo)(() => a(m), [m]),
           T = (0, c.useCallback)((e) => {
             n(Number(e.target.value));
           }, []),
           k = (0, c.useCallback)((e) => {
-            s(e.target.checked);
+            i(e.target.checked);
           }, []),
           g = (0, c.useCallback)(() => {
             let n, l;
@@ -238,7 +256,7 @@
                 ),
               );
             while (l > 0.5);
-            m(n);
+            u(n);
           }, [p, e]);
         return (0, r.jsxs)(h.Y, {
           title: 'Unfathomable Crew Randomizer',
@@ -292,7 +310,7 @@
                 }),
               ],
             }),
-            d.length > 0 &&
+            m.length > 0 &&
               (0, r.jsxs)('table', {
                 children: [
                   (0, r.jsx)('thead', {
@@ -318,8 +336,8 @@
                     }),
                   }),
                   (0, r.jsx)('tbody', {
-                    children: d.map((e) => {
-                      var n, l, a, t, c, i;
+                    children: m.map((e) => {
+                      var n, l, a, t, c, s;
                       return (0, r.jsxs)(
                         'tr',
                         {
@@ -329,41 +347,27 @@
                               children: e.name,
                             }),
                             (0, r.jsx)('td', {
-                              children:
-                                null !== (n = x[e.name]) && void 0 !== n
-                                  ? n
-                                  : '',
+                              children: null != (n = x[e.name]) ? n : '',
                             }),
                             (0, r.jsx)('td', {
                               className: o().center,
-                              children:
-                                null !== (l = e.influence) && void 0 !== l
-                                  ? l
-                                  : '',
+                              children: null != (l = e.influence) ? l : '',
                             }),
                             (0, r.jsx)('td', {
                               className: o().center,
-                              children:
-                                null !== (a = e.lore) && void 0 !== a ? a : '',
+                              children: null != (a = e.lore) ? a : '',
                             }),
                             (0, r.jsx)('td', {
                               className: o().center,
-                              children:
-                                null !== (t = e.perception) && void 0 !== t
-                                  ? t
-                                  : '',
+                              children: null != (t = e.perception) ? t : '',
                             }),
                             (0, r.jsx)('td', {
                               className: o().center,
-                              children:
-                                null !== (c = e.strength) && void 0 !== c
-                                  ? c
-                                  : '',
+                              children: null != (c = e.strength) ? c : '',
                             }),
                             (0, r.jsx)('td', {
                               className: o().center,
-                              children:
-                                null !== (i = e.will) && void 0 !== i ? i : '',
+                              children: null != (s = e.will) ? s : '',
                             }),
                           ],
                         },
@@ -408,14 +412,17 @@
         });
       }
     },
-    3831: (e, n, l) => {
+    8052: (e, n, l) => {
+      Promise.resolve().then(l.bind(l, 7173));
+    },
+    9326: (e, n, l) => {
       'use strict';
-      l.d(n, { Breadcrumbs: () => i });
-      var r = l(4884),
-        a = l(1968),
+      l.d(n, { Breadcrumbs: () => s });
+      var r = l(6814),
+        a = l(1235),
         t = l.n(a),
-        c = l(9269);
-      function i() {
+        c = l(2900);
+      function s() {
         let e = (0, c.usePathname)().split('/').slice(0, -1).filter(Boolean);
         return (0, r.jsx)('nav', {
           'aria-label': 'breadcrumb',
@@ -441,32 +448,9 @@
         });
       }
     },
-    3278: (e, n, l) => {
-      'use strict';
-      l.d(n, { Y: () => t });
-      var r = l(4884),
-        a = l(3831);
-      function t(e) {
-        let { title: n, children: l } = e;
-        return (0, r.jsxs)('main', {
-          children: [
-            (0, r.jsxs)('header', {
-              children: [
-                (0, r.jsx)(a.Breadcrumbs, {}),
-                (0, r.jsx)('h1', { children: n }),
-              ],
-            }),
-            l,
-          ],
-        });
-      }
-    },
-    1330: (e) => {
-      e.exports = { center: 'styles_center__NC8Js' };
-    },
   },
   (e) => {
     var n = (n) => e((e.s = n));
-    e.O(0, [29, 812, 449, 919, 358], () => n(9738)), (_N_E = e.O());
+    (e.O(0, [753, 46, 788, 97, 358], () => n(8052)), (_N_E = e.O()));
   },
 ]);
