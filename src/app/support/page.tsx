@@ -9,11 +9,15 @@ const links: Array<string> = [
 export default function SupportPage() {
   return (
     <Page title='Support'>
-      {links.map((link) => (
-        <a href={link} key={link}>
-          {link}
-        </a>
-      ))}
+      <ul>
+        {links.map((link) => (
+          <li key={link}>
+            <a href={link} target='_blank' rel='noopener noreferrer'>
+              {link}
+            </a>
+          </li>
+        ))}
+      </ul>
     </Page>
   );
 }
