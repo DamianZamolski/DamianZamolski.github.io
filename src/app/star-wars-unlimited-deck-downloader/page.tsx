@@ -1,5 +1,5 @@
 'use client';
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import { atomWithStorage } from 'jotai/utils';
 import { jsPDF } from 'jspdf';
 import { Page } from '@/components/Page';
@@ -7,18 +7,13 @@ import { useAtom } from 'jotai';
 import { useState } from 'react';
 import { z } from 'zod';
 
+const deckLinkRegExp = /https:\/\/swudb\.com\/deck\/\S+/g;
+
 const textAtom = atomWithStorage('text', '');
 const cardWidth = 62;
 const cardHeight = 88;
 
 const http = axios.create();
-
-http.interceptors.response.use(
-  (response: AxiosResponse) => response,
-  (error) => {
-    console.error(error);
-  },
-);
 
 const deckSchema = z.object({
   leader: z.object({ defaultImagePath: z.string() }),
@@ -47,127 +42,128 @@ export default function SleevesPage() {
   const download = async () => {
     setFetching(true);
 
-    const deckLinks: Array<string> = text
-      .replaceAll('deck', 'api/deck')
-      .split(/\s+/);
-
-    const deckDownloadResponses = await Promise.all(
-      deckLinks.map(async (deckLink: string) =>
-        http.get<unknown>(`https://corsproxy.io/?url=${deckLink}`),
-      ),
-    );
-
-    const decks = decksSchema.parse(
-      deckDownloadResponses.map(
-        (deckDownloadResponse) => deckDownloadResponse.data,
-      ),
-    );
-
-    const singleCardImageLinks = decks
-      .flatMap((deck) => [
-        deck.leader.defaultImagePath,
-        deck.leader.defaultImagePath.replace('.png', '-back.png'),
-        deck.leader.defaultImagePath.replace('.png', '-portrait.png'),
-        deck.base.defaultImagePath,
-      ])
-      .map((imageLink) => imageLink.replace('~', 'https://swudb.com/images'));
-
-    const singleCardImageDownloadPromises = await Promise.allSettled(
-      singleCardImageLinks.map((link) =>
-        http.get(`https://corsproxy.io/?url=${link}`, {
-          responseType: 'arraybuffer',
-        }),
-      ),
-    );
-
-    const singleCardImages = singleCardImageDownloadPromises
-      .filter((promise) => promise.status === 'fulfilled')
-      .map((promise) => promise.value.data)
-      .map(
-        (image) =>
-          `data:image/png;base64,${btoa(
-            new Uint8Array(image).reduce(
-              (data, byte) => data + String.fromCharCode(byte),
-              '',
-            ),
-          )}`,
+    try {
+      const deckLinks: Array<string> = (text.match(deckLinkRegExp) ?? []).map(
+        (deckLink) => deckLink.replaceAll('deck', 'api/deck'),
       );
 
-    const tripleCardImageLinks = decks
-      .flatMap((deck) => [
-        ...deck.shuffledDeck.map((card) => card.card.defaultImagePath),
-      ])
-      .map((imageLink) => imageLink.replace('~', 'https://swudb.com/images'));
+      const deckDownloadResponses = await Promise.all(
+        deckLinks.map(async (deckLink: string) =>
+          http.get<unknown>(`https://corsproxy.io/?url=${deckLink}`),
+        ),
+      );
 
-    const tripleCardImageDownloadPromises = await Promise.allSettled(
-      tripleCardImageLinks.map((link) =>
-        http.get(`https://corsproxy.io/?url=${link}`, {
-          responseType: 'arraybuffer',
-        }),
-      ),
-    );
+      const decks = decksSchema.parse(
+        deckDownloadResponses.map(
+          (deckDownloadResponse) => deckDownloadResponse.data,
+        ),
+      );
 
-    const tripleCardImages = tripleCardImageDownloadPromises
-      .filter((promise) => promise.status === 'fulfilled')
-      .map((promise) => promise.value.data)
-      .map(
-        (image) =>
-          `data:image/png;base64,${btoa(
-            new Uint8Array(image).reduce(
-              (data, byte) => data + String.fromCharCode(byte),
-              '',
-            ),
-          )}`,
-      )
-      .flatMap((image) => [image, image, image]);
+      const singleCardImageLinks = decks
+        .flatMap((deck) => [
+          deck.leader.defaultImagePath,
+          deck.leader.defaultImagePath.replace('.png', '-back.png'),
+          deck.leader.defaultImagePath.replace('.png', '-portrait.png'),
+          deck.base.defaultImagePath,
+        ])
+        .map((imageLink) => imageLink.replace('~', 'https://swudb.com/images'));
 
-    const cardImages: Array<string> = [
-      ...singleCardImages,
-      ...tripleCardImages,
-    ];
+      const singleCardImageDownloadPromises = await Promise.allSettled(
+        singleCardImageLinks.map((link) =>
+          http.get<ArrayBuffer>(`https://corsproxy.io/?url=${link}`, {
+            responseType: 'arraybuffer',
+          }),
+        ),
+      );
 
-    const pages = chunkArray(cardImages);
+      const singleCardImages = singleCardImageDownloadPromises
+        .filter((promise) => promise.status === 'fulfilled')
+        .map((promise) => promise.value.data)
+        .map(
+          (arrayBuffer) =>
+            `data:image/png;base64,${Buffer.from(arrayBuffer).toString('base64')}`,
+        );
 
-    const pdf = new jsPDF();
-    const leftMargin = (pdf.internal.pageSize.width - 3 * cardWidth) / 2;
-    const topMargin = (pdf.internal.pageSize.height - 3 * cardHeight) / 2;
-    pdf.setFillColor(0, 0, 0);
+      const tripleCardImageLinks = decks
+        .flatMap((deck) => [
+          ...deck.shuffledDeck.map((card) => card.card.defaultImagePath),
+        ])
+        .map((imageLink) => imageLink.replace('~', 'https://swudb.com/images'));
 
-    for (let pageIndex = 0; pageIndex < pages.length; pageIndex++) {
-      const page = pages[pageIndex];
+      const tripleCardImageDownloadPromises = await Promise.allSettled(
+        tripleCardImageLinks.map((link) =>
+          http.get<ArrayBuffer>(`https://corsproxy.io/?url=${link}`, {
+            responseType: 'arraybuffer',
+          }),
+        ),
+      );
 
-      for (let imageIndex = 0; imageIndex < page.length; imageIndex++) {
-        const image = page[imageIndex];
+      const tripleCardImages = tripleCardImageDownloadPromises
+        .filter((promise) => promise.status === 'fulfilled')
+        .map((promise) => promise.value.data)
+        .map(
+          (image) =>
+            `data:image/png;base64,${btoa(
+              new Uint8Array(image).reduce(
+                (data, byte) => data + String.fromCharCode(byte),
+                '',
+              ),
+            )}`,
+        )
+        .flatMap((image) => [image, image, image]);
 
-        const blob = await (await fetch(image)).blob();
-        const bitmap = await createImageBitmap(blob);
-        const shouldRotate = bitmap.width > bitmap.height;
-        bitmap.close();
+      const cardImages: Array<string> = [
+        ...singleCardImages,
+        ...tripleCardImages,
+      ];
 
-        const yIndex = Math.floor(imageIndex / 3);
-        const xIndex = imageIndex - 3 * yIndex;
+      const pages = chunkArray(cardImages);
 
-        const x = leftMargin + xIndex * cardWidth;
-        const y = topMargin + yIndex * cardHeight;
+      const pdf = new jsPDF();
+      const leftMargin = (pdf.internal.pageSize.width - 3 * cardWidth) / 2;
+      const topMargin = (pdf.internal.pageSize.height - 3 * cardHeight) / 2;
+      pdf.setFillColor(0, 0, 0);
 
-        pdf.rect(x, y, cardWidth, cardHeight, 'F');
+      for (let pageIndex = 0; pageIndex < pages.length; pageIndex++) {
+        const page = pages[pageIndex];
 
-        pdf.addImage({
-          imageData: image,
-          x: x + (shouldRotate ? cardWidth : 0),
-          y: y + (shouldRotate ? cardHeight - cardWidth : 0),
-          width: shouldRotate ? cardHeight : cardWidth,
-          height: shouldRotate ? cardWidth : cardHeight,
-          rotation: shouldRotate ? 90 : 0,
-        });
+        for (let imageIndex = 0; imageIndex < page.length; imageIndex++) {
+          const image = page[imageIndex];
+          console.debug(image);
+
+          const blob = await (await fetch(image)).blob();
+          const bitmap = await createImageBitmap(blob);
+          const shouldRotate = bitmap.width > bitmap.height;
+          bitmap.close();
+
+          const yIndex = Math.floor(imageIndex / 3);
+          const xIndex = imageIndex - 3 * yIndex;
+
+          const x = leftMargin + xIndex * cardWidth;
+          const y = topMargin + yIndex * cardHeight;
+
+          pdf.rect(x, y, cardWidth, cardHeight, 'F');
+
+          pdf.addImage({
+            imageData: image,
+            x: x + (shouldRotate ? cardWidth : 0),
+            y: y + (shouldRotate ? cardHeight - cardWidth : 0),
+            width: shouldRotate ? cardHeight : cardWidth,
+            height: shouldRotate ? cardWidth : cardHeight,
+            rotation: shouldRotate ? 90 : 0,
+          });
+        }
+
+        if (pageIndex < pages.length - 1) {
+          pdf.addPage();
+        }
       }
 
-      if (pageIndex < pages.length - 1) {
-        pdf.addPage();
-      }
+      pdf.save('deck.pdf');
+    } catch (error: unknown) {
+      console.error(error);
     }
 
-    pdf.save('deck.pdf');
     setFetching(false);
   };
 
