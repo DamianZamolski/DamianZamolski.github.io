@@ -301,7 +301,7 @@
                     (0, r.jsxs)('fieldset', {
                       children: [
                         (0, r.jsx)('legend', { children: 'Player Count' }),
-                        Array.from({ length: 4 }, (e, n) => n + 3).map((n) =>
+                        [3, 4, 5, 6].map((n) =>
                           (0, r.jsxs)(
                             c.Fragment,
                             {

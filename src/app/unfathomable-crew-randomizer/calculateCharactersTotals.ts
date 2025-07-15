@@ -4,14 +4,14 @@ export function calculateCharactersTotals(
   characters: ReadonlyArray<UnfathomableCharacter>,
 ) {
   return characters.reduce(
-    (totals, character) => {
-      totals.influence += character.influence ?? 0;
-      totals.lore += character.lore ?? 0;
-      totals.perception += character.perception ?? 0;
-      totals.strength += character.strength ?? 0;
-      totals.will += character.will ?? 0;
+    (result, character) => {
+      result.influence += character.influence ?? 0;
+      result.lore += character.lore ?? 0;
+      result.perception += character.perception ?? 0;
+      result.strength += character.strength ?? 0;
+      result.will += character.will ?? 0;
 
-      return totals;
+      return result;
     },
     { influence: 0, lore: 0, perception: 0, strength: 0, will: 0 },
   );

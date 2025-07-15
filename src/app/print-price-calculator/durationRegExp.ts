@@ -1,0 +1,1 @@
+export const durationRegExp = /(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?/;

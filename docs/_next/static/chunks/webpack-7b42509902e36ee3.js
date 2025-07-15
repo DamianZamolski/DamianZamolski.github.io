@@ -168,12 +168,12 @@
     (r.tu = (e) => r.tt().createScriptURL(e)),
     (r.p = '/_next/'),
     (() => {
-      var e = { 68: 0, 665: 0, 920: 0, 433: 0 };
+      var e = { 68: 0, 665: 0, 920: 0, 299: 0, 433: 0 };
       ((r.f.j = (t, o) => {
         var n = r.o(e, t) ? e[t] : void 0;
         if (0 !== n)
           if (n) o.push(n[2]);
-          else if (/^(433|665|68|920)$/.test(t)) e[t] = 0;
+          else if (/^(299|433|665|68|920)$/.test(t)) e[t] = 0;
           else {
             var a = new Promise((r, o) => (n = e[t] = [r, o]));
             o.push((n[2] = a));

@@ -1,6 +1,6 @@
 import { Page } from '@/components/Page';
 
-const links: Array<string> = [
+const links: ReadonlyArray<string> = [
   'https://revolut.me/damianzamolski',
   'https://buymeacoffee.com/damianzamolski',
   'https://www.paypal.com/paypalme/damianzamolski',

@@ -34,8 +34,8 @@ export default function UnfathomableCrewRandomizerPage() {
   const captain = useMemo(
     () =>
       resultCharacters.reduce(
-        (captain, character) =>
-          character.captain < captain.captain ? character : captain,
+        (result, character) =>
+          character.captain < result.captain ? character : result,
         { name: '', captain: 100 },
       ),
     [resultCharacters],
@@ -44,10 +44,10 @@ export default function UnfathomableCrewRandomizerPage() {
   const keeperOfTheTome = useMemo(
     () =>
       resultCharacters.reduce(
-        (keeperOfTheTome, character) =>
-          character.keeperOfTheTome < keeperOfTheTome.keeperOfTheTome
+        (result, character) =>
+          character.keeperOfTheTome < result.keeperOfTheTome
             ? character
-            : keeperOfTheTome,
+            : result,
         { name: '', keeperOfTheTome: 100 },
       ),
     [resultCharacters],
@@ -86,7 +86,6 @@ export default function UnfathomableCrewRandomizerPage() {
 
     do {
       newCharacters = shuffleArray(charactersPool).slice(0, playerCount);
-
       newVariance = calculateCharactersVariance(newCharacters);
     } while (newVariance > 0.5);
 
@@ -99,7 +98,7 @@ export default function UnfathomableCrewRandomizerPage() {
         <fieldset>
           <fieldset>
             <legend>Player Count</legend>
-            {Array.from({ length: 4 }, (_, i) => i + 3).map((value) => (
+            {[3, 4, 5, 6].map((value) => (
               <Fragment key={value}>
                 <input
                   id={`player-count-${value}`}
