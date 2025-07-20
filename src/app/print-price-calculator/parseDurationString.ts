@@ -5,15 +5,21 @@ export function parseDurationString(durationString: string): Duration {
   const matches = durationString.match(durationRegExp);
 
   if (!matches) {
-    throw new Error(`Invalid duration format: ${durationString}`);
+    throw new Error('No matches found');
   }
 
-  const [, d, h, m, s] = matches;
+  const [, days, hours, minutes, seconds] = matches;
 
-  return {
-    days: d ? parseInt(d, 10) : 0,
-    hours: h ? parseInt(h, 10) : 0,
-    minutes: m ? parseInt(m, 10) : 0,
-    seconds: s ? parseInt(s, 10) : 0,
+  const result = {
+    days: days ? parseInt(days, 10) : 0,
+    hours: hours ? parseInt(hours, 10) : 0,
+    minutes: minutes ? parseInt(minutes, 10) : 0,
+    seconds: seconds ? parseInt(seconds, 10) : 0,
   };
+
+  if (!(result.days || result.hours || result.minutes || result.seconds)) {
+    throw new Error('Duration should not be zero');
+  }
+
+  return result;
 }

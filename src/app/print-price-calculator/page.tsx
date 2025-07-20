@@ -9,9 +9,9 @@ import { Duration } from './Duration';
 
 export default function PrintPriceCalculatorPage() {
   const [materialWeight, setMaterialWeight] = useState<number>(1);
-  const [materialCostPerUnit, setMaterialCostPerUnit] = useState<number>(35);
+  const [materialCostPerUnit, setMaterialCostPerUnit] = useState<number>(40);
   const [durationString, setDurationString] = useState<string>('1h');
-  const [durationError, setDurationError] = useState<unknown | null>(null);
+  const [durationError, setDurationError] = useState<string | null>(null);
   const [hourlyRate, setHourlyRate] = useState<number>(0.5);
   const [markup, setMarkup] = useState<number>(50);
 
@@ -22,7 +22,7 @@ export default function PrintPriceCalculatorPage() {
 
       return parsed;
     } catch (e: unknown) {
-      setDurationError(e);
+      setDurationError(e instanceof Error ? e.message : 'unknown error');
 
       return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     }
@@ -54,7 +54,7 @@ export default function PrintPriceCalculatorPage() {
     <Page title='Print Price Calculator'>
       <form>
         <label>
-          Material Weight in Units
+          Material weight in kilograms
           <input
             type='number'
             min='0'
@@ -63,9 +63,8 @@ export default function PrintPriceCalculatorPage() {
             onChange={onNumberChange(setMaterialWeight)}
           />
         </label>
-
         <label>
-          Material Cost per Unit
+          Material cost Per Kilogram
           <input
             type='number'
             min='0'
@@ -74,7 +73,6 @@ export default function PrintPriceCalculatorPage() {
             onChange={onNumberChange(setMaterialCostPerUnit)}
           />
         </label>
-
         <label>
           Duration
           <input
@@ -83,10 +81,14 @@ export default function PrintPriceCalculatorPage() {
             onChange={(e) => setDurationString(e.target.value)}
             placeholder='1d5h10m15s'
             aria-invalid={Boolean(durationError)}
+            aria-describedby={durationError ? 'duration-error' : undefined}
           />
+          {Boolean(durationError) && (
+            <small id='duration-error'>{durationError}</small>
+          )}
         </label>
         <label>
-          Hourly Rate
+          Hourly rate
           <input
             type='number'
             min='0'
@@ -96,7 +98,7 @@ export default function PrintPriceCalculatorPage() {
           />
         </label>
         <label>
-          Markup
+          markup
           <input
             type='number'
             min='0'
@@ -109,23 +111,23 @@ export default function PrintPriceCalculatorPage() {
       <table>
         <tbody>
           <tr>
-            <th>Material Cost</th>
+            <th>Material cost</th>
             <td className={styles.right}>
               {(materialWeight * materialCostPerUnit).toFixed(2)}
             </td>
           </tr>
           <tr>
-            <th>Duration Cost</th>
+            <th>Duration cost</th>
             <td className={styles.right}>
               {(convertDurationToHours(duration) * hourlyRate).toFixed(2)}
             </td>
           </tr>
           <tr>
-            <th>Total Cost</th>
+            <th>Total cost</th>
             <td className={styles.right}>{totalCost.toFixed(2)}</td>
           </tr>
           <tr className={styles.price}>
-            <th>Total Price</th>
+            <th>Total price</th>
             <td className={styles.right}>{totalPrice.toFixed(2)}</td>
           </tr>
         </tbody>
