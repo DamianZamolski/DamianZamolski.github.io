@@ -2,7 +2,6 @@
 import styles from './styles.module.css';
 import { ChangeEvent, useCallback, useMemo, useState } from 'react';
 import { estimatePrintCost } from './estimatePrintCost';
-import { convertDurationToHours } from './convertDurationToHours';
 import { parseDurationString } from './parseDurationString';
 import { Page } from '@/components/Page';
 import { Duration } from './Duration';
@@ -28,21 +27,16 @@ export default function PrintPriceCalculatorPage() {
     }
   }, [durationString]);
 
-  const totalCost = useMemo(
-    () =>
-      estimatePrintCost({
-        materialWeight,
-        materialCostPerUnit,
-        duration,
-        hourlyRate,
-      }),
-    [materialWeight, materialCostPerUnit, duration, hourlyRate],
-  );
+  const cost = estimatePrintCost({
+    materialWeight,
+    materialCostPerUnit,
+    duration,
+    hourlyRate,
+  });
 
-  const totalPrice = useMemo(
-    () => totalCost * (1 + markup / 100),
-    [totalCost, markup],
-  );
+  const profit = (cost * markup) / 100;
+
+  const price = cost + profit;
 
   const onNumberChange = useCallback(
     (setter: (v: number) => void) => (e: ChangeEvent<HTMLInputElement>) =>
@@ -64,7 +58,7 @@ export default function PrintPriceCalculatorPage() {
           />
         </label>
         <label>
-          Material cost Per Kilogram
+          Material cost per kilogram
           <input
             type='number'
             min='0'
@@ -74,7 +68,7 @@ export default function PrintPriceCalculatorPage() {
           />
         </label>
         <label>
-          Duration
+          Print duration
           <input
             type='text'
             value={durationString}
@@ -98,7 +92,7 @@ export default function PrintPriceCalculatorPage() {
           />
         </label>
         <label>
-          markup
+          Markup
           <input
             type='number'
             min='0'
@@ -111,24 +105,16 @@ export default function PrintPriceCalculatorPage() {
       <table>
         <tbody>
           <tr>
-            <th>Material cost</th>
-            <td className={styles.right}>
-              {(materialWeight * materialCostPerUnit).toFixed(2)}
-            </td>
+            <th>Cost</th>
+            <td className={styles.right}>{cost.toFixed(2)}</td>
           </tr>
           <tr>
-            <th>Duration cost</th>
-            <td className={styles.right}>
-              {(convertDurationToHours(duration) * hourlyRate).toFixed(2)}
-            </td>
-          </tr>
-          <tr>
-            <th>Total cost</th>
-            <td className={styles.right}>{totalCost.toFixed(2)}</td>
+            <th>Profit</th>
+            <td className={styles.right}>{profit.toFixed(2)}</td>
           </tr>
           <tr className={styles.price}>
-            <th>Total price</th>
-            <td className={styles.right}>{totalPrice.toFixed(2)}</td>
+            <th>Price</th>
+            <td className={styles.right}>{price.toFixed(2)}</td>
           </tr>
         </tbody>
       </table>

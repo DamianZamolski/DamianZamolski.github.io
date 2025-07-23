@@ -3,13 +3,13 @@
   {
     1910: (e, r, t) => {
       'use strict';
-      t.d(r, { Breadcrumbs: () => i });
+      t.d(r, { Breadcrumbs: () => l });
       var s = t(9605),
         n = t(6762),
         a = t.n(n),
-        l = t(5935);
-      function i() {
-        let e = (0, l.usePathname)().split('/').slice(0, -1).filter(Boolean);
+        i = t(5935);
+      function l() {
+        let e = (0, i.usePathname)().split('/').slice(0, -1).filter(Boolean);
         return (0, s.jsx)('nav', {
           'aria-label': 'breadcrumb',
           children: (0, s.jsxs)('ul', {
@@ -19,13 +19,13 @@
               }),
               e.map((r, t) => {
                 let n = '/' + e.slice(0, t + 1).join('/'),
-                  l = r
+                  i = r
                     .replace(/-/g, ' ')
                     .trim()
                     .replace(/\b\w/g, (e) => e.toUpperCase());
                 return (0, s.jsx)(
                   'li',
-                  { children: (0, s.jsx)(a(), { href: n, children: l }) },
+                  { children: (0, s.jsx)(a(), { href: n, children: i }) },
                   n,
                 );
               }),
@@ -60,64 +60,63 @@
       var s = t(9605),
         n = t(7972),
         a = t.n(n),
-        l = t(9585);
-      function i(e) {
-        let { days: r, hours: t, minutes: s, seconds: n } = e;
-        return 24 * r + t + s / 60 + n / 3600;
-      }
-      let c = /(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?/;
+        i = t(9585);
+      let l = /(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?/;
       var u = t(5489);
       function d() {
-        let [e, r] = (0, l.useState)(1),
-          [t, n] = (0, l.useState)(40),
-          [d, h] = (0, l.useState)('1h'),
-          [o, x] = (0, l.useState)(null),
-          [m, j] = (0, l.useState)(0.5),
-          [p, b] = (0, l.useState)(50),
-          g = (0, l.useMemo)(() => {
-            try {
-              let e = (function (e) {
-                let r = e.match(c);
-                if (!r) throw Error('No matches found');
-                let [, t, s, n, a] = r,
-                  l = {
-                    days: t ? parseInt(t, 10) : 0,
-                    hours: s ? parseInt(s, 10) : 0,
-                    minutes: n ? parseInt(n, 10) : 0,
-                    seconds: a ? parseInt(a, 10) : 0,
-                  };
-                if (!(l.days || l.hours || l.minutes || l.seconds))
-                  throw Error('Duration should not be zero');
-                return l;
-              })(d);
-              return (x(null), e);
-            } catch (e) {
-              return (
-                x(e instanceof Error ? e.message : 'unknown error'),
-                { days: 0, hours: 0, minutes: 0, seconds: 0 }
-              );
-            }
-          }, [d]),
-          y = (0, l.useMemo)(
-            () =>
+        let [e, r] = (0, i.useState)(1),
+          [t, n] = (0, i.useState)(40),
+          [d, c] = (0, i.useState)('1h'),
+          [h, o] = (0, i.useState)(null),
+          [x, m] = (0, i.useState)(0.5),
+          [j, p] = (0, i.useState)(50),
+          b = (function (e) {
+            let {
+              materialWeight: r,
+              materialCostPerUnit: t,
+              duration: s,
+              hourlyRate: n,
+            } = e;
+            return (
+              r * t +
               (function (e) {
-                let {
-                  materialWeight: r,
-                  materialCostPerUnit: t,
-                  duration: s,
-                  hourlyRate: n,
-                } = e;
-                return r * t + i(s) * n;
-              })({
-                materialWeight: e,
-                materialCostPerUnit: t,
-                duration: g,
-                hourlyRate: m,
-              }),
-            [e, t, g, m],
-          ),
-          f = (0, l.useMemo)(() => y * (1 + p / 100), [y, p]),
-          v = (0, l.useCallback)(
+                let { days: r, hours: t, minutes: s, seconds: n } = e;
+                return 24 * r + t + s / 60 + n / 3600;
+              })(s) *
+                n
+            );
+          })({
+            materialWeight: e,
+            materialCostPerUnit: t,
+            duration: (0, i.useMemo)(() => {
+              try {
+                let e = (function (e) {
+                  let r = e.match(l);
+                  if (!r) throw Error('No matches found');
+                  let [, t, s, n, a] = r,
+                    i = {
+                      days: t ? parseInt(t, 10) : 0,
+                      hours: s ? parseInt(s, 10) : 0,
+                      minutes: n ? parseInt(n, 10) : 0,
+                      seconds: a ? parseInt(a, 10) : 0,
+                    };
+                  if (!(i.days || i.hours || i.minutes || i.seconds))
+                    throw Error('Duration should not be zero');
+                  return i;
+                })(d);
+                return (o(null), e);
+              } catch (e) {
+                return (
+                  o(e instanceof Error ? e.message : 'unknown error'),
+                  { days: 0, hours: 0, minutes: 0, seconds: 0 }
+                );
+              }
+            }, [d]),
+            hourlyRate: x,
+          }),
+          f = (b * j) / 100,
+          g = b + f,
+          y = (0, i.useCallback)(
             (e) => (r) => e(Math.max(0, Number(r.target.value) || 0)),
             [],
           );
@@ -134,37 +133,37 @@
                       min: '0',
                       step: 'any',
                       value: e,
-                      onChange: v(r),
+                      onChange: y(r),
                     }),
                   ],
                 }),
                 (0, s.jsxs)('label', {
                   children: [
-                    'Material cost Per Kilogram',
+                    'Material cost per kilogram',
                     (0, s.jsx)('input', {
                       type: 'number',
                       min: '0',
                       step: 'any',
                       value: t,
-                      onChange: v(n),
+                      onChange: y(n),
                     }),
                   ],
                 }),
                 (0, s.jsxs)('label', {
                   children: [
-                    'Duration',
+                    'Print duration',
                     (0, s.jsx)('input', {
                       type: 'text',
                       value: d,
-                      onChange: (e) => h(e.target.value),
+                      onChange: (e) => c(e.target.value),
                       placeholder: '1d5h10m15s',
-                      'aria-invalid': !!o,
-                      'aria-describedby': o ? 'duration-error' : void 0,
+                      'aria-invalid': !!h,
+                      'aria-describedby': h ? 'duration-error' : void 0,
                     }),
-                    !!o &&
+                    !!h &&
                       (0, s.jsx)('small', {
                         id: 'duration-error',
-                        children: o,
+                        children: h,
                       }),
                   ],
                 }),
@@ -175,20 +174,20 @@
                       type: 'number',
                       min: '0',
                       step: 'any',
-                      value: m,
-                      onChange: v(j),
+                      value: x,
+                      onChange: y(m),
                     }),
                   ],
                 }),
                 (0, s.jsxs)('label', {
                   children: [
-                    'markup',
+                    'Markup',
                     (0, s.jsx)('input', {
                       type: 'number',
                       min: '0',
                       step: 'any',
-                      value: p,
-                      onChange: v(b),
+                      value: j,
+                      onChange: y(p),
                     }),
                   ],
                 }),
@@ -199,38 +198,29 @@
                 children: [
                   (0, s.jsxs)('tr', {
                     children: [
-                      (0, s.jsx)('th', { children: 'Material cost' }),
+                      (0, s.jsx)('th', { children: 'Cost' }),
                       (0, s.jsx)('td', {
                         className: a().right,
-                        children: (e * t).toFixed(2),
+                        children: b.toFixed(2),
                       }),
                     ],
                   }),
                   (0, s.jsxs)('tr', {
                     children: [
-                      (0, s.jsx)('th', { children: 'Duration cost' }),
+                      (0, s.jsx)('th', { children: 'Profit' }),
                       (0, s.jsx)('td', {
                         className: a().right,
-                        children: (i(g) * m).toFixed(2),
-                      }),
-                    ],
-                  }),
-                  (0, s.jsxs)('tr', {
-                    children: [
-                      (0, s.jsx)('th', { children: 'Total cost' }),
-                      (0, s.jsx)('td', {
-                        className: a().right,
-                        children: y.toFixed(2),
+                        children: f.toFixed(2),
                       }),
                     ],
                   }),
                   (0, s.jsxs)('tr', {
                     className: a().price,
                     children: [
-                      (0, s.jsx)('th', { children: 'Total price' }),
+                      (0, s.jsx)('th', { children: 'Price' }),
                       (0, s.jsx)('td', {
                         className: a().right,
-                        children: f.toFixed(2),
+                        children: g.toFixed(2),
                       }),
                     ],
                   }),
