@@ -69,7 +69,7 @@
           [d, c] = (0, i.useState)('1h'),
           [h, o] = (0, i.useState)(null),
           [x, m] = (0, i.useState)(0.5),
-          [j, p] = (0, i.useState)(50),
+          [j, p] = (0, i.useState)(100),
           b = (function (e) {
             let {
               materialWeight: r,

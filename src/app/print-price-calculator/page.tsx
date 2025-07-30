@@ -12,7 +12,7 @@ export default function PrintPriceCalculatorPage() {
   const [durationString, setDurationString] = useState<string>('1h');
   const [durationError, setDurationError] = useState<string | null>(null);
   const [hourlyRate, setHourlyRate] = useState<number>(0.5);
-  const [markup, setMarkup] = useState<number>(50);
+  const [markup, setMarkup] = useState<number>(100);
 
   const duration: Duration = useMemo(() => {
     try {
