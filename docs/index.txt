@@ -1,22 +1,19 @@
 1:"$Sreact.fragment"
-2:I[8387,[],""]
-3:I[1007,[],""]
-5:I[1910,["436","static/chunks/436-3465952751601152.js","974","static/chunks/app/page-d610600143826217.js"],"Breadcrumbs"]
-6:I[6762,["436","static/chunks/436-3465952751601152.js","974","static/chunks/app/page-d610600143826217.js"],""]
-7:I[3809,[],"OutletBoundary"]
-a:I[751,[],"AsyncMetadataOutlet"]
-c:I[3809,[],"ViewportBoundary"]
-e:I[3809,[],"MetadataBoundary"]
-10:I[1254,[],""]
+2:I[4113,[],""]
+3:I[1125,[],""]
+5:I[2091,["924","static/chunks/924-c9b8fb81c75751a7.js","974","static/chunks/app/page-998930b77753b230.js"],"Breadcrumbs"]
+6:I[580,["924","static/chunks/924-c9b8fb81c75751a7.js","974","static/chunks/app/page-998930b77753b230.js"],""]
+7:I[1572,[],"OutletBoundary"]
+9:I[2733,[],"AsyncMetadataOutlet"]
+b:I[1572,[],"ViewportBoundary"]
+d:I[1572,[],"MetadataBoundary"]
+e:"$Sreact.suspense"
+10:I[2771,[],""]
 :HL["/_next/static/css/66b76dce092e3760.css","style"]
 :HL["/_next/static/css/0103c521a59b9f99.css","style"]
-0:{"P":null,"b":"OHDS7eXy8qa9vhh06kYyM","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/66b76dce092e3760.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0103c521a59b9f99.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$L4",[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","main",null,{"children":[["$","header",null,{"children":[["$","$L5",null,{}],["$","h1",null,{"children":"Damian Zamolski Website"}]]}],["$","aside",null,{"children":["$","nav",null,{"children":["$","ul",null,{"children":[["$","li","print-price-calculator",{"children":["$","$L6",null,{"href":"/print-price-calculator","children":"Print Price Calculator"}]}],["$","li","sleeves",{"children":["$","$L6",null,{"href":"/sleeves","children":"Sleeves"}]}],["$","li","star-wars-unlimited-deck-downloader",{"children":["$","$L6",null,{"href":"/star-wars-unlimited-deck-downloader","children":"Star Wars Unlimited Deck Downloader"}]}],["$","li","support",{"children":["$","$L6",null,{"href":"/support","children":"Support"}]}],["$","li","unfathomable-crew-randomizer",{"children":["$","$L6",null,{"href":"/unfathomable-crew-randomizer","children":"Unfathomable Crew Randomizer"}]}],["$","li","war-of-the-ring-roll-calculator",{"children":["$","$L6",null,{"href":"/war-of-the-ring-roll-calculator","children":"War Of The Ring Roll Calculator"}]}]]}]}]}]]}],null,["$","$L7",null,{"children":["$L8","$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","FvP_IkkpRQGX8RJKRZRREv",{"children":[["$","$Lc",null,{"children":"$Ld"}],null]}],["$","$Le",null,{"children":"$Lf"}]]}],false]],"m":"$undefined","G":["$10","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"fG4lQRzo35DTTVd0C-kIG","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/66b76dce092e3760.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0103c521a59b9f99.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$L4",[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","main",null,{"children":[["$","header",null,{"children":[["$","$L5",null,{}],["$","h1",null,{"children":"Damian Zamolski Website"}]]}],["$","aside",null,{"children":["$","nav",null,{"children":["$","ul",null,{"children":[["$","li","print-price-calculator",{"children":["$","$L6",null,{"href":"/print-price-calculator","children":"Print Price Calculator"}]}],["$","li","sleeves",{"children":["$","$L6",null,{"href":"/sleeves","children":"Sleeves"}]}],["$","li","star-wars-unlimited-deck-downloader",{"children":["$","$L6",null,{"href":"/star-wars-unlimited-deck-downloader","children":"Star Wars Unlimited Deck Downloader"}]}],["$","li","support",{"children":["$","$L6",null,{"href":"/support","children":"Support"}]}],["$","li","teams-randomizer",{"children":["$","$L6",null,{"href":"/teams-randomizer","children":"Teams Randomizer"}]}],["$","li","unfathomable-crew-randomizer",{"children":["$","$L6",null,{"href":"/unfathomable-crew-randomizer","children":"Unfathomable Crew Randomizer"}]}],["$","li","war-of-the-ring-roll-calculator",{"children":["$","$L6",null,{"href":"/war-of-the-ring-roll-calculator","children":"War Of The Ring Roll Calculator"}]}]]}]}]}]]}],null,["$","$L7",null,{"children":["$L8",["$","$L9",null,{"promise":"$@a"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Lb",null,{"children":"$Lc"}],null],["$","$Ld",null,{"children":["$","div",null,{"hidden":true,"children":["$","$e",null,{"fallback":null,"children":"$Lf"}]}]}]]}],false]],"m":"$undefined","G":["$10",[]],"s":false,"S":true}
 4:E{"digest":"NEXT_REDIRECT;replace;/;307;"}
-11:"$Sreact.suspense"
-12:I[751,[],"AsyncMetadata"]
-f:["$","div",null,{"hidden":true,"children":["$","$11",null,{"fallback":null,"children":["$","$L12",null,{"promise":"$@13"}]}]}]
-9:null
-d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
-b:{"metadata":[["$","title","0",{"children":"Damian Zamolski's Website"}]],"error":null,"digest":"$undefined"}
-13:{"metadata":"$b:metadata","error":null,"digest":"$undefined"}
+a:{"metadata":[["$","title","0",{"children":"Damian Zamolski's Website"}]],"error":null,"digest":"$undefined"}
+f:"$a:metadata"

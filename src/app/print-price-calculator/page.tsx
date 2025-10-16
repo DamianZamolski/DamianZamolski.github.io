@@ -17,10 +17,12 @@ export default function PrintPriceCalculatorPage() {
   const duration: Duration = useMemo(() => {
     try {
       const parsed = parseDurationString(durationString);
+      // eslint-disable-next-line react-hooks/set-state-in-render
       setDurationError(null);
 
       return parsed;
     } catch (e: unknown) {
+      // eslint-disable-next-line react-hooks/set-state-in-render
       setDurationError(e instanceof Error ? e.message : 'unknown error');
 
       return { days: 0, hours: 0, minutes: 0, seconds: 0 };
