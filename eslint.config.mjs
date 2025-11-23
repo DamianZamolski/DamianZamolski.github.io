@@ -1,29 +1,20 @@
-import { FlatCompat } from '@eslint/eslintrc';
+import nextVitals from 'eslint-config-next/core-web-vitals';
 import prettier from 'eslint-plugin-prettier/recommended';
+import typescript from 'eslint-config-next/typescript';
 import unusedImports from 'eslint-plugin-unused-imports';
+import { defineConfig } from 'eslint/config';
 
-const config = [
-  ...new FlatCompat().extends('next/core-web-vitals', 'next/typescript'),
-  prettier,
+export default defineConfig([
+  ...nextVitals,
+  ...typescript,
   {
     plugins: {
       'unused-imports': unusedImports,
     },
+
     rules: {
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-unused-vars': 'off',
-      'no-unused-vars': 'off',
-      'unused-imports/no-unused-imports': 'warn',
-      'unused-imports/no-unused-vars': [
-        'warn',
-        {
-          args: 'after-used',
-          argsIgnorePattern: '^_',
-          caughtErrorsIgnorePattern: '^_',
-          vars: 'all',
-          varsIgnorePattern: '^_',
-        },
-      ],
       'padding-line-between-statements': [
         'warn',
         {
@@ -53,8 +44,19 @@ const config = [
           ],
         },
       ],
+      'no-unused-vars': 'off',
+      'unused-imports/no-unused-imports': 'warn',
+      'unused-imports/no-unused-vars': [
+        'warn',
+        {
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+          vars: 'all',
+          varsIgnorePattern: '^_',
+        },
+      ],
     },
   },
-];
-
-export default config;
+  prettier,
+]);

@@ -1,48 +1,25 @@
 'use client';
-import { Page } from '@/components/Page';
-import { shuffleArray } from '@/utils/shuffleArray';
-import { ChangeEvent, useCallback, useState } from 'react';
 import styles from './styles.module.css';
-
-function splitPlayersIntoRandomTeams(
-  players: Array<Array<string>>,
-  teamsCount: number,
-): Array<Array<string>> {
-  const shuffledPlayers = players.flatMap(shuffleArray);
-  const teams: Array<Array<string>> = [];
-
-  while (shuffledPlayers.length > 0) {
-    for (let i = 0; i < teamsCount; i++) {
-      const player = shuffledPlayers.shift();
-
-      if (!player) {
-        break;
-      }
-
-      if (!teams[i]) {
-        teams[i] = [];
-      }
-
-      teams[i].push(player);
-    }
-
-    shuffledPlayers.reverse();
-  }
-
-  return teams;
-}
+import { ChangeEvent, useState } from 'react';
+import { Page } from '@/components/Page';
+import { splitPlayersIntoRandomTeams } from './splitPlayersIntoRandomTeams';
 
 export default function TeamsRandomizerPage() {
-  const [playersText, setPlayersText] = useState('');
   const [teamsCount, setTeamsCount] = useState(2);
+  const [playersText, setPlayersText] = useState('');
   const [teams, setTeams] = useState<Array<Array<string>>>([]);
 
-  const onPlayersTextChange = useCallback(
-    (event: ChangeEvent<HTMLTextAreaElement>) => {
-      setPlayersText(event.target.value);
-    },
-    [],
-  );
+  const onTeamsCountChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = Number(event.target.value);
+
+    if (value >= 0) {
+      setTeamsCount(value);
+    }
+  };
+
+  const onPlayersTextChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    setPlayersText(event.target.value);
+  };
 
   const playersTextRows = playersText.split('\n');
 
@@ -64,6 +41,15 @@ export default function TeamsRandomizerPage() {
           onSubmit();
         }}
       >
+        <label>
+          Teams count:
+          <input
+            type='number'
+            min={2}
+            value={teamsCount}
+            onChange={onTeamsCountChange}
+          />
+        </label>
         <textarea
           onChange={onPlayersTextChange}
           rows={playersTextRows.length + 1}
@@ -72,12 +58,9 @@ export default function TeamsRandomizerPage() {
         <button type='submit'>Randomize</button>
       </form>
       {teams.length > 0 &&
-        teams.map((team, index) => (
-          <div key={index}>
-            <div>Team {index}</div>
-            {team.map((player, index) => (
-              <div key={index}>{player}</div>
-            ))}
+        teams.map((team, teamIndex) => (
+          <div key={`team-${teamIndex}`}>
+            Team {teamIndex}: {team.join(' ')}
           </div>
         ))}
     </Page>

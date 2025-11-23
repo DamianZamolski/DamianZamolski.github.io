@@ -11,23 +11,19 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "plugins": [{ "name": "next" }],
+    "paths": { "@/*": ["./src/*"] }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    ".next/dev/types/**/*.ts",
     ".next/types/**/*.ts",
-    "next-env.d.ts",
-    "docs/types/**/*.ts"
+    "docs/dev/types/**/*.ts",
+    "docs/types/**/*.ts",
+    "next-env.d.ts"
   ],
   "exclude": ["node_modules"]
 }
