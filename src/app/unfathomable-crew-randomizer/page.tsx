@@ -28,7 +28,7 @@ export default function UnfathomableCrewRandomizerPage() {
   );
 
   const [resultCharacters, setResultCharacters] = useState<
-    ReadonlyArray<UnfathomableCharacter>
+    Array<UnfathomableCharacter>
   >([]);
 
   const captain = useMemo(
@@ -81,7 +81,7 @@ export default function UnfathomableCrewRandomizerPage() {
   );
 
   const onRandomizeClick = useCallback(() => {
-    let newCharacters: ReadonlyArray<UnfathomableCharacter>;
+    let newCharacters: Array<UnfathomableCharacter>;
     let newVariance: number;
 
     do {

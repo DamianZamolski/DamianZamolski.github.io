@@ -3,7 +3,7 @@ import { calculateCharactersTotals } from './calculateCharactersTotals';
 import { UnfathomableCharacter } from './UnfathomableCharacter';
 
 export function calculateCharactersVariance(
-  characters: ReadonlyArray<UnfathomableCharacter>,
+  characters: Array<UnfathomableCharacter>,
 ): number {
   const totalsObject = calculateCharactersTotals(characters);
   const totalsArray = Object.values(totalsObject);

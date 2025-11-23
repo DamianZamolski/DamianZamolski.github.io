@@ -1,6 +1,6 @@
 import { UnfathomableCharacter } from './UnfathomableCharacter';
 
-export const unfathomableCharacters: ReadonlyArray<UnfathomableCharacter> = [
+export const unfathomableCharacters: Array<UnfathomableCharacter> = [
   {
     name: 'Antar Al-Fakahany',
     expansion: 'from-the-abyss',

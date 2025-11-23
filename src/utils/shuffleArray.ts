@@ -1,4 +1,4 @@
-export function shuffleArray<T>(array: ReadonlyArray<T>): ReadonlyArray<T> {
+export function shuffleArray<T>(array: Array<T>): Array<T> {
   const shuffledArray = array.slice();
 
   for (let i = shuffledArray.length - 1; i > 0; i--) {

@@ -1,7 +1,7 @@
 import { UnfathomableCharacter } from './UnfathomableCharacter';
 
 export function calculateCharactersTotals(
-  characters: ReadonlyArray<UnfathomableCharacter>,
+  characters: Array<UnfathomableCharacter>,
 ) {
   return characters.reduce(
     (result, character) => {
