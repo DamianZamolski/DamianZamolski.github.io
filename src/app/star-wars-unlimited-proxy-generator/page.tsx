@@ -1,7 +1,6 @@
 'use client';
 import { atomWithStorage } from 'jotai/utils';
 import { Page } from '@/components/Page';
-import { http } from '@/utils/http';
 import { useAtom } from 'jotai';
 import { useState } from 'react';
 import { z } from 'zod';
@@ -9,6 +8,7 @@ import { CardSizeInputs } from '@/components/CardSizeInputs';
 import { cardHeightAtom, cardWidthAtom } from '@/utils/cardSizeAtoms';
 import { downloadImages } from '@/utils/downloadImages';
 import { generateProxyPdf } from '@/utils/generateProxyPdf';
+import { corsHttp } from '@/utils/corsHttp';
 
 const deckLinkRegExp = /https:\/\/swudb\.com\/deck\/\S+/g;
 
@@ -44,7 +44,7 @@ export default function StarWarsUnlimitedProxyGeneratorPage() {
     );
 
     const getDeckResponses = await Promise.all(
-      deckUrls.map((deckLink: string) => http.get<unknown>(deckLink)),
+      deckUrls.map((deckLink: string) => corsHttp.get<unknown>(deckLink)),
     );
 
     const decks = decksSchema.parse(
