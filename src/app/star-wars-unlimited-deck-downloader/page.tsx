@@ -1,21 +1,17 @@
 'use client';
-import axios from 'axios';
 import { atomWithStorage } from 'jotai/utils';
 import { jsPDF } from 'jspdf';
 import { Page } from '@/components/Page';
+import { requestWithCorsFallback } from '@/utils/http';
 import { useAtom } from 'jotai';
 import { useState } from 'react';
 import { z } from 'zod';
-
-const corsProxy = 'https://cors-proxy.damian-zamola-zamolski.workers.dev/?url=';
 
 const deckLinkRegExp = /https:\/\/swudb\.com\/deck\/\S+/g;
 
 const textAtom = atomWithStorage('text', '');
 const cardWidth = 62;
 const cardHeight = 88;
-
-const http = axios.create();
 
 const deckSchema = z.object({
   leader: z.object({ defaultImagePath: z.string() }),
@@ -53,7 +49,7 @@ export default function SleevesPage() {
 
     const deckDownloadResponses = await Promise.all(
       deckLinks.map((deckLink: string) =>
-        http.get<unknown>(`${corsProxy}${deckLink}`),
+        requestWithCorsFallback<unknown>(deckLink),
       ),
     );
 
@@ -76,7 +72,7 @@ export default function SleevesPage() {
 
     const singleCardImageDownloadPromises = await Promise.allSettled(
       singleCardImageLinks.map((link) =>
-        http.get<ArrayBuffer>(`${corsProxy}${link}`, {
+        requestWithCorsFallback<ArrayBuffer>(link, {
           responseType: 'arraybuffer',
         }),
       ),
@@ -95,7 +91,7 @@ export default function SleevesPage() {
 
     const tripleCardImageDownloadPromises = await Promise.allSettled(
       tripleCardImageLinks.map((link) =>
-        http.get<ArrayBuffer>(`${corsProxy}${link}`, {
+        requestWithCorsFallback<ArrayBuffer>(link, {
           responseType: 'arraybuffer',
         }),
       ),

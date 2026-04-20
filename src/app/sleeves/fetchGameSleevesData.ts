@@ -1,28 +1,30 @@
 import { z } from 'zod';
 import { cardSetSchema } from './cardSetSchema';
+import { requestWithCorsFallback } from '@/utils/http';
 
 const apiResponseSchema = z.object({ cardSets: z.array(cardSetSchema) });
 
 export async function fetchGameSleevesData(
   gameId: string,
 ): Promise<Record<string, number>> {
-  const response = await fetch(
-    `https://cors-proxy.damian-zamola-zamolski.workers.dev/?url=https://api.geekdo.com/api/cardsetsbygame?objectid=${gameId}`,
-  );
+  let jsonData: unknown;
 
-  if (!response.ok) {
+  try {
+    const response = await requestWithCorsFallback<unknown>(
+      `https://api.geekdo.com/api/cardsetsbygame?objectid=${gameId}`,
+    );
+    jsonData = response.data;
+  } catch {
     return {};
   }
 
-  const jsonData = await response.json();
   const sleevesData = apiResponseSchema.parse(jsonData);
 
-  return (sleevesData.cardSets[0]?.cardTypes ?? []).reduce<Record<string, number>>(
-    (acc, { width, height, quantity }) => {
-      acc[`${width} - ${height}`] = parseInt(quantity, 10);
+  return (sleevesData.cardSets[0]?.cardTypes ?? []).reduce<
+    Record<string, number>
+  >((acc, { width, height, quantity }) => {
+    acc[`${width} - ${height}`] = parseInt(quantity, 10);
 
-      return acc;
-    },
-    {},
-  );
+    return acc;
+  }, {});
 }
