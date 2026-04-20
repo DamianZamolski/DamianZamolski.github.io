@@ -1,0 +1,1 @@
+export const gameIdRegExp = /d+/;
