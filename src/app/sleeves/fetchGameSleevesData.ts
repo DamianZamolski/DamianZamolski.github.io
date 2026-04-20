@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { cardSetSchema } from './cardSetSchema';
-import { requestWithCorsFallback } from '@/utils/http';
+import { http } from '@/utils/http';
 
 const apiResponseSchema = z.object({ cardSets: z.array(cardSetSchema) });
 
@@ -10,9 +10,10 @@ export async function fetchGameSleevesData(
   let jsonData: unknown;
 
   try {
-    const response = await requestWithCorsFallback<unknown>(
+    const response = await http.get<unknown>(
       `https://api.geekdo.com/api/cardsetsbygame?objectid=${gameId}`,
     );
+
     jsonData = response.data;
   } catch {
     return {};

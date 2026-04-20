@@ -1,5 +1,11 @@
 'use client';
-import { type ChangeEvent, Fragment, useCallback, useMemo, useState } from 'react';
+import {
+  type ChangeEvent,
+  Fragment,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react';
 import { calculateExpectedValue } from './calculateExpectedValue';
 import { calculateAtLeastSuccessProbabilities } from './calculateAtLeastSuccessProbabilities';
 import type { SuccessProbabilities } from './SuccessProbabilities';
