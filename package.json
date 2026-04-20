@@ -5,34 +5,42 @@
   "scripts": {
     "build": "next build && touch docs/.nojekyll",
     "dev": "next dev --turbopack",
-    "lint": "prettier --write . && eslint --fix src",
+    "lint": "prettier --write . && eslint --fix src && tsc --noEmit",
     "start": "next start"
+  },
+  "pnpm": {
+    "updateConfig": {
+      "ignoreDependencies": [
+        "eslint",
+        "@eslint/js"
+      ]
+    }
   },
   "dependencies": {
     "@picocss/pico": "^2.1.1",
-    "axios": "^1.13.6",
-    "jotai": "^2.18.1",
+    "axios": "^1.15.1",
+    "jotai": "^2.19.1",
     "jspdf": "^4.2.1",
-    "next": "16.1.6",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
+    "next": "16.2.4",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "zod": "^4.3.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^9.39.4",
-    "@next/eslint-plugin-next": "^16.1.6",
+    "@next/eslint-plugin-next": "^16.2.4",
     "@total-typescript/ts-reset": "^0.6.1",
-    "@types/node": "^25.5.0",
+    "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.4",
-    "eslint-config-next": "16.1.6",
+    "eslint-config-next": "16.2.4",
     "eslint-plugin-prettier": "^5.5.5",
-    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-unused-imports": "^4.4.1",
-    "prettier": "^3.8.1",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.57.0"
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.58.2"
   }
 }

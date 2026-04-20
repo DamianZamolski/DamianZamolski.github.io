@@ -119,10 +119,10 @@ export default function SleevesPage() {
     pdf.setFillColor(0, 0, 0);
 
     for (let pageIndex = 0; pageIndex < pages.length; pageIndex++) {
-      const page = pages[pageIndex];
+      const page = pages[pageIndex]!;
 
       for (let imageIndex = 0; imageIndex < page.length; imageIndex++) {
-        const image = page[imageIndex];
+        const image = page[imageIndex]!;
 
         const blob = new Blob([image], { type: 'image/png' });
 

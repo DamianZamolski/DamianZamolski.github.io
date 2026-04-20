@@ -1,6 +1,6 @@
 import { calculateVariance } from '@/utils/calculateVariance';
 import { calculateCharactersTotals } from './calculateCharactersTotals';
-import { UnfathomableCharacter } from './UnfathomableCharacter';
+import type { UnfathomableCharacter } from './UnfathomableCharacter';
 
 export function calculateCharactersVariance(
   characters: Array<UnfathomableCharacter>,

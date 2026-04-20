@@ -1,31 +1,34 @@
 'use client';
 import styles from './styles.module.css';
-import { ChangeEvent, useCallback, useMemo, useState } from 'react';
+import { type ChangeEvent, useCallback, useMemo, useState } from 'react';
 import { estimatePrintCost } from './estimatePrintCost';
 import { parseDurationString } from './parseDurationString';
 import { Page } from '@/components/Page';
-import { Duration } from './Duration';
+import type { Duration } from './Duration';
+
+const emptyDuration: Duration = { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
 export default function PrintPriceCalculatorPage() {
-  const [materialWeight, setMaterialWeight] = useState<number>(1);
+  const [materialWeight, setMaterialWeight] = useState<number>(1000);
   const [materialCostPerUnit, setMaterialCostPerUnit] = useState<number>(40);
   const [durationString, setDurationString] = useState<string>('1h');
-  const [durationError, setDurationError] = useState<string | null>(null);
   const [hourlyRate, setHourlyRate] = useState<number>(0.5);
   const [markup, setMarkup] = useState<number>(100);
 
-  const duration: Duration = useMemo(() => {
+  const { duration, durationError } = useMemo<{
+    duration: Duration;
+    durationError: string | null;
+  }>(() => {
     try {
-      const parsed = parseDurationString(durationString);
-      // eslint-disable-next-line react-hooks/set-state-in-render
-      setDurationError(null);
-
-      return parsed;
+      return {
+        duration: parseDurationString(durationString),
+        durationError: null,
+      };
     } catch (e: unknown) {
-      // eslint-disable-next-line react-hooks/set-state-in-render
-      setDurationError(e instanceof Error ? e.message : 'unknown error');
-
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      return {
+        duration: emptyDuration,
+        durationError: e instanceof Error ? e.message : 'unknown error',
+      };
     }
   }, [durationString]);
 
@@ -50,7 +53,7 @@ export default function PrintPriceCalculatorPage() {
     <Page title='Print Price Calculator'>
       <form>
         <label>
-          Material weight in kilograms
+          Material weight in grams
           <input
             type='number'
             min='0'

@@ -1,6 +1,6 @@
 import { getSuccessChance } from './getSuccessChance';
 import { calculateAtLeast } from './calculateAtLeast';
-import { SuccessProbabilities } from './SuccessProbabilities';
+import type { SuccessProbabilities } from './SuccessProbabilities';
 
 export function calculateAtLeastSuccessProbabilities(
   rolls: number,

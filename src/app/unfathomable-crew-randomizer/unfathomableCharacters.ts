@@ -1,4 +1,4 @@
-import { UnfathomableCharacter } from './UnfathomableCharacter';
+import type { UnfathomableCharacter } from './UnfathomableCharacter';
 
 export const unfathomableCharacters: Array<UnfathomableCharacter> = [
   {

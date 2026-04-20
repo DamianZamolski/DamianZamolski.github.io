@@ -1,4 +1,4 @@
-import { Duration } from './Duration';
+import type { Duration } from './Duration';
 import { durationRegExp } from './durationRegExp';
 
 export function parseDurationString(durationString: string): Duration {

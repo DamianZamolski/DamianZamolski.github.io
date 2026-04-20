@@ -1,10 +1,17 @@
 'use client';
 import { calculateCharactersTotals } from './calculateCharactersTotals';
 import { calculateCharactersVariance } from './calculateCharactersVariance';
-import { ChangeEvent, Fragment, useCallback, useMemo, useState } from 'react';
+import {
+  type ChangeEvent,
+  type FormEvent,
+  Fragment,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react';
 import { emptyCharacter } from './emptyCharacter';
 import { shuffleArray } from '@/utils/shuffleArray';
-import { UnfathomableCharacter } from './UnfathomableCharacter';
+import type { UnfathomableCharacter } from './UnfathomableCharacter';
 import { unfathomableCharacters } from './unfathomableCharacters';
 import styles from './styles.module.css';
 import { Page } from '@/components/Page';
@@ -80,21 +87,25 @@ export default function UnfathomableCrewRandomizerPage() {
     [],
   );
 
-  const onRandomizeClick = useCallback(() => {
-    let newCharacters: Array<UnfathomableCharacter>;
-    let newVariance: number;
+  const onRandomizeClick = useCallback(
+    (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      let newCharacters: Array<UnfathomableCharacter>;
+      let newVariance: number;
 
-    do {
-      newCharacters = shuffleArray(charactersPool).slice(0, playerCount);
-      newVariance = calculateCharactersVariance(newCharacters);
-    } while (newVariance > 0.5);
+      do {
+        newCharacters = shuffleArray(charactersPool).slice(0, playerCount);
+        newVariance = calculateCharactersVariance(newCharacters);
+      } while (newVariance > 0.5);
 
-    setResultCharacters(newCharacters);
-  }, [charactersPool, playerCount]);
+      setResultCharacters(newCharacters);
+    },
+    [charactersPool, playerCount],
+  );
 
   return (
     <Page title='Unfathomable Crew Randomizer'>
-      <form>
+      <form onSubmit={onRandomizeClick}>
         <fieldset>
           <fieldset>
             <legend>Player Count</legend>
@@ -120,7 +131,7 @@ export default function UnfathomableCrewRandomizerPage() {
             Include From The Abyss Characters
           </label>
         </fieldset>
-        <input type='button' value='Randomize' onClick={onRandomizeClick} />
+        <button type='submit'>Randomize</button>
       </form>
       {resultCharacters.length > 0 && (
         <table>

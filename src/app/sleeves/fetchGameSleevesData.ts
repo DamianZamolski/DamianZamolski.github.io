@@ -17,7 +17,7 @@ export async function fetchGameSleevesData(
   const jsonData = await response.json();
   const sleevesData = apiResponseSchema.parse(jsonData);
 
-  return sleevesData.cardSets[0].cardTypes.reduce<Record<string, number>>(
+  return (sleevesData.cardSets[0]?.cardTypes ?? []).reduce<Record<string, number>>(
     (acc, { width, height, quantity }) => {
       acc[`${width} - ${height}`] = parseInt(quantity, 10);
 

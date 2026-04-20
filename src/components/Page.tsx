@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Breadcrumbs } from './Breadcrumbs';
 
 export function Page({

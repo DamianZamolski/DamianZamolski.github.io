@@ -1,5 +1,5 @@
 import { convertDurationToHours } from './convertDurationToHours';
-import { Duration } from './Duration';
+import type { Duration } from './Duration';
 
 export function estimatePrintCost({
   materialWeight,
@@ -12,7 +12,7 @@ export function estimatePrintCost({
   duration: Duration;
   hourlyRate: number;
 }): number {
-  const materialCost = materialWeight * materialCostPerUnit;
+  const materialCost = (materialWeight / 1000) * materialCostPerUnit;
   const durationCost = convertDurationToHours(duration) * hourlyRate;
 
   return materialCost + durationCost;

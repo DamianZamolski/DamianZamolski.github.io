@@ -20,7 +20,7 @@ export function splitPlayersIntoRandomTeams(
         teams[i] = [];
       }
 
-      teams[i].push(player);
+      teams[i]!.push(player);
     }
 
     shuffledPlayers.reverse();

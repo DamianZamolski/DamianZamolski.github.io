@@ -1,5 +1,5 @@
 'use client';
-import { ChangeEvent, Fragment, useState } from 'react';
+import { type ChangeEvent, Fragment, useState } from 'react';
 import { Page } from '@/components/Page';
 import { shuffleArray } from '@/utils/shuffleArray';
 
@@ -31,19 +31,25 @@ export default function TeamsRandomizerPage() {
     let result: Array<string>;
 
     if (playerCount === 2) {
-      result = [classes[randomIndex], classes[randomIndex + 3]];
+      let anotherRandomIndex = Math.floor(Math.random() * 6);
+
+      while (anotherRandomIndex === randomIndex) {
+        anotherRandomIndex = Math.floor(Math.random() * 6);
+      }
+
+      result = [classes[randomIndex]!, classes[anotherRandomIndex]!];
     } else if (playerCount === 3) {
       result = [
-        classes[randomIndex],
-        classes[randomIndex + 2],
-        classes[randomIndex + 4],
+        classes[randomIndex]!,
+        classes[randomIndex + 2]!,
+        classes[randomIndex + 4]!,
       ];
     } else if (playerCount === 4) {
       result = [
-        classes[randomIndex],
-        classes[randomIndex + 1],
-        classes[randomIndex + 3],
-        classes[randomIndex + 4],
+        classes[randomIndex]!,
+        classes[randomIndex + 1]!,
+        classes[randomIndex + 3]!,
+        classes[randomIndex + 4]!,
       ];
     } else {
       throw new Error('invalid player count');
@@ -80,11 +86,11 @@ export default function TeamsRandomizerPage() {
         <button type='submit'>Randomize</button>
       </form>
       {result.length > 0 && (
-        <div>
+        <ol>
           {result.map((x) => (
-            <div key={x}>{x}</div>
+            <li key={x}>{x}</li>
           ))}
-        </div>
+        </ol>
       )}
     </Page>
   );

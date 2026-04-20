@@ -3,7 +3,7 @@ import { getDirectories } from '@/utils/getDirectories';
 
 export function TableOfContents({ url }: { url: string }) {
   const pages = getDirectories(url);
-  const basePath = url.split('app')[1].split('page')[0];
+  const basePath = url.split('app')[1]!.split('page')[0];
 
   return (
     <aside>
@@ -14,7 +14,7 @@ export function TableOfContents({ url }: { url: string }) {
               <Link href={`${basePath}${page}`}>
                 {page
                   .split('-')
-                  .map((word) => word[0].toUpperCase() + word.slice(1))
+                  .map((word) => word[0]!.toUpperCase() + word.slice(1))
                   .join(' ')}
               </Link>
             </li>

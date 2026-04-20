@@ -8,7 +8,7 @@ export function Breadcrumbs() {
 
   return (
     <nav aria-label='breadcrumb'>
-      <ul>
+      <ol>
         <li>
           <Link href='/'>Home</Link>
         </li>
@@ -26,7 +26,7 @@ export function Breadcrumbs() {
             </li>
           );
         })}
-      </ul>
+      </ol>
     </nav>
   );
 }

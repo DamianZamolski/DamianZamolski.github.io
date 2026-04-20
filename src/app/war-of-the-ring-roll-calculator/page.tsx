@@ -1,8 +1,8 @@
 'use client';
-import { ChangeEvent, Fragment, useCallback, useMemo, useState } from 'react';
+import { type ChangeEvent, Fragment, useCallback, useMemo, useState } from 'react';
 import { calculateExpectedValue } from './calculateExpectedValue';
 import { calculateAtLeastSuccessProbabilities } from './calculateAtLeastSuccessProbabilities';
-import { SuccessProbabilities } from './SuccessProbabilities';
+import type { SuccessProbabilities } from './SuccessProbabilities';
 import { Page } from '@/components/Page';
 
 export default function WarOfTheRingRollCalculatorPage() {
@@ -119,11 +119,8 @@ export default function WarOfTheRingRollCalculatorPage() {
       </form>
       {Object.keys(probabilities).length > 0 && (
         <table>
+          <caption>Expected Value: {expectedValue.toFixed(2)}</caption>
           <thead>
-            <tr>
-              <th scope='row'>Expected Value</th>
-              <td>{expectedValue.toFixed(2)}</td>
-            </tr>
             <tr>
               <th scope='col'>Successes</th>
               <th scope='col'>Probability</th>

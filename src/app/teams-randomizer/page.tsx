@@ -1,6 +1,6 @@
 'use client';
 import styles from './styles.module.css';
-import { ChangeEvent, useState } from 'react';
+import { type ChangeEvent, useState } from 'react';
 import { Page } from '@/components/Page';
 import { splitPlayersIntoRandomTeams } from './splitPlayersIntoRandomTeams';
 
@@ -57,12 +57,13 @@ export default function TeamsRandomizerPage() {
         />
         <button type='submit'>Randomize</button>
       </form>
-      {teams.length > 0 &&
-        teams.map((team, teamIndex) => (
-          <div key={`team-${teamIndex}`}>
-            Team {teamIndex}: {team.join(' ')}
-          </div>
-        ))}
+      {teams.length > 0 && (
+        <ol>
+          {teams.map((team, teamIndex) => (
+            <li key={`team-${teamIndex}`}>{team.join(' ')}</li>
+          ))}
+        </ol>
+      )}
     </Page>
   );
 }
