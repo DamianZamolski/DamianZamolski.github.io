@@ -3,7 +3,7 @@ import { calculateCharactersTotals } from './calculateCharactersTotals';
 import { calculateCharactersVariance } from './calculateCharactersVariance';
 import {
   type ChangeEvent,
-  type FormEvent,
+  type SubmitEvent,
   Fragment,
   useCallback,
   useMemo,
@@ -88,7 +88,7 @@ export default function UnfathomableCrewRandomizerPage() {
   );
 
   const onRandomizeClick = useCallback(
-    (event: FormEvent<HTMLFormElement>) => {
+    (event: SubmitEvent) => {
       event.preventDefault();
       let newCharacters: Array<UnfathomableCharacter>;
       let newVariance: number;
