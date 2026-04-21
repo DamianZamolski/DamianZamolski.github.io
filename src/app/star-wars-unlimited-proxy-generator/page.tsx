@@ -49,6 +49,7 @@ type Status =
 
 async function fetchDeck(apiUrl: string): Promise<ValueOrError<Deck>> {
   let raw: unknown;
+
   try {
     const response = await corsHttp.get<unknown>(apiUrl);
     raw = response.data;
@@ -63,6 +64,7 @@ async function fetchDeck(apiUrl: string): Promise<ValueOrError<Deck>> {
 
   const parsed = deckSchema.safeParse(raw);
   if (!parsed.success) return [null, 'invalid deck data'];
+
   return [parsed.data, null];
 }
 
@@ -92,6 +94,7 @@ export default function StarWarsUnlimitedProxyGeneratorPage() {
 
   const onTextChange = (value: string) => {
     setText(value);
+
     if (status.kind === 'success' || status.kind === 'error') {
       setStatus({ kind: 'idle' });
     }
@@ -123,6 +126,7 @@ export default function StarWarsUnlimitedProxyGeneratorPage() {
         message: 'All decks failed to fetch:',
         urls: failedDecks,
       });
+
       return;
     }
 
@@ -165,6 +169,7 @@ export default function StarWarsUnlimitedProxyGeneratorPage() {
         message: 'All images failed to download:',
         urls: failedUrls,
       });
+
       return;
     }
 
@@ -187,12 +192,14 @@ export default function StarWarsUnlimitedProxyGeneratorPage() {
             ? `PDF generation failed: ${error.message}`
             : 'PDF generation failed.',
       });
+
       return;
     }
 
     const warnings: NonNullable<
       Extract<Status, { kind: 'success' }>['warnings']
     > = {};
+
     if (failedDecks.length > 0) warnings.failedDecks = failedDecks;
     if (failedUrls.length > 0) warnings.skippedImages = failedUrls;
 
@@ -297,8 +304,8 @@ export default function StarWarsUnlimitedProxyGeneratorPage() {
                     status.warnings.failedDecks.length > 0 && (
                       <>
                         <small>
-                          {status.warnings.failedDecks.length} deck(s) failed
-                          to fetch:
+                          {status.warnings.failedDecks.length} deck(s) failed to
+                          fetch:
                         </small>
                         <ul>
                           {status.warnings.failedDecks.map((url) => (

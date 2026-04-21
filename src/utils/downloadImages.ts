@@ -4,6 +4,7 @@ async function fetchArrayBuffer(link: string): Promise<ArrayBuffer> {
   const response = await corsHttp.get<ArrayBuffer>(link, {
     responseType: 'arraybuffer',
   });
+
   return response.data;
 }
 
@@ -32,6 +33,7 @@ export async function downloadImages(
     })();
 
     cache.set(link, promise);
+
     return promise;
   };
 
@@ -53,6 +55,7 @@ export async function downloadImages(
 
   for (let i = 0; i < results.length; i++) {
     const result = results[i]!;
+
     if (result.status === 'fulfilled') {
       images.push(result.value);
     } else {
