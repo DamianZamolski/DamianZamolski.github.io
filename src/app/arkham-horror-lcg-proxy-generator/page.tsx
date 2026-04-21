@@ -5,8 +5,10 @@ import { http } from '@/utils/http';
 import { useAtom } from 'jotai';
 import { useState } from 'react';
 import { z } from 'zod';
-import { CardSizeInputs } from '@/components/CardSizeInputs';
-import { cardHeightAtom, cardWidthAtom } from '@/utils/cardSizeAtoms';
+import { PrintSettings } from '@/components/PrintSettings';
+import { cardWidthAtom } from '@/utils/cardWidthAtom';
+import { cardHeightAtom } from '@/utils/cardHeightAtom';
+import { paperSizeAtom } from '@/utils/paperSizeAtom';
 import { downloadImages } from '@/utils/downloadImages';
 import { generateProxyPdf } from '@/utils/generateProxyPdf';
 
@@ -39,6 +41,7 @@ export default function ArkhamHorrorLcgProxyGeneratorPage() {
   const [text, setText] = useAtom(textAtom);
   const [cardWidth] = useAtom(cardWidthAtom);
   const [cardHeight] = useAtom(cardHeightAtom);
+  const [paperSize] = useAtom(paperSizeAtom);
   const [isFetching, setFetching] = useState(false);
 
   const download = async () => {
@@ -132,14 +135,15 @@ export default function ArkhamHorrorLcgProxyGeneratorPage() {
       }
     }
 
-    const cardImages = await downloadImages(imageLinks);
+    const { images } = await downloadImages(imageLinks);
 
     await generateProxyPdf({
-      images: cardImages,
+      images,
       cardWidth,
       cardHeight,
       imageMimeType: 'image/jpeg',
       filename: 'arkham-proxies.pdf',
+      paperSize,
     });
 
     setFetching(false);
@@ -153,7 +157,7 @@ export default function ArkhamHorrorLcgProxyGeneratorPage() {
           download();
         }}
       >
-        <CardSizeInputs />
+        <PrintSettings />
         <label>
           ArkhamDB URLs
           <textarea

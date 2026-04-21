@@ -1,5 +1,6 @@
 import { jsPDF } from 'jspdf';
 import { chunkArray } from './chunkArray';
+import type { PaperSize } from './paperSizeAtom';
 
 export async function generateProxyPdf(opts: {
   images: ReadonlyArray<ArrayBuffer>;
@@ -7,12 +8,14 @@ export async function generateProxyPdf(opts: {
   cardHeight: number;
   imageMimeType: 'image/png' | 'image/jpeg';
   filename: string;
+  paperSize: PaperSize;
 }): Promise<void> {
-  const { images, cardWidth, cardHeight, imageMimeType, filename } = opts;
+  const { images, cardWidth, cardHeight, imageMimeType, filename, paperSize } =
+    opts;
 
   const pages = chunkArray(images, 9);
 
-  const pdf = new jsPDF();
+  const pdf = new jsPDF({ format: paperSize });
   const leftMargin = (pdf.internal.pageSize.width - 3 * cardWidth) / 2;
   const topMargin = (pdf.internal.pageSize.height - 3 * cardHeight) / 2;
   pdf.setFillColor(0, 0, 0);
@@ -54,7 +57,7 @@ export async function generateProxyPdf(opts: {
     }
 
     if (pageIndex < pages.length - 1) {
-      pdf.addPage();
+      pdf.addPage(paperSize);
     }
   }
 
