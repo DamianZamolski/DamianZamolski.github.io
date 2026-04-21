@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { cardTypeSchema } from './cardTypeSchema';
 
-export const cardSetSchema = z
-  .object({ cardTypes: z.array(cardTypeSchema) })
-  .passthrough();
+export const cardSetSchema = z.looseObject({
+  name: z.string().optional(),
+  cardTypes: z.array(cardTypeSchema),
+});

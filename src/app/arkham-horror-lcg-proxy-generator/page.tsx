@@ -11,12 +11,15 @@ import { cardHeightAtom } from '@/utils/cardHeightAtom';
 import { paperSizeAtom } from '@/utils/paperSizeAtom';
 import { downloadImages } from '@/utils/downloadImages';
 import { generateProxyPdf } from '@/utils/generateProxyPdf';
+import { createCache } from '@/utils/createCache';
 import type { ValueOrError } from '@/utils/ValueOrError';
 
 const deckLinkRegExp =
   /https:\/\/arkhamdb\.com\/(?:deck|decklist)\/view\/(\d+)/g;
 
 const textAtom = atomWithStorage('arkham-horror-lcg-proxy-generator-text', '');
+
+const jsonCache = createCache<unknown>('arkham-json');
 
 const deckSchema = z.object({
   investigator_code: z.string(),
@@ -55,26 +58,34 @@ type Status =
     }
   | { kind: 'error'; message: string; urls?: ReadonlyArray<string> };
 
-async function fetchDeck(deckId: string): Promise<ValueOrError<Deck>> {
-  let raw: unknown;
+async function fetchJson(url: string): Promise<ValueOrError<unknown>> {
+  const cached = jsonCache.get(url);
+  if (cached !== undefined) return [cached, null];
 
-  try {
-    const response = await http.get<unknown>(
-      `https://arkhamdb.com/api/public/deck/${deckId}`,
-    );
-
-    raw = response.data;
-  } catch {
+  const attempt = async (): Promise<ValueOrError<unknown>> => {
     try {
-      const response = await http.get<unknown>(
-        `https://arkhamdb.com/api/public/deck/${deckId}`,
-      );
+      const response = await http.get<unknown>(url);
 
-      raw = response.data;
+      return [response.data, null];
     } catch {
       return [null, 'fetch failed'];
     }
-  }
+  };
+
+  let result = await attempt();
+  if (result[1]) result = await attempt();
+
+  if (result[0] !== null) jsonCache.set(url, result[0]);
+
+  return result;
+}
+
+async function fetchDeck(deckId: string): Promise<ValueOrError<Deck>> {
+  const [raw, err] = await fetchJson(
+    `https://arkhamdb.com/api/public/deck/${deckId}`,
+  );
+
+  if (err) return [null, err];
 
   const parsed = deckSchema.safeParse(raw);
   if (!parsed.success) return [null, 'invalid deck data'];
@@ -83,25 +94,11 @@ async function fetchDeck(deckId: string): Promise<ValueOrError<Deck>> {
 }
 
 async function fetchCard(code: string): Promise<ValueOrError<Card>> {
-  let raw: unknown;
+  const [raw, err] = await fetchJson(
+    `https://arkhamdb.com/api/public/card/${code}.json`,
+  );
 
-  try {
-    const response = await http.get<unknown>(
-      `https://arkhamdb.com/api/public/card/${code}.json`,
-    );
-
-    raw = response.data;
-  } catch {
-    try {
-      const response = await http.get<unknown>(
-        `https://arkhamdb.com/api/public/card/${code}.json`,
-      );
-
-      raw = response.data;
-    } catch {
-      return [null, 'fetch failed'];
-    }
-  }
+  if (err) return [null, err];
 
   const parsed = cardSchema.safeParse(raw);
   if (!parsed.success) return [null, 'invalid card data'];
@@ -394,13 +391,22 @@ export default function ArkhamHorrorLcgProxyGeneratorPage() {
 
           <PrintSettings />
 
-          <button
-            type='submit'
-            disabled={deckIds.length === 0 || isFetching}
-            aria-busy={isFetching}
-          >
-            Download
-          </button>
+          <div role='group'>
+            <button
+              type='submit'
+              disabled={deckIds.length === 0 || isFetching}
+              aria-busy={isFetching}
+            >
+              Download
+            </button>
+            <button
+              type='button'
+              className='secondary'
+              onClick={() => jsonCache.clear()}
+            >
+              Clear cache
+            </button>
+          </div>
         </fieldset>
 
         <output>

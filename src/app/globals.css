@@ -1,0 +1,14 @@
+button.secondary {
+  background: var(--pico-secondary-background);
+  border-color: var(--pico-secondary-border);
+  color: var(--pico-secondary-inverse);
+}
+
+button.secondary:hover {
+  background: var(--pico-secondary-hover-background);
+  border-color: var(--pico-secondary-hover-border);
+}
+
+[role='group'] > button.secondary {
+  flex: 0 0 auto;
+}
