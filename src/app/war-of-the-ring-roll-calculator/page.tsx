@@ -1,21 +1,34 @@
 'use client';
-import {
-  type ChangeEvent,
-  Fragment,
-  useCallback,
-  useMemo,
-  useState,
-} from 'react';
+import { atomWithStorage } from 'jotai/utils';
+import { useAtom } from 'jotai';
+import { type ChangeEvent, Fragment, useCallback, useMemo } from 'react';
 import { calculateExpectedValue } from './calculateExpectedValue';
 import { calculateAtLeastSuccessProbabilities } from './calculateAtLeastSuccessProbabilities';
 import type { SuccessProbabilities } from './SuccessProbabilities';
 import { Page } from '@/components/Page';
 
+const rollsAtom = atomWithStorage<number>('wotr-rolls', 5);
+
+const rollSuccessValueAtom = atomWithStorage<number>(
+  'wotr-roll-success-value',
+  6,
+);
+
+const rerollsAtom = atomWithStorage<number>('wotr-rerolls', 0);
+
+const rerollSuccessValueAtom = atomWithStorage<number>(
+  'wotr-reroll-success-value',
+  6,
+);
+
 export default function WarOfTheRingRollCalculatorPage() {
-  const [rolls, setRolls] = useState(5);
-  const [rollSuccessValue, setRollSuccessValue] = useState(6);
-  const [rerolls, setRerolls] = useState(0);
-  const [rerollSuccessValue, setRerollSuccessValue] = useState(6);
+  const [rolls, setRolls] = useAtom(rollsAtom);
+  const [rollSuccessValue, setRollSuccessValue] = useAtom(rollSuccessValueAtom);
+  const [rerolls, setRerolls] = useAtom(rerollsAtom);
+
+  const [rerollSuccessValue, setRerollSuccessValue] = useAtom(
+    rerollSuccessValueAtom,
+  );
 
   const expectedValue: number = useMemo(
     () =>
@@ -48,7 +61,7 @@ export default function WarOfTheRingRollCalculatorPage() {
         setRerolls(newValue);
       }
     },
-    [rerolls],
+    [rerolls, setRolls, setRerolls],
   );
 
   const handleRadioChange = useCallback(
@@ -124,23 +137,28 @@ export default function WarOfTheRingRollCalculatorPage() {
         </fieldset>
       </form>
       {Object.keys(probabilities).length > 0 && (
-        <table>
-          <caption>Expected Value: {expectedValue.toFixed(2)}</caption>
-          <thead>
-            <tr>
-              <th scope='col'>Successes</th>
-              <th scope='col'>Probability</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.entries(probabilities).map(([successes, probability]) => (
-              <tr key={successes}>
-                <th scope='row'>{successes}</th>
-                <td>{(probability * 100).toFixed(2)}%</td>
+        <>
+          <hgroup>
+            <h2>{expectedValue.toFixed(2)}</h2>
+            <p>Expected Value</p>
+          </hgroup>
+          <table>
+            <thead>
+              <tr>
+                <th scope='col'>Successes</th>
+                <th scope='col'>Probability</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {Object.entries(probabilities).map(([successes, probability]) => (
+                <tr key={successes}>
+                  <th scope='row'>{successes}</th>
+                  <td>{(probability * 100).toFixed(2)}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
       )}
     </Page>
   );
