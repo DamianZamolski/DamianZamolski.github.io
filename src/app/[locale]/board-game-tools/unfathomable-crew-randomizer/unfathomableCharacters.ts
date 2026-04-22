@@ -8,6 +8,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     keeperOfTheTome: 5,
     lore: 2,
     perception: 3,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Arjun Singh',
@@ -16,6 +18,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 2,
     perception: 1,
     strength: 2,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Avery Engelbrecht',
@@ -25,6 +29,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 2,
     strength: 2,
     will: 1,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Beatrice Sharpe',
@@ -33,6 +39,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 1,
     lore: 2,
     perception: 2,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Edmund Mallory',
@@ -43,6 +51,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     perception: 1,
     strength: 1,
     will: 1,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Guillaume Delacroix',
@@ -52,6 +62,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 2,
     lore: 2,
     will: 1,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Ida Lawrence',
@@ -61,6 +73,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 2,
     lore: 1,
     strength: 2,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Ismael Marsh',
@@ -69,6 +83,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     lore: 2,
     strength: 2,
     will: 1,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Jamie Snell',
@@ -76,6 +92,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     keeperOfTheTome: 14,
     strength: 3,
     will: 2,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Jeanne Lafarge',
@@ -84,6 +102,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 1,
     perception: 2,
     strength: 2,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Keilani Tatupu',
@@ -91,6 +111,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     keeperOfTheTome: 18,
     influence: 3,
     will: 2,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Sardaana Morgunova',
@@ -100,6 +122,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 2,
     perception: 2,
     will: 1,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Kokoj Fernandes',
@@ -108,6 +132,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     expansion: 'from-the-abyss',
     lore: 2,
     will: 3,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Raul Martinez Garcia',
@@ -117,6 +143,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     lore: 1,
     perception: 2,
     strength: 2,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Samira Dualeh',
@@ -125,6 +153,8 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     lore: 1,
     perception: 2,
     will: 2,
+    startingSpace: '',
+    startingItem: '',
   },
   {
     name: 'Svetlana Gedroits',
@@ -133,8 +163,18 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 2,
     lore: 1,
     perception: 2,
+    startingSpace: '',
+    startingItem: '',
   },
-  { name: 'William Bowleg', captain: 16, keeperOfTheTome: 1, lore: 3, will: 2 },
+  {
+    name: 'William Bowleg',
+    captain: 16,
+    keeperOfTheTome: 1,
+    lore: 3,
+    will: 2,
+    startingSpace: '',
+    startingItem: '',
+  },
   {
     name: 'Wong Mui Choo',
     captain: 8,
@@ -143,5 +183,7 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     perception: 1,
     strength: 2,
     will: 2,
+    startingSpace: '',
+    startingItem: '',
   },
 ];

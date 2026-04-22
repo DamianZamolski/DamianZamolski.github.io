@@ -94,7 +94,9 @@
     "will": "Will",
     "total": "Total",
     "captain": "Captain",
-    "keeperOfTheTome": "Keeper of The Tome"
+    "keeperOfTheTome": "Keeper of The Tome",
+    "startingSpace": "Starting Space",
+    "startingItem": "Starting Item"
   },
   "sleeves": {
     "urlsLabel": "BGG URLs",

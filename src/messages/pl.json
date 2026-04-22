@@ -94,7 +94,9 @@
     "will": "Wola",
     "total": "Suma",
     "captain": "Kapitan",
-    "keeperOfTheTome": "Strażnik Księgi"
+    "keeperOfTheTome": "Strażnik Księgi",
+    "startingSpace": "Startowe pole",
+    "startingItem": "Startowy przedmiot"
   },
   "sleeves": {
     "urlsLabel": "Adresy URL z BGG",

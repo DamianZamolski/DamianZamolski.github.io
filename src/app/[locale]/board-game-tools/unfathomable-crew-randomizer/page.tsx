@@ -1,5 +1,4 @@
 'use client';
-import { calculateCharactersTotals } from './calculateCharactersTotals';
 import { calculateCharactersVariance } from './calculateCharactersVariance';
 import {
   type ChangeEvent,
@@ -69,11 +68,6 @@ export default function UnfathomableCrewRandomizerPage() {
     [captain.name, keeperOfTheTome.name, t],
   );
 
-  const totals = useMemo(
-    () => calculateCharactersTotals(resultCharacters),
-    [resultCharacters],
-  );
-
   const onPlayerCountChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       setPlayerCount(Number(event.target.value));
@@ -140,11 +134,8 @@ export default function UnfathomableCrewRandomizerPage() {
             <tr>
               <th scope='col'>{t('name')}</th>
               <th scope='col'>{t('title')}</th>
-              <th scope='col'>{t('influence')}</th>
-              <th scope='col'>{t('lore')}</th>
-              <th scope='col'>{t('perception')}</th>
-              <th scope='col'>{t('strength')}</th>
-              <th scope='col'>{t('will')}</th>
+              <th scope='col'>{t('startingSpace')}</th>
+              <th scope='col'>{t('startingItem')}</th>
             </tr>
           </thead>
           <tbody>
@@ -152,32 +143,11 @@ export default function UnfathomableCrewRandomizerPage() {
               <tr key={character.name}>
                 <th scope='row'>{character.name}</th>
                 <td>{titlesMap[character.name] ?? emptyCharacter}</td>
-                <td className='center'>
-                  {character.influence ?? emptyCharacter}
-                </td>
-                <td className='center'>{character.lore ?? emptyCharacter}</td>
-                <td className='center'>
-                  {character.perception ?? emptyCharacter}
-                </td>
-                <td className='center'>
-                  {character.strength ?? emptyCharacter}
-                </td>
-                <td className='center'>{character.will ?? emptyCharacter}</td>
+                <td>{character.startingSpace || emptyCharacter}</td>
+                <td>{character.startingItem || emptyCharacter}</td>
               </tr>
             ))}
           </tbody>
-          <tfoot>
-            <tr>
-              <th scope='row' colSpan={2}>
-                {t('total')}
-              </th>
-              <td className='center'>{totals.influence}</td>
-              <td className='center'>{totals.lore}</td>
-              <td className='center'>{totals.perception}</td>
-              <td className='center'>{totals.strength}</td>
-              <td className='center'>{totals.will}</td>
-            </tr>
-          </tfoot>
         </table>
       )}
     </Page>

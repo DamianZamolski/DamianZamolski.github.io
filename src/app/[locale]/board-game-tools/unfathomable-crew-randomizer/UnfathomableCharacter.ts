@@ -8,4 +8,6 @@ export type UnfathomableCharacter = {
   perception?: number;
   strength?: number;
   will?: number;
+  startingSpace?: string;
+  startingItem?: string;
 };
