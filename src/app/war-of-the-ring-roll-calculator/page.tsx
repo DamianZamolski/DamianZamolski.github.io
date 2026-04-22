@@ -6,6 +6,7 @@ import { calculateExpectedValue } from './calculateExpectedValue';
 import { calculateAtLeastSuccessProbabilities } from './calculateAtLeastSuccessProbabilities';
 import type { SuccessProbabilities } from './SuccessProbabilities';
 import { Page } from '@/components/Page';
+import styles from './page.module.css';
 
 const rollsAtom = atomWithStorage<number>('wotr-rolls', 5);
 
@@ -107,7 +108,7 @@ export default function WarOfTheRingRollCalculatorPage() {
         </fieldset>
         <fieldset>
           <legend>Rerolls</legend>
-          {Array.from({ length: rolls + 1 }, (_, i) => i).map((value) => (
+          {Array.from({ length: 6 }, (_, i) => i).map((value) => (
             <Fragment key={value}>
               <input
                 id={`rerolls-${value}`}
@@ -115,12 +116,13 @@ export default function WarOfTheRingRollCalculatorPage() {
                 value={value}
                 checked={rerolls === value}
                 onChange={handleRadioChange(setRerolls)}
+                disabled={value > rolls}
               />
               <label htmlFor={`rerolls-${value}`}>{value}</label>
             </Fragment>
           ))}
         </fieldset>
-        <fieldset>
+        <fieldset disabled={rerolls === 0}>
           <legend>Reroll Success Value</legend>
           {Array.from({ length: 5 }, (_, i) => i + 2).map((value) => (
             <Fragment key={value}>
@@ -138,10 +140,9 @@ export default function WarOfTheRingRollCalculatorPage() {
       </form>
       {Object.keys(probabilities).length > 0 && (
         <>
-          <hgroup>
-            <h2>{expectedValue.toFixed(2)}</h2>
-            <p>Expected Value</p>
-          </hgroup>
+          <p>
+            Expected value: <strong>{expectedValue.toFixed(2)}</strong>
+          </p>
           <table>
             <thead>
               <tr>
@@ -153,7 +154,11 @@ export default function WarOfTheRingRollCalculatorPage() {
               {Object.entries(probabilities).map(([successes, probability]) => (
                 <tr key={successes}>
                   <th scope='row'>{successes}</th>
-                  <td>{(probability * 100).toFixed(2)}%</td>
+                  <td>
+                    <span className={styles.probability}>
+                      {(probability * 100).toFixed(2)}%
+                    </span>
+                  </td>
                 </tr>
               ))}
             </tbody>

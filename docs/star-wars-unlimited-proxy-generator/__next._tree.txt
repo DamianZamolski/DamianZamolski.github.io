@@ -1,2 +1,2 @@
 :HL["/_next/static/chunks/0vy7ki.xjqwya.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"star-wars-unlimited-proxy-generator","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"vXmSQL5Dkk5BJNFkiebpw"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"star-wars-unlimited-proxy-generator","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"45ysAqt0vz3mBKkvjYYfr"}
