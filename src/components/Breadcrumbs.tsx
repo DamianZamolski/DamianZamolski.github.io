@@ -1,28 +1,26 @@
 'use client';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import { usePathname, Link } from '@/i18n/navigation';
 
 export function Breadcrumbs() {
   const pathname = usePathname();
-  const pathSegments = pathname.split('/').slice(0, -1).filter(Boolean);
+  const t = useTranslations('routes');
+  const tb = useTranslations('breadcrumbs');
+
+  const segments = pathname.split('/').filter(Boolean);
 
   return (
     <nav aria-label='breadcrumb'>
       <ol>
         <li>
-          <Link href='/'>Home</Link>
+          <Link href='/'>{tb('home')}</Link>
         </li>
-        {pathSegments.map((segment, index) => {
-          const path = '/' + pathSegments.slice(0, index + 1).join('/');
-
-          const label = segment
-            .replace(/-/g, ' ')
-            .trim()
-            .replace(/\b\w/g, (char) => char.toUpperCase());
+        {segments.slice(0, -1).map((segment, index) => {
+          const path = '/' + segments.slice(0, index + 1).join('/');
 
           return (
             <li key={path}>
-              <Link href={path}>{label}</Link>
+              <Link href={path}>{t(segment)}</Link>
             </li>
           );
         })}

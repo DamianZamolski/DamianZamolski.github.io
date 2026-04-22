@@ -1,18 +1,22 @@
+'use client';
 import type { ReactNode } from 'react';
+import { useTranslations } from 'next-intl';
 import { Breadcrumbs } from './Breadcrumbs';
 
 export function Page({
-  title,
+  slug,
   children,
 }: {
-  title: string;
+  slug: string;
   children: ReactNode;
 }) {
+  const t = useTranslations('routes');
+
   return (
     <main>
       <header>
         <Breadcrumbs />
-        <h1>{title}</h1>
+        <h1>{t(slug)}</h1>
       </header>
       {children}
     </main>

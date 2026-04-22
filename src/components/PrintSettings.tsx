@@ -1,10 +1,12 @@
 'use client';
 import { useAtom } from 'jotai';
+import { useTranslations } from 'next-intl';
 import { cardWidthAtom } from '@/utils/cardWidthAtom';
 import { cardHeightAtom } from '@/utils/cardHeightAtom';
 import { paperSizeAtom, type PaperSize } from '@/utils/paperSizeAtom';
 
 export function PrintSettings() {
+  const t = useTranslations('printSettings');
   const [cardWidth, setCardWidth] = useAtom(cardWidthAtom);
   const [cardHeight, setCardHeight] = useAtom(cardHeightAtom);
   const [paperSize, setPaperSize] = useAtom(paperSizeAtom);
@@ -12,7 +14,7 @@ export function PrintSettings() {
   return (
     <>
       <label>
-        Paper size
+        {t('paperSize')}
         <select
           value={paperSize}
           onChange={(event) => setPaperSize(event.target.value as PaperSize)}
@@ -23,7 +25,7 @@ export function PrintSettings() {
       </label>
       <fieldset role='group'>
         <label>
-          Card width (mm)
+          {t('cardWidth')}
           <input
             type='number'
             min={10}
@@ -33,7 +35,7 @@ export function PrintSettings() {
           />
         </label>
         <label>
-          Card height (mm)
+          {t('cardHeight')}
           <input
             type='number'
             min={10}

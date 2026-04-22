@@ -1,0 +1,134 @@
+{
+  "site": {
+    "title": "Damian Zamolski",
+    "description": "Small tools for board games and 3D printing."
+  },
+  "footer": {
+    "supportMe": "Support me:"
+  },
+  "breadcrumbs": {
+    "home": "Home"
+  },
+  "routes": {
+    "home": "Damian Zamolski",
+    "board-game-tools": "Board Game Tools",
+    "arkham-horror-proxy-generator": "Arkham Horror: The Card Game — Proxy Generator",
+    "star-wars-unlimited-proxy-generator": "Star Wars: Unlimited — Proxy Generator",
+    "war-of-the-ring-roll-calculator": "War of the Ring — Roll Calculator",
+    "unfathomable-crew-randomizer": "Unfathomable — Crew Randomizer",
+    "card-sleeves-counter": "Card Sleeves Counter",
+    "teams-randomizer": "Teams Randomizer",
+    "3d-print-price-calculator": "3D Print Price Calculator"
+  },
+  "common": {
+    "clearCache": "Clear cache",
+    "download": "Download",
+    "randomize": "Randomize",
+    "copy": "Copy",
+    "copied": "Copied",
+    "done": "Done"
+  },
+  "printSettings": {
+    "paperSize": "Paper size",
+    "cardWidth": "Card width (mm)",
+    "cardHeight": "Card height (mm)"
+  },
+  "arkhamHorror": {
+    "urlsLabel": "ArkhamDB URLs",
+    "placeholder": "Paste ArkhamDB deck URLs here. Separate them with spaces or enters.",
+    "hintEmpty": "e.g. https://arkhamdb.com/deck/view/123456",
+    "hintNoMatches": "No ArkhamDB URLs detected.",
+    "hintDetected": "{count} ArkhamDB URL(s) detected.",
+    "fetchingDecks": "Fetching {total} deck(s)…",
+    "fetchingCards": "Fetching card {done}/{total}",
+    "downloadingImages": "Downloading image {done}/{total}",
+    "generatingPdf": "Generating PDF…",
+    "successMessage": "Done — PDF downloaded as <code>arkham-proxies.pdf</code>.",
+    "warningsLabel": "{count} warning(s)",
+    "failedDecksAll": "All decks failed to fetch:",
+    "failedDecksSome": "{count} deck(s) failed to fetch:",
+    "failedCards": "{count} card(s) failed to fetch:",
+    "skippedImages": "{count} image(s) skipped:",
+    "noImages": "No card images available to download.",
+    "allImagesFailed": "All images failed to download:",
+    "pdfFailed": "PDF generation failed: {message}",
+    "pdfFailedGeneric": "PDF generation failed."
+  },
+  "starWarsUnlimited": {
+    "urlsLabel": "SWUDB URLs",
+    "placeholder": "Paste SWUDB URLs here. Separate them with spaces or enters.",
+    "hintEmpty": "e.g. https://swudb.com/deck/abc123",
+    "hintNoMatches": "No SWUDB URLs detected.",
+    "hintDetected": "{count} SWUDB URL(s) detected.",
+    "fetchingDecks": "Fetching {total} deck(s)…",
+    "downloadingImages": "Downloading image {done}/{total}",
+    "generatingPdf": "Generating PDF…",
+    "successMessage": "Done — PDF downloaded as <code>star-wars-unlimited-proxies.pdf</code>.",
+    "warningsLabel": "{count} warning(s)",
+    "failedDecksAll": "All decks failed to fetch:",
+    "failedDecksSome": "{count} deck(s) failed to fetch:",
+    "skippedImages": "{count} image(s) skipped:",
+    "allImagesFailed": "All images failed to download:",
+    "pdfFailed": "PDF generation failed: {message}",
+    "pdfFailedGeneric": "PDF generation failed."
+  },
+  "wotr": {
+    "rolls": "Rolls",
+    "rollSuccessValue": "Roll Success Value",
+    "rerolls": "Rerolls",
+    "rerollSuccessValue": "Reroll Success Value",
+    "expectedValue": "Expected value:",
+    "successes": "Successes",
+    "probability": "Probability"
+  },
+  "unfathomable": {
+    "playerCount": "Player Count",
+    "includeAbyss": "Include From The Abyss Characters",
+    "randomize": "Randomize",
+    "name": "Name",
+    "title": "Title",
+    "influence": "Influence",
+    "lore": "Lore",
+    "perception": "Perception",
+    "strength": "Strength",
+    "will": "Will",
+    "total": "Total",
+    "captain": "Captain",
+    "keeperOfTheTome": "Keeper of The Tome"
+  },
+  "sleeves": {
+    "urlsLabel": "BGG URLs",
+    "placeholder": "Paste BGG URLs here. Separate them with spaces or enters.",
+    "hintEmpty": "e.g. https://boardgamegeek.com/boardgame/12345/name",
+    "hintNoMatches": "No BGG URLs detected.",
+    "hintDetected": "{count} unique BGG URL(s) detected.",
+    "countSleeves": "Count sleeves",
+    "fetchingGame": "Fetching game {done}/{total}",
+    "allGamesFailed": "All games failed to fetch:",
+    "gamesFailed": "{count} game(s) failed to fetch",
+    "size": "Size",
+    "quantity": "Quantity",
+    "setLabel": "{name} ({count} card type{plural})"
+  },
+  "teams": {
+    "count": "Teams count:",
+    "copy": "Copy teams",
+    "copied": "Copied"
+  },
+  "printPrice": {
+    "materialWeight": "Material weight in grams",
+    "materialCostPerKg": "Material cost per kilogram",
+    "duration": "Print duration",
+    "hourlyRate": "Hourly rate",
+    "markup": "Markup %",
+    "currency": "Currency",
+    "cost": "Cost",
+    "profit": "Profit",
+    "price": "Price",
+    "copyPrice": "Copy price",
+    "copied": "Copied",
+    "durationInvalidFormat": "Invalid duration format. Expected format: 1d5h10m15s",
+    "durationInvalidUnit": "Invalid unit: {unit}",
+    "durationEmpty": "Duration cannot be empty"
+  }
+}

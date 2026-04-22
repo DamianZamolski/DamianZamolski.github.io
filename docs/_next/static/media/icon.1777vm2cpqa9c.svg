@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    text { fill: #398712; font: bold 18px system-ui, sans-serif; }
+    @media (prefers-color-scheme: dark) { text { fill: #7bc950; } }
+  </style>
+  <text x="16" y="22" text-anchor="middle">DZ</text>
+</svg>
