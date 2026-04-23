@@ -15,8 +15,8 @@
     "arkham-horror-proxy-generator": "Arkham Horror: The Card Game — Generator proxy",
     "star-wars-unlimited-proxy-generator": "Star Wars: Unlimited — Generator proxy",
     "war-of-the-ring-roll-calculator": "Wojna o Pierścień — Kalkulator rzutów",
-    "unfathomable-crew-randomizer": "Unfathomable — Losowanie załogi",
-    "card-sleeves-counter": "Licznik koszulek",
+    "unfathomable-crew-randomizer": "Odmęty Grozy — Losowanie załogi",
+    "card-sleeves-counter": "Kalkulator koszulek na karty",
     "teams-randomizer": "Losowanie drużyn",
     "3d-print-price-calculator": "Kalkulator ceny druku 3D"
   },
@@ -83,7 +83,7 @@
   },
   "unfathomable": {
     "playerCount": "Liczba graczy",
-    "includeAbyss": "Dodaj postacie z From The Abyss",
+    "includeAbyss": "Dodatek Otchłań",
     "randomize": "Losuj",
     "name": "Imię",
     "title": "Tytuł",
@@ -122,7 +122,7 @@
     "materialCostPerKg": "Koszt materiału za kilogram",
     "duration": "Czas druku",
     "hourlyRate": "Stawka godzinowa",
-    "markup": "Marża %",
+    "markup": "Narzut %",
     "currency": "Waluta",
     "cost": "Koszt",
     "profit": "Zysk",
