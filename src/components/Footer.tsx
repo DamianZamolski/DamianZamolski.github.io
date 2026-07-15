@@ -24,6 +24,14 @@ export function Footer() {
         ))}
       </small>
       <LanguageToggle />
+      <a
+        className='bgg-badge'
+        href='https://boardgamegeek.com'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <img src='/bgg.png' alt='Powered by BGG' />
+      </a>
     </footer>
   );
 }

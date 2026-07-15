@@ -1,35 +1,6 @@
-:root {
-  --pico-container-max-width: 40rem;
-}
-
-@media (min-width: 576px) {
-  :root {
-    --pico-container-max-width: 40rem;
-  }
-}
-
-@media (min-width: 768px) {
-  :root {
-    --pico-container-max-width: 40rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --pico-container-max-width: 40rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  :root {
-    --pico-container-max-width: 40rem;
-  }
-}
-
-@media (min-width: 1536px) {
-  :root {
-    --pico-container-max-width: 40rem;
-  }
+body > main,
+body > footer {
+  max-width: 60ch;
 }
 
 button.secondary {
@@ -70,6 +41,19 @@ footer {
   padding: var(--pico-spacing);
   margin-top: var(--pico-spacing);
   border-top: var(--pico-border-width) solid var(--pico-muted-border-color);
+}
+
+.bgg-badge {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: var(--pico-spacing);
+}
+
+.bgg-badge img {
+  width: 180px;
+  max-width: 60%;
+  height: auto;
 }
 
 .right {

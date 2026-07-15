@@ -1,2 +1,3 @@
-:HL["/_next/static/chunks/0_rqbpqcg.lny.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"locale","param":{"type":"d","key":"en","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"board-game-tools","param":null,"prefetchHints":0,"slots":{"children":{"name":"unfathomable-crew-randomizer","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"YFMA5taLIijIS4UopHkU7"}
+:HL["/_next/static/chunks/0i62oi6nyz7yw.css","style"]
+:HL["/bgg.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"locale","param":{"type":"d","key":"en","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"board-game-tools","param":null,"prefetchHints":0,"slots":{"children":{"name":"unfathomable-crew-randomizer","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"sT5ielXOGfQD36NUU3y6E"}
