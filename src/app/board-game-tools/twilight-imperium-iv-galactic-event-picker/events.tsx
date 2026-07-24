@@ -196,9 +196,9 @@ The Obsidian/Firmament player does not participate in the Cultural Exchange Prog
             supernovas have their PRODUCTION values increased by 1.
           </li>
           <li>
-            <strong>Gravity Rifts:</strong> You may apply an additional +1 to the
-            MOVE values of any of your ships moving out of gravity rifts; if you
-            do, those ships are removed on a roll of 5 or lower.
+            <strong>Gravity Rifts:</strong> You may apply an additional +1 to
+            the MOVE values of any of your ships moving out of gravity rifts; if
+            you do, those ships are removed on a roll of 5 or lower.
           </li>
           <li>
             <strong>Entropic Scars:</strong> Systems that contain entropic scars

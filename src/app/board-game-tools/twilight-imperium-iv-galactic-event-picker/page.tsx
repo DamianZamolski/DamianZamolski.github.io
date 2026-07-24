@@ -2,7 +2,8 @@
 import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { usePathname, useRouter } from 'next/navigation';
-import { type SubmitEvent, useMemo, useState } from 'react';
+import { type SubmitEvent, useMemo } from 'react';
+import { Checkbox } from '@/components/Checkbox';
 import { Page } from '@/components/Page';
 import { shuffleArray } from '@/utils/shuffleArray';
 import { type GalacticEvent, galacticEvents } from './events';
@@ -21,19 +22,20 @@ const poolAtom = atomWithStorage<Array<string>>(
   allEventIds,
 );
 
-const rowStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '0.5rem',
-} as const;
+const drawCountAtom = atomWithStorage('ti4-galactic-event-draw-count', 1);
 
 export default function TwilightImperiumIvGalacticEventPickerPage() {
   const router = useRouter();
   const pathname = usePathname();
   const [pool, setPool] = useAtom(poolAtom);
-  const [drawCount, setDrawCount] = useState(1);
+  const [drawCount, setDrawCount] = useAtom(drawCountAtom);
 
   const poolSet = useMemo(() => new Set(pool), [pool]);
+
+  const effectiveDrawCount = Math.min(
+    Math.max(1, drawCount),
+    Math.max(1, pool.length),
+  );
 
   const toggleEvent = (id: string) => {
     setPool((prev) =>
@@ -54,8 +56,7 @@ export default function TwilightImperiumIvGalacticEventPickerPage() {
 
   const onDraw = (event: SubmitEvent) => {
     event.preventDefault();
-    const count = Math.min(Math.max(1, drawCount), pool.length);
-    const drawnIds = shuffleArray([...pool]).slice(0, count);
+    const drawnIds = shuffleArray([...pool]).slice(0, effectiveDrawCount);
     router.push(`${pathname}/drawn?drawn=${drawnIds.join(',')}`);
   };
 
@@ -67,34 +68,27 @@ export default function TwilightImperiumIvGalacticEventPickerPage() {
           {eventsBySource.map(({ source, events }) => (
             <fieldset key={source}>
               <legend>
-                <label style={rowStyle}>
-                  <input
-                    type='checkbox'
-                    style={{ margin: 0 }}
-                    checked={events.every((event) => poolSet.has(event.id))}
-                    onChange={() => toggleGroup(events)}
-                  />
+                <Checkbox
+                  checked={events.every((event) => poolSet.has(event.id))}
+                  onChange={() => toggleGroup(events)}
+                >
                   <strong>{source}</strong>
-                </label>
+                </Checkbox>
               </legend>
               {events.map((event) => (
-                <label key={event.id} style={rowStyle}>
-                  <input
-                    type='checkbox'
-                    style={{ margin: 0 }}
-                    checked={poolSet.has(event.id)}
-                    onChange={() => toggleEvent(event.id)}
-                  />
-                  <span>
-                    {event.name} <small>(complexity {event.complexity})</small>
-                  </span>
-                </label>
+                <Checkbox
+                  key={event.id}
+                  checked={poolSet.has(event.id)}
+                  onChange={() => toggleEvent(event.id)}
+                >
+                  {event.name} <small>(complexity {event.complexity})</small>
+                </Checkbox>
               ))}
             </fieldset>
           ))}
         </details>
         <label>
-          Draw
+          Draw count
           <input
             type='number'
             min={1}
@@ -111,7 +105,7 @@ export default function TwilightImperiumIvGalacticEventPickerPage() {
           />
         </label>
         <button type='submit' disabled={pool.length === 0}>
-          Draw events
+          Draw {effectiveDrawCount} event{effectiveDrawCount === 1 ? '' : 's'}
         </button>
       </form>
     </Page>
