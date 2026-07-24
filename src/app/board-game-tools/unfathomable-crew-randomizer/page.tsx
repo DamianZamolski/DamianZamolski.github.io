@@ -13,6 +13,7 @@ import { shuffleArray } from '@/utils/shuffleArray';
 import type { UnfathomableCharacter } from './UnfathomableCharacter';
 import { unfathomableCharacters } from './unfathomableCharacters';
 import { Page } from '@/components/Page';
+import { Checkbox } from '@/components/Checkbox';
 
 export default function UnfathomableCrewRandomizerPage() {
   const [playerCount, setPlayerCount] = useState(3);
@@ -73,13 +74,6 @@ export default function UnfathomableCrewRandomizerPage() {
     [],
   );
 
-  const onShouldIncludeFromTheAbyssCharactersChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setShouldIncludeFromTheAbyssCharacters(event.target.checked);
-    },
-    [],
-  );
-
   const onRandomizeClick = useCallback(
     (event: SubmitEvent) => {
       event.preventDefault();
@@ -115,14 +109,12 @@ export default function UnfathomableCrewRandomizerPage() {
               </Fragment>
             ))}
           </fieldset>
-          <label>
-            <input
-              type='checkbox'
-              checked={shouldIncludeFromTheAbyssCharacters}
-              onChange={onShouldIncludeFromTheAbyssCharactersChange}
-            />
+          <Checkbox
+            checked={shouldIncludeFromTheAbyssCharacters}
+            onChange={setShouldIncludeFromTheAbyssCharacters}
+          >
             From the Abyss expansion
-          </label>
+          </Checkbox>
         </fieldset>
         <button type='submit'>Randomize</button>
       </form>
