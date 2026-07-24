@@ -23,37 +23,17 @@ button.secondary:hover {
   min-width: 0;
 }
 
-main > nav[aria-label='Tools'] ul {
+main > nav > ul {
   flex-direction: column;
   align-items: stretch;
 }
 
-main > nav[aria-label='Tools'] li {
-  display: block;
-}
-
 footer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: var(--pico-spacing);
-  padding: var(--pico-spacing);
-  margin-top: var(--pico-spacing);
+  gap: 0.5rem;
   border-top: var(--pico-border-width) solid var(--pico-muted-border-color);
-}
-
-.bgg-badge {
-  flex-basis: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: var(--pico-spacing);
-}
-
-.bgg-badge img {
-  width: 180px;
-  max-width: 60%;
-  height: auto;
 }
 
 .right {
@@ -82,4 +62,8 @@ footer {
 .bold th,
 .bold td {
   font-weight: bold;
+}
+
+.bgg {
+  max-width: 33%;
 }

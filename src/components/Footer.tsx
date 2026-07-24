@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const supportLinks = [
   { label: 'revolut', href: 'https://revolut.me/damianzamolski' },
   { label: 'buymeacoffee', href: 'https://buymeacoffee.com/damianzamolski' },
@@ -19,12 +21,12 @@ export function Footer() {
         ))}
       </small>
       <a
-        className='bgg-badge'
+        className='bgg'
         href='https://boardgamegeek.com'
         target='_blank'
         rel='noopener noreferrer'
       >
-        <img src='/bgg.png' alt='Powered by BGG' />
+        <Image src='/bgg.png' alt='Powered by BGG' width={900} height={264} />
       </a>
     </footer>
   );
