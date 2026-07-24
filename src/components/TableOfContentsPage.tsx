@@ -1,15 +1,9 @@
 import { Page } from './Page';
 import { TableOfContents } from './TableOfContents';
 
-export function TableOfContentsPage({
-  slug,
-  url,
-}: {
-  slug: string;
-  url: string;
-}) {
+export function TableOfContentsPage({ url }: { url: string }) {
   return (
-    <Page slug={slug}>
+    <Page>
       <TableOfContents url={url} />
     </Page>
   );

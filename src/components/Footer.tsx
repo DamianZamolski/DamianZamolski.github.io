@@ -1,6 +1,3 @@
-import { useTranslations } from 'next-intl';
-import { LanguageToggle } from './LanguageToggle';
-
 const supportLinks = [
   { label: 'revolut', href: 'https://revolut.me/damianzamolski' },
   { label: 'buymeacoffee', href: 'https://buymeacoffee.com/damianzamolski' },
@@ -8,12 +5,10 @@ const supportLinks = [
 ];
 
 export function Footer() {
-  const t = useTranslations('footer');
-
   return (
     <footer>
       <small>
-        {t('supportMe')}{' '}
+        Support me:{' '}
         {supportLinks.map((link, i) => (
           <span key={link.href}>
             {i > 0 && ' · '}
@@ -23,7 +18,6 @@ export function Footer() {
           </span>
         ))}
       </small>
-      <LanguageToggle />
       <a
         className='bgg-badge'
         href='https://boardgamegeek.com'

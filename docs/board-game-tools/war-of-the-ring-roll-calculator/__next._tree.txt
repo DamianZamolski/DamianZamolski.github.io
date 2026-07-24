@@ -1,0 +1,3 @@
+:HL["/_next/static/chunks/1l26l-8x5nq-_.css","style"]
+:HL["/bgg.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"board-game-tools","param":null,"prefetchHints":0,"slots":{"children":{"name":"war-of-the-ring-roll-calculator","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"1nkmDawE0_XAMnY4yEBsF"}

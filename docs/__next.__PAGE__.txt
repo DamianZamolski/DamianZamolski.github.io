@@ -1,5 +1,7 @@
 1:"$Sreact.fragment"
-2:I[43117,["/_next/static/chunks/10te08gja98n1.js","/_next/static/chunks/0ujg9wyvthkw6.js"],"OutletBoundary"]
-3:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){try{var s=localStorage.getItem('locale');var l=s||(navigator.language&&navigator.language.toLowerCase().startsWith('pl')?'pl':'en');location.replace('/'+l+location.search+location.hash);}catch(e){location.replace('/en');}})();"}}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"sT5ielXOGfQD36NUU3y6E"}
-4:null
+2:I[39911,["/_next/static/chunks/3w6ye10rmqx2s.js","/_next/static/chunks/1ihs01rh2luw3.js","/_next/static/chunks/1svtovaub8r18.js"],"Page"]
+3:I[63831,["/_next/static/chunks/3w6ye10rmqx2s.js","/_next/static/chunks/1ihs01rh2luw3.js","/_next/static/chunks/1svtovaub8r18.js"],""]
+4:I[18243,["/_next/static/chunks/3w6ye10rmqx2s.js","/_next/static/chunks/1ihs01rh2luw3.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"children":["$","nav",null,{"aria-label":"Tools","children":["$","ul",null,{"children":[["$","li","3d-print-price-calculator",{"children":["$","$L3",null,{"href":"/3d-print-price-calculator","children":"3D Print Price Calculator"}]}],["$","li","board-game-tools",{"children":["$","$L3",null,{"href":"/board-game-tools","children":"Board Game Tools"}]}],["$","li","teams-randomizer",{"children":["$","$L3",null,{"href":"/teams-randomizer","children":"Teams Randomizer"}]}]]}]}]}],[["$","script","script-0",{"src":"/_next/static/chunks/1svtovaub8r18.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"1nkmDawE0_XAMnY4yEBsF"}
+6:null

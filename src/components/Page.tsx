@@ -1,22 +1,19 @@
 'use client';
 import type { ReactNode } from 'react';
-import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
+import { getTitle } from '@/titles';
 import { Breadcrumbs } from './Breadcrumbs';
 
-export function Page({
-  slug,
-  children,
-}: {
-  slug: string;
-  children: ReactNode;
-}) {
-  const t = useTranslations('routes');
+export function Page({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const segments = pathname.split('/').filter(Boolean);
+  const slug = segments.at(-1) ?? 'home';
 
   return (
     <main>
       <header>
         <Breadcrumbs />
-        <h1>{t(slug)}</h1>
+        <h1>{getTitle(slug)}</h1>
       </header>
       {children}
     </main>

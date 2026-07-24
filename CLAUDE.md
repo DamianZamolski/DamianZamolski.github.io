@@ -20,7 +20,7 @@ Next.js 16 static export site. Output goes to `docs/` (GitHub Pages). No server 
 
 **Auto-navigation:** `TableOfContents` calls `getDirectories(import.meta.url)` which uses `fs.readdirSync` on the directory of the calling file to list subdirectories at build time. Adding a new subdirectory automatically adds it to the nav — no manual registration.
 
-**Page shell:** Wrap every page with `<Page title="...">`. This adds breadcrumbs (auto-generated from URL path) and an `<h1>`.
+**Page shell:** Wrap every page with `<Page slug="...">`. The slug resolves to a display label via `getTitle(slug)` in `src/titles.ts` (a slug→label map, with a `humanize()` fallback for slugs not in the map). This adds breadcrumbs (auto-generated from URL path) and an `<h1>`.
 
 **Styling:** PicoCSS classless green theme — no class names needed on semantic HTML. CSS modules for component-specific overrides. No Tailwind.
 
@@ -31,5 +31,5 @@ Next.js 16 static export site. Output goes to `docs/` (GitHub Pages). No server 
 **Adding a new tool:**
 
 1. Create `src/app/<tool-name>/page.tsx`
-2. Use `<Page title="...">` as wrapper
+2. Use `<Page slug="...">` as wrapper (add the slug→label entry to `src/titles.ts`)
 3. It auto-appears in parent directory's `TableOfContents`
