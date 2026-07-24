@@ -12,6 +12,7 @@ const titles: Record<string, string> = {
   '3d-print-price-calculator': '3D Print Price Calculator',
   'twilight-imperium-iv-galactic-event-picker':
     'Twilight Imperium IV | Galactic Event Picker',
+  drawn: 'Drawn Events',
 };
 
 function humanize(slug: string): string {
