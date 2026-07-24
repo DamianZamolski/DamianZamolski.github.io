@@ -1,9 +1,19 @@
 'use client';
-import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import { Page } from '@/components/Page';
 import { type GalacticEvent, galacticEvents } from '../events';
+
+function EventEffect({ effect }: { effect: GalacticEvent['effect'] }) {
+  if (typeof effect !== 'string') {
+    return effect;
+  }
+  return effect.split('\n\n').map((paragraph, index) => (
+    <p key={index} style={{ whiteSpace: 'pre-line' }}>
+      {paragraph}
+    </p>
+  ));
+}
 
 function DrawnEvents() {
   const drawnParam = useSearchParams().get('drawn');
@@ -23,7 +33,7 @@ function DrawnEvents() {
         <strong>{event.name}</strong>{' '}
         <small>(complexity {event.complexity})</small>
       </header>
-      <div style={{ whiteSpace: 'pre-wrap' }}>{event.effect}</div>
+      <EventEffect effect={event.effect} />
     </article>
   ));
 }
@@ -34,9 +44,6 @@ export default function DrawnEventsPage() {
       <Suspense>
         <DrawnEvents />
       </Suspense>
-      <Link href='/board-game-tools/twilight-imperium-iv-galactic-event-picker'>
-        Draw again
-      </Link>
     </Page>
   );
 }

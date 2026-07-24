@@ -1,3 +1,5 @@
+import { type ReactNode } from 'react';
+
 export type GalacticEventSource = 'Codex IV (Liberation)' | "Thunder's Edge";
 
 export type GalacticEvent = {
@@ -5,7 +7,7 @@ export type GalacticEvent = {
   name: string;
   source: GalacticEventSource;
   complexity: number;
-  effect: string;
+  effect: string | ReactNode;
 };
 
 export const galacticEvents: ReadonlyArray<GalacticEvent> = [
@@ -124,19 +126,44 @@ The Argent Flight's votes are public and are known before the other players vote
     name: 'Wild, Wild Galaxy',
     source: "Thunder's Edge",
     complexity: 3,
-    effect: `Action cards are adjusted as follows:
-
-* Direct Hit: Can be used against mechs
-* Flank Speed: Applies +2 MOVE instead of +1
-* Maneuvering Jets: Cancel all SPACE CANNON hits
-* Morale Boost: Applies +2 to die rolls instead of +1
-* Sabotage: Also take the canceled action card
-* Shields Holding: Can be used in ground combat
-* Skilled Retreat: Does not place a command token
-* War Machine: Reduces cost by 5 instead of 1
-* Diplomatic Pressure: Player must give 3 notes
-
-Additionally, Stellar Converter and Nova Seed can be used against any planets or systems.`,
+    effect: (
+      <>
+        <p>Action cards are adjusted as follows:</p>
+        <ul>
+          <li>
+            <strong>Direct Hit:</strong> Can be used against mechs
+          </li>
+          <li>
+            <strong>Flank Speed:</strong> Applies +2 MOVE instead of +1
+          </li>
+          <li>
+            <strong>Maneuvering Jets:</strong> Cancel all SPACE CANNON hits
+          </li>
+          <li>
+            <strong>Morale Boost:</strong> Applies +2 to die rolls instead of +1
+          </li>
+          <li>
+            <strong>Sabotage:</strong> Also take the canceled action card
+          </li>
+          <li>
+            <strong>Shields Holding:</strong> Can be used in ground combat
+          </li>
+          <li>
+            <strong>Skilled Retreat:</strong> Does not place a command token
+          </li>
+          <li>
+            <strong>War Machine:</strong> Reduces cost by 5 instead of 1
+          </li>
+          <li>
+            <strong>Diplomatic Pressure:</strong> Player must give 3 notes
+          </li>
+        </ul>
+        <p>
+          Additionally, Stellar Converter and Nova Seed can be used against any
+          planets or systems.
+        </p>
+      </>
+    ),
   },
   {
     id: 'cultural-exchange-program',
@@ -152,13 +179,34 @@ The Obsidian/Firmament player does not participate in the Cultural Exchange Prog
     name: 'Cosmic Phenomenae',
     source: "Thunder's Edge",
     complexity: 2,
-    effect: `Anomalies are adjusted as follows:
-
-* Nebulae: The defender applies +3 to each of their ship's combat rolls in the nebulae instead.
-* Asteroid Fields: Fighters without a move value do not participate in space combat in asteroid fields.
-* Supernovas: Units with PRODUCTION in or adjacent to supernovas have their PRODUCTION values increased by 1.
-* Gravity Rifts: You may apply an additional +1 to the MOVE values of any of your ships moving out of gravity rifts; if you do, those ships are removed on a roll of 5 or lower.
-* Entropic Scars: Systems that contain entropic scars are adjacent to each other`,
+    effect: (
+      <>
+        <p>Anomalies are adjusted as follows:</p>
+        <ul>
+          <li>
+            <strong>Nebulae:</strong> The defender applies +3 to each of their
+            ship&apos;s combat rolls in the nebulae instead.
+          </li>
+          <li>
+            <strong>Asteroid Fields:</strong> Fighters without a move value do
+            not participate in space combat in asteroid fields.
+          </li>
+          <li>
+            <strong>Supernovas:</strong> Units with PRODUCTION in or adjacent to
+            supernovas have their PRODUCTION values increased by 1.
+          </li>
+          <li>
+            <strong>Gravity Rifts:</strong> You may apply an additional +1 to the
+            MOVE values of any of your ships moving out of gravity rifts; if you
+            do, those ships are removed on a roll of 5 or lower.
+          </li>
+          <li>
+            <strong>Entropic Scars:</strong> Systems that contain entropic scars
+            are adjacent to each other.
+          </li>
+        </ul>
+      </>
+    ),
   },
   {
     id: 'advent-of-the-war-sun',
@@ -185,33 +233,65 @@ Players can use the abilities of the mercenaries in their play area.`,
     name: 'Rapid Mobilization',
     source: "Thunder's Edge",
     complexity: 1,
-    effect: `After setup, put the Fracture into play. Then, each player simultaneously resolves the following effects in order.
-
-1. Place 1 infantry onto each planet adjacent to your home system (or the Creuss Gate/The Sorrow, if playing those factions); gain control of and ready those planets but do not explore them.
-2. Place 1 space dock on any planet you control and place your flagship and 3 fighters in its system.
-3. Gain your breakthrough.
-4. Research 1 technology; if you are the Nomad player, research 1 additional technology.`,
+    effect: (
+      <>
+        <p>
+          After setup, put the Fracture into play. Then, each player
+          simultaneously resolves the following effects in order.
+        </p>
+        <ol>
+          <li>
+            Place 1 infantry onto each planet adjacent to your home system (or
+            the Creuss Gate/The Sorrow, if playing those factions); gain control
+            of and ready those planets but do not explore them.
+          </li>
+          <li>
+            Place 1 space dock on any planet you control and place your flagship
+            and 3 fighters in its system.
+          </li>
+          <li>Gain your breakthrough.</li>
+          <li>
+            Research 1 technology; if you are the Nomad player, research 1
+            additional technology.
+          </li>
+        </ol>
+      </>
+    ),
   },
   {
     id: 'weird-wormholes',
     name: 'Weird Wormholes',
     source: "Thunder's Edge",
     complexity: 3,
-    effect: `After a ship moves using at least 1 alpha, beta, or gamma wormhole, roll 1 die and consult the following list;
-
-1. Fighter
-2. Destroyer
-3. Cruiser
-4. Dreadnought
-5. Carrier
-6. Flagship
-7. War Sun (if researched)
-
-For each roll of 1-5, replace that ship with the ship before it from your reinforcements, if able.
-
-For each roll of 6-10, replace that ship with the ship after it from your reinforcements, if able.
-
-If there are no ships of that type in your reinforcements, skip that type and replace it with the next available type.`,
+    effect: (
+      <>
+        <p>
+          After a ship moves using at least 1 alpha, beta, or gamma wormhole,
+          roll 1 die and consult the following list:
+        </p>
+        <ol>
+          <li>Fighter</li>
+          <li>Destroyer</li>
+          <li>Cruiser</li>
+          <li>Dreadnought</li>
+          <li>Carrier</li>
+          <li>Flagship</li>
+          <li>War Sun (if researched)</li>
+        </ol>
+        <p>
+          For each roll of 1-5, replace that ship with the ship before it from
+          your reinforcements, if able.
+        </p>
+        <p>
+          For each roll of 6-10, replace that ship with the ship after it from
+          your reinforcements, if able.
+        </p>
+        <p>
+          If there are no ships of that type in your reinforcements, skip that
+          type and replace it with the next available type.
+        </p>
+      </>
+    ),
   },
   {
     id: 'monuments-to-the-ages',
