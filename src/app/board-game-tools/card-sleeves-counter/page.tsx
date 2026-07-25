@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Page } from '@/components/Page';
 import { createCache } from '@/utils/createCache';
 import { fetchGames } from './fetchGames';
-import type { GameData } from './fetchGame';
+import type { GameData } from './GameData';
 import { findGameIds } from './findGameIds';
 
 const textAtom = atomWithStorage('sleeves-text', '');

@@ -6,7 +6,8 @@ import { type SubmitEvent, useMemo } from 'react';
 import { Checkbox } from '@/components/Checkbox';
 import { Page } from '@/components/Page';
 import { shuffleArray } from '@/utils/shuffleArray';
-import { type GalacticEvent, galacticEvents } from './events';
+import type { GalacticEvent } from './GalacticEvent';
+import { galacticEvents } from './galacticEvents';
 
 const allEventIds = galacticEvents.map((event) => event.id);
 

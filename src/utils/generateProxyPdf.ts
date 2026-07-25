@@ -1,6 +1,6 @@
 import { jsPDF } from 'jspdf';
 import { chunkArray } from './chunkArray';
-import type { PaperSize } from './paperSizeAtom';
+import type { PaperSize } from './PaperSize';
 
 export async function generateProxyPdf(opts: {
   images: ReadonlyArray<ArrayBuffer>;

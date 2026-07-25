@@ -1,19 +1,13 @@
 import { z } from 'zod';
 import { cardSetSchema } from './cardSetSchema';
+import type { GameData } from './GameData';
+import type { Cache } from '@/utils/Cache';
 import { corsHttp } from '@/utils/corsHttp';
-import type { Cache } from '@/utils/createCache';
 import type { ValueOrError } from '@/utils/ValueOrError';
 
 const cardSetsResponseSchema = z.object({
   cardSets: z.array(cardSetSchema),
 });
-
-export type CardSet = z.infer<typeof cardSetSchema>;
-
-export interface GameData {
-  name: string | null;
-  cardSets: ReadonlyArray<CardSet>;
-}
 
 const cardSetsUrl = (id: string) =>
   `https://api.geekdo.com/api/cardsetsbygame?objectid=${id}`;

@@ -1,14 +1,4 @@
-import { type ReactNode } from 'react';
-
-export type GalacticEventSource = 'Codex IV (Liberation)' | "Thunder's Edge";
-
-export type GalacticEvent = {
-  id: string;
-  name: string;
-  source: GalacticEventSource;
-  complexity: number;
-  effect: string | ReactNode;
-};
+import type { GalacticEvent } from './GalacticEvent';
 
 export const galacticEvents: ReadonlyArray<GalacticEvent> = [
   {

@@ -1,5 +1,6 @@
-import { fetchGame, type GameData } from './fetchGame';
-import type { Cache } from '@/utils/createCache';
+import { fetchGame } from './fetchGame';
+import type { GameData } from './GameData';
+import type { Cache } from '@/utils/Cache';
 
 export async function fetchGames(
   ids: ReadonlyArray<string>,

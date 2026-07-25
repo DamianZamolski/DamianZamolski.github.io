@@ -2,7 +2,8 @@
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import { Page } from '@/components/Page';
-import { type GalacticEvent, galacticEvents } from '../events';
+import type { GalacticEvent } from '../GalacticEvent';
+import { galacticEvents } from '../galacticEvents';
 
 function EventEffect({ effect }: { effect: GalacticEvent['effect'] }) {
   if (typeof effect !== 'string') {

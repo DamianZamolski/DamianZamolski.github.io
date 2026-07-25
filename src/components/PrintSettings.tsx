@@ -2,7 +2,8 @@
 import { useAtom } from 'jotai';
 import { cardWidthAtom } from '@/utils/cardWidthAtom';
 import { cardHeightAtom } from '@/utils/cardHeightAtom';
-import { paperSizeAtom, type PaperSize } from '@/utils/paperSizeAtom';
+import { paperSizeAtom } from '@/utils/paperSizeAtom';
+import type { PaperSize } from '@/utils/PaperSize';
 
 export function PrintSettings() {
   const [cardWidth, setCardWidth] = useAtom(cardWidthAtom);
