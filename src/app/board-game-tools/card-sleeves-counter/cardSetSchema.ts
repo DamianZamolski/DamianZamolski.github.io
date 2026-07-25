@@ -2,6 +2,6 @@ import { z } from 'zod';
 import { cardTypeSchema } from './cardTypeSchema';
 
 export const cardSetSchema = z.looseObject({
-  name: z.string().optional(),
+  name: z.string().nullish(),
   cardTypes: z.array(cardTypeSchema),
 });
