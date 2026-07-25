@@ -9,11 +9,9 @@ function EventEffect({ effect }: { effect: GalacticEvent['effect'] }) {
     return effect;
   }
 
-  return effect.split('\n\n').map((paragraph, index) => (
-    <p key={index} style={{ whiteSpace: 'pre-line' }}>
-      {paragraph}
-    </p>
-  ));
+  return effect
+    .split('\n\n')
+    .map((paragraph, index) => <p key={index}>{paragraph}</p>);
 }
 
 function DrawnEvents() {
