@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "next build && touch docs/.nojekyll",
+    "build": "pnpm lint && next build && touch docs/.nojekyll",
     "dev": "next dev --turbopack",
     "lint": "prettier --write . && eslint --fix src && tsc --noEmit",
     "start": "next start"
