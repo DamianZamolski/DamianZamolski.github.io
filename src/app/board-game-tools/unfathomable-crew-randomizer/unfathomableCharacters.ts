@@ -8,7 +8,6 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     keeperOfTheTome: 5,
     lore: 2,
     perception: 3,
-    startingSpace: '',
     startingItem: '',
   },
   {
@@ -18,8 +17,7 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 2,
     perception: 1,
     strength: 2,
-    startingSpace: '',
-    startingItem: '',
+    startingItem: 'Six-Shooter',
   },
   {
     name: 'Avery Engelbrecht',
@@ -29,7 +27,6 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 2,
     strength: 2,
     will: 1,
-    startingSpace: '',
     startingItem: '',
   },
   {
@@ -39,8 +36,7 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 1,
     lore: 2,
     perception: 2,
-    startingSpace: '',
-    startingItem: '',
+    startingItem: 'Almanac',
   },
   {
     name: 'Edmund Mallory',
@@ -51,8 +47,7 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     perception: 1,
     strength: 1,
     will: 1,
-    startingSpace: '',
-    startingItem: '',
+    startingItem: 'Lucky Ring',
   },
   {
     name: 'Guillaume Delacroix',
@@ -62,7 +57,6 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 2,
     lore: 2,
     will: 1,
-    startingSpace: '',
     startingItem: '',
   },
   {
@@ -73,7 +67,6 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 2,
     lore: 1,
     strength: 2,
-    startingSpace: '',
     startingItem: '',
   },
   {
@@ -83,8 +76,7 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     lore: 2,
     strength: 2,
     will: 1,
-    startingSpace: '',
-    startingItem: '',
+    startingItem: 'Book of Dagon',
   },
   {
     name: 'Jamie Snell',
@@ -92,8 +84,7 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     keeperOfTheTome: 14,
     strength: 3,
     will: 2,
-    startingSpace: '',
-    startingItem: '',
+    startingItem: 'Repeating Rifle',
   },
   {
     name: 'Jeanne Lafarge',
@@ -102,8 +93,7 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 1,
     perception: 2,
     strength: 2,
-    startingSpace: '',
-    startingItem: '',
+    startingItem: 'Tool Kit',
   },
   {
     name: 'Keilani Tatupu',
@@ -111,8 +101,7 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     keeperOfTheTome: 18,
     influence: 3,
     will: 2,
-    startingSpace: '',
-    startingItem: '',
+    startingItem: 'Speaking Trumpet',
   },
   {
     name: 'Sardaana Morgunova',
@@ -122,7 +111,6 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 2,
     perception: 2,
     will: 1,
-    startingSpace: '',
     startingItem: '',
   },
   {
@@ -132,7 +120,6 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     expansion: 'from-the-abyss',
     lore: 2,
     will: 3,
-    startingSpace: '',
     startingItem: '',
   },
   {
@@ -143,7 +130,6 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     lore: 1,
     perception: 2,
     strength: 2,
-    startingSpace: '',
     startingItem: '',
   },
   {
@@ -153,8 +139,7 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     lore: 1,
     perception: 2,
     will: 2,
-    startingSpace: '',
-    startingItem: '',
+    startingItem: 'Starbuck',
   },
   {
     name: 'Svetlana Gedroits',
@@ -163,8 +148,7 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     influence: 2,
     lore: 1,
     perception: 2,
-    startingSpace: '',
-    startingItem: '',
+    startingItem: 'Travel Pharmacy',
   },
   {
     name: 'William Bowleg',
@@ -172,8 +156,7 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     keeperOfTheTome: 1,
     lore: 3,
     will: 2,
-    startingSpace: '',
-    startingItem: '',
+    startingItem: 'Elder Sign Amulet',
   },
   {
     name: 'Wong Mui Choo',
@@ -183,7 +166,6 @@ export const unfathomableCharacters: Array<UnfathomableCharacter> = [
     perception: 1,
     strength: 2,
     will: 2,
-    startingSpace: '',
     startingItem: '',
   },
 ];

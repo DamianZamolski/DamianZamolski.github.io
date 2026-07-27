@@ -124,7 +124,6 @@ export default function UnfathomableCrewRandomizerPage() {
             <tr>
               <th scope='col'>Name</th>
               <th scope='col'>Title</th>
-              <th scope='col'>Starting Space</th>
               <th scope='col'>Starting Item</th>
             </tr>
           </thead>
@@ -133,7 +132,6 @@ export default function UnfathomableCrewRandomizerPage() {
               <tr key={character.name}>
                 <th scope='row'>{character.name}</th>
                 <td>{titlesMap[character.name] ?? emptyCharacter}</td>
-                <td>{character.startingSpace || emptyCharacter}</td>
                 <td>{character.startingItem || emptyCharacter}</td>
               </tr>
             ))}
