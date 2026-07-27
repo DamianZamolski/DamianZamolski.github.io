@@ -1,5 +1,6 @@
 'use client';
 import { type ReactNode, useState } from 'react';
+import styles from './ShareButton.module.css';
 
 export function ShareButton({ children = 'Share' }: { children?: ReactNode }) {
   const [copied, setCopied] = useState(false);
@@ -11,11 +12,11 @@ export function ShareButton({ children = 'Share' }: { children?: ReactNode }) {
   };
 
   return (
-    <>
+    <span className={styles.wrapper}>
       <button type='button' onClick={onClick}>
         {children}
       </button>
-      {copied && <small role='status'>Copied</small>}
-    </>
+      {copied && <output>Link copied</output>}
+    </span>
   );
 }
