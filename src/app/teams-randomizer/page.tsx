@@ -3,6 +3,7 @@ import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { type ChangeEvent, useState } from 'react';
 import { Page } from '@/components/Page';
+import { ShareButton } from '@/components/ShareButton';
 import { splitPlayersIntoRandomTeams } from './splitPlayersIntoRandomTeams';
 
 const teamsCountAtom = atomWithStorage<number>('teams-randomizer-count', 2);
@@ -12,7 +13,6 @@ export default function TeamsRandomizerPage() {
   const [teamsCount, setTeamsCount] = useAtom(teamsCountAtom);
   const [playersText, setPlayersText] = useAtom(playersTextAtom);
   const [teams, setTeams] = useState<Array<Array<string>>>([]);
-  const [copied, setCopied] = useState(false);
 
   const onTeamsCountChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = Number(event.target.value);
@@ -36,13 +36,6 @@ export default function TeamsRandomizerPage() {
 
     const randomTeams = splitPlayersIntoRandomTeams(players, teamsCount);
     setTeams(randomTeams);
-  };
-
-  const onCopy = async () => {
-    const text = teams.map((team) => team.join(' ')).join('\n');
-    await navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
   };
 
   return (
@@ -77,10 +70,9 @@ export default function TeamsRandomizerPage() {
               <li key={`team-${teamIndex}`}>{team.join(' ')}</li>
             ))}
           </ol>
-          <button type='button' onClick={onCopy}>
+          <ShareButton value={teams.map((team) => team.join(' ')).join('\n')}>
             Copy teams
-          </button>
-          {copied && <small role='status'>Copied</small>}
+          </ShareButton>
         </>
       )}
     </Page>

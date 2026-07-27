@@ -1,10 +1,11 @@
 'use client';
 import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
-import { type ChangeEvent, useCallback, useMemo, useState } from 'react';
+import { type ChangeEvent, useCallback, useMemo } from 'react';
 import { estimatePrintCost } from './estimatePrintCost';
 import { parseDurationString } from './parseDurationString';
 import { Page } from '@/components/Page';
+import { ShareButton } from '@/components/ShareButton';
 import type { Duration } from './Duration';
 
 const emptyDuration: Duration = { days: 0, hours: 0, minutes: 0, seconds: 0 };
@@ -50,7 +51,6 @@ export default function PrintPriceCalculatorPage() {
   const [hourlyRate, setHourlyRate] = useAtom(hourlyRateAtom);
   const [markup, setMarkup] = useAtom(markupAtom);
   const [currency, setCurrency] = useAtom(currencyAtom);
-  const [copied, setCopied] = useState(false);
 
   const { duration, durationError } = useMemo<{
     duration: Duration;
@@ -85,12 +85,6 @@ export default function PrintPriceCalculatorPage() {
       setter(Math.max(0, Number(e.target.value) || 0)),
     [],
   );
-
-  const onCopy = async () => {
-    await navigator.clipboard.writeText(formatCurrency(price, currency));
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
-  };
 
   return (
     <Page>
@@ -185,10 +179,9 @@ export default function PrintPriceCalculatorPage() {
           </tr>
         </tbody>
       </table>
-      <button type='button' onClick={onCopy}>
+      <ShareButton value={formatCurrency(price, currency)}>
         Copy price
-      </button>
-      {copied && <small role='status'>Copied</small>}
+      </ShareButton>
     </Page>
   );
 }

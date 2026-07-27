@@ -58,7 +58,7 @@ export default function TwilightImperiumIvGalacticEventPickerPage() {
   const onDraw = (event: SubmitEvent) => {
     event.preventDefault();
     const drawnIds = shuffleArray([...pool]).slice(0, effectiveDrawCount);
-    router.push(`${pathname}/drawn?drawn=${drawnIds.join(',')}`);
+    router.push(`${pathname}/share?events=${drawnIds.join(',')}`);
   };
 
   return (

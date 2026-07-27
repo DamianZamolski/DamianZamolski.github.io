@@ -1,4 +1,6 @@
 'use client';
+import { atomWithStorage } from 'jotai/utils';
+import { useAtom } from 'jotai';
 import { calculateCharactersVariance } from './calculateCharactersVariance';
 import {
   type ChangeEvent,
@@ -15,13 +17,23 @@ import { unfathomableCharacters } from './unfathomableCharacters';
 import { Page } from '@/components/Page';
 import { Checkbox } from '@/components/Checkbox';
 
+const playerCountAtom = atomWithStorage(
+  'unfathomable-crew-randomizer-player-count',
+  3,
+);
+
+const shouldIncludeFromTheAbyssCharactersAtom = atomWithStorage(
+  'unfathomable-crew-randomizer-include-from-the-abyss',
+  true,
+);
+
 export default function UnfathomableCrewRandomizerPage() {
-  const [playerCount, setPlayerCount] = useState(3);
+  const [playerCount, setPlayerCount] = useAtom(playerCountAtom);
 
   const [
     shouldIncludeFromTheAbyssCharacters,
     setShouldIncludeFromTheAbyssCharacters,
-  ] = useState(true);
+  ] = useAtom(shouldIncludeFromTheAbyssCharactersAtom);
 
   const charactersPool = useMemo(
     () =>
@@ -71,7 +83,7 @@ export default function UnfathomableCrewRandomizerPage() {
     (event: ChangeEvent<HTMLInputElement>) => {
       setPlayerCount(Number(event.target.value));
     },
-    [],
+    [setPlayerCount],
   );
 
   const onRandomizeClick = useCallback(
