@@ -5,7 +5,7 @@ import { type ChangeEvent, useCallback, useMemo } from 'react';
 import { estimatePrintCost } from './estimatePrintCost';
 import { parseDurationString } from './parseDurationString';
 import { Page } from '@/components/Page';
-import { ShareButton } from '@/components/ShareButton';
+import { CopyButton } from '@/components/CopyButton';
 import type { Duration } from './Duration';
 
 const emptyDuration: Duration = { days: 0, hours: 0, minutes: 0, seconds: 0 };
@@ -179,9 +179,9 @@ export default function PrintPriceCalculatorPage() {
           </tr>
         </tbody>
       </table>
-      <ShareButton value={formatCurrency(price, currency)}>
+      <CopyButton value={formatCurrency(price, currency)}>
         Copy price
-      </ShareButton>
+      </CopyButton>
     </Page>
   );
 }

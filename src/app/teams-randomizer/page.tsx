@@ -3,7 +3,7 @@ import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { type ChangeEvent, useState } from 'react';
 import { Page } from '@/components/Page';
-import { ShareButton } from '@/components/ShareButton';
+import { CopyButton } from '@/components/CopyButton';
 import { splitPlayersIntoRandomTeams } from './splitPlayersIntoRandomTeams';
 
 const teamsCountAtom = atomWithStorage<number>('teams-randomizer-count', 2);
@@ -70,9 +70,9 @@ export default function TeamsRandomizerPage() {
               <li key={`team-${teamIndex}`}>{team.join(' ')}</li>
             ))}
           </ol>
-          <ShareButton value={teams.map((team) => team.join(' ')).join('\n')}>
+          <CopyButton value={teams.map((team) => team.join(' ')).join('\n')}>
             Copy teams
-          </ShareButton>
+          </CopyButton>
         </>
       )}
     </Page>
