@@ -13,6 +13,7 @@ import { downloadImages } from '@/utils/downloadImages';
 import { generateProxyPdf } from '@/utils/generateProxyPdf';
 import { createCache } from '@/utils/createCache';
 import type { ValueOrError } from '@/utils/ValueOrError';
+import { Form } from '@/components/Form';
 
 const deckLinkRegExp =
   /https:\/\/arkhamdb\.com\/(?:deck|decklist)\/view\/(\d+)/g;
@@ -363,12 +364,7 @@ export default function ArkhamHorrorProxyGeneratorPage() {
 
   return (
     <Page>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          download();
-        }}
-      >
+      <Form onSubmit={download}>
         <fieldset disabled={isFetching}>
           <label>
             ArkhamDB URLs
@@ -500,7 +496,7 @@ export default function ArkhamHorrorProxyGeneratorPage() {
             </article>
           )}
         </output>
-      </form>
+      </Form>
     </Page>
   );
 }

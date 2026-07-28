@@ -6,6 +6,7 @@ import { calculateExpectedValue } from './calculateExpectedValue';
 import { calculateAtLeastSuccessProbabilities } from './calculateAtLeastSuccessProbabilities';
 import type { SuccessProbabilities } from './SuccessProbabilities';
 import { Page } from '@/components/Page';
+import { Form } from '@/components/Form';
 
 const rollsAtom = atomWithStorage<number>('wotr-rolls', 5);
 
@@ -74,7 +75,7 @@ export default function WarOfTheRingRollCalculatorPage() {
 
   return (
     <Page>
-      <form>
+      <Form>
         <fieldset>
           <legend>Rolls</legend>
           {Array.from({ length: 5 }, (_, i) => i + 1).map((value) => (
@@ -136,7 +137,7 @@ export default function WarOfTheRingRollCalculatorPage() {
             </Fragment>
           ))}
         </fieldset>
-      </form>
+      </Form>
       {Object.keys(probabilities).length > 0 && (
         <>
           <p>

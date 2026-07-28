@@ -1,22 +1,12 @@
 'use client';
-import { type ReactNode, useState } from 'react';
-import styles from './ShareButton.module.css';
+import { CopyButton } from './CopyButton';
 
-export function ShareButton({ children = 'Share' }: { children?: ReactNode }) {
-  const [copied, setCopied] = useState(false);
-
-  const onClick = async () => {
-    await navigator.clipboard.writeText(window.location.href);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
-  };
-
+export function ShareButton() {
   return (
-    <span className={styles.wrapper}>
-      <button type='button' onClick={onClick}>
-        {children}
-      </button>
-      {copied && <output>Link copied</output>}
-    </span>
+    <CopyButton
+      label='Share'
+      copiedLabel='Link copied!'
+      value={window.location.href}
+    />
   );
 }

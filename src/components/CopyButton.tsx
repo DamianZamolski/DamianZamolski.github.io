@@ -1,27 +1,31 @@
 'use client';
-import { type ReactNode, useState } from 'react';
+import { useState } from 'react';
 
 export function CopyButton({
   value,
-  children = 'Copy',
+  label = 'Copy',
+  copiedLabel = 'Copied!',
 }: {
   value: string;
-  children?: ReactNode;
+  label?: string;
+  copiedLabel?: string;
 }) {
   const [copied, setCopied] = useState(false);
 
   const onClick = async () => {
     await navigator.clipboard.writeText(value);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <>
-      <button type='button' onClick={onClick}>
-        {children}
-      </button>
-      {copied && <small role='status'>Copied</small>}
-    </>
+    <button
+      type='button'
+      onClick={onClick}
+      disabled={copied}
+      className='full-width'
+    >
+      {copied ? copiedLabel : label}
+    </button>
   );
 }

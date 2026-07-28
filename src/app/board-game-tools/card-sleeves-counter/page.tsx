@@ -7,6 +7,7 @@ import { createCache } from '@/utils/createCache';
 import { fetchGames } from './fetchGames';
 import type { GameData } from './GameData';
 import { findGameIds } from './findGameIds';
+import { Form } from '@/components/Form';
 
 const textAtom = atomWithStorage('sleeves-text', '');
 
@@ -119,12 +120,7 @@ export default function CardSleevesCounterPage() {
 
   return (
     <Page>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          countSleeves();
-        }}
-      >
+      <Form onSubmit={countSleeves}>
         <fieldset disabled={isFetching}>
           <label>
             BGG URLs
@@ -253,7 +249,7 @@ export default function CardSleevesCounterPage() {
             </article>
           )}
         </output>
-      </form>
+      </Form>
     </Page>
   );
 }

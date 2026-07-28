@@ -67,3 +67,7 @@ footer {
 .bgg {
   max-width: 33%;
 }
+
+.full-width {
+  width: 100%;
+}

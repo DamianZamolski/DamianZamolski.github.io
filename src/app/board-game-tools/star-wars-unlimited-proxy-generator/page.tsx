@@ -13,6 +13,7 @@ import { generateProxyPdf } from '@/utils/generateProxyPdf';
 import { corsHttp } from '@/utils/corsHttp';
 import { createCache } from '@/utils/createCache';
 import type { ValueOrError } from '@/utils/ValueOrError';
+import { Form } from '@/components/Form';
 
 const deckLinkRegExp = /https:\/\/swudb\.com\/deck\/\S+/g;
 
@@ -253,12 +254,7 @@ export default function StarWarsUnlimitedProxyGeneratorPage() {
 
   return (
     <Page>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          download();
-        }}
-      >
+      <Form onSubmit={download}>
         <fieldset disabled={isFetching}>
           <label>
             SWUDB URLs
@@ -375,7 +371,7 @@ export default function StarWarsUnlimitedProxyGeneratorPage() {
             </article>
           )}
         </output>
-      </form>
+      </Form>
     </Page>
   );
 }

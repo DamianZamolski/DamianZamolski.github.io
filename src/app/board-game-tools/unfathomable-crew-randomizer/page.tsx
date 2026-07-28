@@ -4,7 +4,6 @@ import { useAtom } from 'jotai';
 import { calculateCharactersVariance } from './calculateCharactersVariance';
 import {
   type ChangeEvent,
-  type SubmitEvent,
   Fragment,
   useCallback,
   useMemo,
@@ -16,6 +15,7 @@ import type { UnfathomableCharacter } from './UnfathomableCharacter';
 import { unfathomableCharacters } from './unfathomableCharacters';
 import { Page } from '@/components/Page';
 import { Checkbox } from '@/components/Checkbox';
+import { Form } from '@/components/Form';
 
 const playerCountAtom = atomWithStorage(
   'unfathomable-crew-randomizer-player-count',
@@ -86,25 +86,21 @@ export default function UnfathomableCrewRandomizerPage() {
     [setPlayerCount],
   );
 
-  const onRandomizeClick = useCallback(
-    (event: SubmitEvent) => {
-      event.preventDefault();
-      let newCharacters: Array<UnfathomableCharacter>;
-      let newVariance: number;
+  const onRandomizeClick = () => {
+    let newCharacters: Array<UnfathomableCharacter>;
+    let newVariance: number;
 
-      do {
-        newCharacters = shuffleArray(charactersPool).slice(0, playerCount);
-        newVariance = calculateCharactersVariance(newCharacters);
-      } while (newVariance > 0.5);
+    do {
+      newCharacters = shuffleArray(charactersPool).slice(0, playerCount);
+      newVariance = calculateCharactersVariance(newCharacters);
+    } while (newVariance > 0.5);
 
-      setResultCharacters(newCharacters);
-    },
-    [charactersPool, playerCount],
-  );
+    setResultCharacters(newCharacters);
+  };
 
   return (
     <Page>
-      <form onSubmit={onRandomizeClick}>
+      <Form onSubmit={onRandomizeClick}>
         <fieldset>
           <fieldset>
             <legend>Player Count</legend>
@@ -129,7 +125,7 @@ export default function UnfathomableCrewRandomizerPage() {
           </Checkbox>
         </fieldset>
         <button type='submit'>Randomize</button>
-      </form>
+      </Form>
       {resultCharacters.length > 0 && (
         <table>
           <thead>

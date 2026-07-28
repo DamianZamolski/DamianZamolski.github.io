@@ -8,6 +8,7 @@ import { Page } from '@/components/Page';
 import { shuffleArray } from '@/utils/shuffleArray';
 import type { GalacticEvent } from './GalacticEvent';
 import { galacticEvents } from './galacticEvents';
+import { Form } from '@/components/Form';
 
 const allEventIds = galacticEvents.map((event) => event.id);
 
@@ -63,7 +64,7 @@ export default function TwilightImperiumIvGalacticEventPickerPage() {
 
   return (
     <Page>
-      <form onSubmit={onDraw}>
+      <Form onSubmit={onDraw}>
         <details>
           <summary>Event pool ({pool.length} selected)</summary>
           {eventsBySource.map(({ source, events }) => (
@@ -108,7 +109,7 @@ export default function TwilightImperiumIvGalacticEventPickerPage() {
         <button type='submit' disabled={pool.length === 0}>
           Draw {effectiveDrawCount} event{effectiveDrawCount === 1 ? '' : 's'}
         </button>
-      </form>
+      </Form>
     </Page>
   );
 }

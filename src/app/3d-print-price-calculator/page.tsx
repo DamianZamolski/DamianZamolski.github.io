@@ -7,6 +7,7 @@ import { parseDurationString } from './parseDurationString';
 import { Page } from '@/components/Page';
 import { CopyButton } from '@/components/CopyButton';
 import type { Duration } from './Duration';
+import { Form } from '@/components/Form';
 
 const emptyDuration: Duration = { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
@@ -77,8 +78,8 @@ export default function PrintPriceCalculatorPage() {
   });
 
   const profit = (cost * markup) / 100;
-
   const price = cost + profit;
+  const formattedPrice = formatCurrency(price, currency);
 
   const onNumberChange = useCallback(
     (setter: (v: number) => void) => (e: ChangeEvent<HTMLInputElement>) =>
@@ -88,7 +89,7 @@ export default function PrintPriceCalculatorPage() {
 
   return (
     <Page>
-      <form>
+      <Form>
         <fieldset role='group'>
           <label>
             Material weight in grams
@@ -162,7 +163,7 @@ export default function PrintPriceCalculatorPage() {
             </select>
           </label>
         </fieldset>
-      </form>
+      </Form>
       <table>
         <tbody>
           <tr>
@@ -179,9 +180,7 @@ export default function PrintPriceCalculatorPage() {
           </tr>
         </tbody>
       </table>
-      <CopyButton value={formatCurrency(price, currency)}>
-        Copy price
-      </CopyButton>
+      <CopyButton label='Copy price' value={formattedPrice} />
     </Page>
   );
 }

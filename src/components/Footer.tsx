@@ -26,7 +26,13 @@ export function Footer() {
         target='_blank'
         rel='noopener noreferrer'
       >
-        <Image src='/bgg.png' alt='Powered by BGG' width={900} height={264} />
+        <Image
+          src='/bgg.png'
+          alt='Powered by BGG'
+          width={900}
+          height={264}
+          loading='eager'
+        />
       </a>
     </footer>
   );

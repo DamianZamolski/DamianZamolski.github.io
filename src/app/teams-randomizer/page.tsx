@@ -5,6 +5,7 @@ import { type ChangeEvent, useState } from 'react';
 import { Page } from '@/components/Page';
 import { CopyButton } from '@/components/CopyButton';
 import { splitPlayersIntoRandomTeams } from './splitPlayersIntoRandomTeams';
+import { Form } from '@/components/Form';
 
 const teamsCountAtom = atomWithStorage<number>('teams-randomizer-count', 2);
 const playersTextAtom = atomWithStorage<string>('teams-randomizer-players', '');
@@ -40,12 +41,7 @@ export default function TeamsRandomizerPage() {
 
   return (
     <Page>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          onSubmit();
-        }}
-      >
+      <Form onSubmit={onSubmit}>
         <label>
           Teams count:
           <input
@@ -62,7 +58,7 @@ export default function TeamsRandomizerPage() {
           className='no-resize'
         />
         <button type='submit'>Randomize</button>
-      </form>
+      </Form>
       {teams.length > 0 && (
         <>
           <ol>
@@ -70,9 +66,12 @@ export default function TeamsRandomizerPage() {
               <li key={`team-${teamIndex}`}>{team.join(' ')}</li>
             ))}
           </ol>
-          <CopyButton value={teams.map((team) => team.join(' ')).join('\n')}>
-            Copy teams
-          </CopyButton>
+          <CopyButton
+            value={teams
+              .map((team) => team.join(' '))
+              .map((teamString, teamIndex) => `${teamIndex + 1}. ${teamString}`)
+              .join('\n')}
+          />
         </>
       )}
     </Page>
