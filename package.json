@@ -7,7 +7,9 @@
     "dev": "next dev --turbopack",
     "lint": "prettier --write . && eslint --fix src && tsc --noEmit",
     "start": "next start",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:e2e": "playwright test --project=localhost-chromium --project=localhost-firefox --project=localhost-webkit",
+    "test:e2e:prod": "E2E_TARGET=prod playwright test --project=prod-smoke-chromium --project=prod-smoke-firefox --project=prod-smoke-webkit"
   },
   "dependencies": {
     "@picocss/pico": "^2.1.1",
@@ -23,6 +25,7 @@
     "@eslint/eslintrc": "^3.3.6",
     "@eslint/js": "^10.0.1",
     "@next/eslint-plugin-next": "^16.2.11",
+    "@playwright/test": "^1.62.0",
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/node": "^26.1.1",
     "@types/react": "^19.2.17",
@@ -34,6 +37,7 @@
     "eslint-plugin-unused-imports": "^4.4.1",
     "jsdom": "^30.0.0",
     "prettier": "^3.9.6",
+    "serve": "^14.2.6",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.65.0",
     "vitest": "^4.1.10"
