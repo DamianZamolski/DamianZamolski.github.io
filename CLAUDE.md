@@ -33,3 +33,17 @@ Next.js 16 static export site. Output goes to `docs/` (GitHub Pages). No server 
 1. Create `src/app/<tool-name>/page.tsx`
 2. Use `<Page slug="...">` as wrapper (add the slug→label entry to `src/titles.ts`)
 3. It auto-appears in parent directory's `TableOfContents`
+
+## Agent skills
+
+### Issue tracker
+
+Issues, PRDs, and `/wayfinder` maps live in this repo's GitHub Issues (via the `gh` CLI). See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five canonical triage roles map 1:1 to GitHub labels of the same name. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context repo. Read `CONTEXT.md` and `docs/adr/` before exploring (created lazily by `/domain-modeling`; proceed silently if absent). See `docs/agents/domain.md`.
