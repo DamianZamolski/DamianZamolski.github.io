@@ -2,7 +2,7 @@
 import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { usePathname, useRouter } from 'next/navigation';
-import { type SubmitEvent, useMemo } from 'react';
+import { useMemo } from 'react';
 import { Checkbox } from '@/components/Checkbox';
 import { Page } from '@/components/Page';
 import { shuffleArray } from '@/utils/shuffleArray';
@@ -56,8 +56,7 @@ export default function TwilightImperiumIvGalacticEventPickerPage() {
     );
   };
 
-  const onDraw = (event: SubmitEvent) => {
-    event.preventDefault();
+  const onDraw = () => {
     const drawnIds = shuffleArray([...pool]).slice(0, effectiveDrawCount);
     router.push(`${pathname}/share?events=${drawnIds.join(',')}`);
   };
