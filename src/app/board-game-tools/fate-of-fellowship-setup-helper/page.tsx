@@ -2,7 +2,6 @@
 import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { Fragment, useState } from 'react';
-import { Checkbox } from '@/components/Checkbox';
 import { Form } from '@/components/Form';
 import { Page } from '@/components/Page';
 import { pickSetup, type Setup } from './pickSetup';
@@ -13,25 +12,16 @@ const questCounts = [4, 5, 6];
 const playerCountAtom = atomWithStorage('fate-of-fellowship-player-count', 4);
 const questCountAtom = atomWithStorage('fate-of-fellowship-quest-count', 5);
 
-const includeDestroyTheRingAtom = atomWithStorage(
-  'fate-of-fellowship-include-destroy-the-ring',
-  true,
-);
-
 export default function FateOfFellowshipSetupHelperPage() {
   const [playerCount, setPlayerCount] = useAtom(playerCountAtom);
   const [questCount, setQuestCount] = useAtom(questCountAtom);
-
-  const [includeDestroyTheRing, setIncludeDestroyTheRing] = useAtom(
-    includeDestroyTheRingAtom,
-  );
 
   const [setup, setSetup] = useState<Setup | null>(null);
   const [hasPicked, setHasPicked] = useState(false);
 
   const onPick = () => {
     setHasPicked(true);
-    setSetup(pickSetup({ playerCount, questCount, includeDestroyTheRing }));
+    setSetup(pickSetup({ playerCount, questCount }));
   };
 
   return (
@@ -67,12 +57,6 @@ export default function FateOfFellowshipSetupHelperPage() {
             </Fragment>
           ))}
         </fieldset>
-        <Checkbox
-          checked={includeDestroyTheRing}
-          onChange={setIncludeDestroyTheRing}
-        >
-          Include Destroy the Ring quest
-        </Checkbox>
         <button type='submit'>Pick</button>
       </Form>
 

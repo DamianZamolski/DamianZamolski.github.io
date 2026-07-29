@@ -11,17 +11,15 @@ export type Setup = {
 export type PickSetupInput = {
   playerCount: number;
   questCount: number;
-  includeDestroyTheRing: boolean;
 };
 
 export function pickSetup({
   playerCount,
   questCount,
-  includeDestroyTheRing,
 }: PickSetupInput): Setup | null {
   const characterSlots = playerCount * 2;
 
-  const forcedQuests = includeDestroyTheRing ? [destroyTheRing] : [];
+  const forcedQuests = [destroyTheRing];
 
   const requiredCharacters = new Set<Character>(
     forcedQuests.flatMap((quest) => quest.requiredCharacters ?? []),
