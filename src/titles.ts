@@ -11,6 +11,7 @@ const titles: Record<string, string> = {
   '3d-print-price-calculator': '3D Print Price Calculator',
   'twilight-imperium-iv-galactic-event-picker':
     'Twilight Imperium IV Galactic Event Picker',
+  'fate-of-fellowship-setup-helper': 'Fate of Fellowship Setup Helper',
   share: 'Drawn Events',
 };
 

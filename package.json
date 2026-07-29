@@ -6,17 +6,14 @@
     "build": "pnpm lint && next build && touch docs/.nojekyll",
     "dev": "next dev --turbopack",
     "lint": "prettier --write . && eslint --fix src && tsc --noEmit",
-    "start": "next start",
-    "test": "vitest run",
-    "test:e2e": "playwright test --project=localhost-chromium --project=localhost-firefox --project=localhost-webkit",
-    "test:e2e:prod": "E2E_TARGET=prod playwright test --project=prod-smoke-chromium --project=prod-smoke-firefox --project=prod-smoke-webkit"
+    "start": "next start"
   },
   "dependencies": {
     "@picocss/pico": "^2.1.1",
     "axios": "^1.18.1",
     "jotai": "^2.20.2",
     "jspdf": "^4.2.1",
-    "next": "16.2.11",
+    "next": "16.2.12",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "zod": "^4.4.3"
@@ -24,22 +21,18 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.6",
     "@eslint/js": "^10.0.1",
-    "@next/eslint-plugin-next": "^16.2.11",
-    "@playwright/test": "^1.62.0",
+    "@next/eslint-plugin-next": "^16.2.12",
     "@total-typescript/ts-reset": "^0.6.1",
-    "@types/node": "^26.1.1",
+    "@types/node": "^26.1.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.5",
-    "eslint-config-next": "16.2.11",
+    "eslint-config-next": "16.2.12",
     "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-unused-imports": "^4.4.1",
-    "jsdom": "^30.0.0",
     "prettier": "^3.9.6",
-    "serve": "^14.2.6",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.65.0",
-    "vitest": "^4.1.10"
+    "typescript-eslint": "^8.65.0"
   }
 }

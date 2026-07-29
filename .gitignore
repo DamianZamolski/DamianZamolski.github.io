@@ -3,7 +3,3 @@ next-env.d.ts
 node_modules
 tsconfig.tsbuildinfo
 docs/dev
-test-results
-playwright-report
-blob-report
-playwright/.cache
