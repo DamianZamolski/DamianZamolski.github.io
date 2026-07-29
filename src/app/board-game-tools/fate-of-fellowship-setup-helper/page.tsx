@@ -1,9 +1,11 @@
 'use client';
 import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import { Form } from '@/components/Form';
 import { Page } from '@/components/Page';
+import { RadioGroup } from '@/components/RadioGroup';
+import { Radio } from '@/components/Radio';
 import { pickSetup, type Setup } from './pickSetup';
 
 const playerCounts = [1, 2, 3, 4, 5];
@@ -27,36 +29,24 @@ export default function FateOfFellowshipSetupHelperPage() {
   return (
     <Page>
       <Form onSubmit={onPick}>
-        <fieldset>
-          <legend>Players</legend>
+        <RadioGroup
+          label='Players'
+          value={playerCount}
+          onChange={setPlayerCount}
+        >
           {playerCounts.map((count) => (
-            <Fragment key={count}>
-              <input
-                id={`player-count-${count}`}
-                type='radio'
-                name='player-count'
-                checked={playerCount === count}
-                onChange={() => setPlayerCount(count)}
-              />
-              <label htmlFor={`player-count-${count}`}>{count}</label>
-            </Fragment>
+            <Radio key={count} value={count} />
           ))}
-        </fieldset>
-        <fieldset>
-          <legend>Quests to pick</legend>
+        </RadioGroup>
+        <RadioGroup
+          label='Quests to pick'
+          value={questCount}
+          onChange={setQuestCount}
+        >
           {questCounts.map((count) => (
-            <Fragment key={count}>
-              <input
-                id={`quest-count-${count}`}
-                type='radio'
-                name='quest-count'
-                checked={questCount === count}
-                onChange={() => setQuestCount(count)}
-              />
-              <label htmlFor={`quest-count-${count}`}>{count}</label>
-            </Fragment>
+            <Radio key={count} value={count} />
           ))}
-        </fieldset>
+        </RadioGroup>
         <button type='submit'>Pick</button>
       </Form>
 

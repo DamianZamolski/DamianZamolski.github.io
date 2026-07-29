@@ -2,13 +2,7 @@
 import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { calculateCharactersVariance } from './calculateCharactersVariance';
-import {
-  type ChangeEvent,
-  Fragment,
-  useCallback,
-  useMemo,
-  useState,
-} from 'react';
+import { useMemo, useState } from 'react';
 import { emptyCharacter } from './emptyCharacter';
 import { shuffleArray } from '@/utils/shuffleArray';
 import type { UnfathomableCharacter } from './UnfathomableCharacter';
@@ -16,6 +10,8 @@ import { unfathomableCharacters } from './unfathomableCharacters';
 import { Page } from '@/components/Page';
 import { Checkbox } from '@/components/Checkbox';
 import { Form } from '@/components/Form';
+import { RadioGroup } from '@/components/RadioGroup';
+import { Radio } from '@/components/Radio';
 
 const playerCountAtom = atomWithStorage(
   'unfathomable-crew-randomizer-player-count',
@@ -79,13 +75,6 @@ export default function UnfathomableCrewRandomizerPage() {
     [captain.name, keeperOfTheTome.name],
   );
 
-  const onPlayerCountChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setPlayerCount(Number(event.target.value));
-    },
-    [setPlayerCount],
-  );
-
   const onRandomizeClick = () => {
     let newCharacters: Array<UnfathomableCharacter>;
     let newVariance: number;
@@ -102,21 +91,15 @@ export default function UnfathomableCrewRandomizerPage() {
     <Page>
       <Form onSubmit={onRandomizeClick}>
         <fieldset>
-          <fieldset>
-            <legend>Player Count</legend>
+          <RadioGroup
+            label='Player Count'
+            value={playerCount}
+            onChange={setPlayerCount}
+          >
             {[3, 4, 5, 6].map((value) => (
-              <Fragment key={value}>
-                <input
-                  id={`player-count-${value}`}
-                  type='radio'
-                  value={value}
-                  checked={playerCount === value}
-                  onChange={onPlayerCountChange}
-                />
-                <label htmlFor={`player-count-${value}`}>{value}</label>
-              </Fragment>
+              <Radio key={value} value={value} />
             ))}
-          </fieldset>
+          </RadioGroup>
           <Checkbox
             checked={shouldIncludeFromTheAbyssCharacters}
             onChange={setShouldIncludeFromTheAbyssCharacters}

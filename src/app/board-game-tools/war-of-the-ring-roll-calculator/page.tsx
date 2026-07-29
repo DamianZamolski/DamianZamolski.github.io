@@ -1,12 +1,14 @@
 'use client';
 import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
-import { type ChangeEvent, Fragment, useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { calculateExpectedValue } from './calculateExpectedValue';
 import { calculateAtLeastSuccessProbabilities } from './calculateAtLeastSuccessProbabilities';
 import type { SuccessProbabilities } from './SuccessProbabilities';
 import { Page } from '@/components/Page';
 import { Form } from '@/components/Form';
+import { RadioGroup } from '@/components/RadioGroup';
+import { Radio } from '@/components/Radio';
 
 const rollsAtom = atomWithStorage<number>('wotr-rolls', 5);
 
@@ -54,8 +56,7 @@ export default function WarOfTheRingRollCalculatorPage() {
   );
 
   const onRollsChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      const newValue = Number(event.target.value);
+    (newValue: number) => {
       setRolls(newValue);
 
       if (newValue < rerolls) {
@@ -65,78 +66,38 @@ export default function WarOfTheRingRollCalculatorPage() {
     [rerolls, setRolls, setRerolls],
   );
 
-  const handleRadioChange = useCallback(
-    (setter: (value: number) => void) =>
-      (event: ChangeEvent<HTMLInputElement>) => {
-        setter(Number(event.target.value));
-      },
-    [],
-  );
-
   return (
     <Page>
       <Form>
-        <fieldset>
-          <legend>Rolls</legend>
+        <RadioGroup label='Rolls' value={rolls} onChange={onRollsChange}>
           {Array.from({ length: 5 }, (_, i) => i + 1).map((value) => (
-            <Fragment key={value}>
-              <input
-                id={`rolls-${value}`}
-                type='radio'
-                value={value}
-                checked={rolls === value}
-                onChange={onRollsChange}
-              />
-              <label htmlFor={`rolls-${value}`}>{value}</label>
-            </Fragment>
+            <Radio key={value} value={value} />
           ))}
-        </fieldset>
-        <fieldset>
-          <legend>Roll Success Value</legend>
+        </RadioGroup>
+        <RadioGroup
+          label='Roll Success Value'
+          value={rollSuccessValue}
+          onChange={setRollSuccessValue}
+        >
           {Array.from({ length: 5 }, (_, i) => i + 2).map((value) => (
-            <Fragment key={value}>
-              <input
-                id={`roll-success-${value}`}
-                type='radio'
-                value={value}
-                checked={rollSuccessValue === value}
-                onChange={handleRadioChange(setRollSuccessValue)}
-              />
-              <label htmlFor={`roll-success-${value}`}>{value}</label>
-            </Fragment>
+            <Radio key={value} value={value} />
           ))}
-        </fieldset>
-        <fieldset>
-          <legend>Rerolls</legend>
+        </RadioGroup>
+        <RadioGroup label='Rerolls' value={rerolls} onChange={setRerolls}>
           {Array.from({ length: 6 }, (_, i) => i).map((value) => (
-            <Fragment key={value}>
-              <input
-                id={`rerolls-${value}`}
-                type='radio'
-                value={value}
-                checked={rerolls === value}
-                onChange={handleRadioChange(setRerolls)}
-                disabled={value > rolls}
-              />
-              <label htmlFor={`rerolls-${value}`}>{value}</label>
-            </Fragment>
+            <Radio key={value} value={value} disabled={value > rolls} />
           ))}
-        </fieldset>
-        <fieldset disabled={rerolls === 0}>
-          <legend>Reroll Success Value</legend>
+        </RadioGroup>
+        <RadioGroup
+          label='Reroll Success Value'
+          value={rerollSuccessValue}
+          onChange={setRerollSuccessValue}
+          disabled={rerolls === 0}
+        >
           {Array.from({ length: 5 }, (_, i) => i + 2).map((value) => (
-            <Fragment key={value}>
-              <input
-                id={`reroll-success-${value}`}
-                type='radio'
-                value={value}
-                checked={rerollSuccessValue === value}
-                onChange={handleRadioChange(setRerollSuccessValue)}
-              />
-              <label htmlFor={`reroll-success-${value}`}>{value}</label>
-            </Fragment>
+            <Radio key={value} value={value} />
           ))}
-        </fieldset>
+        </RadioGroup>
       </Form>
       {Object.keys(probabilities).length > 0 && (
         <>

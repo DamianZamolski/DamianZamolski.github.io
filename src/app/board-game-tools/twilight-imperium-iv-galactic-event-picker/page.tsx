@@ -9,6 +9,8 @@ import { shuffleArray } from '@/utils/shuffleArray';
 import type { GalacticEvent } from './GalacticEvent';
 import { galacticEvents } from './galacticEvents';
 import { Form } from '@/components/Form';
+import { RadioGroup } from '@/components/RadioGroup';
+import { Radio } from '@/components/Radio';
 
 const allEventIds = galacticEvents.map((event) => event.id);
 
@@ -88,23 +90,15 @@ export default function TwilightImperiumIvGalacticEventPickerPage() {
             </fieldset>
           ))}
         </details>
-        <label>
-          Draw count
-          <input
-            type='number'
-            min={1}
-            max={Math.max(1, pool.length)}
-            value={drawCount}
-            onChange={(event) =>
-              setDrawCount(
-                Math.min(
-                  Math.max(1, Number(event.target.value) || 1),
-                  Math.max(1, pool.length),
-                ),
-              )
-            }
-          />
-        </label>
+        <RadioGroup
+          label='Draw count'
+          value={drawCount}
+          onChange={setDrawCount}
+        >
+          {[1, 2, 3].map((value) => (
+            <Radio key={value} value={value} />
+          ))}
+        </RadioGroup>
         <button type='submit' disabled={pool.length === 0}>
           Draw {effectiveDrawCount} event{effectiveDrawCount === 1 ? '' : 's'}
         </button>
