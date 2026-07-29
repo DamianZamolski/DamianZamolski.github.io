@@ -70,16 +70,7 @@ export default function FateOfFellowshipSetupHelperPage() {
             <h2>Quests</h2>
             <ul>
               {setup.quests.map((quest) => (
-                <li key={quest.name}>
-                  {quest.name}
-                  {quest.requiredCharacters &&
-                    quest.requiredCharacters.length > 0 && (
-                      <small>
-                        {' '}
-                        (requires {quest.requiredCharacters.join(', ')})
-                      </small>
-                    )}
-                </li>
+                <li key={quest.name}>{quest.name}</li>
               ))}
             </ul>
           </section>
