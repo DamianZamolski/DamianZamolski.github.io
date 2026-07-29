@@ -24,7 +24,7 @@ export function pickSetup({
   const forcedQuests = includeDestroyTheRing ? [destroyTheRing] : [];
 
   const requiredCharacters = new Set<Character>(
-    forcedQuests.flatMap((quest) => quest.requiredCharacters),
+    forcedQuests.flatMap((quest) => quest.requiredCharacters ?? []),
   );
 
   if (requiredCharacters.size > characterSlots) {
@@ -44,14 +44,14 @@ export function pickSetup({
 
     const withCandidate = new Set(requiredCharacters);
 
-    quest.requiredCharacters.forEach((character) =>
+    (quest.requiredCharacters ?? []).forEach((character) =>
       withCandidate.add(character),
     );
 
     if (withCandidate.size <= characterSlots) {
       selectedQuests.push(quest);
 
-      quest.requiredCharacters.forEach((character) =>
+      (quest.requiredCharacters ?? []).forEach((character) =>
         requiredCharacters.add(character),
       );
     }

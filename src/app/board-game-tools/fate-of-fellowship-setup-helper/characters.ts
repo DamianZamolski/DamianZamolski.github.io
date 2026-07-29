@@ -6,10 +6,10 @@ export const characters = [
   'Gimli',
   'Legolas',
   'Galadriel',
-  'Eowin',
+  'Éowyn',
   'Boromir',
   'Faramir',
-  'Eomer',
+  'Éomer',
   'Gollum',
   'Arwen',
 ] as const;

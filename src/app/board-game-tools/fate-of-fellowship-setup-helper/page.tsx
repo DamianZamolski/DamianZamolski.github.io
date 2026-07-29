@@ -88,12 +88,13 @@ export default function FateOfFellowshipSetupHelperPage() {
               {setup.quests.map((quest) => (
                 <li key={quest.name}>
                   {quest.name}
-                  {quest.requiredCharacters.length > 0 && (
-                    <small>
-                      {' '}
-                      (requires {quest.requiredCharacters.join(', ')})
-                    </small>
-                  )}
+                  {quest.requiredCharacters &&
+                    quest.requiredCharacters.length > 0 && (
+                      <small>
+                        {' '}
+                        (requires {quest.requiredCharacters.join(', ')})
+                      </small>
+                    )}
                 </li>
               ))}
             </ul>
