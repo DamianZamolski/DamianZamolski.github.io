@@ -69,35 +69,30 @@ export default function WarOfTheRingRollCalculatorPage() {
   return (
     <Page>
       <Form>
-        <RadioGroup label='Rolls' value={rolls} onChange={onRollsChange}>
-          {Array.from({ length: 5 }, (_, i) => i + 1).map((value) => (
-            <Radio key={value} value={value} />
-          ))}
-        </RadioGroup>
+        <RadioGroup
+          label='Rolls'
+          options={[1, 2, 3, 4, 5]}
+          value={rolls}
+          onChange={onRollsChange}
+        />
         <RadioGroup
           label='Roll Success Value'
+          options={[2, 3, 4, 5, 6]}
           value={rollSuccessValue}
           onChange={setRollSuccessValue}
-        >
-          {Array.from({ length: 5 }, (_, i) => i + 2).map((value) => (
-            <Radio key={value} value={value} />
-          ))}
-        </RadioGroup>
+        />
         <RadioGroup label='Rerolls' value={rerolls} onChange={setRerolls}>
-          {Array.from({ length: 6 }, (_, i) => i).map((value) => (
+          {[0, 1, 2, 3, 4, 5].map((value) => (
             <Radio key={value} value={value} disabled={value > rolls} />
           ))}
         </RadioGroup>
         <RadioGroup
           label='Reroll Success Value'
+          options={[2, 3, 4, 5, 6]}
           value={rerollSuccessValue}
           onChange={setRerollSuccessValue}
           disabled={rerolls === 0}
-        >
-          {Array.from({ length: 5 }, (_, i) => i + 2).map((value) => (
-            <Radio key={value} value={value} />
-          ))}
-        </RadioGroup>
+        />
       </Form>
       {Object.keys(probabilities).length > 0 && (
         <>

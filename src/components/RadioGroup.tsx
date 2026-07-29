@@ -1,19 +1,26 @@
 import type { ReactNode } from 'react';
 import { RadioGroupContext } from './radioGroupContext';
+import { Radio } from './Radio';
 
-export function RadioGroup<T extends string | number>({
-  label,
-  value,
-  onChange,
-  disabled,
-  children,
-}: {
+type RadioGroupOption = string | number;
+
+type RadioGroupProps<T extends RadioGroupOption> = {
   label: string;
   value?: T;
   onChange: (newValue: T) => void;
   disabled?: boolean;
-  children: ReactNode;
-}) {
+  children?: ReactNode;
+  options?: Array<T>;
+};
+
+export function RadioGroup<T extends RadioGroupOption>({
+  label,
+  value,
+  onChange,
+  disabled,
+  options,
+  children,
+}: RadioGroupProps<T>) {
   const name = label.toLowerCase().replace(/\s+/g, '-');
 
   return (
@@ -26,7 +33,9 @@ export function RadioGroup<T extends string | number>({
     >
       <fieldset disabled={disabled}>
         <legend>{label}</legend>
-        {children}
+        {children
+          ? children
+          : options?.map((option) => <Radio key={option} value={option} />)}
       </fieldset>
     </RadioGroupContext.Provider>
   );
