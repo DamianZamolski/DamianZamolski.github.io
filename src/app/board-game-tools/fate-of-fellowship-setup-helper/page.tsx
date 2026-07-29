@@ -1,7 +1,7 @@
 'use client';
 import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Checkbox } from '@/components/Checkbox';
 import { Form } from '@/components/Form';
 import { Page } from '@/components/Page';
@@ -40,29 +40,31 @@ export default function FateOfFellowshipSetupHelperPage() {
         <fieldset>
           <legend>Players</legend>
           {playerCounts.map((count) => (
-            <label key={count}>
+            <Fragment key={count}>
               <input
+                id={`player-count-${count}`}
                 type='radio'
                 name='player-count'
                 checked={playerCount === count}
                 onChange={() => setPlayerCount(count)}
               />
-              {count}
-            </label>
+              <label htmlFor={`player-count-${count}`}>{count}</label>
+            </Fragment>
           ))}
         </fieldset>
         <fieldset>
           <legend>Quests to pick</legend>
           {questCounts.map((count) => (
-            <label key={count}>
+            <Fragment key={count}>
               <input
+                id={`quest-count-${count}`}
                 type='radio'
                 name='quest-count'
                 checked={questCount === count}
                 onChange={() => setQuestCount(count)}
               />
-              {count}
-            </label>
+              <label htmlFor={`quest-count-${count}`}>{count}</label>
+            </Fragment>
           ))}
         </fieldset>
         <Checkbox
