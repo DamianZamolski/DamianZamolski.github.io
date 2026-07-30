@@ -1,2 +1,2 @@
-:HL["/_next/static/chunks/3ql585uc_cljk.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"board-game-tools","param":null,"prefetchHints":0,"slots":{"children":{"name":"war-of-the-ring-roll-calculator","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"CkWp594itSwDjHI6ikz2Y"}
+:HL["/_next/static/chunks/0t3vq91jaqpir.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"board-game-tools","param":null,"prefetchHints":0,"slots":{"children":{"name":"war-of-the-ring-roll-calculator","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"Cz95PFy87d6MMXoKKku85"}

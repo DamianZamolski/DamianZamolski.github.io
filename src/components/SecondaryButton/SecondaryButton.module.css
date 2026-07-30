@@ -3,3 +3,12 @@
   border-color: var(--pico-secondary-border);
   color: var(--pico-secondary-inverse);
 }
+
+.secondaryButton:hover {
+  background: var(--pico-secondary-hover-background);
+  border-color: var(--pico-secondary-hover-border);
+}
+
+[role='group'] > .secondaryButton {
+  flex: 0 0 auto;
+}
