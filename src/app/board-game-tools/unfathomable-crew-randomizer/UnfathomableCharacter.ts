@@ -1,6 +1,6 @@
 export type UnfathomableCharacter = {
   name: string;
-  expansion?: 'from-the-abyss';
+  expansion?: 'From the Abyss';
   captain: number;
   keeperOfTheTome: number;
   influence?: number;
