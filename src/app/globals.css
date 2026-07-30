@@ -3,6 +3,10 @@ body > footer {
   max-width: 60ch;
 }
 
+button {
+  width: 100%;
+}
+
 button.secondary {
   background: var(--pico-secondary-background);
   border-color: var(--pico-secondary-border);
@@ -62,12 +66,4 @@ footer {
 .bold th,
 .bold td {
   font-weight: bold;
-}
-
-.bgg {
-  max-width: 33%;
-}
-
-.full-width {
-  width: 100%;
 }

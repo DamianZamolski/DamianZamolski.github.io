@@ -14,6 +14,8 @@ import { corsHttp } from '@/utils/corsHttp';
 import { createCache } from '@/utils/createCache';
 import type { ValueOrError } from '@/utils/ValueOrError';
 import { Form } from '@/components/Form';
+import { SubmitButton } from '@/components/SubmitButton';
+import { Button } from '@/components/Button';
 
 const deckLinkRegExp = /https:\/\/swudb\.com\/deck\/\S+/g;
 
@@ -278,20 +280,15 @@ export default function StarWarsUnlimitedProxyGeneratorPage() {
           <PrintSettings />
 
           <div role='group'>
-            <button
-              type='submit'
+            <SubmitButton
               disabled={deckUrls.length === 0 || isFetching}
               aria-busy={isFetching}
             >
               Download
-            </button>
-            <button
-              type='button'
-              className='secondary'
-              onClick={() => jsonCache.clear()}
-            >
+            </SubmitButton>
+            <Button className='secondary' onClick={() => jsonCache.clear()}>
               Clear cache
-            </button>
+            </Button>
           </div>
         </fieldset>
 

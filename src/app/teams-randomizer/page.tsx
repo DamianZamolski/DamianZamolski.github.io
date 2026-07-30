@@ -6,6 +6,7 @@ import { Page } from '@/components/Page';
 import { CopyButton } from '@/components/CopyButton';
 import { splitPlayersIntoRandomTeams } from './splitPlayersIntoRandomTeams';
 import { Form } from '@/components/Form';
+import { SubmitButton } from '@/components/SubmitButton';
 
 const teamsCountAtom = atomWithStorage<number>('teams-randomizer-count', 2);
 const playersTextAtom = atomWithStorage<string>('teams-randomizer-players', '');
@@ -57,7 +58,7 @@ export default function TeamsRandomizerPage() {
           rows={playersTextRows.length + 1}
           className='no-resize'
         />
-        <button type='submit'>Randomize</button>
+        <SubmitButton>Randomize</SubmitButton>
       </Form>
       {teams.length > 0 && (
         <>

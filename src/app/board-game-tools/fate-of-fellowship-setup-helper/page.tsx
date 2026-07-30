@@ -6,6 +6,7 @@ import { Form } from '@/components/Form';
 import { Page } from '@/components/Page';
 import { RadioGroup } from '@/components/RadioGroup';
 import { Radio } from '@/components/Radio';
+import { SubmitButton } from '@/components/SubmitButton';
 import { pickSetup, type Setup } from './pickSetup';
 
 const playerCounts = [1, 2, 3, 4, 5];
@@ -47,7 +48,7 @@ export default function FateOfFellowshipSetupHelperPage() {
             <Radio key={count} value={count} />
           ))}
         </RadioGroup>
-        <button type='submit'>Pick</button>
+        <SubmitButton>Pick</SubmitButton>
       </Form>
 
       {hasPicked && setup === null && (

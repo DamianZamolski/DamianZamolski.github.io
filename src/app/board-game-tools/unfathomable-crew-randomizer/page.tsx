@@ -12,6 +12,7 @@ import { Checkbox } from '@/components/Checkbox';
 import { Form } from '@/components/Form';
 import { RadioGroup } from '@/components/RadioGroup';
 import { Radio } from '@/components/Radio';
+import { SubmitButton } from '@/components/SubmitButton';
 
 const groupOrder = ['Base', 'From the Abyss'] as const;
 
@@ -164,9 +165,9 @@ export default function UnfathomableCrewRandomizerPage() {
             ))}
           </details>
         </fieldset>
-        <button type='submit' disabled={pool.length < playerCount}>
+        <SubmitButton disabled={pool.length < playerCount}>
           Randomize
-        </button>
+        </SubmitButton>
       </Form>
       {resultCharacters.length > 0 && (
         <table>

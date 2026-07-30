@@ -14,6 +14,8 @@ import { generateProxyPdf } from '@/utils/generateProxyPdf';
 import { createCache } from '@/utils/createCache';
 import type { ValueOrError } from '@/utils/ValueOrError';
 import { Form } from '@/components/Form';
+import { SubmitButton } from '@/components/SubmitButton';
+import { Button } from '@/components/Button';
 
 const deckLinkRegExp =
   /https:\/\/arkhamdb\.com\/(?:deck|decklist)\/view\/(\d+)/g;
@@ -388,20 +390,15 @@ export default function ArkhamHorrorProxyGeneratorPage() {
           <PrintSettings />
 
           <div role='group'>
-            <button
-              type='submit'
+            <SubmitButton
               disabled={deckIds.length === 0 || isFetching}
               aria-busy={isFetching}
             >
               Download
-            </button>
-            <button
-              type='button'
-              className='secondary'
-              onClick={() => jsonCache.clear()}
-            >
+            </SubmitButton>
+            <Button className='secondary' onClick={() => jsonCache.clear()}>
               Clear cache
-            </button>
+            </Button>
           </div>
         </fieldset>
 

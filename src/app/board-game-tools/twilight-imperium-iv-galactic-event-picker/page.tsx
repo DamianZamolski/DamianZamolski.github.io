@@ -11,6 +11,7 @@ import { galacticEvents } from './galacticEvents';
 import { Form } from '@/components/Form';
 import { RadioGroup } from '@/components/RadioGroup';
 import { Radio } from '@/components/Radio';
+import { SubmitButton } from '@/components/SubmitButton';
 
 const allEventIds = galacticEvents.map((event) => event.id);
 
@@ -99,9 +100,9 @@ export default function TwilightImperiumIvGalacticEventPickerPage() {
             <Radio key={value} value={value} />
           ))}
         </RadioGroup>
-        <button type='submit' disabled={pool.length === 0}>
+        <SubmitButton disabled={pool.length === 0}>
           Draw {effectiveDrawCount} event{effectiveDrawCount === 1 ? '' : 's'}
-        </button>
+        </SubmitButton>
       </Form>
     </Page>
   );

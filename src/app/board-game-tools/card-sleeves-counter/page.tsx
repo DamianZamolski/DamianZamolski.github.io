@@ -8,6 +8,8 @@ import { fetchGames } from './fetchGames';
 import type { GameData } from './GameData';
 import { findGameIds } from './findGameIds';
 import { Form } from '@/components/Form';
+import { SubmitButton } from '@/components/SubmitButton';
+import { Button } from '@/components/Button';
 
 const textAtom = atomWithStorage('sleeves-text', '');
 
@@ -142,16 +144,15 @@ export default function CardSleevesCounterPage() {
           </label>
 
           <div role='group'>
-            <button
-              type='submit'
+            <SubmitButton
               disabled={uniqueGameIds.length === 0 || isFetching}
               aria-busy={isFetching}
             >
               Count sleeves
-            </button>
-            <button type='button' className='secondary' onClick={clearCache}>
+            </SubmitButton>
+            <Button className='secondary' onClick={clearCache}>
               Clear cache
-            </button>
+            </Button>
           </div>
         </fieldset>
 

@@ -1,10 +1,10 @@
-import Image from 'next/image';
+import { BggBanner } from './BggBanner/BggBanner';
 
 const supportLinks = [
   { label: 'revolut', href: 'https://revolut.me/damianzamolski' },
   { label: 'buymeacoffee', href: 'https://buymeacoffee.com/damianzamolski' },
   { label: 'paypal', href: 'https://www.paypal.com/paypalme/damianzamolski' },
-];
+] as const;
 
 export function Footer() {
   return (
@@ -20,20 +20,7 @@ export function Footer() {
           </span>
         ))}
       </small>
-      <a
-        className='bgg'
-        href='https://boardgamegeek.com'
-        target='_blank'
-        rel='noopener noreferrer'
-      >
-        <Image
-          src='/bgg.png'
-          alt='Powered by BGG'
-          width={900}
-          height={264}
-          loading='eager'
-        />
-      </a>
+      <BggBanner />
     </footer>
   );
 }

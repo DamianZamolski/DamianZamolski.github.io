@@ -1,0 +1,5 @@
+.secondaryButton {
+  background: var(--pico-secondary-background);
+  border-color: var(--pico-secondary-border);
+  color: var(--pico-secondary-inverse);
+}

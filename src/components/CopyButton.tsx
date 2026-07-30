@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { Button } from './Button';
 
 export function CopyButton({
   value,
@@ -19,13 +20,8 @@ export function CopyButton({
   };
 
   return (
-    <button
-      type='button'
-      onClick={onClick}
-      disabled={copied}
-      className='full-width'
-    >
+    <Button onClick={onClick} disabled={copied}>
       {copied ? copiedLabel : label}
-    </button>
+    </Button>
   );
 }
