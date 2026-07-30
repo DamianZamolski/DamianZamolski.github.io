@@ -9,7 +9,7 @@ import type { GameData } from './GameData';
 import { findGameIds } from './findGameIds';
 import { Form } from '@/components/Form';
 import { SubmitButton } from '@/components/SubmitButton';
-import { Button } from '@/components/Button';
+import { SecondaryButton } from '@/components/SecondaryButton/SecondaryButton';
 
 const textAtom = atomWithStorage('sleeves-text', '');
 
@@ -150,9 +150,7 @@ export default function CardSleevesCounterPage() {
             >
               Count sleeves
             </SubmitButton>
-            <Button className='secondary' onClick={clearCache}>
-              Clear cache
-            </Button>
+            <SecondaryButton onClick={clearCache}>Clear cache</SecondaryButton>
           </div>
         </fieldset>
 

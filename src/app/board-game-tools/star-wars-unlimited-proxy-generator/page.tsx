@@ -15,7 +15,7 @@ import { createCache } from '@/utils/createCache';
 import type { ValueOrError } from '@/utils/ValueOrError';
 import { Form } from '@/components/Form';
 import { SubmitButton } from '@/components/SubmitButton';
-import { Button } from '@/components/Button';
+import { SecondaryButton } from '@/components/SecondaryButton/SecondaryButton';
 
 const deckLinkRegExp = /https:\/\/swudb\.com\/deck\/\S+/g;
 
@@ -286,9 +286,9 @@ export default function StarWarsUnlimitedProxyGeneratorPage() {
             >
               Download
             </SubmitButton>
-            <Button className='secondary' onClick={() => jsonCache.clear()}>
+            <SecondaryButton onClick={() => jsonCache.clear()}>
               Clear cache
-            </Button>
+            </SecondaryButton>
           </div>
         </fieldset>
 
