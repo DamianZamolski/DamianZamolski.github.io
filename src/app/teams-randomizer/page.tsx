@@ -1,5 +1,4 @@
 'use client';
-import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { type ChangeEvent, useState } from 'react';
 import { Page } from '@/components/Page';
@@ -7,9 +6,8 @@ import { CopyButton } from '@/components/CopyButton';
 import { splitPlayersIntoRandomTeams } from './splitPlayersIntoRandomTeams';
 import { Form } from '@/components/Form';
 import { SubmitButton } from '@/components/SubmitButton';
-
-const teamsCountAtom = atomWithStorage<number>('teams-randomizer-count', 2);
-const playersTextAtom = atomWithStorage<string>('teams-randomizer-players', '');
+import { teamsCountAtom } from './teamsCountAtom';
+import { playersTextAtom } from './playersTextAtom';
 
 export default function TeamsRandomizerPage() {
   const [teamsCount, setTeamsCount] = useAtom(teamsCountAtom);

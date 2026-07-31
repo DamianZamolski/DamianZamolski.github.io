@@ -1,5 +1,4 @@
 'use client';
-import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { calculateCharactersVariance } from './calculateCharactersVariance';
 import { useMemo, useState } from 'react';
@@ -13,31 +12,10 @@ import { Form } from '@/components/Form';
 import { RadioGroup } from '@/components/RadioGroup';
 import { Radio } from '@/components/Radio';
 import { SubmitButton } from '@/components/SubmitButton';
-
-const groupOrder = ['Base', 'From the Abyss'] as const;
-
-const charactersByGroup = groupOrder.map((group) => ({
-  group,
-  characters: unfathomableCharacters
-    .filter((character) => (character.expansion ?? 'Base') === group)
-    .sort((a, b) => a.name.localeCompare(b.name)),
-}));
-
-const allCharacterNames = unfathomableCharacters.map(
-  (character) => character.name,
-);
-
-const poolAtom = atomWithStorage<Array<string>>(
-  'unfathomable-crew-randomizer-character-pool',
-  allCharacterNames,
-);
-
-const playerCountAtom = atomWithStorage(
-  'unfathomable-crew-randomizer-player-count',
-  3,
-);
-
-const maxRandomizeAttempts = 1_000_000;
+import { charactersByGroup } from './charactersByGroup';
+import { poolAtom } from './poolAtom';
+import { playerCountAtom } from './playerCountAtom';
+import { maxRandomizeAttempts } from './maxRandomizeAttempts';
 
 export default function UnfathomableCrewRandomizerPage() {
   const [playerCount, setPlayerCount] = useAtom(playerCountAtom);

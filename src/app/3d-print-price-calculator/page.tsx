@@ -1,5 +1,4 @@
 'use client';
-import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { type ChangeEvent, useCallback, useMemo } from 'react';
 import { estimatePrintCost } from './estimatePrintCost';
@@ -8,38 +7,15 @@ import { Page } from '@/components/Page';
 import { CopyButton } from '@/components/CopyButton';
 import type { Duration } from './Duration';
 import { Form } from '@/components/Form';
-
-const emptyDuration: Duration = { days: 0, hours: 0, minutes: 0, seconds: 0 };
-
-const materialWeightAtom = atomWithStorage<number>(
-  'print-price-material-weight',
-  1000,
-);
-
-const materialCostPerUnitAtom = atomWithStorage<number>(
-  'print-price-material-cost-per-unit',
-  40,
-);
-
-const durationStringAtom = atomWithStorage<string>(
-  'print-price-duration',
-  '1h',
-);
-
-const hourlyRateAtom = atomWithStorage<number>('print-price-hourly-rate', 0.5);
-const markupAtom = atomWithStorage<number>('print-price-markup', 100);
-const currencyAtom = atomWithStorage<string>('print-price-currency', 'zł');
-
-const currencies = ['zł', '$', '€', '£', '¥', 'CHF', 'SEK'] as const;
-const prefixSymbols = new Set(['$', '€', '£', '¥']);
-
-function formatCurrency(value: number, symbol: string): string {
-  const formatted = value.toFixed(2);
-
-  return prefixSymbols.has(symbol)
-    ? `${symbol}${formatted}`
-    : `${formatted} ${symbol}`;
-}
+import { emptyDuration } from './emptyDuration';
+import { materialWeightAtom } from './materialWeightAtom';
+import { materialCostPerUnitAtom } from './materialCostPerUnitAtom';
+import { durationStringAtom } from './durationStringAtom';
+import { hourlyRateAtom } from './hourlyRateAtom';
+import { markupAtom } from './markupAtom';
+import { currencyAtom } from './currencyAtom';
+import { currencies } from './currencies';
+import { formatCurrency } from './formatCurrency';
 
 export default function PrintPriceCalculatorPage() {
   const [materialWeight, setMaterialWeight] = useAtom(materialWeightAtom);

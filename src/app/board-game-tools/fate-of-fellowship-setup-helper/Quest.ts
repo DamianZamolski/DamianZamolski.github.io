@@ -1,4 +1,4 @@
-import type { Character } from './characters';
+import type { Character } from './Character';
 
 export type Quest = {
   name: string;

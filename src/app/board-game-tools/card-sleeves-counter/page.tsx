@@ -1,30 +1,18 @@
 'use client';
-import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Page } from '@/components/Page';
-import { createCache } from '@/utils/createCache';
 import { fetchGames } from './fetchGames';
 import type { GameData } from './GameData';
 import { findGameIds } from './findGameIds';
 import { Form } from '@/components/Form';
 import { SubmitButton } from '@/components/SubmitButton';
 import { SecondaryButton } from '@/components/SecondaryButton/SecondaryButton';
-
-const textAtom = atomWithStorage('sleeves-text', '');
-
-const jsonCache = createCache<unknown>('sleeves-json');
-const textCache = createCache<string>('sleeves-text-cache');
-
-type Status =
-  | { kind: 'idle' }
-  | { kind: 'fetching-games'; done: number; total: number }
-  | {
-      kind: 'results';
-      games: Map<string, GameData>;
-      failedIds: ReadonlyArray<string>;
-    }
-  | { kind: 'error'; message: string; ids?: ReadonlyArray<string> };
+import { Group } from '@/components/Group';
+import { textAtom } from './textAtom';
+import { jsonCache } from './jsonCache';
+import { textCache } from './textCache';
+import type { Status } from './Status';
 
 export default function CardSleevesCounterPage() {
   const [text, setText] = useAtom(textAtom);
@@ -143,7 +131,7 @@ export default function CardSleevesCounterPage() {
             </small>
           </label>
 
-          <div role='group'>
+          <Group>
             <SubmitButton
               disabled={uniqueGameIds.length === 0 || isFetching}
               aria-busy={isFetching}
@@ -151,7 +139,7 @@ export default function CardSleevesCounterPage() {
               Count sleeves
             </SubmitButton>
             <SecondaryButton onClick={clearCache}>Clear cache</SecondaryButton>
-          </div>
+          </Group>
         </fieldset>
 
         <output>

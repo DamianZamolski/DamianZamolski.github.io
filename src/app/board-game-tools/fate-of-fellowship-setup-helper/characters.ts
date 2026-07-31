@@ -13,5 +13,3 @@ export const characters = [
   'Gollum',
   'Arwen',
 ] as const;
-
-export type Character = (typeof characters)[number];

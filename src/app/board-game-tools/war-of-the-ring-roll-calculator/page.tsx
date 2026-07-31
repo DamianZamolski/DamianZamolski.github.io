@@ -1,5 +1,4 @@
 'use client';
-import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { useCallback, useMemo } from 'react';
 import { calculateExpectedValue } from './calculateExpectedValue';
@@ -9,20 +8,10 @@ import { Page } from '@/components/Page';
 import { Form } from '@/components/Form';
 import { RadioGroup } from '@/components/RadioGroup';
 import { Radio } from '@/components/Radio';
-
-const rollsAtom = atomWithStorage<number>('wotr-rolls', 5);
-
-const rollSuccessValueAtom = atomWithStorage<number>(
-  'wotr-roll-success-value',
-  6,
-);
-
-const rerollsAtom = atomWithStorage<number>('wotr-rerolls', 0);
-
-const rerollSuccessValueAtom = atomWithStorage<number>(
-  'wotr-reroll-success-value',
-  6,
-);
+import { rollsAtom } from './rollsAtom';
+import { rollSuccessValueAtom } from './rollSuccessValueAtom';
+import { rerollsAtom } from './rerollsAtom';
+import { rerollSuccessValueAtom } from './rerollSuccessValueAtom';
 
 export default function WarOfTheRingRollCalculatorPage() {
   const [rolls, setRolls] = useAtom(rollsAtom);

@@ -1,17 +1,11 @@
 import { shuffleArray } from '@/utils/shuffleArray';
-import { characters, type Character } from './characters';
+import { characters } from './characters';
+import type { Character } from './Character';
 import type { Quest } from './Quest';
-import { destroyTheRing, quests } from './quests';
-
-export type Setup = {
-  quests: Array<Quest>;
-  characters: Array<Character>;
-};
-
-export type PickSetupInput = {
-  playerCount: number;
-  questCount: number;
-};
+import { destroyTheRing } from './destroyTheRing';
+import { quests } from './quests';
+import type { Setup } from './Setup';
+import type { PickSetupInput } from './PickSetupInput';
 
 export function pickSetup({
   playerCount,

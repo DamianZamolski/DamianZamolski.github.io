@@ -1,5 +1,4 @@
 'use client';
-import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { usePathname, useRouter } from 'next/navigation';
 import { useMemo } from 'react';
@@ -7,27 +6,13 @@ import { Checkbox } from '@/components/Checkbox';
 import { Page } from '@/components/Page';
 import { shuffleArray } from '@/utils/shuffleArray';
 import type { GalacticEvent } from './GalacticEvent';
-import { galacticEvents } from './galacticEvents';
 import { Form } from '@/components/Form';
 import { RadioGroup } from '@/components/RadioGroup';
 import { Radio } from '@/components/Radio';
 import { SubmitButton } from '@/components/SubmitButton';
-
-const allEventIds = galacticEvents.map((event) => event.id);
-
-const eventsBySource = Array.from(
-  new Set(galacticEvents.map((event) => event.source)),
-).map((source) => ({
-  source,
-  events: galacticEvents.filter((event) => event.source === source),
-}));
-
-const poolAtom = atomWithStorage<Array<string>>(
-  'ti4-galactic-event-pool',
-  allEventIds,
-);
-
-const drawCountAtom = atomWithStorage('ti4-galactic-event-draw-count', 1);
+import { eventsBySource } from './eventsBySource';
+import { poolAtom } from './poolAtom';
+import { drawCountAtom } from './drawCountAtom';
 
 export default function TwilightImperiumIvGalacticEventPickerPage() {
   const router = useRouter();

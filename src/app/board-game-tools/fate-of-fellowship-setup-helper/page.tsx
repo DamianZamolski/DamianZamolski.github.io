@@ -1,5 +1,4 @@
 'use client';
-import { atomWithStorage } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { useState } from 'react';
 import { Form } from '@/components/Form';
@@ -7,13 +6,12 @@ import { Page } from '@/components/Page';
 import { RadioGroup } from '@/components/RadioGroup';
 import { Radio } from '@/components/Radio';
 import { SubmitButton } from '@/components/SubmitButton';
-import { pickSetup, type Setup } from './pickSetup';
-
-const playerCounts = [1, 2, 3, 4, 5];
-const questCounts = [4, 5, 6];
-
-const playerCountAtom = atomWithStorage('fate-of-fellowship-player-count', 4);
-const questCountAtom = atomWithStorage('fate-of-fellowship-quest-count', 5);
+import { pickSetup } from './pickSetup';
+import type { Setup } from './Setup';
+import { playerCounts } from './playerCounts';
+import { questCounts } from './questCounts';
+import { playerCountAtom } from './playerCountAtom';
+import { questCountAtom } from './questCountAtom';
 
 export default function FateOfFellowshipSetupHelperPage() {
   const [playerCount, setPlayerCount] = useAtom(playerCountAtom);
