@@ -8,8 +8,11 @@ button {
 }
 
 ul {
-  list-style-position: inside;
   padding-left: 0;
+}
+
+ul li {
+  list-style-position: inside;
 }
 
 [role='group'] > label {
