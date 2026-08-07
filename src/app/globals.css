@@ -12,7 +12,7 @@ ul {
 }
 
 ul li {
-  list-style-position: inside disc;
+  list-style: inside disc;
 }
 
 [role='group'] > label {
