@@ -1,9 +1,9 @@
 import { BggBanner } from './BggBanner/BggBanner';
 
 const supportLinks = [
-  { label: 'revolut', href: 'https://revolut.me/damianzamolski' },
-  { label: 'buymeacoffee', href: 'https://buymeacoffee.com/damianzamolski' },
-  { label: 'paypal', href: 'https://www.paypal.com/paypalme/damianzamolski' },
+  { label: 'Revolut', href: 'https://revolut.me/damianzamolski' },
+  { label: 'PayPal', href: 'https://www.paypal.com/paypalme/damianzamolski' },
+  { label: 'Buy me a coffee', href: 'https://buymeacoffee.com/damianzamolski' },
 ] as const;
 
 export function Footer() {
